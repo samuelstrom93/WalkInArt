@@ -45,14 +45,21 @@ namespace DSU21_2.Repository
             return artist;
         }
 
-        public Artist AddCollection(string name, string about)
-        {
-            var artist = new Artist { Name = name, About = about };
-            context.Artists.Add(artist);
-            context.SaveChanges();
-            return artist;
-        }
+        //public Collection AddCollection(int artistId, string name, string description)
+        //{
+        //    var collection = new Collection {ArtistId = artistId, Name = name, Description = description };
+        //    context.Collections.Add(collection);
+        //    context.SaveChanges();
+        //    return collection;
+        //}
 
+        //public Artwork AddArtwork(int artistId, string name, string description)
+        //{
+        //    var artWork = new Artwork { Name = name, Description = description };
+        //    context.Artwork.Add(artWork);
+        //    context.SaveChanges();
+        //    return artWork;
+        //}
 
 
 
