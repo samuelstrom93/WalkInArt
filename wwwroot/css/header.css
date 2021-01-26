@@ -1,23 +1,43 @@
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    white-space: nowrap;
+}
+
 nav {
-    min-height: 8.5vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     font-size: 1.5em;
-    background-color:#fff;
+    background-color: #fff;
 }
 
-.logo {
+#search-btn {
+    border-radius: 30px;
+    border: none;
+    width: 100px;
+    background: -moz-linear-gradient(left, #8EF4A4, #A154F2);
+    background: -webkit-linear-gradient(left, #8EF4A4, #A154F2);
+    background: linear-gradient(to right, #8EF4A4, #A154F2);
+}
+
+#search-input {
+    width: 50vh;
+}
+
+/*.logo {
     display: flex;
+}*/
+
+.logo_title {
+    color:black;
+    font-size: 2em;
 }
 
-.logo p {
-    margin: auto 0.5em;
-    font-size: 1.3em;
-}
-
-.logo:hover {
-    text-decoration: underline;
+/*
+.logo_title:hover {
+    text-decoration: none;
 }
 
 #search-bar {
@@ -45,6 +65,7 @@ nav input[type=text] {
 
 /* DROPDOWN MENU*/
 /* Dropdown Button */
+/*
 .dropbtn {
     background-color: #3498DB;
     color: white;
@@ -55,6 +76,7 @@ nav input[type=text] {
 }
 
   /* Dropdown button on hover & focus */
+/*
 .dropbtn:hover, .dropbtn:focus {
     background-color: #2980B9;
 }
@@ -79,9 +101,13 @@ nav input[type=text] {
     text-decoration: none;
     display: block;
   }
-
+    */
   /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+  /*
+.dropdown-content a:hover {background-color: #ddd}*/
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+/*
 .show {display:block;}
+
+*/
