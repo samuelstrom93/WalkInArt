@@ -10,7 +10,9 @@ namespace DSU21_2.Models
     {
         public int Id { get; set; }
         [Required]
+        [MaxLength(1000)]
         public string Name { get; set; }
+        [MaxLength(4000)]
         public string About { get; set; }
         public List<Collection> Collections { get; set; }
     }
