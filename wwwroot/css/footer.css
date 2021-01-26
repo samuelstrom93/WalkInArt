@@ -2,24 +2,23 @@ footer {
     color: #fff;
     background-color: rgb(32, 32, 32);
     min-height: 8.5vh;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.icons, footer p {
+/*.icons, footer p {
     margin: 0 10em;
 }
 
-footer p {
+/*footer span {
     font-size: 1.3em;
-}
+}*/
 
 .icons i {
-    margin: 0 15px;
+    /*margin: 0 5px;
+        padding: 0.3em;
+    */
     font-size: 1.5em;
     color: #fff;
     background-color: rgb(73, 70, 70);
-    padding: 0.3em;
     border-radius: 16px;
 }
