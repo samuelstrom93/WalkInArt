@@ -1,4 +1,5 @@
 using DSU21_2.Data;
+using DSU21_2.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,7 @@ namespace DSU21_2
         {
             services.AddDbContext<ArtContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("LocalDb")));
+            services.AddScoped<IArtDBRepo, ArtDBRepo>();
             services.AddControllersWithViews();
         }
 
