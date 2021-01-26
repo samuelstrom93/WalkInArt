@@ -8,9 +8,12 @@ namespace DSU21_2.Repository
 {
     public interface IArtDBRepo
     {
+
         Task<Artist> GetArtistAsync(int id);
         Task<List<Artist>> GetArtistsWithArt();
         Task<Collection> GetCollection(int id);
         Artist AddArtist(string name, string about);
+        bool AddCollection(Artist artist);
+        bool AddArtwork(Collection collection);
     }
 }

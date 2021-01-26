@@ -20,6 +20,7 @@ namespace DSU21_2.Repository
         public async Task<Artist>GetArtistAsync(int id)
         {
             return await context.Artists
+                .Include(a => a.Collections)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
@@ -35,6 +36,7 @@ namespace DSU21_2.Repository
         {
             await Task.Delay(0);
             return null;
+        //    artist.Collections.Add(await context.Collections.All(x=> x. )
         }
 
         public Artist AddArtist(string name, string about)
@@ -45,7 +47,24 @@ namespace DSU21_2.Repository
             return artist;
         }
 
-        //public Collection AddCollection(int artistId, string name, string description)
+        public bool AddCollection(Artist artist)
+        {
+            Collection collection = new Collection { Name = "Sommar", Description = "Vårblommor i solen som aldrig skiner hos Espen" };
+            artist.Collections.Add(collection);
+            context.SaveChanges();
+            return true;
+        }
+
+       public bool AddArtwork(Collection collection)
+        {
+            Artwork art = new Artwork { Name = "Winter", Description = "This amazing winter shot", Hyperlink = "https://i.imgur.com/sxjAWXB.jpg" };
+            collection.Artworks.Add(art);
+            context.SaveChanges();
+            return true;
+        }
+            
+            
+            //public Collection AddCollection(int artistId, string name, string description)
         //{
         //    var collection = new Collection {ArtistId = artistId, Name = name, Description = description };
         //    context.Collections.Add(collection);

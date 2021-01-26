@@ -24,8 +24,11 @@ namespace DSU21_2.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult>  Index()
         {
+            Artist a = await artDbRepo.GetArtistAsync(2);
+            //artDbRepo.AddCollection(a);
+            artDbRepo.AddArtwork(a.Collections[0]);
             return View();
         }
 

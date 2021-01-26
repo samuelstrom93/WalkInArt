@@ -14,6 +14,6 @@ namespace DSU21_2.Models
         [MaxLength(1000)]
         public string Name { get; set; }
         public List<Tag> Tags { get; set; }
-        public List<Artwork> Artworks { get; set; }
+        public List<Artwork> Artworks { get; set; } = new List<Artwork>();
     }
 }
