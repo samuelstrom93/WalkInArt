@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/gallery.css">
 
-    <script defer src="node_modules/swup/dist/swup.min.js"></script>
-    <script defer src="script.js"></script>
 
-
-    <title>Startsida</title>
+    <!-- Egen js -->
+    <script defer src="/js/script.js"></script>
 </head>
-<body>
 
+<body>
+    <!-- Nav -->
     <header>
         <nav>
             <a href="index.html">
@@ -53,8 +54,11 @@
         </nav>
     </header>
 
-    @RenderBody();
 
+    @RenderBody()
+
+
+    <!-- Footer -->
     <footer>
         <span>&copy;2021 DSU Grupp 2</span>
 
@@ -64,15 +68,16 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
 
-
     </footer>
 
-
+    <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/3ef0f906bf.js" crossorigin="anonymous"></script>
-    <script src="gallery.js"></script>
-    <script src="header.js"></script>
+
+    <!-- SWUP.js -->
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+
+    <!-- Egna js -->
+    <script src="/js/gallery.js"></script>
+    <script src="/js/header.js"></script>
 </body>
-
-
-
 </html>
