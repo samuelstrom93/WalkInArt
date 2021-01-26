@@ -1,0 +1,79 @@
+.navigation {
+    margin: 1em;
+    color: #fff;
+    font-size: 3em;
+}
+
+
+
+#chevron-right, #chevron-left {
+    cursor: pointer;
+}
+
+#chevron-right:hover, #chevron-left:hover {
+    color: rgb(175, 170, 170);
+}
+
+
+#chevron-right {
+    float: right;
+}
+
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    margin: 10em 0;
+    max-width: 100%;
+}
+
+.gallery img {
+    width: 300px;
+    height: 400px;
+    margin: 1em;
+    transition: transform .5s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.picture-text p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+
+.artist-section {
+    background-color: #fff;
+    min-height: 35vh;
+}
+
+.artist-info {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(236, 229, 229);
+}
+
+.artist-info p {
+    margin: 0.8em;
+    font-weight: bold;
+}
+
+.artist-description {
+    display: grid;
+    width: 85%;
+    grid-template-columns: 300px 1fr;
+    margin: 2em auto;
+}
+
+.artist-description p {
+    padding: 0 3em;
+}
+
+.author {
+    width: 300px;
+}
