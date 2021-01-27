@@ -1,4 +1,5 @@
 ﻿using DSU21_2.Models;
+using DSU21_2.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,14 +13,22 @@ namespace DSU21_2.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IArtDBRepo artDbRepo;
+        
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController(ILogger<HomeController> logger, IArtDBRepo artDbRepo)
         {
             _logger = logger;
+            this.artDbRepo = artDbRepo;
         }
 
-        public IActionResult Index()
+
+        public async Task<IActionResult>  Index()
         {
+            Artist a = await artDbRepo.GetArtistAsync(2);
+            //artDbRepo.AddCollection(a);
+            artDbRepo.AddArtwork(a.Collections[0]);
             return View();
         }
 
