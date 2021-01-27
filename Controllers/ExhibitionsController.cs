@@ -12,5 +12,11 @@ namespace DSU21_2.Views.Exhibitions
         {
             return View();
         }
+
+        //To do: Kanske ta bort senare
+        public IActionResult Gallery()
+        {
+            return View();
+        }
     }
 }

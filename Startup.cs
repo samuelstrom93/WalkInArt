@@ -56,7 +56,7 @@ namespace DSU21_2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Exhibitions}/{action=Index}/{id?}");
+                    pattern: "{controller=Exhibitions}/{action=Gallery}/{id?}");
             });
         }
     }

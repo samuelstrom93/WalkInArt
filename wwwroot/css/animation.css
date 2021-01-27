@@ -1,0 +1,17 @@
+@keyframes move-right {
+    from {left: 1600px;}
+    to {left: 0px;}
+}
+
+@keyframes move-left {
+    from {right: 1600px;}
+    to {right: 0px;}
+}
+
+.gallery-wrapper {
+    position: relative;
+}
+
+
+
+
