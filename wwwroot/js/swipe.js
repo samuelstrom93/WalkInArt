@@ -1,4 +1,4 @@
-﻿console.log('start.js')
+﻿console.log('swipe.js')
 
 //Karusel
 const swiper = makeSwiper()

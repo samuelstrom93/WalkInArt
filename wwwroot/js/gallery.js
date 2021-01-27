@@ -1,3 +1,6 @@
+console.log('gallery.js')
+
+
 let picture = document.querySelector(".gallery img");
 let pictures = document.querySelectorAll(".gallery img");
 let pictureText = document.querySelectorAll(".picture-text p");
