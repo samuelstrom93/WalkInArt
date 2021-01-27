@@ -1,8 +1,6 @@
 ﻿console.log('swipe.js')
 
 //Karusel
-const swiper = makeSwiper()
-function makeSwiper() {
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 20,
 
@@ -45,4 +43,4 @@ function makeSwiper() {
     });
     console.log('swiper made')
 
-}
+
