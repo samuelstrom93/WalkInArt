@@ -23,23 +23,23 @@ function makeSwiper() {
             // window width <= 499px
             499: {
                 slidesPerView: 1,
-                spaceBetweenSlides: 50
+                spaceBetweenSlides: 20
             },
             // window width <= 999px
             999: {
                 slidesPerView: 2,
-                spaceBetweenSlides: 50
+                spaceBetweenSlides: 20
             },
             // window width <= 1199px
             1199: {
                 slidesPerView: 3,
-                spaceBetweenSlides: 50
+                spaceBetweenSlides: 20
             },
             // window width <= 1599px
 
             1599: {
                 slidesPerView: 4,
-                spaceBetweenSlides: 50
+                spaceBetweenSlides: 20
             }
         }
 

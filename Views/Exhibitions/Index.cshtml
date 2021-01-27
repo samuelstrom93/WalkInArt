@@ -70,24 +70,44 @@
 </main>
 
 
-<nav class="room-selection">
-    <i class="fas fa-chevron-left" id="chevron-rooms"></i>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
+<div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
 
-    <i class="fas fa-chevron-right" id="chevron-rooms"></i>
-</nav>
+            <!-- Slides (kallas från model i c#) -->
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 1</span>
+            </div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 2</span>
+            </div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 3</span>
+            </div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 4</span>
+            </div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 10</span>
+            </div>
+        </div>
+
+        <!--  pagination -->
+        <div class="swiper-pagination swiper-pagination-black"></div>
+
+        <!--  navigation buttons -->
+        <div class="swiper-button-prev swiper-button-black"></div>
+        <div class="swiper-button-next swiper-button-black"></div>
+    </div>
+</div>
