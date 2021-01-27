@@ -12,6 +12,6 @@ namespace DSU21_2.Models
         [Required]
         [MaxLength(50)]
         public string Title { get;  set; }
-        public List<Collection> Collections { get; set; }
+        public List<Collection> Collections  { get; set; }
     }
 }
