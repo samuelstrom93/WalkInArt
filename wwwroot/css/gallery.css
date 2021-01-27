@@ -178,11 +178,8 @@
     align-items: center;
 }
 
-.swiper-film {
-    height: 444px;
-}
 .room-img {
-    max-height: 444px;
+    max-height: 400px;
 }
 .room-span {
     vertical-align: bottom;

@@ -4,8 +4,7 @@
 const swiper = makeSwiper()
 function makeSwiper() {
     var swiper = new Swiper('.swiper-container', {
-        /*slidesPerView: 4,*/
-        spaceBetween: 30,
+        spaceBetween: 20,
 
         loop: true,
         speed: 1000,
