@@ -10,7 +10,7 @@ namespace DSU21_2.Repository
     {
 
         Task<Artist> GetArtistAsync(int id);
-        Task<Collection> GetCollection(int id);
+        Task<Collection> GetCollection(int collectionId);
         Artist AddArtist(string name, string about);
         bool AddCollection(Artist artist);
         bool AddArtwork(Collection collection);
@@ -19,6 +19,7 @@ namespace DSU21_2.Repository
         Task<List<Tag>> GetTags();
         Task<Artist> UpdateArtist(int id, string about);
         Task<List<Collection>> GetCollectionWithTag(int tagId);
+        Task<Artwork> GetArtwork(int artworkId);
 
     }
 }

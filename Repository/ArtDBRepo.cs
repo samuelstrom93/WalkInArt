@@ -48,12 +48,13 @@ namespace DSU21_2.Repository
 
         #region Collection
 
-        public async Task<Collection> GetCollection(int id)
-        {
-            await Task.Delay(0);
-            return null;
+        public async Task<Collection> GetCollection(int collectionId)
+        {            
+            return await context.Collections
+                .Include(x => x.Artworks)
+                .FirstOrDefaultAsync(y =>y.Id == collectionId);
         }
-
+        
         public async Task<List<Collection>> GetCollectionsWithArt()
         {
             return await context.Collections
@@ -75,12 +76,7 @@ namespace DSU21_2.Repository
                 .Where(x => x.Tags.Count > 0).ToListAsync();
         }
 
-        //public async Task<List<Collection>> GetCollectionWithTag(int tagId)
-        //{
-        //    var collections = await GetCollectionWithTags();
-        //    collections = collections.Where(x => x.Tags.FindAll(y => y.Id ==  tagId).Count > 0).ToList();
-        //    return collections;
-        //}
+       
         public async Task<List<Collection>> GetCollectionWithTag(int tagId)
         {
             Tag tag = await GetTag(tagId);
@@ -100,6 +96,12 @@ namespace DSU21_2.Repository
             collection.Artworks.Add(art);
             context.SaveChanges();
             return true;
+        }
+
+        public async Task<Artwork> GetArtwork(int artworkId)
+        {
+            return await context.Artworks
+                .FirstOrDefaultAsync(x => x.Id ==  artworkId);            
         }
 
         #endregion
