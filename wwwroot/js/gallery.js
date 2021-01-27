@@ -1,3 +1,6 @@
+console.log('gallery.js')
+
+
 let picture = document.querySelector(".gallery img");
 let pictures = document.querySelectorAll(".gallery img");
 let pictureText = document.querySelectorAll(".picture-text p");
@@ -26,8 +29,8 @@ for (let i = 0; i < overlayClose.length; i++) {
 
 
 // Sätter första bild som stor när sidan laddas in
-picture.style.height = "650px";
-picture.style.width = "500px";
+/*picture.style.height = "650px";
+picture.style.width = "500px";*/
 
 
 
