@@ -1,7 +1,7 @@
 ﻿console.log('swipe.js')
 
-//Karusel
-    var swiper = new Swiper('.swiper-container', {
+//Karusel för utställningar
+var gallerySwiper = new Swiper('.gallerylist', {
         spaceBetween: 20,
 
         loop: true,
@@ -11,6 +11,20 @@
             type: 'bullets',
             clickable: true,
         },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+});
+
+//Karusel för rumlista
+var roomsSwiper = new Swiper('.roomlist', {
+        spaceBetween: 20,
+
+        loop: true,
+        speed: 1000,
+
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
