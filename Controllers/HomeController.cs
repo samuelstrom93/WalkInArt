@@ -1,5 +1,6 @@
 ﻿using DSU21_2.Models;
 using DSU21_2.Repository;
+using DSU21_2.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -26,14 +27,10 @@ namespace DSU21_2.Controllers
 
         public async Task<IActionResult>  Index()
         {
-            //Artist a = await artDbRepo.GetArtistAsync(2);
-            //artDbRepo.AddCollection(a);
-            //artDbRepo.AddArtwork(a.Collections[0]);
-            //List<Tag> tags = await artDbRepo.GetTags();
-            //var collections = await artDbRepo.GetCollectionsWithArt();
-            //Artist artist = await artDbRepo.UpdateArtist(1, "^_^");
-            var test = await artDbRepo.GetCollectionWithTag(1);
-            return View();
+            var collectionList = await artDbRepo.GetCollectionsWithArt();
+            var tagList = await artDbRepo.GetTags();
+            var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()
