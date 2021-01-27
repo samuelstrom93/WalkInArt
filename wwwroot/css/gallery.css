@@ -12,10 +12,14 @@
     float: right;
 }
 
+
+#gallery-background{
+    background-size:cover;
+}
 .gallery {
     display: flex;
     justify-content: center;
-    margin: 7.5em 0 2em;
+    margin: 5% 0 2em;
     max-width: 100%;
 }
 
@@ -143,9 +147,11 @@
 }
 
 /*SWIPER (Karusel)*/
+/*.gallerylist {
+    margin-top: 0%;
+}*/
 .swiper-container {
     margin-top: 2%;
-
 }
 
 .swiper-wrapper {
