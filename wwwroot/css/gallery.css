@@ -12,10 +12,6 @@
     float: right;
 }
 
-
-#gallery-background{
-    background-size:cover;
-}
 .gallery {
     display: flex;
     justify-content: center;

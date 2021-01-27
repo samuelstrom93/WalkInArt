@@ -29,8 +29,8 @@ for (let i = 0; i < overlayClose.length; i++) {
 
 
 // Sätter första bild som stor när sidan laddas in
-picture.style.height = "650px";
-picture.style.width = "500px";
+/*picture.style.height = "650px";
+picture.style.width = "500px";*/
 
 
 
