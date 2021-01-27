@@ -1,3 +1,61 @@
 ﻿@model DSU21_2.ViewModels.HomeViewModel
 
-// Startsidas innehåll 
+<main>
+    <div class="gridContainer">
+        <h1>Mest besökta</h1>
+        <div class="gridArt"></div>
+        <div class="gridArt"></div>
+        <div class="gridArt"></div>
+        <div class="gridArt"></div>
+        <i class="fas fa-chevron-right"></i>
+
+
+
+        <h1>Kommande utställningar</h1>
+        <div class="gridArt"></div>
+        <div class="gridArt"></div>
+        <div class="gridArt"></div>
+        <div class="gridArt"></div>
+
+
+
+        <h1>Kategorier</h1>
+        <div class="gridArt">
+            <div class="gridArt">
+                <img src="/assets/mock_images/room-example.jpg" alt="">
+                <div class="art-overlay">
+                    <span>@Model.Categories.FirstOrDefault()</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="gridArt">
+            <img src="/assets/mock_images/room-example.jpg" alt="">
+            <div class="art-overlay">
+                <span>Fotografier</span>
+            </div>
+        </div>
+
+
+        <div class="gridArt">
+            <img src="/assets/mock_images/room-example.jpg" alt="">
+            <div class="art-overlay">
+                <span>Fotografier</span>
+            </div>
+        </div>
+
+
+    <div class="gridArt">
+        <img src="/assets/mock_images/room-example.jpg" alt="">
+        <div class="art-overlay">
+            <span>Fotografier</span>
+        </div>
+    </div>
+
+        </div>
+    </div>
+</main>
+
+
