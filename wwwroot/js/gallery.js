@@ -2,29 +2,9 @@ let picture = document.querySelector(".gallery img");
 let pictures = document.querySelectorAll(".gallery img");
 let pictureText = document.querySelectorAll(".picture-text p");
 
-let navLeft = document.querySelector('.fas.fa-chevron-left');
-let navRight = document.querySelector('.fas.fa-chevron-right');
-
-let galleryWrapper = document.querySelector('.gallery-wrapper');
-
-
-// Navigation-animationer
-let lastPage = document.referrer;
-let url = window.location.href;
-let currentPage = window.location.pathname;
-
-
-if (currentPage === '/gallery.html') {
-    document.querySelector('.gallery-wrapper').style.animation = "1.2s move-right";
-}
-
-if (currentPage === '/index.html') {
-    document.querySelector('.gallery-wrapper').style.animation = "1.2s move-left";
-}
 
 
 let buttons = document.querySelectorAll('.button-overlay');
-
 let overlays = document.querySelectorAll("#overlay")
 let overlayClose = document.querySelectorAll("#overlay span")
 

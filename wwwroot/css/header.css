@@ -26,88 +26,9 @@ nav {
     width: 50vh;
 }
 
-/*.logo {
-    display: flex;
-}*/
 
 #logo-title {
     color: black;
     font-size: 30px;
 }
 
-/*
-.logo_title:hover {
-    text-decoration: none;
-}
-
-#search-bar {
-    padding: 0.3em;
-    border: 1px solid #000;
-    width: 25vh;
-}
-
-#search-icon {
-    margin-left: -0.3em;
-    padding: 0.4em;
-    border: 1px solid #000;
-    cursor: pointer;
-    background-color: #d7d7d7;
-}
-
-#search-icon:hover {
-    background-color: #f0e3e3;
-}
-
-nav input[type=text] {
-    font-size: 1.03em;
-}
-
-
-/* DROPDOWN MENU*/
-/* Dropdown Button */
-/*
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-  /* Dropdown button on hover & focus */
-/*
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-    */
-  /* Change color of dropdown links on hover */
-  /*
-.dropdown-content a:hover {background-color: #ddd}*/
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-/*
-.show {display:block;}
-
-*/
