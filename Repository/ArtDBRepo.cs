@@ -17,27 +17,7 @@ namespace DSU21_2.Repository
             this.context  =  context;
         }
 
-        public async Task<Artist>GetArtistAsync(int id)
-        {
-            return await context.Artists
-                .Include(a => a.Collections)
-                .FirstOrDefaultAsync(x => x.Id == id);
-        }
-
-
-
-        public async Task<List<Artist>> GetArtistsWithArt()
-        {
-            await Task.Delay(0);
-            return null;
-        }
-
-        public async Task<Collection> GetCollection(int id)
-        {
-            await Task.Delay(0);
-            return null;
-        //    artist.Collections.Add(await context.Collections.All(x=> x. )
-        }
+        #region Artist
 
         public Artist AddArtist(string name, string about)
         {
@@ -45,6 +25,40 @@ namespace DSU21_2.Repository
             context.Artists.Add(artist);
             context.SaveChanges();
             return artist;
+        }
+
+        public async Task<Artist>GetArtistAsync(int id)
+        {
+            return await context.Artists
+                .Include(a => a.Collections)
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<Artist>UpdateArtist(int id, string about)
+        {
+            Artist artist = await GetArtistAsync(id);
+            artist.About = about;
+            context.Artists
+                .Update(artist);
+            
+            context.SaveChanges();
+            return artist;
+        }
+        #endregion
+
+        #region Collection
+
+        public async Task<Collection> GetCollection(int id)
+        {
+            await Task.Delay(0);
+            return null;
+        }
+
+        public async Task<List<Collection>> GetCollectionsWithArt()
+        {
+            return await context.Collections
+                .Include(x => x.Artworks)
+                .Where(y => y.Artworks.Count > 0).ToListAsync();
         }
 
         public bool AddCollection(Artist artist)
@@ -55,30 +69,71 @@ namespace DSU21_2.Repository
             return true;
         }
 
-       public bool AddArtwork(Collection collection)
+        public async Task<List<Collection>> GetCollectionWithTags()
+        {
+            return await context.Collections
+                .Where(x => x.Tags.Count > 0).ToListAsync();
+        }
+
+        //public async Task<List<Collection>> GetCollectionWithTag(int tagId)
+        //{
+        //    var collections = await GetCollectionWithTags();
+        //    collections = collections.Where(x => x.Tags.FindAll(y => y.Id ==  tagId).Count > 0).ToList();
+        //    return collections;
+        //}
+        public async Task<List<Collection>> GetCollectionWithTag(int tagId)
+        {
+            Tag tag = await GetTag(tagId);
+            return tag.Collections;
+        }
+
+
+
+
+        #endregion
+
+        #region Artwork
+
+        public bool AddArtwork(Collection collection)
         {
             Artwork art = new Artwork { Name = "Winter", Description = "This amazing winter shot", Hyperlink = "https://i.imgur.com/sxjAWXB.jpg" };
             collection.Artworks.Add(art);
             context.SaveChanges();
             return true;
         }
-            
-            
-            //public Collection AddCollection(int artistId, string name, string description)
-        //{
-        //    var collection = new Collection {ArtistId = artistId, Name = name, Description = description };
-        //    context.Collections.Add(collection);
-        //    context.SaveChanges();
-        //    return collection;
-        //}
 
-        //public Artwork AddArtwork(int artistId, string name, string description)
-        //{
-        //    var artWork = new Artwork { Name = name, Description = description };
-        //    context.Artwork.Add(artWork);
-        //    context.SaveChanges();
-        //    return artWork;
-        //}
+        #endregion
+
+        #region Tag
+
+        public bool AddTag(string title)
+        {
+            title = "Fotografi";
+            var tag = new Tag { Title = title };
+            context.Tags.Add(tag);
+            context.SaveChanges();
+            return true;
+        }
+
+        public async Task<List<Tag>> GetTags()
+        {
+            return await context.Tags
+                .ToListAsync();
+        }
+
+        public async Task<Tag> GetTag(int tagId)
+        {
+            return await context.Tags
+                .Include(a => a.Collections)
+                .FirstOrDefaultAsync(x => x.Id == tagId);
+        }
+            
+           
+            
+
+        #endregion 
+
+
 
 
 
