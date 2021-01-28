@@ -1,8 +1,10 @@
 ﻿using DSU21_2.Data;
 using DSU21_2.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,9 +14,21 @@ namespace DSU21_2.Repository
     {
         private readonly ArtContext context;
 
+
         public ArtDBRepo(ArtContext context)
         {
             this.context  =  context;
+        }
+
+        public void FillDbWithData() // Endast för att fylla DB med fejkdata.
+        {
+            string data = File.ReadAllText(@"test.json");
+            var result = JsonConvert.DeserializeObject<List<Artist>>(data);
+            foreach (var artist in result)
+            {
+                context.Artists.Add(artist);
+            }
+            context.SaveChanges();
         }
 
         #region Artist
