@@ -19,6 +19,7 @@ namespace DSU21_2.Repository
         Task<List<Tag>> GetTags();
         Task<Artist> UpdateArtist(int id, string about);
         Task<List<Collection>> GetCollectionWithTag(int tagId);
+        Task GetCollection(string id);
         Task<Artwork> GetArtwork(int artworkId);
 
     }
