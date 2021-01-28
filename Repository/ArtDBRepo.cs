@@ -20,7 +20,7 @@ namespace DSU21_2.Repository
         }
         public void FillDbWithData() // Endast för att fylla DB med fejkdata.
         {
-            string data = File.ReadAllText(@"test.json");
+            string data = File.ReadAllText(@"TestData.json");
             var result = JsonConvert.DeserializeObject<List<Artist>>(data);
             foreach (var artist in result)
             {
