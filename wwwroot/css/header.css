@@ -1,0 +1,34 @@
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    white-space: nowrap;
+}
+
+nav {
+    font-size: 1.5em;
+    background-color: #fff;
+}
+
+#search-btn {
+    border-radius: 30px;
+    border: none;
+    width: 100px;
+    background: -moz-linear-gradient(left, #8EF4A4, #A154F2);
+    background: -webkit-linear-gradient(left, #8EF4A4, #A154F2);
+    background: linear-gradient(to right, #8EF4A4, #A154F2);
+}
+
+#search-input {
+    width: 50vh;
+}
+
+
+#logo-title {
+    color: black;
+    font-size: 30px;
+}
+

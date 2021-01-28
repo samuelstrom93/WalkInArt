@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+header, main, footer {
+    flex-shrink: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+
