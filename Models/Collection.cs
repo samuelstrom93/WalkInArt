@@ -13,7 +13,7 @@ namespace DSU21_2.Models
         [Required]
         [MaxLength(1000)]
         public string Name { get; set; }
-        public List<Tag> Tags { get; set; }
+        public List<Tag> Tags { get; set; } = new List<Tag>();
         public List<Artwork> Artworks { get; set; } = new List<Artwork>();
     }
 }
