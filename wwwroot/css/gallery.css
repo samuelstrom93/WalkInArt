@@ -1,10 +1,3 @@
-.navigation {
-    margin: 0 1em;
-    padding: 0.5em;
-    color: #fff;
-    font-size: 3em;
-}
-
 
 #chevron-right, #chevron-left {
     cursor: pointer;
@@ -22,7 +15,7 @@
 .gallery {
     display: flex;
     justify-content: center;
-    margin: 7.5em 0 2em;
+    margin: 5% 0 2em;
     max-width: 100%;
 }
 
@@ -147,4 +140,66 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/*SWIPER (Karusel)*/
+/*.gallerylist {
+    margin-top: 0%;
+}*/
+.swiper-container {
+    margin-top: 2%;
+}
+
+.swiper-wrapper {
+    margin-bottom: 2%;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.room-img {
+    max-height: 400px;
+}
+.room-span {
+    vertical-align: bottom;
+}
+.swiper-slide {
+    align-content: center;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet {
+    background-color: black;
+}
+
+.swiper-nav-gallery-prev {
+    background-color: #30363d65;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.swiper-nav-gallery-next {
+    background-color: #30363d65;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
 }

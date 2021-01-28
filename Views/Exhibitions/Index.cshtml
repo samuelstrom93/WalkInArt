@@ -1,90 +1,194 @@
-﻿@model DSU21_2.ViewModels.ExhibitionsViewModel
 
-<main style="background-image: url('assets/images/brownWall.png')">
+@section Scripts {
+    <script src="~/js/gallery.js"></script>
+    <script type="text/javascript" src="~/js/swipe.js"></script>
+}
+
+@model DSU21_2.ViewModels.ExhibitionsViewModel
+
+<main style="background-image: url('assets/images/brownWall.png'); background-size:cover;">
     <div class="gallery-wrapper">
-        <div class="gallery">
-            <div class="picture-text">
-                <img src="/assets/mock_images/gallery1.png" alt="">
-                <p>Beskrivande text</p>
-                <button class="button-overlay">Mer info</button>
 
-                <div id="overlay">
-                    <span>X</span>
-                    <img src="/assets/mock_images/gallery1.png" alt="">
-                    <div class="object-info">
-                        <h1>Title 1</h1>
-                        <p>2020 av Test Testsson</p>
-                        <p>Text från titel 3.</p>
+        <!-- Swiper.js -->
+        <div class="swiper-container gallerylist">
+            <div class="swiper-wrapper">
+
+                <!-- Slides (kallas från model i c#) -->
+                <div class="swiper-slide">
+                    <div class="gallery">
+                        <div class="picture-text">
+                            <img src="/assets/mock_images/gallery1.png" alt="">
+                            <p>Beskrivande text</p>
+                            <button class="button-overlay">Mer info</button>
+
+                            <div id="overlay">
+                                <span>X</span>
+                                <img src="/assets/mock_images/gallery1.png" alt="">
+                                <div class="object-info">
+                                    <h1>Title 1</h1>
+                                    <p>2020 av Test Testsson</p>
+                                    <p>Text från titel 3.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="picture-text">
+                            <img src="/assets/mock_images/gallery2.png" alt="">
+                            <p>Beskrivande text</p>
+                            <button class="button-overlay">Mer info</button>
+
+                            <div id="overlay">
+                                <span>X</span>
+                                <img src="/assets/mock_images/gallery2.png" alt="">
+                                <div class="object-info">
+                                    <h1>Title 2</h1>
+                                    <p>2020 av Test Testsson</p>
+                                    <p>Text från titel 2</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="picture-text">
+                            <img src="/assets/mock_images/gallery3.png" alt="">
+                            <p>Beskrivande text</p>
+                            <button class="button-overlay">Mer info</button>
+
+                            <div id="overlay">
+                                <span>X</span>
+                                <img src="/assets/mock_images/gallery3.png" alt="">
+                                <div class="object-info">
+                                    <h1>Title 3</h1>
+                                    <p>2020 av Test Testsson</p>
+                                    <p>Text från titel 3</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gallery">
 
+                        <div class="picture-text">
+                            <img src="/assets/mock_images/gallery1.png" alt="">
+                            <p>Beskrivande text</p>
+                            <button class="button-overlay">Mer info</button>
+
+                            <div id="overlay">
+                                <span>X</span>
+                                <img src="/assets/mock_images/gallery1.png" alt="">
+                                <div class="object-info">
+                                    <h1>Title 1</h1>
+                                    <p>2020 av Test Testsson</p>
+                                    <p>Text från titel 3.</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="picture-text">
+                            <img src="/assets/mock_images/gallery2.png" alt="">
+                            <p>Beskrivande text</p>
+                            <button class="button-overlay">Mer info</button>
+
+                            <div id="overlay">
+                                <span>X</span>
+                                <img src="/assets/mock_images/gallery2.png" alt="">
+                                <div class="object-info">
+                                    <h1>Title 2</h1>
+                                    <p>2020 av Test Testsson</p>
+                                    <p>Text från titel 2</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="picture-text">
+                            <img src="/assets/mock_images/gallery3.png" alt="">
+                            <p>Beskrivande text</p>
+                            <button class="button-overlay">Mer info</button>
+
+                            <div id="overlay">
+                                <span>X</span>
+                                <img src="/assets/mock_images/gallery3.png" alt="">
+                                <div class="object-info">
+                                    <h1>Title 3</h1>
+                                    <p>2020 av Test Testsson</p>
+                                    <p>Text från titel 3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                    <span class="room-span">Slide 3</span>
+                </div>
+                <div class="swiper-slide">
+                    <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                    <span class="room-span">Slide 4</span>
+                </div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">
+                    <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                    <span class="room-span">Slide 10</span>
                 </div>
             </div>
 
-            <div class="picture-text">
-                <img src="/assets/mock_images/gallery2.png" alt="">
-                <p>Beskrivande text</p>
-                <button class="button-overlay">Mer info</button>
+            <!--  pagination -->
+            <div class="swiper-pagination swiper-pagination-black"></div>
 
-                <div id="overlay">
-                    <span>X</span>
-                    <img src="/assets/mock_images/gallery2.png" alt="">
-                    <div class="object-info">
-                        <h1>Title 2</h1>
-                        <p>2020 av Test Testsson</p>
-                        <p>Text från titel 2</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="picture-text">
-                <img src="/assets/mock_images/gallery3.png" alt="">
-                <p>Beskrivande text</p>
-                <button class="button-overlay">Mer info</button>
-
-                <div id="overlay">
-                    <span>X</span>
-                    <img src="/assets/mock_images/gallery3.png" alt="">
-                    <div class="object-info">
-                        <h1>Title 3</h1>
-                        <p>2020 av Test Testsson</p>
-                        <p>Text från titel 3</p>
-                    </div>
-                </div>
-            </div>
+            <!--  navigation buttons -->
+            <div class="swiper-button-prev swiper-button-white swiper-nav-gallery-prev"></div>
+            <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
         </div>
 
     </div>
-    <div class="navigation">
-
-        <a href="#">
-            <i class="fas fa-chevron-left" id="chevron-left"></i>
-        </a>
-        <a href="#">
-            <i class="fas fa-chevron-right" id="chevron-right"></i>
-        </a>
-    </div>
 </main>
 
+<!-- Rumlista -->
+<div>
+    <div class="swiper-container roomlist">
+        <div class="swiper-wrapper">
 
-<nav class="room-selection">
-    <i class="fas fa-chevron-left" id="chevron-rooms"></i>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
-    <div class="room-description">
-        <img src="/assets/mock_images/room-example.jpg" class="author" alt="author">
-        <p>Ett annat rum</p>
-    </div>
+            <!-- Slides (kallas från model i c#) -->
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 1</span>
+            </div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 2</span>
+            </div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 3</span>
+            </div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 4</span>
+            </div>
+            <div class="swiper-slide">Slide 5</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 6</div>
+            <div class="swiper-slide">Slide 7</div>
+            <div class="swiper-slide">Slide 8</div>
+            <div class="swiper-slide">Slide 9</div>
+            <div class="swiper-slide">
+                <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
+                <span class="room-span">Slide 10</span>
+            </div>
+        </div>
 
-    <i class="fas fa-chevron-right" id="chevron-rooms"></i>
-</nav>
+        <!--  navigation buttons -->
+        <div class="swiper-button-prev swiper-button-black"></div>
+        <div class="swiper-button-next swiper-button-black"></div>
+    </div>
+</div>
