@@ -1,43 +1,54 @@
 ﻿@model DSU21_2.ViewModels.HomeViewModel
 
 <main>
-    <div class="gridContainer">
+    <div class="grid-container">
         <h1>Mest besökta</h1>
+
+
+        @*Hårdkodad till fyra just nu för att fylla grid som består av fyra kolumner
+        Behöver förstora griden för att elementen ska få plats horistontellt och
+        sätta någon sorts begränsning på hur många element vi kan ladda in?*@
+
 
         @for (int i = 0; i < 4; i++)
         {
-            <div class="gridArt">
-                <a href="/exhibitions/@Model.CurrentCollections[i].Id"/>
-                <p>hejsan</p>
+            <div class="grid-art">
+                <img src="/assets/mock_images/gallery1.png" alt="">
+                <div class="art-overlay">
+                    <a href="/Exhibitions/@Model.CurrentCollections[i].Id" alt="utställning">
+                        @Model.CurrentCollections[i].Name
+                    </a>
+                </div>
             </div>
         }
 
-        
-        @*<div class="gridArt"></div>
-        <div class="gridArt"></div>
-        <div class="gridArt"></div>*@
+        @*För slidern senare*@ 
+        @*<i class="fas fa-chevron-left"></i>*@
         <i class="fas fa-chevron-right"></i>
 
 
-
         <h1>Kommande utställningar</h1>
-        <div class="gridArt"></div>
-        <div class="gridArt"></div>
-        <div class="gridArt"></div>
-        <div class="gridArt"></div>
+        @for (int i = 0; i < 4; i++)
+        {
+            <div class="grid-art">
+                <img src="/assets/mock_images/room1.png" alt="">
+                <div class="art-overlay">
+                    <a href="/Exhibitions/@Model.IncomingCollections[i].Id" alt="utställning">
+                        @Model.IncomingCollections[i].Name
+                    </a>
+                </div>
+            </div>
+        }
+
+
 
         <h1>Kategorier</h1>
 
-        @* Hårdkodad till fyra just nu*@
         @for (int i = 0; i < 4; i++)
         {
-            <div class="gridArt">
-                <div class="gridArt">
-                    <img src="/assets/mock_images/room-example.jpg" alt="">
-                    <div class="art-overlay">
-                        <span>@Model.Categories[i].Title</span>
-                    </div>
-                </div>
+            <div class="grid-art">
+                <img src="/assets/mock_images/room-example.jpg" alt="">
+                <span>@Model.Categories[i].Title</span>
             </div>
         }
 

@@ -1,5 +1,5 @@
 ﻿
-.gridContainer {
+.grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 10px 50px;
@@ -8,10 +8,26 @@
     grid-row: 3;
 }
 
-.gridArt {
-    background-color: pink;
+.grid-art {
     height: 200px;
     width: 230px;
+}
+
+
+.grid-art img {
+    height: 200px;
+    width: 230px;
+}
+
+.grid-art a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.grid-art a:hover {
+    text-decoration: underline;
+    color: #000;
 }
 
 
@@ -28,7 +44,6 @@ h1 {
 
 
 
-
 .art-overlay {
     position: relative;
     bottom: 200px;
@@ -41,28 +56,27 @@ h1 {
     transition: .5s ease;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.gridArt:hover .art-overlay {
-    height: 95%;
+.grid-art:hover .art-overlay {
+    height: 100%;
     opacity: 0.9;
 }
 
 
-.gridArt span {
-    color: white;
+.grid-art span {
+    /*color: #fff;*/
     font-size: 20px;
-    position: absolute;
+   /* position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
     text-align: center;
 }
 
 
-.gridArt img {
-    height: 200px;
-    width: 230px;
-}

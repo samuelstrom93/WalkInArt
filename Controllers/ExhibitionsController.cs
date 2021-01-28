@@ -19,10 +19,10 @@ namespace DSU21_2.Views.Exhibitions
             this.artDbRepo = artDbRepo;
         }
         [Route("Exhibitions/{id?}")]
-        public async Task<IActionResult>  Index(string id = "")
+        public async Task<IActionResult> Index(int id)
         {
-            var exhibitions = await artDbRepo.GetCollection(int.Parse(id));
-            var exhibitionsViewModel = new ExhibitionsViewModel(exhibitions);
+            var exhibitions = await artDbRepo.GetCollection(id);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions);
             return View(exhibitionsViewModel);
         }
         public IActionResult Gallery()
