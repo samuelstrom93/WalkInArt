@@ -3,12 +3,19 @@
 <main>
     <div class="gridContainer">
         <h1>Mest besökta</h1>
-        <div class="gridArt">
-            @*@Model.CurrentCollections.First()*@
-        </div>
+
+        @for (int i = 0; i < 4; i++)
+        {
+            <div class="gridArt">
+                <a href="/exhibitions/@Model.CurrentCollections[i].Id"/>
+                <p>hejsan</p>
+            </div>
+        }
+
+        
+        @*<div class="gridArt"></div>
         <div class="gridArt"></div>
-        <div class="gridArt"></div>
-        <div class="gridArt"></div>
+        <div class="gridArt"></div>*@
         <i class="fas fa-chevron-right"></i>
 
 
