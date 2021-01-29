@@ -1,8 +1,10 @@
 ﻿using DSU21_2.Data;
 using DSU21_2.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,6 +19,34 @@ namespace DSU21_2.Repository
             this.context  =  context;
         }
 
+        public async Task FillDbWithData() // Endast för att fylla DB med fejkdata.
+        {
+            string data = File.ReadAllText(@"Test_v2.json");
+            var result = JsonConvert.DeserializeObject<List<Artist>>(data);
+            foreach (var artist in result)
+            {
+                context.Artists.Add(artist);
+            }
+            //context.SaveChanges();
+
+            var data2 = File.ReadAllText(@"testTag.json");
+            var result2 = JsonConvert.DeserializeObject<List<Tag>>(data2);
+            foreach (var tag in result2)
+            {
+                context.Tags.Add(tag);
+
+            }
+            context.SaveChanges();
+            Random random = new Random();
+            List<Tag> tags = await GetTags();
+            List<Collection> collections = await GetCollectionsWithArt();
+            foreach (var collection in collections)
+            {
+                collection.Tags.Add(tags[random.Next(8)]);
+            }
+            context.SaveChanges();
+        }
+        
         #region Artist
 
         public Artist AddArtist(string name, string about)
