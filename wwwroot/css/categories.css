@@ -7,14 +7,17 @@
     padding: 50px;
     grid-column: 4;
     grid-row: 6;
+    margin-top: 100px;
 }
 
 .grid-art {
     position: relative;
     text-align: center;
-    background-color: yellowgreen;
+    background-color: yellow;
+    overflow: hidden;
     height: 150px;
     width: 230px;
+    
 }
 
 h1 {
@@ -22,27 +25,24 @@ h1 {
     grid-column: span 4;
 }
 
-p {
-    justify-self: center;
-    text-align: center;
-    padding-top: 8px;
-}
 
-.to-exhibition {
-    text-decoration: none;
+.chosen-category {
     color: #000;
 }
 
-.to-exhibition:hover p {
+.chosen-category:hover {
     text-decoration: none;
     font-weight: bold;
     color: rgb(236, 4, 159);
 }
 
-.fas.fa-chevron-right {
-    align-self: center;
-    justify-self: center;
-    font-size: 2.3em;
+
+.to-exhibition:hover > a {
+  text-decoration: none;
+}
+
+.grid-art:hover > a {
+    text-decoration: none;
 }
 
 .grid-art img {
@@ -50,7 +50,6 @@ p {
     height: 150px;
     width: 230px;
 }
-
 
 .category {
     position: absolute;
@@ -67,4 +66,33 @@ p {
     opacity: 0.7;
     height: 40%;
     width: 100%;
+}
+
+/*CHOSEN CATEGORY*/
+.title {
+    text-align: center;
+    padding-top: 7px;
+    font-size: 20px;
+}
+
+.info-txt {
+    text-align: left;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.info-box {
+    top: -30%;
+    position: relative;
+    transition: all .3s ease-out;
+    background: #fff;
+    opacity: 0.8;
+    height: 100%;
+}
+
+
+.info-box:hover {
+    top: -100%;
 }

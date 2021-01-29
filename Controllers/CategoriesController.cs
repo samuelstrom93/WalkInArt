@@ -12,5 +12,10 @@ namespace DSU21_2.Controllers
         {
             return View();
         }
+
+        public IActionResult ChosenCategory()
+        {
+            return View();
+        }
     }
 }
