@@ -90,4 +90,15 @@ h1 {
 }
 
 
+.all-categories {
+    grid-column: span 5;
+    margin-left: 2.5em;
+    color: #000;
+    font-weight: bold;
+}
+
+.all-categories:hover {
+    color: #000;
+}
+
 
