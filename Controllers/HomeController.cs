@@ -26,12 +26,7 @@ namespace DSU21_2.Controllers
 
         public async Task<IActionResult>  Index()
         {
-            //Artist a = await artDbRepo.GetArtistAsync(2);
-            //artDbRepo.AddCollection(a);
-            //artDbRepo.AddArtwork(a.Collections[0]);
-            //List<Tag> tags = await artDbRepo.GetTags();
-            //var collections = await artDbRepo.GetCollectionsWithArt();
-            //Artist artist = await artDbRepo.UpdateArtist(1, "^_^");
+            //Used for filling local DB with data, run once.
             //await artDbRepo.FillDbWithData();
             var test = await artDbRepo.GetCollectionWithTag(1);
             return View();
