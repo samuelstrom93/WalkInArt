@@ -1,5 +1,5 @@
 ﻿
-
+/*CSS FÖR BÅDE INDEX OCH CHOSEN CATEGORY*/
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -25,22 +25,6 @@ h1 {
     grid-column: span 4;
 }
 
-
-.chosen-category {
-    color: #000;
-}
-
-.chosen-category:hover {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(236, 4, 159);
-}
-
-
-.to-exhibition:hover > a {
-  text-decoration: none;
-}
-
 .grid-art:hover > a {
     text-decoration: none;
 }
@@ -51,6 +35,8 @@ h1 {
     width: 230px;
 }
 
+
+/*INDEX PAGE*/
 .category {
     position: absolute;
     top: 50%;
@@ -62,13 +48,24 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;
     margin: auto;
-    background-color: #fff;
-    opacity: 0.7;
+    background-color: rgba(255,255,255, 0.7); /*bakgrundsfärgen måste vara rgba för att inte texten ska bli genomskinlig som bakgrunden*/
     height: 40%;
     width: 100%;
 }
 
-/*CHOSEN CATEGORY*/
+.chosen-category p {
+    margin-top: 10px;
+}
+
+.chosen-category:hover p {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(236, 4, 159);
+    position: absolute;
+}
+
+
+/*CHOSEN CATEGORY PAGE*/
 .title {
     text-align: center;
     padding-top: 7px;
@@ -95,4 +92,8 @@ h1 {
 
 .info-box:hover {
     top: -100%;
+}
+
+.to-exhibition:hover > a {
+    text-decoration: none;
 }
