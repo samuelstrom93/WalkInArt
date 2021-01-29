@@ -4,16 +4,13 @@
     <div class="grid-container">
         <h1>Mest besökta</h1>
 
-
         @*Hårdkodad till fyra just nu för att fylla grid som består av fyra kolumner
         Behöver förstora griden för att elementen ska få plats horistontellt och
         sätta någon sorts begränsning på hur många element vi kan ladda in?*@
-
-
         @for (int i = 0; i < 4; i++)
         {
             <div class="grid-art">
-                <img src="/assets/mock_images/gallery1.png" alt="">
+                <img src="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Hyperlink" alt="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Name" />
                 <div class="art-overlay">
                     <a href="/Exhibitions/@Model.CurrentCollections[i].Id" alt="utställning">
                         @Model.CurrentCollections[i].Name
@@ -23,38 +20,39 @@
         }
 
 
+        <h1>Kategorier</h1>
+
+        @for (int i = 0; i < 4; i++)
+        {
+            <div class="grid-art">
+                <img src="/assets/mock_images/gallery2.png" alt="">
+                <div class="category-overlay">
+
+                    @*Borde vara detta som skickas in i controllern Categories för sidan Categories*@
+                    @*<a href="/Categories/@Model.Categories[i].Title" alt="kategori">
+                        @Model.Categories[i].Title
+                    </a>*@
+                    <a href="#" alt="kategori">
+                        @Model.Categories[i].Title
+                    </a>
+                </div>
+            </div>
+        }
+        <a href="/Categories" alt="categories" class="all-categories">
+            Visa alla kategorier
+        </a>
+
         <h1>Kommande utställningar</h1>
         @for (int i = 0; i < 4; i++)
         {
             <div class="grid-art">
-                <img src="/assets/mock_images/room1.png" alt="">
+                <img src="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Hyperlink" alt="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Name">
                 <div class="art-overlay">
                     <a href="/Exhibitions/@Model.IncomingCollections[i].Id" alt="utställning">
                         @Model.IncomingCollections[i].Name
                     </a>
                 </div>
             </div>
-        }
-
-
-
-        <h1>Kategorier</h1>
-
-        @for (int i = 0; i < 4; i++)
-        {
-    <div class="grid-art">
-        <img src="/assets/mock_images/gallery2.png" alt="">
-        <div class="category-overlay">
-
-            @*Borde vara detta som skickas in i controllern Categories för sidan Categories*@
-            @*<a href="/Categories/@Model.Categories[i].Title" alt="kategori">
-                @Model.Categories[i].Title
-            </a>*@
-            <a href="#" alt="kategori">
-                @Model.Categories[i].Title
-            </a>
-        </div>
-    </div>
         }
 
 
