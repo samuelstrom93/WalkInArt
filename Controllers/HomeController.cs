@@ -26,10 +26,11 @@ namespace DSU21_2.Controllers
 
         public async Task<IActionResult>  Index()
         {
-            var collectionList = await artDbRepo.GetCollectionsWithArt();
-            var tagList = await artDbRepo.GetTags();
-            var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
-            return View(homeViewModel);
+            //var collectionList = await artDbRepo.GetCollectionsWithArt();
+            //var tagList = await artDbRepo.GetTags();
+            //var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
+            //return View(homeViewModel);
+            return View();
         }
 
         public IActionResult Privacy()

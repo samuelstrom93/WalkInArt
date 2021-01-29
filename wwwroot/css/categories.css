@@ -1,2 +1,70 @@
-﻿body {
+﻿
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    padding: 50px;
+    grid-column: 4;
+    grid-row: 6;
+}
+
+.grid-art {
+    position: relative;
+    text-align: center;
+    background-color: yellowgreen;
+    height: 150px;
+    width: 230px;
+}
+
+h1 {
+    padding: 5px;
+    grid-column: span 4;
+}
+
+p {
+    justify-self: center;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.to-exhibition {
+    text-decoration: none;
+    color: #000;
+}
+
+.to-exhibition:hover p {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(236, 4, 159);
+}
+
+.fas.fa-chevron-right {
+    align-self: center;
+    justify-self: center;
+    font-size: 2.3em;
+}
+
+.grid-art img {
+    box-shadow: 5px 5px 7px #707070;
+    height: 150px;
+    width: 230px;
+}
+
+
+.category {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: auto;
+    background-color: #fff;
+    opacity: 0.7;
+    height: 40%;
+    width: 100%;
 }
