@@ -10,8 +10,7 @@
         @for (int i = 0; i < 4; i++)
         {
             <div class="grid-art">
-                @*<img src="/assets/mock_images/gallery1.png" alt="">*@
-                <img src="@Model.CurrentCollections[i].Artworks."
+                <img src="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Hyperlink" alt="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Name" />
                 <div class="art-overlay">
                     <a href="/Exhibitions/@Model.CurrentCollections[i].Id" alt="utställning">
                         @Model.CurrentCollections[i].Name
@@ -47,7 +46,7 @@
         @for (int i = 0; i < 4; i++)
         {
             <div class="grid-art">
-                <img src="/assets/mock_images/room1.png" alt="">
+                <img src="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Hyperlink" alt="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Name">
                 <div class="art-overlay">
                     <a href="/Exhibitions/@Model.IncomingCollections[i].Id" alt="utställning">
                         @Model.IncomingCollections[i].Name
