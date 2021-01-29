@@ -32,7 +32,7 @@ namespace DSU21_2.Controllers
             //List<Tag> tags = await artDbRepo.GetTags();
             //var collections = await artDbRepo.GetCollectionsWithArt();
             //Artist artist = await artDbRepo.UpdateArtist(1, "^_^");
-            await artDbRepo.FillDbWithData();
+            //await artDbRepo.FillDbWithData();
             var test = await artDbRepo.GetCollectionWithTag(1);
 
             return View();

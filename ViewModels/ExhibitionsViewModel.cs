@@ -9,11 +9,14 @@ namespace DSU21_2.ViewModels
 {
     public class ExhibitionsViewModel
     {
-        public ExhibitionsViewModel(Collection exhibitions)
+        public Collection Exhibitions { get; set; }
+        public List<Collection> ExhibitionsForRooms { get; set; }
+
+        public ExhibitionsViewModel(Collection exhibitions, List<Collection> exhibitionsForRooms)
         {
             Exhibitions = exhibitions;
+            ExhibitionsForRooms = exhibitionsForRooms;
         }
-        public Collection Exhibitions { get; set; }
-        
+
     }
 }
