@@ -18,7 +18,6 @@ namespace DSU21_2.Repository
         {
             this.context  =  context;
         }
-      
 
         public async Task FillDbWithData() // Endast för att fylla DB med fejkdata.
         {
