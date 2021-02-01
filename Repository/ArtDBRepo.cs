@@ -157,6 +157,7 @@ namespace DSU21_2.Repository
         {
             return await context.Tags
                 .Include(a => a.Collections)
+                .ThenInclude(b=> b.Artworks)
                 .FirstOrDefaultAsync(x => x.Id == tagId);
         }
 

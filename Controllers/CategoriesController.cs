@@ -19,9 +19,10 @@ namespace DSU21_2.Controllers
             this.artDBRepo = artDBRepo;
         }
 
-        public async Task <IActionResult> Index(int tagId)
+        public async Task <IActionResult> Index()
         {
             var categories = await artDBRepo.GetTags();
+            //var category = await artDBRepo.GetTag(tagId);
             CategoriesViewModel categoriesViewModel = new CategoriesViewModel(categories);
             return View(categoriesViewModel);
         }

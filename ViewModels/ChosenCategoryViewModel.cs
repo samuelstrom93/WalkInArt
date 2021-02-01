@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace DSU21_2.ViewModels
 {
-    public class ChosenCategoryViewModel
+    public class ChosenCategoryViewModel    
     {
-        public Tag chosenTag { get; set; }
+        public Tag ChosenTag { get; set; }
 
         public ChosenCategoryViewModel(Tag tag)
-        {
-            chosenTag = tag;
+        { 
+            ChosenTag = tag;
+ 
         }
 
 
