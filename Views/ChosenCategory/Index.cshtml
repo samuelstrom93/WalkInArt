@@ -5,10 +5,11 @@
         <h1>@Model.chosenTag.Title</h1>
 
         <div class="grid-art">
-            <a class="to-exhibition" href="/Exhibitions">
-                <img src="photo.jpg" alt="">
+            <img src="/assets/category_images/photo.jpg" alt="/assets/category_images/photo.jpg">
+            <a class="to-exhibition" href="/Exhibitions/@Model.chosenTag.Collections[0].Id">
+
                 <div class="info-box">
-                    <h3 class="title"></h3>
+                    <h3 class="title">@Model.chosenTag.Collections[0].Name</h3>
                     <p class="info-txt">En liten text om vad utställningen handlar om </p>
                 </div>
             </a>
