@@ -28,11 +28,6 @@ for (let i = 0; i < overlayClose.length; i++) {
 }
 
 
-// Sätter första bild som stor när sidan laddas in
-/*picture.style.height = "650px";
-picture.style.width = "500px";*/
-
-
 
 // Vid addEventListener "click" blir bilden stor
 // Håller koll på ifall man klickat på en av bilderna. 
@@ -40,16 +35,18 @@ picture.style.width = "500px";*/
 var flag = true;
 for (let i = 0; i < pictures.length; i++) {
     pictures[i].addEventListener("click", function (event){
-        pictures.forEach(element => {
-            if (element.style.height = "650px") {
-                element.style.height = "";
-                element.style.width = "";    
+
+        pictures.forEach(picture => {
+            if (picture.style.height = "650px") {
+                picture.style.height = "";
+                picture.style.width = "";
             }
-        })
-        if (flag) {
-            pictures[i].style.height = "650px";
-            pictures[i].style.width = "500px";
-        }
+        });
+
+        console.log(event.target)
+        event.target.style.width = "500px";
+        event.target.style.height = "650px";
+
     })
 }
 

@@ -3,8 +3,9 @@
 //Karusel för utställningar
 var gallerySwiper = new Swiper('.gallerylist', {
         spaceBetween: 20,
+        allowTouchMove: false,
 
-        loop: true,
+        //loop: true,
         speed: 1000,
         pagination: {
             el: '.swiper-pagination',
@@ -20,10 +21,11 @@ var gallerySwiper = new Swiper('.gallerylist', {
 
 //Karusel för rumlista
 var roomsSwiper = new Swiper('.roomlist', {
-        spaceBetween: 20,
+    spaceBetween: 20,
+    allowTouchMove: false,
 
-        loop: true,
-        speed: 1000,
+        //loop: true,
+        speed: 750,
 
         navigation: {
             nextEl: '.swiper-button-next',
