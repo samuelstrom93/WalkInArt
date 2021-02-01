@@ -17,6 +17,7 @@ namespace DSU21_2.Controllers
         private readonly IArtDBRepo artDbRepo;
         
 
+
         public HomeController(ILogger<HomeController> logger, IArtDBRepo artDbRepo)
         {
             _logger = logger;

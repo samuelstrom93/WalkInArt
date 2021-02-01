@@ -18,13 +18,17 @@ namespace DSU21_2.Views.Exhibitions
         {
             this.artDbRepo = artDbRepo;
         }
+
         [Route("Exhibitions/{id?}")]
         public async Task<IActionResult> Index(int id)
         {
+            //id = 2; //TA BORT SENARE
             var exhibitions = await artDbRepo.GetCollection(id);
-            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions);
+            var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom);
             return View(exhibitionsViewModel);
         }
+
         public IActionResult Gallery()
         {
             return View();
