@@ -29,16 +29,16 @@
                 <div class="category-overlay">
 
                     @*Borde vara detta som skickas in i controllern Categories för sidan Categories*@
-                    @*<a href="/Categories/@Model.Categories[i].Title" alt="kategori">
+                    <a href="/Categories/@Model.Categories[i].Title" alt="kategori">
                         @Model.Categories[i].Title
-                    </a>*@
+                    </a>
                     <a href="#" alt="kategori">
                         @Model.Categories[i].Title
                     </a>
                 </div>
             </div>
         }
-        <a href="/Categories" alt="categories" class="all-categories">
+        <a href="Categories" alt="categories" class="all-categories">
             Visa alla kategorier
         </a>
 

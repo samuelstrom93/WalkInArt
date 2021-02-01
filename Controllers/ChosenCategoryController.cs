@@ -10,25 +10,26 @@ using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
 {
-    public class CategoriesController : Controller
+    public class ChosenCategoryController : Controller
     {
         private IArtDBRepo artDBRepo;
 
-        public CategoriesController(IArtDBRepo artDBRepo)
+        public ChosenCategoryController(IArtDBRepo artDBRepo)
         {
             this.artDBRepo = artDBRepo;
         }
-
-        public async Task <IActionResult> Index(int tagId)
+        [Route("ChosenCategory/{id?}")]
+        public async Task<IActionResult> Index(int id)
         {
-            var categories = await artDBRepo.GetTags();
-            CategoriesViewModel categoriesViewModel = new CategoriesViewModel(categories);
-            return View(categoriesViewModel);
+            var chosenCategory = await artDBRepo.GetTag(id);
+            ChosenCategoryViewModel chosenCategoryViewModel = new ChosenCategoryViewModel(chosenCategory);
+            return View(chosenCategoryViewModel);
         }
 
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
