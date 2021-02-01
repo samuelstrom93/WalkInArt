@@ -18,16 +18,7 @@ namespace DSU21_2.Repository
         {
             this.context  =  context;
         }
-        public void FillDbWithData() // Endast för att fylla DB med fejkdata.
-        {
-            string data = File.ReadAllText(@"TestData.json");
-            var result = JsonConvert.DeserializeObject<List<Artist>>(data);
-            foreach (var artist in result)
-            {
-                context.Artists.Add(artist);
-            }
-            context.SaveChanges();
-        }
+      
 
         public async Task FillDbWithData() // Endast för att fylla DB med fejkdata.
         {
