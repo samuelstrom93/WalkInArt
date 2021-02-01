@@ -1,6 +1,5 @@
 ﻿using DSU21_2.Models;
 using DSU21_2.Repository;
-using DSU21_2.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,6 +15,7 @@ namespace DSU21_2.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IArtDBRepo artDbRepo;
         
+
 
         public HomeController(ILogger<HomeController> logger, IArtDBRepo artDbRepo)
         {
