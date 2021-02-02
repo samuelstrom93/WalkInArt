@@ -95,6 +95,27 @@
     cursor: pointer;
 }
 
+.share-aside {
+    display: flex;
+    float: right;
+    margin: 0 1em;
+    padding: 0 0.5em;
+    background-color: rgb(250, 250, 250);
+}
+
+.share-aside:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+}
+
+.share-aside p {
+    margin: 0 0.5em;
+}
+
+.fas.fa-share {
+    font-size: 2em;
+}
+
 
 .object-info {
     margin: 2em 0;

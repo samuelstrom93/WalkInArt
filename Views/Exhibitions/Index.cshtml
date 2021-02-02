@@ -37,6 +37,11 @@
                                     </div>
                                 }
                             </div>
+
+                            @*<aside class="share-aside">
+                            <i class="fas fa-share"></i>
+                            <p>Dela</p>
+                        </aside>*@
                         </div>
                     }
                     @if (Model.Exhibitions.Artworks.Count % 3 != 0)
@@ -65,9 +70,14 @@
                     }
                 }
             </div>
-
+            <aside class="share-aside">
+                <i class="fas fa-share"></i>
+                <p>Dela</p>
+            </aside>
             <!--  pagination -->
-            <div class="swiper-pagination swiper-pagination-black"></div>
+            <div class="swiper-pagination swiper-pagination-black">
+
+            </div>
             <!--  navigation buttons -->
             <div class="swiper-button-prev swiper-button-white swiper-nav-gallery-prev"></div>
             <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
