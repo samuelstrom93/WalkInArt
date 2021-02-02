@@ -27,8 +27,8 @@ var roomsSwiper = new Swiper('.roomlist', {
 
 
         navigation: {
-            nextEl: '.swiper-button-nextRoom',
-            prevEl: '.swiper-button-prevRoom',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
 
         breakpoints: {
