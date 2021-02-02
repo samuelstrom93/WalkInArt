@@ -1,4 +1,8 @@
 
+#main-wrapper {
+    margin-top: 75px;
+}
+
 #chevron-right, #chevron-left {
     cursor: pointer;
     color: rgb(235, 229, 229);
@@ -15,81 +19,43 @@
 .gallery {
     display: flex;
     justify-content: center;
-    margin: 5% 0 2em;
+    margin: 2% 0 2em;
     max-width: 100%;
 }
 
 .gallery img {
     width: 300px;
     height: 400px;
-    margin: 5em 1em 2em; 
-    transition: transform .5s;
+    margin: 3em 2em 2em; 
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
     cursor: pointer;
 }
 
 .picture-text {
     display: flex;
     flex-direction: column;
+    height: 700px;
 }
 
 .picture-text p {
     text-align: center;
-    font-size: 1.2em;
 }
 
 .picture-text button {
-    width: 120px;
-    font-size: 1.1em;
     font-weight: bold;
     margin: 1em auto;
     cursor: pointer;
-    border: 1px solid #000;
+    border: 1px solid #A154F2;
     padding: 0.2em 1em;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 .picture-text button:hover {
-    background-color: rgb(168, 164, 164);
+    background: linear-gradient(to bottom, #A154F2, #8EF4A4);
 }
 
-
-.room-selection {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 25vh;
-}
-
-.room-selection img {
-    width: 250px;
-    height: 250px;
-}
-
-.room-selection img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-    transition: transform .5s;
-}
-
-#chevron-rooms:hover {
-    color: rgb(85, 81, 81);
-    cursor: pointer;
-}
-
-.room-description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.room-selection p {
-    margin: 0.5em;
-    font-size: 0.9em;
-}
 
 
 #overlay {
@@ -97,9 +63,10 @@
     position: absolute;
     left: 0;
     right: 0px;
-    top: 150px;
-    width: 90%;
-    height: 65%;
+    top: 100px;
+    height: 900px;
+    width: 1300px;
+
     margin: auto;
     z-index: 1000;
     background-color: rgb(219, 216, 216);
@@ -107,34 +74,30 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    opacity: 0.95;
 }
 
 
 #overlay img {
+   height: 650px;
    width: 500px;
-   height: 600px;
+   margin: 0 2em;
 }
 
 #overlay span {
    font-size: 2.5em;
-   width: 1em;
-   height: 1em;
-   text-align: center;
-   border-radius: 4px;
-   top: 1%;
-   right: 96%;
+   bottom: 92%;
+   left: 2%;
    position: absolute;
+   margin: 0;
 }
 
-#overlay span:hover {
-   cursor: pointer;
-   background-color: rgb(167, 164, 164);
+.fa-window-close:hover {
+    cursor: pointer;
 }
+
 
 .object-info {
     margin: 2em 0;
-    align-self: flex-start;
     width: 500px;
     height: 600px;
     display: flex;
@@ -142,6 +105,21 @@
     align-items: center;
 }
 
+.exhibition-link {
+    font-weight: bold;
+    margin: 1em auto;
+    cursor: pointer;
+    border: 1px solid #A154F2;
+    padding: 0.2em 1em;
+    border-radius: 3px;
+    color: #000;
+}
+
+.exhibition-link:hover {
+    background: linear-gradient(to right, #A154F2, #8EF4A4);
+    text-decoration: none;
+    color: #000;
+}
 /*SWIPER (Karusel)*/
 /*.gallerylist {
     margin-top: 0%;
@@ -174,18 +152,48 @@
 }
 
 .room-img {
-    max-height: 400px;
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+.room-noimg {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
 }
 .room-span {
     vertical-align: bottom;
+    margin: 1em 0;
 }
 .swiper-slide {
     align-content: center;
-    cursor: pointer;
+    /*cursor: pointer;*/
+}
+
+.swiper-gallery {
+    height: 82.5vh !important;
+}
+
+
+
+.swiper-pagination {
+    position: inherit !important;
+    background-color: rgb(235, 229, 229);
+    margin: auto;
+}
+
+.swiper-pagination-black {
+    padding: 0.5em;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    width: 10% !important;
 }
 
 .swiper-pagination-bullet {
     background-color: black;
+    width: 1.2em !important;
+    height: 1.2em !important;
 }
 
 .swiper-nav-gallery-prev {
@@ -202,4 +210,14 @@
     padding-bottom: 4%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+.swiper-nav-room-prev {
+    background-color: #30363d65;
+    padding: 2% 1%;
+}
+
+.swiper-nav-room-next {
+    background-color: #30363d65;
+    padding: 2% 1%;
 }
