@@ -22,8 +22,7 @@
 .gallery img {
     width: 300px;
     height: 400px;
-    margin: 5em 1em 2em; 
-    transition: transform .5s;
+    margin: 3em 1em 2em; 
 }
 
 .gallery img:hover {
@@ -37,22 +36,19 @@
 
 .picture-text p {
     text-align: center;
-    font-size: 1.2em;
 }
 
 .picture-text button {
-    width: 120px;
-    font-size: 1.1em;
     font-weight: bold;
     margin: 1em auto;
     cursor: pointer;
-    border: 1px solid #000;
-    padding: 0.2em 1em;
-    border-radius: 4px;
+    border: 1px solid #A154F2;
+    padding: 0.3em 1em;
+    border-radius: 3px;
 }
 
 .picture-text button:hover {
-    background-color: rgb(168, 164, 164);
+    background: linear-gradient(to bottom, #A154F2, #8EF4A4);
 }
 
 
@@ -96,9 +92,9 @@
     position: absolute;
     left: 0;
     right: 0px;
-    top: 150px;
-    width: 90%;
-    height: 65%;
+    top: 100px;
+    width: 50%;
+    height: 100%;
     margin: auto;
     z-index: 1000;
     background-color: rgb(219, 216, 216);
@@ -111,25 +107,24 @@
 
 
 #overlay img {
-   width: 500px;
-   height: 600px;
+   height: 550px;
+   width: 450px;
+   margin: 0 2em;
 }
 
 #overlay span {
    font-size: 2.5em;
-   width: 1em;
-   height: 1em;
-   text-align: center;
-   border-radius: 4px;
-   top: 1%;
-   right: 96%;
-   position: absolute;
+   bottom: 47.5%;
+   left: 1%;
+   position: relative;
+   margin: 0;
 }
 
-#overlay span:hover {
-   cursor: pointer;
-   background-color: rgb(167, 164, 164);
+.fa-window-close:hover {
+    cursor: pointer;
 }
+
+
 
 .object-info {
     margin: 2em 0;
@@ -185,6 +180,13 @@
 
 .swiper-pagination {
     position: inherit !important;
+    background-color: rgb(235, 229, 229);
+    width: 10%;
+    margin: auto;
+}
+
+.swiper-pagination-black {
+    padding: 0.5em;
 }
 
 
