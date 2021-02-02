@@ -1,12 +1,34 @@
-﻿#main-help {
-    margin: 3% 13% 0% 13%;
+﻿
+#questions-box {
+    padding: 100px;
+    border: 1px solid #a893c2;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px #707070;
+    margin: 200px;
+    background-color: #f8f9fa;
 }
 
-#questions {
-    margin-top: 3%;
+#faq-title{
+    padding-bottom: 50px;
 }
 
-.arrow {
+.question{
+    color: #9f63eb;
+    
+}
+
+.fas fa-chevron-down {
+    float: right;
+    display: inline-block;
+    padding: 5px;
+}
+
+.fas fa-chevron-up {
+    display: none;
+}
+
+
+/*.arrow {
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -22,7 +44,40 @@
 .up {
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
+}*/
+
+/*
+.arrowdown {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    float: right;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
+
+.arrowup {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    float: right;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}*/
+
+.rotate {
+    -moz-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+.rotate.down {
+    -moz-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+
 
 #hr.thin-line {
     height: 1px;
@@ -36,7 +91,7 @@
 }
 
 #readmore2 {
-    display: none;
+   display: none;
 }
 
 #readmore3 {
@@ -48,5 +103,5 @@
 }
 
 #contact {
-    margin-top: 3%;
+    padding: 60px;
 }

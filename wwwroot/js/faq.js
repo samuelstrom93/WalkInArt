@@ -1,13 +1,32 @@
-﻿function readMore_1() {
+﻿function readmore_1() {
+    
     var hide = document.getElementById("hide");
     var readmore1 = document.getElementById("readmore1");
 
     if (readmore1.style.display === "none") {
         readmore1.style.display = "inline";
         hide.style.display = "none";
+        
     } else {
         readmore1.style.display = "none";
         hide.style.display = "inline";
+       
+
+    }
+}
+
+function showArrowUp() {
+    var arrowup = document.getElementsByClassName("arrowup");
+    var arrowdown = document.getElementsByClassName("arrowdown");
+    var readmore1 = document.getElementById("readmore1");
+
+    if (readmore1.style.display === "none") {
+        arrowdown.style.display = "inline";
+        arrowup.style.display = "none";
+    }
+    else {
+        arrowup.style.display = "inline";
+        arrowdown.style.display = "none";
     }
 }
 
@@ -23,6 +42,8 @@ function readmore_2() {
         readmore2.style.display = "none";
         hide2.style.display = "inline";
     }
+
+    showArrowUp()
 }
 
 function readmore_3() {
@@ -51,4 +72,18 @@ function readmore_4() {
         readmore4.style.display = "none";
         hide4.style.display = "inline";
     }
+}
+
+function arrowup() {
+
+    //var arrow = document.getElementById('.rotate')
+    //arrow.addEventListener('click')
+    //readmore_1()
+
+    (".rotate").click(function () {
+        $(this).toggleClass("down");
+    })
+
+
+
 }
