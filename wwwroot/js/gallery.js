@@ -29,9 +29,7 @@ for (let i = 0; i < overlayClose.length; i++) {
 
 
 
-// Vid addEventListener "click" blir bilden stor
-// Håller koll på ifall man klickat på en av bilderna. 
-// Ifall man klickat på bilden blir flag inte sann, klickar man igen blir den sann
+
 for (let i = 0; i < pictures.length; i++) {
     pictures[i].addEventListener("click", function (event){
 
