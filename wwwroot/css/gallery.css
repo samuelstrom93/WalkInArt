@@ -1,4 +1,8 @@
 
+#main-wrapper {
+    margin-top: 75px;
+}
+
 #chevron-right, #chevron-left {
     cursor: pointer;
     color: rgb(235, 229, 229);
@@ -101,6 +105,21 @@
     align-items: center;
 }
 
+.exhibition-link {
+    font-weight: bold;
+    margin: 1em auto;
+    cursor: pointer;
+    border: 1px solid #A154F2;
+    padding: 0.2em 1em;
+    border-radius: 3px;
+    color: #000;
+}
+
+.exhibition-link:hover {
+    background: linear-gradient(to right, #A154F2, #8EF4A4);
+    text-decoration: none;
+    color: #000;
+}
 /*SWIPER (Karusel)*/
 /*.gallerylist {
     margin-top: 0%;
@@ -144,6 +163,7 @@
 }
 .room-span {
     vertical-align: bottom;
+    margin: 1em 0;
 }
 .swiper-slide {
     align-content: center;
