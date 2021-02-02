@@ -10,7 +10,7 @@
         {
             <div class="grid-art">
                 <a class="chosen-category" href="/ChosenCategory/@Model.Categories[i].Id">
-                    <img src="/assets/category_images/photo.jpg" alt="/assets/category_images/photo.jpg">
+                    <img src="@Model.Categories[i].Collections[0].Artworks[0].Hyperlink" alt="@Model.Categories[i].Collections[0].Artworks[0].Hyperlink">
                     <div class="category">
                         <p>@Model.Categories[i].Title</p>
                     </div>

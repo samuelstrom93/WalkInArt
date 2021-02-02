@@ -150,7 +150,10 @@ namespace DSU21_2.Repository
         public async Task<List<Tag>> GetTags()
         {
             return await context.Tags
+                 .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
                 .ToListAsync();
+
         }
 
         public async Task<Tag> GetTag(int tagId)
