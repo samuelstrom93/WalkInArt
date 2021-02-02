@@ -83,15 +83,23 @@
             {
                 var room = Model.ExhibitionsForRooms[i];
 
-                <div class="swiper-slide">
-                    <img class="room-img" src="@room.Artworks[0].Hyperlink" alt="">
-                    <span class="room-span">@room.Name</span>
-                </div>
+        <div class="swiper-slide">
+            @if (room.Artworks[0].Hyperlink != "N/A")
+            {
+                <img class="room-img" src="@room.Artworks[0].Hyperlink">
+
+            }
+            else
+            {
+                <img class="room-noimg" src="/assets/images/noImage.png">
+            }
+            <span class="room-span">@room.Name</span>
+        </div>
             }
         }
     </div>
 
     <!--  navigation buttons -->
-    <div class="swiper-button-prev swiper-button-black"></div>
-    <div class="swiper-button-next swiper-button-black"></div>
+    <div class="swiper-button-prev swiper-button-white swiper-nav-room-prev"></div>
+    <div class="swiper-button-next swiper-button-white swiper-nav-room-next"></div>
 </div>
