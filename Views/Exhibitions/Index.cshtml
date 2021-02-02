@@ -78,32 +78,17 @@
     <div class="swiper-wrapper">
 
         <!-- Slides (kallas från model i c#) -->
-        <div class="swiper-slide">
-            <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
-            <span class="room-span">Slide 1</span>
-        </div>
-        <div class="swiper-slide">
-            <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
-            <span class="room-span">Slide 2</span>
-        </div>
-        <div class="swiper-slide">
-            <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
-            <span class="room-span">Slide 3</span>
-        </div>
-        <div class="swiper-slide">
-            <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
-            <span class="room-span">Slide 4</span>
-        </div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-        <div class="swiper-slide">
-            <img class="room-img" src="/assets/mock_images/room-example.jpg" alt="">
-            <span class="room-span">Slide 10</span>
-        </div>
+        @{
+            @for (var i = 0; i < Model.ExhibitionsForRooms.Count; i++)
+            {
+                var room = Model.ExhibitionsForRooms[i];
+
+                <div class="swiper-slide">
+                    <img class="room-img" src="@room.Artworks[0].Hyperlink" alt="">
+                    <span class="room-span">@room.Name</span>
+                </div>
+            }
+        }
     </div>
 
     <!--  navigation buttons -->
