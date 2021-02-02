@@ -1,0 +1,52 @@
+﻿#main-help {
+    margin: 3% 13% 0% 13%;
+}
+
+#questions {
+    margin-top: 3%;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    float: right;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+#hr.thin-line {
+    height: 1px;
+    border: 0;
+    background-color: grey;
+    width: 100%;
+}
+
+#readMore1 {
+    display: none;
+}
+
+#readMore2 {
+    display: none;
+}
+
+#readMore3 {
+    display: none;
+}
+
+#readMore4 {
+    display: none;
+}
+
+#contact {
+    margin-top: 3%;
+}
