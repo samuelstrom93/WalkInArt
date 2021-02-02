@@ -6,3 +6,43 @@
 }
 
 @model DSU21_2.ViewModels.ExhibitionsViewModel
+    <a-scene fog="color:  #fffafa;  far:  850;  near:  0;  density:  0" class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+        <a-assets>
+            <img id="page1" crossorigin="anonymous" src="/assets/images/gallery1.png">
+            <img id="page2" crossorigin="anonymous" src="/assets/images/gallery2.png">
+            <img id="page3" crossorigin="anonymous" src="/assets/images/gallery3.png">
+            <img id="tile" crossorigin="anonymous" src="/assets/images/tile.png">
+            <img id="tile2" crossorigin="anonymous" src="/assets/images/tile2.jpg">
+            <img id="tile3" crossorigin="anonymous" src="/assets/images/tile3.jpg">
+            <img id="tile4" crossorigin="anonymous" src="/assets/images/tile4.jpg">
+            <img id="tile5" crossorigin="anonymous" src="/assets/images/tile5.jpg">
+            <img id="sky" crossorigin="anonymous" src="/assets/images/test.jpg">
+            <img id="sky2" crossorigin="anonymous" src="/assets/images/test2.jpg">
+        </a-assets>
+
+        <a-entity position="-2.538 0.000 -7.594">
+            <a-image src="#page1" position="4.965 3.12722 -2.81674" geometry="height: 2; width: 1.5" material="" scale="2 2 1"></a-image>
+            <a-text value="Sample3" text="color: #000000; align: center" position="4.95272 5.38382 -2.83279"></a-text>
+            <a-text value="2021" text="color: #000000; align: center" position="4.95118 0.83361 -3.43502" scale="0.8 0.8 1"></a-text>
+            <a-text value="blablablablabla" text="value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.; color: #000000; wrapCount: 30" position="-1.75097 3.307 -2.85597"></a-text>
+        </a-entity>
+
+        <a-entity position="6.657 0.000 -7.594">
+            <a-image src="#page1" position="4.965 3.12722 -2.81674" geometry="height: 2; width: 1.5" material="" scale="2 2 1"></a-image>
+            <a-text value="Sample3" text="color: #000000; align: center" position="4.95272 5.38382 -2.83279"></a-text>
+            <a-text value="2021" text="color: #000000; align: center" position="4.95118 0.83361 -3.43502" scale="0.8 0.8 1"></a-text>
+            <a-text value="blablablablabla" text="value: Lowrem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.; color: #000000; wrapCount: 30" position="-1.75097 3.307 -2.85597"></a-text>
+        </a-entity>
+
+        <a-entity position="15.990 0.000 -7.594">
+            <a-image src="#page1" position="4.965 3.12722 -2.81674" geometry="height: 2; width: 1.5" material="" scale="2 2 1"></a-image>
+            <a-text value="Sample3" text="color: #000000; align: center" position="4.95272 5.38382 -2.83279"></a-text>
+            <a-text value="2021" text="color: #000000; align: center" position="4.95118 0.83361 -3.43502" scale="0.8 0.8 1"></a-text>
+            <a-text value="blablablablabla" text="value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.; color: #000000; wrapCount: 30" position="-1.75097 3.307 -2.85597"></a-text>
+        </a-entity>
+
+        <a-image src="#tile2" rotation="90 0 0" scale="50 50 50" position="0 0 0"></a-image>
+        <a-sky fog="color:  #ffffff;  far:  35;  near:  0;  density:  0" src="#tile2" material="" geometry=""></a-sky>
+
+        <div class="a-loader-title" style="display: none;"></div>
+    </a-scene>
