@@ -20,10 +20,8 @@ var gallerySwiper = new Swiper('.gallerylist', {
 
 //Karusel för rumlista
 var roomsSwiper = new Swiper('.roomlist', {
-    //loop: true,
-    spaceBetween: 20,
-    allowTouchMove: false,
-
+        spaceBetween: 20,
+        allowTouchMove: false,
         speed: 750,
         
 
