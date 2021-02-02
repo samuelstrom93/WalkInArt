@@ -5,7 +5,6 @@ var gallerySwiper = new Swiper('.gallerylist', {
         spaceBetween: 20,
         allowTouchMove: false,
 
-        //loop: true,
         speed: 1000,
         pagination: {
             el: '.swiper-pagination',
@@ -24,12 +23,12 @@ var roomsSwiper = new Swiper('.roomlist', {
     spaceBetween: 20,
     allowTouchMove: false,
 
-        //loop: true,
         speed: 750,
 
+
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-nextRoom',
+            prevEl: '.swiper-button-prevRoom',
         },
 
         breakpoints: {
