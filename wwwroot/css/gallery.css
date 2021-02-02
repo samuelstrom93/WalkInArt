@@ -52,40 +52,6 @@
 }
 
 
-/*.room-selection {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 25vh;
-}
-
-.room-selection img {
-    width: 250px;
-    height: 250px;
-}
-
-.room-selection img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-    transition: transform .5s;
-}
-
-#chevron-rooms:hover {
-    color: rgb(85, 81, 81);
-    cursor: pointer;
-}
-
-.room-description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.room-selection p {
-    margin: 0.5em;
-    font-size: 0.9em;
-}*/
-
 
 #overlay {
     visibility: hidden;
@@ -107,8 +73,8 @@
 
 
 #overlay img {
-   height: 550px;
-   width: 450px;
+   height: 650px;
+   width: 500px;
    margin: 0 2em;
 }
 
@@ -180,9 +146,14 @@
 }
 .swiper-slide {
     align-content: center;
-    height: 80vh !important;
     /*cursor: pointer;*/
 }
+
+.swiper-gallery {
+    height: 80vh !important;
+}
+
+
 
 .swiper-pagination {
     position: inherit !important;
@@ -222,16 +193,10 @@
 
 .swiper-nav-room-prev {
     background-color: #30363d65;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 2% 1%;
 }
 
 .swiper-nav-room-next {
     background-color: #30363d65;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 2% 1%;
 }
