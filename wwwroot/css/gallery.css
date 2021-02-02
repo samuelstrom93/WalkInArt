@@ -15,7 +15,7 @@
 .gallery {
     display: flex;
     justify-content: center;
-    margin: 5% 0 2em;
+    margin: 2% 0 2em;
     max-width: 100%;
 }
 
@@ -32,6 +32,7 @@
 .picture-text {
     display: flex;
     flex-direction: column;
+    height: 700px;
 }
 
 .picture-text p {
@@ -150,7 +151,7 @@
 }
 
 .swiper-gallery {
-    height: 80vh !important;
+    height: 82.5vh !important;
 }
 
 
