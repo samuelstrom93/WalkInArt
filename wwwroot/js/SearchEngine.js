@@ -19,7 +19,7 @@ async function showSearchResponse(data, lenght) {
     //let data = await searchArtists();
     let html = ""
     for (let i = 0; i < lenght; i++) {
-        html += `<option value ="${data[i].name}"></option>`
+        html += `<li><a href="/exhibitions/${data[i].id}">${data[i].name}</a></li>`
         //html += `<option value = "${data[i].name}"><a href="/exhibitions/22"></a></option>`
     }
     console.log(html)
