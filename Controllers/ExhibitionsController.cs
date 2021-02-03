@@ -24,7 +24,8 @@ namespace DSU21_2.Views.Exhibitions
         {
             var exhibitions = await artDbRepo.GetCollection(id);
             var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
-            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom);
+            var artist = await artDbRepo.GetArtistByCollection(exhibition);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibition, exhibitionsForRoom, artist);
             return View(exhibitionsViewModel);
         }
 

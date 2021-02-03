@@ -8,8 +8,8 @@
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 
 
-<main>
 
+<main>
 
     <div id="main-wrapper" >
         <div class="gallery-wrapper">
@@ -31,6 +31,7 @@
                                     {
                                         <div class="picture-text">
                                             <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
+
                                             <p>@Model.Exhibitions.Artworks[j].Name</p>
                                             <button class="button-overlay">Mer info</button>
                                             <div id="overlay">
@@ -41,6 +42,7 @@
                                                     <p>2020 av Test Testsson</p>
                                                     <p>@Model.Exhibitions.Artworks[j].Description</p>
                                                 </div>
+
                                             </div>
                                         </div>
                                     }
@@ -55,15 +57,16 @@
                                     {
                                         <div class="picture-text">
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
+
                                             <p>@Model.Exhibitions.Artworks[i].Name</p>
                                             <button class="button-overlay">Mer info</button>
                                             <div id="overlay">
                                                 <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                                 <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
                                                 <div class="object-info">
-                                                    <h1>Title 1</h1>
-                                                    <p>2020 av Test Testsson</p>
-                                                    <p>@Model.Exhibitions.Artworks[i].Description</p>
+                                                    <h1>@Model.Exhibitions.Artworks[i].Name</h1>
+                                                  <p>@Model.Artist.Name</p>
+                                                  <p>@Model.Exhibitions.Artworks[i].Description</p>
                                                 </div>
                                             </div>
                                         </div>

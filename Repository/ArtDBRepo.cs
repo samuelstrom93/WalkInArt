@@ -63,6 +63,12 @@ namespace DSU21_2.Repository
                 .Include(a => a.Collections)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
+        public async Task<Artist> GetArtistByCollection(Collection collection)
+        {
+            return await context.Artists
+                .Where(a => a.Collections.Contains(collection))
+                .FirstOrDefaultAsync();
+        }
 
         public async Task<Artist>UpdateArtist(int id, string about)
         {
