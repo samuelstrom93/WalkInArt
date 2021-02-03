@@ -45,20 +45,23 @@
             </a>
 
             <!-- Sökfunktion -->
-            <div class="search-wrapper">
+            <div class="search-wrapper" id="test123">
                 <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
                     <i class="fas fa-search mr-2"></i>
                     <input id="search-input" class="form-control mr-sm-2" placeholder="Sök härifrån..." />
                     <!--Läser in nyckelord-->
                     <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
                 </form>
+
+
+
+
             </div>
             <div id="search-response">
 
             </div>
 
-            <!-- SearchEngine.js -->
-            <script type="text/javascript" src="~/js/searchEngine.js"></script>
+
 
             <!-- Meny item -->
             <div id="navbarNavDropdown">
@@ -69,10 +72,10 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Utställningar
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Kategori 1</a>
+                        <div class="dropdown-menu" id="search-suggestions" aria-labelledby="navbarDropdownMenuLink">
+                            @*<a class="dropdown-item" href="#">Kategori 1</a>
                             <a class="dropdown-item" href="#">Kategori 2</a>
-                            <a class="dropdown-item" href="#">Kategori 3</a>
+                            <a class="dropdown-item" href="#">Kategori 3</a>*@
                         </div>
                     </li>
 
@@ -83,7 +86,15 @@
 
                 </ul>
             </div>
+            <!-- SearchEngine.js -->
+            <script type="text/javascript" src="~/js/searchEngine.js"></script>
         </nav>
+
+        <div @*class="dropdown-menu"*@ id="search-suggestions" aria-labelledby="navbarDropdownMenuLink">
+            @*<a class="dropdown-item" href="#">Kategori 1</a>
+            <a class="dropdown-item" href="#">Kategori 2</a>
+            <a class="dropdown-item" href="#">Kategori 3</a>*@
+        </div>
     </header>
 
 

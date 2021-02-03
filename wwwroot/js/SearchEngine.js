@@ -1,6 +1,6 @@
 ﻿const searchBar = document.getElementById("search-input")
 const searchButton = document.getElementById("search-btn")
-const searchResponse = document.getElementById("search-response")
+const searchResponse = document.getElementById("search-suggestions")
 searchButton.addEventListener("click", searchArtists)
 console.log('hi')
 
@@ -18,9 +18,7 @@ async function showSearchResponse(data, lenght) {
     //let data = await searchArtists();
     let html = ""
     for (let i = 0; i < lenght; i++) {
-        html += `<li>
-                    <p>${data[i].name}</p>
-                 </li>`
+        html += `<a class="dropdown-item" href="/exhibitions/22">${data[i].name}</a>`
     }
     console.log(html)
     searchResponse.innerHTML = html;
