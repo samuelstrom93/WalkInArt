@@ -23,9 +23,10 @@ namespace DSU21_2.Views.Exhibitions
         public async Task<IActionResult> Index(int id)
         {
             //id = 2; //TA BORT SENARE
-            var exhibitions = await artDbRepo.GetCollection(id);
+            var exhibition = await artDbRepo.GetCollection(id);
             var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
-            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom);
+            var artist = await artDbRepo.GetArtistByCollection(exhibition);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibition, exhibitionsForRoom, artist);
             return View(exhibitionsViewModel);
         }
 

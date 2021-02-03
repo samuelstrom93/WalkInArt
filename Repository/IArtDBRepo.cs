@@ -10,6 +10,7 @@ namespace DSU21_2.Repository
     {
 
         Task<Artist> GetArtistAsync(int id);
+        Task<Artist> GetArtistByCollection(Collection collection);
         Task<Collection> GetCollection(int collectionId);
         Artist AddArtist(string name, string about);
         bool AddCollection(Artist artist);
