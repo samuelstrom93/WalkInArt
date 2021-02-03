@@ -44,13 +44,13 @@
             </a>
 
             <!-- Sökfunktion -->
-            <div class="search-wrapper" id="test123">
+            <div class="search-wrapper">
                 <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
                     <i class="fas fa-search mr-2"></i>
                     <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Type to search...">
                     <datalist id="search-suggestions">
                     </datalist>
-                    
+
                     <!--Läser in nyckelord-->
                     <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
                 </form>
@@ -59,28 +59,12 @@
 
             <!-- Meny item -->
             <div id="navbarNavDropdown">
-                <ul class="navbar-nav">
-
-                    <!-- Utställningar -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Utställningar
-                        </a>
-                        <div class="dropdown-menu" id="search-suggestions" aria-labelledby="navbarDropdownMenuLink">
-                            @*<a class="dropdown-item" href="#">Kategori 1</a>
-                            <a class="dropdown-item" href="#">Kategori 2</a>
-                            <a class="dropdown-item" href="#">Kategori 3</a>*@
-                        </div>
-                    </li>
-
-                    <!-- Hjälpsida -->
-                    <li class="nav-item">
+                
                         <a class="nav-link" href="#">Hjälp</a>
-                    </li>
 
-                </ul>
             </div>
-
+            <!-- SearchEngine.js -->
+            <script type="text/javascript" src="~/js/searchEngine.js"></script>
         </nav>
     </header>
 
@@ -114,8 +98,7 @@
     <!-- Egna js -->
     @RenderSection("Scripts", required: false)
 
-    <!-- SearchEngine.js -->
-    <script type="text/javascript" src="~/js/searchEngine.js"></script>
+
 
 </body>
 </html>

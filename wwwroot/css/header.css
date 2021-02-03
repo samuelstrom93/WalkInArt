@@ -32,30 +32,4 @@ nav {
     font-size: 30px;
 }
 
-#search-suggestions {
-    position: relative;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    float: left;
-    min-width: 10rem;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
-    font-size: 2rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: .25rem;
-    display: grid;
-}
-#search-suggestions :hover {
-    background-color:dimgrey;
-    color:black;
-}
-/*#test123{
-    display:grid;
-}*/
 

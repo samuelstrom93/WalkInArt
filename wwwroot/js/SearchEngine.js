@@ -2,7 +2,7 @@
 const searchButton = document.getElementById("search-btn")
 const searchResponse = document.getElementById("search-suggestions")
 searchButton.addEventListener("click", searchArtists)
-console.log('hi')
+console.log(searchResponse)
 
  async function searchArtists () {
     let response = await fetch('https://localhost:44305/api/Artists');
@@ -14,11 +14,11 @@ console.log('hi')
 //searchArtists().then(data => searchResponse(data));
 
 async function showSearchResponse(data, lenght) {
-    console.log("vi kom hit")
+    console.log("vi kom hi")
     //let data = await searchArtists();
     let html = ""
     for (let i = 0; i < lenght; i++) {
-        html += `<option value = "${data[i].name}"></option>`
+        html += `<option value ="${data[i].name}"></option>`
         //html += `<option value = "${data[i].name}"><a href="/exhibitions/22"></a></option>`
     }
     console.log(html)
