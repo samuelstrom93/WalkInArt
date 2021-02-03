@@ -59,6 +59,20 @@ namespace DSU21_2
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });*/
 
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Categories}/{action=Index}/{id?}");
+            //});
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Categories}/{action=ChosenCategory}/{id?}");
+            //});
+
 
             app.UseEndpoints(endpoints =>
             {

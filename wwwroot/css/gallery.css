@@ -4,22 +4,13 @@
     width: 25%;
 }
 
-
 #main-wrapper {
     margin-top: 75px;
 }
 
-#chevron-right, #chevron-left {
-    cursor: pointer;
-    color: rgb(235, 229, 229);
-}
-
-#chevron-right:hover, #chevron-left:hover {
-    color: rgb(175, 170, 170);
-}
-
-#chevron-right {
-    float: right;
+.gallery-wrapper {
+    background-image: url("../assets/images/brownWall.png");
+    background-size: cover;
 }
 
 .gallery {
@@ -47,6 +38,8 @@
 
 .picture-text p {
     text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
 }
 
 .picture-text button {
@@ -120,7 +113,6 @@
     font-size: 2em;
 }
 
-
 .object-info {
     margin: 2em 0;
     width: 500px;
@@ -145,6 +137,8 @@
     text-decoration: none;
     color: #000;
 }
+
+
 /*SWIPER (Karusel)*/
 /*.gallerylist {
     margin-top: 0%;
@@ -192,7 +186,6 @@
 }
 .swiper-slide {
     align-content: center;
-    /*cursor: pointer;*/
 }
 
 .swiper-gallery {
