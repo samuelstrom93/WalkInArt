@@ -26,6 +26,16 @@ namespace DSU21_2.Controllers
             return View(categoriesViewModel);
         }
 
+
+        [Route("Categories/{title}")]
+        public async Task<IActionResult> ChosenCategory(string title)
+        {
+            var chosenCategory = await artDBRepo.GetTagByName(title);
+            ChosenCategoryViewModel chosenCategoryViewModel = new ChosenCategoryViewModel(chosenCategory);
+            return View(chosenCategoryViewModel);
+        }
+
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

@@ -164,6 +164,14 @@ namespace DSU21_2.Repository
                 .FirstOrDefaultAsync(x => x.Id == tagId);
         }
 
+        public async Task<Tag> GetTagByName(string title)
+        {
+            return await context.Tags
+                .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
+                .FirstOrDefaultAsync(x => x.Title == title);
+        }
+
 
 
         #endregion

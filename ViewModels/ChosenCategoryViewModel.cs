@@ -13,9 +13,7 @@ namespace DSU21_2.ViewModels
         public ChosenCategoryViewModel(Tag tag)
         { 
             ChosenTag = tag;
- 
         }
-
 
     }
 }

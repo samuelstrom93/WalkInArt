@@ -1,0 +1,21 @@
+﻿@model DSU21_2.ViewModels.ChosenCategoryViewModel
+
+<main>
+    <div class="grid-container">
+        <h1>@Model.ChosenTag.Title</h1>
+
+        @for (int i = 0; i < Model.ChosenTag.Collections.Count; i++)
+        {
+            <div class="grid-art">
+                <img src="@Model.ChosenTag.Collections[i].Artworks.FirstOrDefault().Hyperlink" alt="@Model.ChosenTag.Collections[i].Artworks.FirstOrDefault().Hyperlink">
+                <a class="to-exhibition" href="/Exhibitions/@Model.ChosenTag.Collections[i].Id">
+
+                    <div class="info-box">
+                        <h3 class="title">@Model.ChosenTag.Collections[i].Name</h3>
+                        <p class="info-txt">@Model.ChosenTag.Collections[i].Description </p>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</main>
