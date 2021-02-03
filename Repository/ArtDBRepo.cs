@@ -63,6 +63,12 @@ namespace DSU21_2.Repository
                 .Include(a => a.Collections)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
+        public async Task<Artist> GetArtistByCollection(Collection collection)
+        {
+            return await context.Artists
+                .Where(a => a.Collections.Contains(collection))
+                .FirstOrDefaultAsync();
+        }
 
         public async Task<Artist>UpdateArtist(int id, string about)
         {
@@ -150,20 +156,31 @@ namespace DSU21_2.Repository
         public async Task<List<Tag>> GetTags()
         {
             return await context.Tags
+                 .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
                 .ToListAsync();
+
         }
 
         public async Task<Tag> GetTag(int tagId)
         {
             return await context.Tags
                 .Include(a => a.Collections)
+                .ThenInclude(b=> b.Artworks)
                 .FirstOrDefaultAsync(x => x.Id == tagId);
         }
-            
-           
-            
 
-        #endregion 
+        public async Task<Tag> GetTagByName(string title)
+        {
+            return await context.Tags
+                .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
+                .FirstOrDefaultAsync(x => x.Title == title);
+        }
+
+
+
+        #endregion
 
 
 
