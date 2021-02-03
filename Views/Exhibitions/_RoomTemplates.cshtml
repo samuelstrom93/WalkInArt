@@ -1,0 +1,68 @@
+﻿<template id="3d-room-template">
+    <iframe id="3d-room" src="@Url.Action("Room3d")" style="height:80vh;width:100%;"></iframe>
+</template>
+
+<template id="2d-room-template">
+    <!-- Swiper.js -->
+    <div class="swiper-container gallerylist">
+        <div class="swiper-wrapper">
+            @{
+                int artCount = Model.Exhibitions.Artworks.Count / 3;
+                for (int i = 0; i < artCount; i++)
+                {
+                    <div class="swiper-slide swiper-gallery">
+                        <div class="gallery">
+                            @for (int j = i * 3; j < (i * 3) + 3; j++)
+                            {
+                                <div class="picture-text">
+                                    <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
+                                    <p>@Model.Exhibitions.Artworks[j].Name</p>
+                                    <button class="button-overlay">Mer info</button>
+                                    <div id="overlay">
+                                        <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
+                                        <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
+                                        <div class="object-info">
+                                            <h1>@Model.Exhibitions.Artworks[j].Name</h1>
+                                            <p>2020 av Test Testsson</p>
+                                            <p>@Model.Exhibitions.Artworks[j].Description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+                @if (Model.Exhibitions.Artworks.Count % 3 != 0)
+                {
+                    <div class="swiper-slide">
+                        <div class="gallery">
+                            @for (int i = artCount * 3; i < Model.Exhibitions.Artworks.Count; i++)
+                            {
+                                <div class="picture-text">
+                                    <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
+                                    <p>@Model.Exhibitions.Artworks[i].Name</p>
+                                    <button class="button-overlay">Mer info</button>
+                                    <div id="overlay">
+                                        <span>X</span>
+                                        <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
+                                        <div class="object-info">
+                                            <h1>Title 1</h1>
+                                            <p>2020 av Test Testsson</p>
+                                            <p>@Model.Exhibitions.Artworks[i].Description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <!--  pagination -->
+        <div class="swiper-pagination swiper-pagination-black"></div>
+        <!--  navigation buttons -->
+        <div class="swiper-button-prev swiper-button-white swiper-nav-gallery-prev"></div>
+        <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
+    </div>
+</template>
