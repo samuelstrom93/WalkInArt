@@ -1,3 +1,9 @@
+.exhibition-description {
+    margin: 4em 1em 0;
+    border: 1px solid #000;
+    width: 25%;
+}
+
 
 #main-wrapper {
     margin-top: 75px;
@@ -56,8 +62,6 @@
     background: linear-gradient(to bottom, #A154F2, #8EF4A4);
 }
 
-
-
 #overlay {
     visibility: hidden;
     position: absolute;
@@ -66,7 +70,6 @@
     top: 100px;
     height: 900px;
     width: 1300px;
-
     margin: auto;
     z-index: 1000;
     background-color: rgb(219, 216, 216);
@@ -93,6 +96,28 @@
 
 .fa-window-close:hover {
     cursor: pointer;
+}
+
+.share-aside {
+    display: flex;
+    float: right;
+    margin: 0 1em;
+    padding: 0 0.5em;
+    background-color: rgb(250, 250, 250);
+    border-radius: 4px;
+}
+
+.share-aside:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+}
+
+.share-aside p {
+    margin: 0 0.5em;
+}
+
+.fas.fa-share {
+    font-size: 2em;
 }
 
 
@@ -174,8 +199,6 @@
     height: 82.5vh !important;
 }
 
-
-
 .swiper-pagination {
     position: inherit !important;
     background-color: rgb(235, 229, 229);
@@ -188,6 +211,7 @@
 
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
     width: 10% !important;
+    border-radius: 4px !important;
 }
 
 .swiper-pagination-bullet {
