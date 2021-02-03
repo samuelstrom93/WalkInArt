@@ -29,7 +29,7 @@ namespace DSU21_2.Views.Exhibitions
         }
 
         [Route("Test/{id?}")]
-        public async Task<IActionResult> Test3D(int id)
+        public async Task<IActionResult> Room3d(int id)
         {
             id = 2; //TA BORT SENARE
             var exhibitions = await artDbRepo.GetCollection(id);
