@@ -13,8 +13,8 @@
         <!-- Swiper.js -->
         <div class="swiper-container gallerylist">
             <div class="exhibition-description">
-                <h1>Samuel Ström</h1>
-                <p>Hejsan jag heter Samuel och detta är min utställning</p>
+                <h1>Namn: @Model.Artist.Name</h1>
+                <p>Info om utställning: @Model.Exhibitions.Description</p>
             </div>
 
             <div class="swiper-wrapper">
@@ -35,7 +35,7 @@
                                             <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
                                             <div class="object-info">
                                                 <h1>@Model.Exhibitions.Artworks[j].Name</h1>
-                                                <p>2020 av Test Testsson</p>
+                                                <p>@Model.Artist.Name</p>
                                                 <p>@Model.Exhibitions.Artworks[j].Description</p>
                                             </div>
                                         </div>
@@ -58,8 +58,8 @@
                                             <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
                                             <div class="object-info">
-                                                <h1>Title 1</h1>
-                                                <p>2020 av Test Testsson</p>
+                                                <h1>@Model.Exhibitions.Artworks[i].Name</h1>
+                                                <p>@Model.Artist.Name</p>
                                                 <p>@Model.Exhibitions.Artworks[i].Description</p>
                                             </div>
                                         </div>
