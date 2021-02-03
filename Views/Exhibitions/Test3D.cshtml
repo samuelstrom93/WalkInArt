@@ -11,7 +11,8 @@
         @{
             for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
             {
-                string imageId = $"image{i}";
+                int j = i + 1;
+                string imageId = $"image{j}";
                 <img id="@imageId" crossorigin="anonymous" src="@Model.Exhibitions.Artworks[i].Hyperlink">
             }
         }
@@ -22,22 +23,68 @@
 
     @{
         double entityPosition = -2.538;
-        for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
+        int artWorks = Model.Exhibitions.Artworks.Count;
+
+        if (Model.Exhibitions.Artworks.Count < 7)
         {
-            string imageId = $"#image{i}";
+            for (int i = 0; i < artWorks; i++)
+            {
+                int j = i + 1;
+                string imageId = $"#image{j}";
 
 
-            <a-entity position="@entityPosition 0.000 -7.594">
-                <a-image src="@imageId" position="4.965 3.12722 -2.81674" geometry="height: 2; width: 1.5" material="" scale="2 2 1"></a-image>
-                <a-text value="@Model.Exhibitions.Artworks[i].Name" text="color: #000000; align: center" position="4.95272 5.38382 -2.83279"></a-text>
-                <a-text text="value: @Model.Exhibitions.Artworks[i].Description; color: #000000; wrapCount: 30" position="-1.75097 3.307 -2.85597"></a-text>
-            </a-entity>
+                <a-entity position="@entityPosition 0.000 -7.594">
+                    <a-image src="@imageId" position="4.965 3.12722 -2.81674" geometry="height: 2; width: 1.5" material="" scale="2 2 1"></a-image>
+                    <a-text value="@Model.Exhibitions.Artworks[i].Name" text="color: #000000; align: center" position="4.95272 5.38382 -2.83279"></a-text>
+                    <a-text text="value: @Model.Exhibitions.Artworks[i].Description; color: #000000; wrapCount: 30" position="-1.75097 3.307 -2.85597"></a-text>
+                </a-entity>
 
-            entityPosition += 9.915;
+                entityPosition += 9.915;
+
+            }
+        }
+        else if ((7 <= artWorks) && (artWorks < 20))
+        {
+            int artWorksRight = artWorks / 2;
+            int artWorksLeft = artWorks - artWorksRight;
+
+            for (int i = 0; i < artWorksRight; i++)
+            {
+                int j = i + 1;
+                string imageId = $"#image{j}";
+
+
+                <a-entity position="@entityPosition 0.000 -7.594">
+                    <a-image src="@imageId" position="4.965 3.12722 -2.81674" geometry="height: 2; width: 1.5" material="" scale="2 2 1"></a-image>
+                    <a-text value="@Model.Exhibitions.Artworks[i].Name" text="color: #000000; align: center" position="4.95272 5.38382 -2.83279"></a-text>
+                    <a-text text="value: @Model.Exhibitions.Artworks[i].Description; color: #000000; wrapCount: 30" position="-1.75097 3.307 -2.85597"></a-text>
+                </a-entity>
+
+                entityPosition += 9.915;
+
+            }
+            entityPosition = -12.453;
+
+            for (int i = 0; i < artWorksLeft; i++)
+            {
+
+                int j = artWorksRight + 1;
+                string imageId = $"#image{j}";
+
+
+                <a-entity position="@entityPosition 0.000 -7.594">
+                    <a-image src="@imageId" position="4.965 3.12722 -2.81674" geometry="height: 2; width: 1.5" material="" scale="2 2 1"></a-image>
+                    <a-text value="@Model.Exhibitions.Artworks[i].Name" text="color: #000000; align: center" position="4.95272 5.38382 -2.83279"></a-text>
+                    <a-text text="value: @Model.Exhibitions.Artworks[i].Description; color: #000000; wrapCount: 30" position="-1.75097 3.307 -2.85597"></a-text>
+                </a-entity>
+
+                entityPosition -= 9.915;
+
+            }
 
         }
-
     }
+
     <a-image src="#tile2" rotation="90 0 0" scale="400 200 50" position="" material="repeat: 20 20" geometry="" visible=""></a-image>
     <a-sky fog="color:  #ffffff;  far:  35;  near:  0;  density:  0" src="#tile" material="" geometry=""></a-sky>
 
