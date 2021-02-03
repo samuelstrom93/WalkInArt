@@ -48,6 +48,14 @@
             <div class="search-wrapper" id="test123">
                 <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
                     <i class="fas fa-search mr-2"></i>
+                    <input class="form-control" list="search-suggestions" id="search-input" placeholder="Type to search...">
+                    <datalist id="search-suggestions">
+                        <option value="San Francisco"></option>
+                        <option value="New York"></option>
+                        <option value="Seattle"></option>
+                        <option value="Los Angeles"></option>
+                        <option value="Chicago"></option>
+                    </datalist>
                     <input id="search-input" class="form-control mr-sm-2" placeholder="Sök härifrån..." />
                     <!--Läser in nyckelord-->
                     <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
@@ -74,8 +82,8 @@
                         </a>
                         <div class="dropdown-menu" id="search-suggestions" aria-labelledby="navbarDropdownMenuLink">
                             @*<a class="dropdown-item" href="#">Kategori 1</a>
-                            <a class="dropdown-item" href="#">Kategori 2</a>
-                            <a class="dropdown-item" href="#">Kategori 3</a>*@
+                                <a class="dropdown-item" href="#">Kategori 2</a>
+                                <a class="dropdown-item" href="#">Kategori 3</a>*@
                         </div>
                     </li>
 
@@ -86,14 +94,13 @@
 
                 </ul>
             </div>
-            <!-- SearchEngine.js -->
-            <script type="text/javascript" src="~/js/searchEngine.js"></script>
+
         </nav>
 
         <div @*class="dropdown-menu"*@ id="search-suggestions" aria-labelledby="navbarDropdownMenuLink">
             @*<a class="dropdown-item" href="#">Kategori 1</a>
-            <a class="dropdown-item" href="#">Kategori 2</a>
-            <a class="dropdown-item" href="#">Kategori 3</a>*@
+                <a class="dropdown-item" href="#">Kategori 2</a>
+                <a class="dropdown-item" href="#">Kategori 3</a>*@
         </div>
     </header>
 
@@ -126,6 +133,9 @@
 
     <!-- Egna js -->
     @RenderSection("Scripts", required: false)
-   
+
+    <!-- SearchEngine.js -->
+    <script type="text/javascript" src="~/js/searchEngine.js"></script>
+
 </body>
 </html>
