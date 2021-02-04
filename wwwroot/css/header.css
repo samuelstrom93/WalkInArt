@@ -20,7 +20,6 @@ nav {
     background: -moz-linear-gradient(left, #8EF4A4, #A154F2);
     background: -webkit-linear-gradient(left, #8EF4A4, #A154F2);
     background: linear-gradient(to right, #8EF4A4, #A154F2);
-    visibility:hidden;
 }
 
 #search-input {
