@@ -4,21 +4,34 @@ const searchResponse = document.getElementById("search-suggestions")
 const searchResult = document.getElementById("searchresultbox")
 searchButton.addEventListener("click", searchTags)
 
+
 searchBar.addEventListener("input", function (event) {
     if (searchBar.value != "") {
         searchResult.className = "search-result hidden"
-        searchCollections()
+        searchAll()
     }
     else searchResult.className = "search-result hidden" }   
     )
-
-
+let html;
+async function searchAll(){
+    
+    html = "";
+    await searchCollections()
+    await searchTags()
+    searchResponse.innerHTML = html;
+}
 async function showSearchResponse(data, lenght) {
-    let html = ""
+    //let html = ""
+
+    console.log(lenght)
+    if (lenght > 0) {
+        html += `<li style="pointer-events:none !important" >Utställningar: <li>`;
+    }
+
     for (let i = 0; i < lenght; i++) {
         html += `<li><a href="/exhibitions/${data[i].id}">${data[i].name}</a></li>`
     }
-    searchResponse.innerHTML = html;
+    //searchResponse.innerHTML = html;
 }
 
 async function searchCollections() {
@@ -43,12 +56,19 @@ async function searchTags() {
 }
 
 async function showTagSearchResponse(data, lenght) {
-    let html = ""
+
+    if (lenght > 0) {
+        html += `<li style="pointer-events:none !important" >Kategori: <li>`;
+    }
+
     for (let i = 0; i < lenght; i++) {
         html += `<li><a href="/exhibitions/${data[i].id}">${data[i].title}</a></li>`
     }
+    if (Object.keys(data).length >= 1) {
+        searchResult.className = "search-result visible";
+    }
     console.log(html)
-    searchResponse.innerHTML = html;
+    //searchResponse.innerHTML = html;
 }
 
 
