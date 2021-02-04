@@ -158,6 +158,7 @@ namespace DSU21_2.Repository
             return await context.Tags
                  .Include(a => a.Collections)
                 .ThenInclude(b => b.Artworks)
+                .OrderByDescending(a => a.Collections.Count)
                 .ToListAsync();
 
         }
