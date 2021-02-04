@@ -1,8 +1,62 @@
-.exhibition-description {
+.exhibition-about {
     margin: 4em 1em 0;
     border: 1px solid #000;
     width: 25%;
 }
+
+
+.share-aside {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.5em -1.5%;
+}
+
+.signout-wrapper {
+    background-color: rgb(250, 250, 250);
+    padding: 0 0.3em 0 0;
+    border-radius: 4px;
+    display: flex;
+}
+
+.signout-wrapper:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+}
+
+.signout-wrapper a {
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.signout-wrapper a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.share-icon {
+    display: flex;
+    padding: 0 0.5em;
+    background-color: rgb(250, 250, 250);
+    border-radius: 4px;
+}
+
+.share-icon:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+}
+
+.share-icon p {
+    margin: auto 0.5em;
+}
+
+
+.fas.fa-sign-out-alt {
+    color: #000;
+    font-size: 2.5em;
+    margin: 0 0.2em 0;
+}
+
 
 #main-wrapper {
     margin-top: 75px;
@@ -96,26 +150,8 @@
     cursor: pointer;
 }
 
-.share-aside {
-    display: flex;
-    float: right;
-    margin: 0 1em;
-    padding: 0 0.5em;
-    background-color: rgb(250, 250, 250);
-    border-radius: 4px;
-}
-
-.share-aside:hover {
-    cursor: pointer;
-    background-color: rgb(200, 200, 200);
-}
-
-.share-aside p {
-    margin: 0 0.5em;
-}
-
 .fas.fa-share {
-    font-size: 2em;
+    font-size: 2.5em;
 }
 
 .object-info {

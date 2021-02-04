@@ -19,16 +19,33 @@
                     Hejsan jag heter Samuel och detta är min utställning</p>
                 </div>
 
-                <div class="swiper-wrapper">
-                    @{
-                        int artCount = Model.Exhibitions.Artworks.Count / 3;
-                        for (int i = 0; i < artCount; i++)
-                        {
-                            <div class="swiper-slide swiper-gallery">
-                                <div class="gallery">
-                                    @for (int j = i * 3; j < (i * 3) + 3; j++)
-                                    {
-                                        <div class="picture-text">
+
+<main id="main-wrapper" style="background-image: url('../assets/images/brownWall.png'); background-size:cover;">
+    <div class="gallery-wrapper">
+        <!-- Swiper.js -->
+        <div class="swiper-container gallerylist">
+            <div class="exhibition-about">
+                <h1>Namn: @Model.Artist.Name</h1>
+                <p>Info om utställning: @Model.Exhibitions.Description</p>
+            </div>
+
+
+
+            <div class="swiper-wrapper">
+                @{
+                    int artCount = Model.Exhibitions.Artworks.Count / 3;
+                    for (int i = 0; i < artCount; i++)
+                    {
+                        <div class="swiper-slide swiper-gallery">
+                            <div class="gallery">
+                                @for (int j = i * 3; j < (i * 3) + 3; j++)
+                                {
+                                    <div class="picture-text">
+                                        <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
+                                        <p>@Model.Exhibitions.Artworks[j].Name</p>
+                                        <button class="button-overlay">Mer info</button>
+                                        <div id="overlay">
+                                            <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                             <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
 
                                             <p>@Model.Exhibitions.Artworks[j].Name</p>
@@ -74,13 +91,24 @@
                             </div>
                         }
                     }
+
+                }
+            </div>
+            
+            <aside class="share-aside">
+                <div class="signout-wrapper">
+                    <a href="/Home" class="sign-out">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Lämna utställning
+                    </a>
                 </div>
-                <aside class="share-aside" onclick="copyUrl()">
-                    <i class="fas fa-share"></i>
+                <div class="share-icon">
+                    <i class="fas fa-share" onclick="copyUrl()"></i>
                     <p>Dela</p>
-                </aside>
-                <!--  pagination -->
-                <div class="swiper-pagination swiper-pagination-black">
+                </div>
+            </aside>
+            <!--  pagination -->
+            <div class="swiper-pagination swiper-pagination-black">
 
                 </div>
                 <!--  navigation buttons -->
