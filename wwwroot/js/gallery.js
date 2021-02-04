@@ -1,10 +1,5 @@
-console.log('gallery.js')
-
-
-let picture = document.querySelector(".gallery img");
 let pictures = document.querySelectorAll(".gallery img");
 let pictureText = document.querySelectorAll(".picture-text p");
-
 
 
 let buttons = document.querySelectorAll('.button-overlay');
@@ -13,46 +8,51 @@ let overlayClose = document.querySelectorAll("#overlay span")
 
 
 
+// Visar overlay med mer info vid knapptryck "mer info"-knapp
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function (event) {
         overlays[i].style.visibility = (overlays[i].style.visibility == "visible") ? "hidden" : "visible";
+        buttons[i].style.visibility = "hidden";
     })
-
 }
 
+// Stänger overlay genom att klicka på krysset i overlay eller "mer info"-knappen igen
 for (let i = 0; i < overlayClose.length; i++) {
     overlayClose[i].addEventListener("click", function (event) {
         overlays[i].style.visibility = (overlays[i].style.visibility == "visible") ? "hidden" : "visible";
+        buttons[i].style.visibility = "visible";
     })
     
 }
 
 
-// SÃ¤tter fÃ¶rsta bild som stor nÃ¤r sidan laddas in
-/*picture.style.height = "650px";
-picture.style.width = "500px";*/
-
-
-
-// Vid addEventListener "click" blir bilden stor
-// HÃ¥ller koll pÃ¥ ifall man klickat pÃ¥ en av bilderna. 
-// Ifall man klickat pÃ¥ bilden blir flag inte sann, klickar man igen blir den sann
-var flag = true;
+// Förstorar bilden genom knapptryck på respektive bild (konstverk)
 for (let i = 0; i < pictures.length; i++) {
     pictures[i].addEventListener("click", function (event){
-        pictures.forEach(element => {
-            if (element.style.height = "650px") {
-                element.style.height = "";
-                element.style.width = "";    
+
+        pictures.forEach(picture => {
+            if (picture.style.height = "650px") {
+                picture.style.height = "";
+                picture.style.width = "";
             }
-        })
-        if (flag) {
-            pictures[i].style.height = "650px";
-            pictures[i].style.width = "500px";
-        }
+        });
+
+        event.target.style.width = "500px";
+        event.target.style.height = "650px";
     })
 }
 
+// Kopierar url via share-icon (används med onclick på share-elementet)
+function copyUrl() {
+    let textDummy = document.createElement('input'),
+    text = window.location.href;
+    document.body.appendChild(textDummy);
+    textDummy.value = text;
+    textDummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(textDummy);
+    alert('Nu kan du dela webbadressen!');
+}
 
 
 

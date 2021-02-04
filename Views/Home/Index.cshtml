@@ -10,35 +10,30 @@
         @for (int i = 0; i < 4; i++)
         {
             <div class="grid-art">
-                <img src="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Hyperlink" alt="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Name" />
-                <div class="art-overlay">
-                    <a href="/Exhibitions/@Model.CurrentCollections[i].Id" alt="utställning">
-                        @Model.CurrentCollections[i].Name
-                    </a>
-                </div>
+                <img src="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Hyperlink">
+                <a class="to-exhibition" href="/Exhibitions/@Model.CurrentCollections[i].Id">
+
+                    <div class="info-box">
+                        <h3 class="title">@Model.CurrentCollections[i].Name</h3>
+                        <p class="info-txt">@Model.CurrentCollections[i].Description </p>
+                    </div>
+                </a>
             </div>
         }
-
-
         <h1>Kategorier</h1>
 
         @for (int i = 0; i < 4; i++)
         {
             <div class="grid-art">
-                <img src="/assets/mock_images/gallery2.png" alt="">
-                <div class="category-overlay">
-
-                    @*Borde vara detta som skickas in i controllern Categories för sidan Categories*@
-                    @*<a href="/Categories/@Model.Categories[i].Title" alt="kategori">
-                        @Model.Categories[i].Title
-                    </a>*@
-                    <a href="#" alt="kategori">
-                        @Model.Categories[i].Title
-                    </a>
-                </div>
+                <a class="chosen-category" href="/Categories/@Model.Categories[i].Title">
+                    <img src="@Model.Categories[i].Collections.FirstOrDefault().Artworks.FirstOrDefault().Hyperlink" alt="">
+                    <div class="category">
+                        <p>@Model.Categories[i].Title</p>
+                    </div>
+                </a>
             </div>
         }
-        <a href="/Categories" alt="categories" class="all-categories">
+        <a href="Categories" alt="categories" class="all-categories">
             Visa alla kategorier
         </a>
 
@@ -46,18 +41,17 @@
         @for (int i = 0; i < 4; i++)
         {
             <div class="grid-art">
-                <img src="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Hyperlink" alt="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Name">
-                <div class="art-overlay">
-                    <a href="/Exhibitions/@Model.IncomingCollections[i].Id" alt="utställning">
-                        @Model.IncomingCollections[i].Name
-                    </a>
-                </div>
+                <img src="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Hyperlink">
+                <a class="to-exhibition" href="/Exhibitions/@Model.IncomingCollections[i].Id">
+
+                    <div class="info-box">
+                        <h3 class="title">@Model.IncomingCollections[i].Name</h3>
+                        <p class="info-txt">@Model.IncomingCollections[i].Description </p>
+                    </div>
+                </a>
             </div>
         }
 
-
-
     </div>
 </main>
-
 
