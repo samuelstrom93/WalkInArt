@@ -6,19 +6,14 @@
 
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 <main>
-
     <div id="main-wrapper">
         <div class="gallery-wrapper">
             <!-- Swiper.js -->
             <div class="swiper-container gallerylist">
                 <div class="exhibition-description">
                     <h1>@Model.Artist.Name</h1>
-                    <p>
-                        @Model.Exhibitions.Description
-
-                    Hejsan jag heter Samuel och detta är min utställning
-                </p>
-            </div>
+                    <p>@Model.Exhibitions.Description</p>
+                </div>
 
             <div class="swiper-wrapper">
                 @{
@@ -76,10 +71,20 @@
                     }
                 }
             </div>
-            <aside class="share-aside" onclick="copyUrl()">
-                <i class="fas fa-share"></i>
-                <p>Dela</p>
+
+            <aside class="share-aside">
+                <div class="signout-wrapper">
+                    <a href="/Home" class="sign-out">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Lämna utställning
+                    </a>
+                </div>
+                <div class="share-icon">
+                    <i class="fas fa-share" onclick="copyUrl()"></i>
+                    <p>Dela</p>
+                </div>
             </aside>
+
             <!--  pagination -->
             <div class="swiper-pagination swiper-pagination-black">
 
@@ -89,7 +94,6 @@
             <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
         </div>
     </div>
-    @*</main>*@
 
     <!-- Rumlista -->
     <div class="swiper-container roomlist">

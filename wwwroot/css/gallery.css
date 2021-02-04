@@ -1,9 +1,8 @@
-.exhibition-about {
+.exhibition-description {
     margin: 4em 1em 0;
     border: 1px solid #000;
     width: 25%;
 }
-
 
 .share-aside {
     display: flex;
