@@ -48,27 +48,21 @@
                 <div>
                     <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
                         <i class="fas fa-search mr-2"></i>
-                        <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Type to search...">
-                        <datalist id="search-suggestion">
-                            <select onChange="window.location.href=this.value">
-                                <option value="www.google.com">A</option>
-                                <option value="www.aol.com">B</option>
-                            </select>
-                        </datalist>
-
-                        <!--Läser in nyckelord-->
+                        <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Type to search..." autocomplete="off">
+                        
+                    <!--Läser in nyckelord-->
                         <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
                     </form>
                 </div>
 
-                <div class="kalleskaviar">
+                <div class="search-result" id="searchresultbox">
                     <ul id="search-suggestions" style="list-style-type:none">
 
                     </ul>
                 </div>
             </div>
 
-
+            <a style="display: block"></a>
             <!-- Meny item -->
             <div id="navbarNavDropdown">
                 
