@@ -1,9 +1,31 @@
-.exhibition-description {
+.exhibition-about {
     margin: 4em 1em 0;
     border: 1px solid #000;
     width: 25%;
 }
 
+.go-home{
+    position: relative;
+    margin: 10px;
+}
+
+.to-home {
+    height: 80px;
+    width: 50px;
+    background-color: rgba(255,255,255, 0.4);
+    border: 2px #000;
+    border-radius: 8px;
+}
+
+.to-home:hover {
+    background-color: rgba(255,255,255, 0.6);
+}
+
+
+.img-gohome{
+    height: 25px;
+    width: 25px;
+}
 
 #main-wrapper {
     margin-top: 75px;

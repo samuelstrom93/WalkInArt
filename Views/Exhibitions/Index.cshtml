@@ -12,9 +12,13 @@
     <div class="gallery-wrapper">
         <!-- Swiper.js -->
         <div class="swiper-container gallerylist">
-            <div class="exhibition-description">
+            <div class="exhibition-about">
                 <h1>Namn: @Model.Artist.Name</h1>
                 <p>Info om utställning: @Model.Exhibitions.Description</p>
+            </div>
+
+            <div class="go-home">
+                <a href="/Home" class="to-home"><img class="img-gohome" src="/assets/images/logoutmini.png" /></a>
             </div>
 
             <div class="swiper-wrapper">

@@ -24,7 +24,6 @@ namespace DSU21_2.Controllers
             this.artDbRepo = artDbRepo;
         }
 
-
         public async Task<IActionResult>  Index()
         {
             //Used for filling local DB with data, run once.
