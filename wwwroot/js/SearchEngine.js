@@ -62,7 +62,7 @@ async function showTagSearchResponse(data, lenght) {
     }
 
     for (let i = 0; i < lenght; i++) {
-        html += `<li><a href="/exhibitions/${data[i].id}">${data[i].title}</a></li>`
+        html += `<li><a href="/Categories/${data[i].title}">${data[i].title}</a></li>`
     }
     if (Object.keys(data).length >= 1) {
         searchResult.className = "search-result visible";
