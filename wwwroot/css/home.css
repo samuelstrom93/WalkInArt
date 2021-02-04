@@ -57,7 +57,7 @@
     padding: 0.25em 0;
 }
 
-.all-categories:hover {
+all-categories:hover {
     color: #000;
     background: linear-gradient(to bottom, #A154F2, #8EF4A4);
     text-decoration: none;
