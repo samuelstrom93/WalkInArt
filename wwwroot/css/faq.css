@@ -1,7 +1,7 @@
 ﻿
 #questions-box {
     padding: 100px;
-    border: 1px solid #a893c2;
+    border: 1px solid #f8f9fa;
     border-radius: 10px;
     box-shadow: 2px 2px 8px #707070;
     margin: 200px;
@@ -14,7 +14,7 @@
 
 
 .question {
-    color: #9f63eb;
+    color: #000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,7 +22,7 @@
 }
 
 .question:hover {
-    color: #8feea8;
+    color: #9f63eb;
 }
 
 
@@ -31,7 +31,7 @@
 }
 
 .fa.fa-chevron-down:hover {
-    color: #8feea8;
+    color: #9f63eb;
 }
 
 .fas fa-chevron-up {
@@ -52,5 +52,6 @@
 
 
 #contact {
+    background-color: #f8f9fa;
     padding: 60px;
 }
