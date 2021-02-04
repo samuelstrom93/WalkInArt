@@ -1,7 +1,11 @@
 .exhibition-description {
     margin: 4em 1em 0;
     border: 1px solid #000;
-    width: 25%;
+    width: 15%;
+    border-radius: 4px;
+    opacity: 0.75;
+    background: #fff;
+    padding: 1em;
 }
 
 .share-aside {
@@ -230,6 +234,7 @@
 
 .swiper-gallery {
     height: 82.5vh !important;
+    margin-top: -17.5em;
 }
 
 .swiper-pagination {
