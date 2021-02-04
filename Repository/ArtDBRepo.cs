@@ -156,20 +156,32 @@ namespace DSU21_2.Repository
         public async Task<List<Tag>> GetTags()
         {
             return await context.Tags
+                 .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
+                .OrderByDescending(a => a.Collections.Count)
                 .ToListAsync();
+
         }
 
         public async Task<Tag> GetTag(int tagId)
         {
             return await context.Tags
                 .Include(a => a.Collections)
+                .ThenInclude(b=> b.Artworks)
                 .FirstOrDefaultAsync(x => x.Id == tagId);
         }
-            
-           
-            
 
-        #endregion 
+        public async Task<Tag> GetTagByName(string title)
+        {
+            return await context.Tags
+                .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
+                .FirstOrDefaultAsync(x => x.Title == title);
+        }
+
+
+
+        #endregion
 
 
 

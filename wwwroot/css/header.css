@@ -20,6 +20,7 @@ nav {
     background: -moz-linear-gradient(left, #8EF4A4, #A154F2);
     background: -webkit-linear-gradient(left, #8EF4A4, #A154F2);
     background: linear-gradient(to right, #8EF4A4, #A154F2);
+    visibility:hidden;
 }
 
 #search-input {
@@ -31,4 +32,37 @@ nav {
     color: black;
     font-size: 30px;
 }
+
+.search-result {
+    border-radius: 10px;
+    margin-left: 32px;
+    width: 50vh;
+    position: absolute !important;
+    background-color:cornsilk;
+    visibility:hidden;    
+    margin-top:4px;
+}
+
+.search-result ul{
+    display:block;
+    padding:0;
+}
+.search-result li{
+    padding-left:13px;
+}
+.search-result li:hover {
+    background-color:lightgray;
+}
+.search-result a {
+    display: inline-block;
+    width: 100%;
+    color: inherit;
+}
+.hidden {
+    visibility: hidden;
+}
+.visible {
+    visibility: visible;
+}
+
 

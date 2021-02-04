@@ -1,4 +1,4 @@
-using DSU21_2.Models;
+﻿using DSU21_2.Models;
 using DSU21_2.Repository;
 using DSU21_2.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -22,22 +22,40 @@ namespace DSU21_2.Views.Exhibitions
         [Route("Exhibitions/{id?}")]
         public async Task<IActionResult> Index(int id)
         {
-            //id = 2; //TA BORT SENARE
-            var exhibition = await artDbRepo.GetCollection(id);
+            var exhibitions = await artDbRepo.GetCollection(id);
             var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
-            var artist = await artDbRepo.GetArtistByCollection(exhibition);
-            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibition, exhibitionsForRoom, artist);
+            var artist = await artDbRepo.GetArtistByCollection(exhibitions);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
             return View(exhibitionsViewModel);
         }
 
-        public IActionResult Gallery()
+        public async Task<IActionResult> Room3d(int id)
         {
-            return View();
+            //id = 2; //TA BORT SENARE
+            var exhibitions = await artDbRepo.GetCollection(id);
+            var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
+            var artist = await artDbRepo.GetArtistByCollection(exhibitions);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
+            return View(exhibitionsViewModel);
         }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //↓↓↓↓↓↓↓↓↓ TA BORT SENARE ↓↓↓↓↓↓↓↓↓
+        [Route("Test/{id?}")]
+        public async Task<IActionResult> TestIndex(int id)
+        {
+            id = 2;
+            var exhibitions = await artDbRepo.GetCollection(id);
+            var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
+            var artist = await artDbRepo.GetArtistByCollection(exhibitions);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
+            return View(exhibitionsViewModel);
+        }
+
     }
 
     

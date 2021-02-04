@@ -51,7 +51,7 @@ function copyUrl() {
     textDummy.select();
     document.execCommand('copy');
     document.body.removeChild(textDummy);
-    alert('Länk kopierad!');
+    alert('Nu kan du dela webbadressen!');
 }
 
 
