@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +11,7 @@
     <link rel="stylesheet" href="/css/gallery.css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/categories.css">
-    
+    <link rel="stylesheet" href="/css/faq.css">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -48,60 +47,57 @@
                     </div>
                 </a>
 
-                <!-- Sökfunktion -->
-                <div class="search-wrapper">
-                    <form class="form-inline my-2 my-lg-0 ">
+            <!-- Sökfunktion -->
+            <div class="search-wrapper">
+                <div>
+                    <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
                         <i class="fas fa-search mr-2"></i>
-                        <input id="search-input" class="form-control mr-sm-2" placeholder="Sök härifrån..." />
-                        <!--Läser in nyckelord-->
-                        <button id="search-btn" class="btn btn-secondary my-2 my-sm-0" type="submit">Sök</button>
+                        <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Type to search..." autocomplete="off">
+                        
+                    <!--Läser in nyckelord-->
+                        <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
                     </form>
                 </div>
 
-                <!-- Meny item -->
-                <div id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-
-
-                        @*TODO ta bort ifall den inte ska användas*@
-                        <!-- Utställningar -->
-                        @*<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Utställningar
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Kategori 1</a>
-                                <a class="dropdown-item" href="#">Kategori 2</a>
-                                <a class="dropdown-item" href="#">Kategori 3</a>
-                            </div>
-                        </li>*@
-
-                        <!-- Hjälpsida -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hjälp</a>
-                        </li>
+                <div class="search-result" id="searchresultbox">
+                    <ul id="search-suggestions" style="list-style-type:none">
 
                     </ul>
                 </div>
-            </nav>
-        </header>
+            </div>
+
+            <a style="display: block"></a>
+            <!-- Meny item -->
+            <div id="navbarNavDropdown">
+                        <a class="faq-link" href="/Faq">Hjälp</a>
+            </div>
+            <!-- SearchEngine.js -->
+            <script type="text/javascript" src="~/js/searchEngine.js"></script>
+        </nav>
+    </header>
 
 
         @RenderBody()
 
 
-        <!-- Footer -->
-        <footer class="d-flex justify-content-between align-items-center">
+    <!-- Footer -->
+<footer class="d-flex justify-content-between align-items-center">
 
-            <span class="ml-5">&copy;2021 DSU Grupp 2</span>
+    <span class="ml-5">&copy;2021 DSU Grupp 2</span>
 
-            <div class="icons mr-5">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+    <div>
+        <h2>Kontakta oss</h2>
+        <p>Telefonnummer: 070-1234567</p>
+        <p>Epostadress: WalkInArt@gmail.com</p>
+    </div>
 
-        </footer>
+    <div class="icons mr-5">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+
+</footer>
 
         <!-- Fontawesome -->
         <script src="https://kit.fontawesome.com/3ef0f906bf.js" crossorigin="anonymous"></script>
