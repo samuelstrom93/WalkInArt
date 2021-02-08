@@ -1,5 +1,6 @@
 using DSU21_2.Data;
 using DSU21_2.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Google;
 
 namespace DSU21_2
 {
@@ -40,7 +42,31 @@ namespace DSU21_2
                                       builder.WithOrigins("https://localhost:44373/");
                                   });
             });
+
+           
+            // SAMUEL
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/account/google-login";
+            })
+            .AddGoogle(options =>
+            {
+                IConfigurationSection googleAuthNSection =
+                Configuration.GetSection("Authentication:Google");
+                options.ClientId = googleAuthNSection["ClientId"];
+                options.ClientSecret = googleAuthNSection["ClientSecret"];
+            });
         }
+
+
+
+
+
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +88,7 @@ namespace DSU21_2
             app.UseRouting();
             app.UseCors(MyAllowSpecificOrigins);
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
