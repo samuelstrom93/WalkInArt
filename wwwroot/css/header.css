@@ -17,18 +17,26 @@ nav {
     border-radius: 30px;
     border: none;
     width: 100px;
-    background: -moz-linear-gradient(left, #8EF4A4, #A154F2);
-    background: -webkit-linear-gradient(left, #8EF4A4, #A154F2);
-    background: linear-gradient(to right, #8EF4A4, #A154F2);
+    background-color: lightgray;
+    color: black;
+    font-family: 'Modern No. 20';
+    font-size: 18px;
 }
 
 #search-input {
     width: 50vh;
+    font-family: 'Modern No. 20';
+    font-size: 18px;
+    border-radius:.60rem;
 }
 
 
 #logo-title {
     color: black;
     font-size: 30px;
+   
+}
+.align-Middle{
+    font-family: 'Modern No. 20';
 }
 
