@@ -24,7 +24,10 @@ nav {
     font-family: 'Modern No. 20';
     font-size: 18px;
 }
-
+ #search-btn:hover {
+        cursor: pointer;
+        background: linear-gradient(to bottom, #808080, #575151);
+ }
 #search-input {
     width: 50vh;
     font-family: 'Modern No. 20';
@@ -33,11 +36,17 @@ nav {
     background-color: #fff;
     color:white;
 }
-
-#logo-title {
-    color: black;
-    font-size: 30px;
-   
+.Login-icon {
+    position: absolute; right: 10%;
+    
 }
+.Login-link{
+    text-decoration: none;
+    color: rgba(69,73,82,255);
+}
+.fas.fa-user {
+   color: rgba(69,73,82,255)
+}
+
 
 

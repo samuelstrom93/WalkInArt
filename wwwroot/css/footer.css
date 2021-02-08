@@ -4,7 +4,11 @@ footer {
     min-height: 8.5vh;
     align-items: center;
 }
-
+.faq-link{
+    position:relative; right: 80%;
+    color: #fff;
+    font-size: 25px;
+}
 .icons i {
     margin: 0 5px;
     padding: 0.3em;

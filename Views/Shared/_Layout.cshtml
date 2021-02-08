@@ -40,63 +40,65 @@
                                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                                     <use xlink:href="#image0" transform="translate(0 -0.0539216) scale(0.005 0.00553922)" />
                                 </pattern>
-                                <image id="image0" width="175" height="175" xlink:href="/assets/images/WIA.PNG"/>
+                                <image id="image0" width="175" height="175" xlink:href="/assets/images/WIA.PNG" />
                             </defs>
                         </svg>
                     </div>
                 </a>
 
-            <!-- Sökfunktion -->
-            <div class="search-wrapper">
-                <div>
-                    <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
-                        <i class="fas fa-search mr-2"></i>
-                        <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Type to search..." autocomplete="off">
-                        
-                    <!--Läser in nyckelord-->
-                        <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
-                    </form>
+                <!-- Sökfunktion -->
+                <div class="search-wrapper">
+                    <div>
+                        <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
+                            <i class="fas fa-search mr-2"></i>
+                            <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Type to search..." autocomplete="off">
+
+                            <!--Läser in nyckelord-->
+                            <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
+                        </form>
+                    </div>
+
+                    <div class="search-result" id="searchresultbox">
+                        <ul id="search-suggestions" style="list-style-type:none">
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="search-result" id="searchresultbox">
-                    <ul id="search-suggestions" style="list-style-type:none">
+                <a style="display: block"></a>
 
-                    </ul>
+                <!-- SearchEngine.js -->
+                <script type="text/javascript" src="~/js/searchEngine.js"></script>
+
+                <!-- Logga in knapp -->
+                <div class="Login-icon">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a class="Login-link" href="@*/Faq*@">Logga In</a>
                 </div>
-            </div>
-
-            <a style="display: block"></a>
-            <!-- Meny item -->
-            <div id="navbarNavDropdown">
-                        <a class="faq-link" href="/Faq">Hjälp</a>
-            </div>
-            <!-- SearchEngine.js -->
-            <script type="text/javascript" src="~/js/searchEngine.js"></script>
-        </nav>
-    </header>
-
+            </nav>           
+        </header>
 
         @RenderBody()
 
-
     <!-- Footer -->
-<footer class="d-flex justify-content-between align-items-center">
+    <footer class="d-flex justify-content-between align-items-center">
 
-    <span class="ml-5">&copy;2021 DSU Grupp 2</span>
+        <span class="ml-5">&copy;2021 DSU Grupp 2</span>
 
-    <div>
-        <h2>Kontakta oss</h2>
-        <p>Telefonnummer: 070-1234567</p>
-        <p>Epostadress: WalkInArt@gmail.com</p>
-    </div>
+        <div>
+            <h2>Kontakta oss</h2>
+            <p>Telefonnummer: 070-1234567</p>
+            <p>Epostadress: WalkInArt@gmail.com</p>
+        </div>
 
-    <div class="icons mr-5">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-
-</footer>
+        <div class="icons mr-5">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div id="faq-hjälp">
+            <a class="faq-link" href="/Faq">Hjälp</a>
+        </div>
+    </footer>
 
         <!-- Fontawesome -->
         <script src="https://kit.fontawesome.com/3ef0f906bf.js" crossorigin="anonymous"></script>
