@@ -51,10 +51,8 @@
 }
 
 .chosen-category:hover p {
-    text-decoration: none;
     font-weight: bold;
-    color: rgb(236, 4, 159);
-    position: absolute;
+    text-decoration: underline;
 }
 
 
