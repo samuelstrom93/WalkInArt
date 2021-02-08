@@ -12,7 +12,9 @@ nav {
     font-size: 1.5em;
     background-color: #fff;
 }
-
+.search-wrapper{
+    position:absolute; left: 30%;
+}
 #search-btn {
     border-radius: 30px;
     border: none;
@@ -37,8 +39,5 @@ nav {
     font-size: 30px;
    
 }
-.text-decoration-none{
-    font-family:'Modern No. 20';
-    font-size: 30px;
-}
+
 
