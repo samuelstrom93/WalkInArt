@@ -5,7 +5,7 @@ header {
     top: 0;
     z-index: 100;
     width: 100%;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 nav {
@@ -17,8 +17,8 @@ nav {
     border-radius: 30px;
     border: none;
     width: 100px;
-    background-color: lightgray;
-    color: black;
+    background-color: rgba(69,73,82,255);
+    color: white;
     font-family: 'Modern No. 20';
     font-size: 18px;
 }
@@ -27,16 +27,18 @@ nav {
     width: 50vh;
     font-family: 'Modern No. 20';
     font-size: 18px;
-    border-radius:.60rem;
+    border-radius: .60rem;
+    background-color: #fff;
+    color:white;
 }
-
 
 #logo-title {
     color: black;
     font-size: 30px;
    
 }
-.align-Middle{
-    font-family: 'Modern No. 20';
+.text-decoration-none{
+    font-family:'Modern No. 20';
+    font-size: 30px;
 }
 
