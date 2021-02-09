@@ -1,11 +1,12 @@
 .exhibition-description {
     margin: 4em 1em 0;
     border: 1px solid #000;
-    width: 15%;
+    width: 20%;
     border-radius: 4px;
     opacity: 0.75;
     background: #fff;
-    padding: 1em;
+    padding: 0.5em;
+    text-align: center;
 }
 
 .share-aside {
@@ -66,7 +67,7 @@
 }
 
 .gallery-wrapper {
-    background-image: url("../assets/images/brownWall.png");
+    background-image: url("../assets/images/greyWall.png");
     background-size: cover;
 }
 
@@ -75,13 +76,15 @@
     justify-content: center;
     margin: 2% 0 2em;
     max-width: 100%;
+    
 }
 
-.gallery img {
-    width: 300px;
-    height: 400px;
-    margin: 3em 2em 2em; 
-}
+    .gallery img {
+        width: 300px;
+        height: 400px;
+        margin: 3em 2em 2em;
+        box-shadow: 7px 7px 7px #000;
+    }
 
 .gallery img:hover {
     cursor: pointer;
@@ -90,13 +93,21 @@
 .picture-text {
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: 600px;
 }
 
 .picture-text p {
-    text-align: center;
-    font-style: italic;
-    font-size: 1.2em;
+        text-align: center;
+        font-style: italic;
+        font-size: 2em;
+        cursor: pointer;
+        margin: 0.5em 2.2em 0;
+        border: 1px solid #000;
+        width: 60%;
+        border-radius: 4px;
+        opacity: 0.75;
+        background: #fff;
+        padding: 0.1em;
 }
 
 #artwork-description {
@@ -195,6 +206,10 @@
     margin-bottom: 2%;
 }
 
+.swiper-wrapper :hover{
+    text-decoration: none;   
+}
+
 .swiper-slide {
     display: flex;
     flex-flow: column nowrap;
@@ -224,10 +239,18 @@
     width: 300px;
     object-fit: cover;
 }
-.room-span {
+
+#room-span{
     vertical-align: bottom;
-    margin: 1em 0;
+    color: #000;
 }
+
+#room-span {
+    vertical-align: bottom;
+    color: #000;
+}
+
+
 .swiper-slide {
     align-content: center;
 }

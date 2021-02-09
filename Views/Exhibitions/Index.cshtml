@@ -24,22 +24,22 @@
                             <div class="gallery">
                                 @for (int j = i * 3; j < (i * 3) + 3; j++)
                                 {
-                                    <div class="picture-text">
+                                <div class="picture-text">
+                                    <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
+
+                                    <p class="button-overlay">@Model.Exhibitions.Artworks[j].Name</p>
+                                    @*<button class="button-overlay">Mer info</button>*@
+                                    <div id="overlay">
+                                        <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                         <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
-
-                                        <p>@Model.Exhibitions.Artworks[j].Name</p>
-                                        <button class="button-overlay">Mer info</button>
-                                        <div id="overlay">
-                                            <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
-                                            <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
-                                            <div class="object-info">
-                                                <h1>@Model.Exhibitions.Artworks[j].Name</h1>
-                                                <p>@Model.Artist.Name</p>
-                                                <p id="artwork-description">@Model.Exhibitions.Artworks[j].Description</p>
-                                            </div>
-
+                                        <div class="object-info">
+                                            <h1>@Model.Exhibitions.Artworks[j].Name</h1>
+                                            <p>@Model.Artist.Name</p>
+                                            <p id="artwork-description">@Model.Exhibitions.Artworks[j].Description</p>
                                         </div>
+
                                     </div>
+                                </div>
                                 }
                             </div>
                         </div>
@@ -53,8 +53,8 @@
                                     <div class="picture-text">
                                         <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
 
-                                        <p>@Model.Exhibitions.Artworks[i].Name</p>
-                                        <button class="button-overlay">Mer info</button>
+                                        <p class="button-overlay">@Model.Exhibitions.Artworks[i].Name</p>
+                                        @*<button class="button-overlay">Mer info</button>*@
                                         <div id="overlay">
                                             <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
@@ -114,8 +114,8 @@
                         {
                             <img class="room-noimg" src="/assets/images/noImage.png">
                         }
-                        <span class="room-span">@room.Name</span>
-                        <a href="/exhibitions/@room.Id" class="exhibition-link">Gå till utställningen</a>
+                    <a href="/exhibitions/@room.Id" id="room-span">@room.Name</a> @*class="exhibition-link"*@ 
+                        @*<a href="/exhibitions/@room.Id" class="exhibition-link">Gå till utställningen</a>*@
                     </div>
                 }
             }
