@@ -14,85 +14,87 @@
                     <h1>@Model.Artist.Name</h1>
                     <p>@Model.Exhibitions.Description</p>
                 </div>
+                <div class="swiper-wrapper">
+                    @{
+                        int artCount = Model.Exhibitions.Artworks.Count / 3;
+                        for (int i = 0; i < artCount; i++)
+                        {
+                            <div class="swiper-slide swiper-gallery">
+                                <div class="gallery">
+                                    @for (int j = i * 3; j < (i * 3) + 3; j++)
+                                    {
+                                        <div class="picture-text">
+                                            <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
 
-            <div class="swiper-wrapper">
-                @{
-                    int artCount = Model.Exhibitions.Artworks.Count / 3;
-                    for (int i = 0; i < artCount; i++)
-                    {
-                        <div class="swiper-slide swiper-gallery">
-                            <div class="gallery">
-                                @for (int j = i * 3; j < (i * 3) + 3; j++)
-                                {
-                                <div class="picture-text">
-                                    <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
-
-                                    <p class="button-overlay">@Model.Exhibitions.Artworks[j].Name</p>
-                                    @*<button class="button-overlay">Mer info</button>*@
-                                    <div id="overlay">
-                                        <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
-                                        <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
-                                        <div class="object-info">
-                                            <h1>@Model.Exhibitions.Artworks[j].Name</h1>
-                                            <p>@Model.Artist.Name</p>
-                                            <p id="artwork-description">@Model.Exhibitions.Artworks[j].Description</p>
+                                            <p class="button-overlay">@Model.Exhibitions.Artworks[j].Name</p>
+                                            @*<button class="button-overlay">Mer info</button>*@
+                                            <div id="overlay">
+                                                <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
+                                                <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
+                                                
+                                                <button class="btn-readmoregallery">Läs mer</button>
+                                            <div class="object-info">
+                                                    <h1>@Model.Exhibitions.Artworks[j].Name</h1>
+                                                    <p>@Model.Artist.Name</p>
+                                                    <p id="artwork-description">@Model.Exhibitions.Artworks[j].Description</p>
+                                            </div>
+                                            </div>
                                         </div>
-
-                                    </div>
+                                    }
                                 </div>
-                                }
                             </div>
-                        </div>
-                    }
-                    @if (Model.Exhibitions.Artworks.Count % 3 != 0)
-                    {
-                        <div class="swiper-slide">
-                            <div class="gallery">
-                                @for (int i = artCount * 3; i < Model.Exhibitions.Artworks.Count; i++)
-                                {
-                                    <div class="picture-text">
-                                        <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
+                        }
+                        @if (Model.Exhibitions.Artworks.Count % 3 != 0)
+                        {
+                            <div class="swiper-slide">
+                                <div class="gallery">
+                                    @for (int i = artCount * 3; i < Model.Exhibitions.Artworks.Count; i++)
+                                    {
+                                        <div class="picture-text">
+                                            <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
 
-                                        <p class="button-overlay">@Model.Exhibitions.Artworks[i].Name</p>
-                                        @*<button class="button-overlay">Mer info</button>*@
+                                            <p class="button-overlay">@Model.Exhibitions.Artworks[i].Name</p>
+                                            @*<button class="button-overlay">Mer info</button>*@
                                         <div id="overlay">
                                             <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
+
+                                            <button class="btn-readmoregallery">Läs mer</button>
                                             <div class="object-info">
                                                 <h1>@Model.Exhibitions.Artworks[i].Name</h1>
                                                 <p>@Model.Artist.Name</p>
                                                 <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
                                             </div>
                                         </div>
-                                    </div>
-                                }
+                                        </div>
+                                    }
+                                </div>
                             </div>
-                        </div>
+                        }
                     }
-                }
-            </div>
-
-            <aside class="share-aside">
-                <div class="signout-wrapper">
-                    <a href="/Home" class="sign-out">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Lämna utställning
-                    </a>
                 </div>
-                <div class="share-icon" onclick="copyUrl()">
-                    <i class="fas fa-share" ></i>
-                    <p>Dela</p>
+
+                <aside class="share-aside">
+                    <div class="signout-wrapper">
+                        <a href="/Home" class="sign-out">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Lämna utställning
+                        </a>
+                    </div>
+                    <div class="share-icon" onclick="copyUrl()">
+                        <i class="fas fa-share" ></i>
+                        <p>Dela</p>
+                    </div>
+                </aside>
+
+                <!--  pagination -->
+                <div class="swiper-pagination swiper-pagination-black">
+
                 </div>
-            </aside>
-
-            <!--  pagination -->
-            <div class="swiper-pagination swiper-pagination-black">
-
+                <!--  navigation buttons -->
+                <div class="swiper-button-prev swiper-button-white swiper-nav-gallery-prev"></div>
+                <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
             </div>
-            <!--  navigation buttons -->
-            <div class="swiper-button-prev swiper-button-white swiper-nav-gallery-prev"></div>
-            <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
-        </div>
     </div>
 
     <!-- Rumlista -->
