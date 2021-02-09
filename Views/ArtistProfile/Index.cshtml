@@ -1,8 +1,10 @@
 ﻿@model DSU21_2.ViewModels.ArtistViewModel
-<br />
-<br />
-<br />
-<br />
+
+@section Scripts {
+
+    <script src="~/js/artist-profile.js"></script>
+}
+
 <br />
 <br />
 <br />
@@ -12,3 +14,134 @@
 <h2>@Model.ProfileId</h2>
 
 <h3>@Model.ProfileFirstName</h3>
+
+<main>
+
+
+
+    <div class="grid-profile">
+        <h1 id="header-grid">Dina utställningar</h1>
+
+        <h2 id="exhibition-title">Utställning</h2>
+        <h2>Hantera</h2>
+
+
+        @for (int i = 0; i < 3; i++)
+        {
+            <div class="exhibition-info">
+                <p class="exhibition-title">
+                    Glaskonst i Duvemåla
+                    <i class="fas fa-chevron-right" id="arrow"></i>
+                </p>
+                <div class="artworks">
+
+                    @for (int j = 0; j < 4; j++)
+                    {
+                    <form class="update-form">
+                        <p>
+                            <label><b>Bild</b></label>
+                            <img src="~/assets/mock_images/gallery1.png" />
+                        </p>
+                        <p>
+                            <label><b>Namn</b></label>
+                            <input type="text" name="name" value="Objektnamn" required pattern="\S(.*\S)?" />
+                        </p>
+                        <p>
+                            <label><b>Beskrivning</b></label>
+                            <textarea name="description" rows="7" cols="25">Objektbeskrivning</textarea>
+                        </p>
+                        <p>
+                            <label><b>Url</b></label>
+                            <input type="text" name="url" value="Objektnamn" required pattern="\S(.*\S)?" />
+                        </p>
+                        <p>
+                            <label><b>Uppdatera</b></label>
+                            <input type="submit" name="update" value="Uppdatera" id="update-submit" />
+                        </p>
+
+                        <a href="#" class="removeObject-btn">Ta bort</a>
+
+                    </form>
+
+                        <hr />
+                    }
+
+
+                    @*LÄGG TILL NYTT OBJEKT*@
+                    <div>
+                        <a href="#" class="add-object">
+                            <i class="fas fa-plus"></i>
+                            Lägg till objekt
+                        </a>
+                        <form class="object-form">
+                            <h3>Utställning</h3>
+                            <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
+                            <p>
+                                <label>
+                                    Beskrivning
+                                    <textarea name="description" rows="5" cols="33"></textarea>
+                                </label>
+                            </p>
+                            <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
+                            <p><label>Bild <input type="file" name="picture" /></label></p>
+                            <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
+                        </form>
+                    </div>
+                    @*LÄGG TILL NYTT OBJEKT*@
+
+                </div>
+            </div>
+
+
+            <div class="actions-btns">
+                <a class="edit-btn">Hantera</a>
+                <a class="delete-btn">Ta bort</a>
+            </div>
+
+        }
+
+        @*Knapp och formulär för att lägga in mer data*@
+        @*POST ELLER GET?*@
+        <div>
+            <a class="add-exhibition">
+                <i class="fas fa-plus"></i>
+                Lägg till ny utställning
+            </a>
+            <form class="exhibition-form">
+                <h3>Utställning</h3>
+                <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
+                <p>
+                    <label>
+                        Beskrivning
+                        <textarea name="description" rows="5" cols="33"></textarea>
+                    </label>
+                </p>
+                <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
+
+
+            </form>
+        </div>
+
+    </div>
+
+    <div>
+        Lägg till info för profilen (about i databasen)
+    </div>
+
+    <div>
+
+        Lägg till bekräftelse vid knapptryck på "Delete-knappen"
+    </div>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+

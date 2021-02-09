@@ -1,0 +1,187 @@
+﻿.add-exhibition {
+    background-color: #34ac19;
+    padding: 0.3em 0.5em;
+    color: #fff;
+    width: 200px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.add-exhibition:hover {
+    color: #fff;
+}
+
+
+.exhibition-info {
+    margin: 0 1em;
+}
+
+.grid-profile {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border-radius: 4px;
+    width: 90%;
+    background-color: #fff;
+    margin: auto;
+    padding-bottom: 1em;
+    grid-gap: 1em;
+    background-color: rgb(245, 245, 245);
+}
+
+
+#header-grid {
+    grid-column: span 2;
+    background-color: #3c25c1;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+}
+
+.grid-profile a:hover {
+    text-decoration: underline;
+}
+
+.edit-btn {
+    background-color: #147a4c;
+    padding: 0.3em 1em;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #c62020;
+    padding: 0.3em 1em;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    color: #fff;
+}
+
+.edit-btn:hover {
+    color: #fff;
+}
+
+.exhibition-wrapper {
+    border-bottom: 1px solid #000;
+}
+
+.exhibition-title {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.artworks {
+    display: none;
+}
+
+#arrow {
+    font-size: 1em;
+}
+
+
+.removeObject-btn {
+    background-color: #c62020;
+    padding: 0.5em 1em;
+    align-self: center;
+    border-radius: 4px;
+    color: #fff;
+    margin-left: auto;
+}
+
+.removeObject-btn:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+#exhibition-title {
+    margin: 0 0.25em;
+}
+
+.exhibition-form {
+    display: none;
+    margin: 1em;
+    border: 1px solid #000;
+    padding: 1em;
+    width: 75%;
+}
+
+.exhibition-form h3 {
+    margin-bottom: 1em;
+}
+
+.exhibition-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+} 
+
+#submit-btn {
+    display: flex;
+    margin: auto;
+    font-weight: bold;
+}
+
+
+
+
+.artwork-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.add-object{
+    background-color: #27ad63;
+    padding: 0.3em 0.5em;
+    color: #fff;
+    width: 200px;
+    margin: 1em;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.add-object:hover {
+    color: #fff;
+}
+
+.object-form {
+    display: none;
+    margin: 1em;
+    border: 1px solid #000;
+    padding: 1em;
+    width: 75%;
+}
+
+.object-form h3 {
+    margin-bottom: 1em;
+}
+
+.object-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+} 
+
+
+.update-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.update-form p {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5em;
+}
+
+.update-form img {
+    height: 190px;
+    width: 230px;
+}
+
+
