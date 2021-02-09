@@ -15,19 +15,6 @@ nav {
 .search-wrapper{
     position:absolute; left: 30%;
 }
-#search-btn {
-    border-radius: 30px;
-    border: none;
-    width: 100px;
-    background-color: rgba(69,73,82,255);
-    color: white;
-    font-family: 'Modern No. 20';
-    font-size: 18px;
-}
- #search-btn:hover {
-        cursor: pointer;
-        background: linear-gradient(to bottom, #808080, #575151);
- }
 #search-input {
     width: 50vh;
     font-family: 'Modern No. 20';
@@ -40,9 +27,10 @@ nav {
     position: absolute; right: 10%;
     
 }
-.Login-link{
+.Login-link {
     text-decoration: none;
     color: rgba(69,73,82,255);
+    font-family: 'Modern No. 20';
 }
 .fas.fa-user {
    color: rgba(69,73,82,255)
