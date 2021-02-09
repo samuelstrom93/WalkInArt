@@ -4,10 +4,13 @@ footer {
     min-height: 8.5vh;
     align-items: center;
 }
+.contact{
+    font-size : 15px;
+}
 .faq-link{
     position:relative; right: 80%;
     color: #fff;
-    font-size: 25px;
+    font-size: 15px;
 }
 .icons i {
     margin: 0 5px;

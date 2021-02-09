@@ -25,21 +25,26 @@ nav {
 }
 /* Dropdown meny */
 .drop-btn {
-    position: absolute;
+    position: relative;
     right: 20%;
-    color: #fff;
     border-radius: 10px;
-    width: 80px;
-    padding: 16px;
-    font-size: 16px;
+    cursor: pointer;
+    color: rgba(69,73,82,255);
+    width: 50px;
     border: none;
 }
 .dropdown {
     position: relative;
     display: inline-block;
+
 }
 .dropdown {
    position: relative; right: 30%; bottom: 5px;
+   border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    width: 50px;
+    border: none;
 }
 .dropdown-content {
     display: none;
@@ -55,7 +60,7 @@ nav {
     text-decoration: none;
     display: block;
 }
-.dropdown-content a:hover {
+.dropdown-content a:active {
     background-color: #fff;
 }
 .dropdown:hover .dropdown-content {
