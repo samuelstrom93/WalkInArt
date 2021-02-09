@@ -65,6 +65,7 @@
                         @for (int j = 0; j < Model.Artist.Collections[i].Artworks.Count; j++)
                         {
                             var artwork = @Model.Artist.Collections[i].Artworks[j];
+
                             <form class="update-form" asp-controller="ArtistProfile" asp-action="UpdateArtwork">
                                 <input type="hidden" name="artistId" value="@Model.Artist.Id" />
                                 <input type="hidden" name="artworkId" value="@artwork.Id" />
@@ -88,14 +89,13 @@
                                     <label><b>Uppdatera</b></label>
                                     <input type="submit" name="update" value="Uppdatera" id="update-submit" />
                                 </p>
-
                                 <a href="#" class="removeObject-btn">Ta bort</a>
-
                             </form>
-
                             <hr />
 
-                            @if (j == @Model.Artist.Collections[i].Artworks.Count)
+                            // Går igenom denna if-sats när index är på sista elementen för att 
+                            //få ut "lägg till nytt objekt"-knappen längst nere
+                            @if (j == @Model.Artist.Collections[i].Artworks.Count-1)
                             {
                                 <div>
                                     <a href="#" class="add-object">
