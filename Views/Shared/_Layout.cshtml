@@ -51,10 +51,9 @@
                     <div>
                         <form class="form-inline my-2 my-lg-0 " onsubmit="event.preventDefault();">
                             <i class="fas fa-search mr-2"></i>
-                            <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Type to search..." autocomplete="off">
+                            <input class="form-control mr-sm-2" list="search-suggestions" id="search-input" placeholder="Sök din konst här..." autocomplete="off">
 
                             <!--Läser in nyckelord-->
-                            <button id="search-btn" class="btn btn-secondary my-2 my-sm-0">Sök</button>
                         </form>
                     </div>
 
@@ -68,6 +67,15 @@
 
                 <!-- SearchEngine.js -->
                 <script type="text/javascript" src="~/js/searchEngine.js"></script>
+                <!-- DropDown meny för kategorier och utställningar.js -->
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-bars"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Kategorier</a>
+                        <a href="#">Utställningar</a>
+                        <a href="#">Hjälp</a>
+                    </div>
+                </div>
 
                 <!-- Logga in knapp -->
                 <div class="Login-icon">
