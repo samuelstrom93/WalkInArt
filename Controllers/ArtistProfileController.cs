@@ -18,41 +18,14 @@ namespace DSU21_2.Controllers
         }
 
 
-        public async Task<IActionResult> LogIn(string profileId, string profileFirstName)
+        public async Task<IActionResult> Index(string profileId, string profileFirstName)
         {
             Artist artist = await artDbRepo.CheckArtist(profileId, profileFirstName);
             ArtistViewModel viewModel = new ArtistViewModel(artist);
-            return RedirectToAction("Index", viewModel);
-        }
-
-        public async Task<IActionResult> UpdateView(ArtistViewModel viewModel)
-        {
-            //Artist artist = await artDbRepo.CheckArtist(profileId, profileFirstName);
-            //ArtistViewModel viewModel = new ArtistViewModel(artist);
-            //return View(viewModel);
-            //return View("UpdateView", viewModel);
-            //return RedirectToAction("UpdateView", artist);
-        }
-
-        public IActionResult Index(ArtistViewModel viewModel)
-        {
             return View(viewModel);
         }
 
-        //public async Task<IActionResult> Index(string profileId, string profileFirstName)
-        //{
-        //    Artist artist = await artDbRepo.CheckArtist(profileId, profileFirstName);
-        //    //ArtistViewModel viewModel = new ArtistViewModel(artist);
-        //    //return View(viewModel);
-        //    //return View("UpdateView", viewModel);
-        //    return RedirectToAction("UpdateView", artist);
-        //}
 
-        //public IActionResult UpdateView(Artist artist)
-        //{
-        //    ArtistViewModel viewModel = new ArtistViewModel(artist);
-        //    return View(viewModel);
-        //}
 
         public async Task<IActionResult> AddCollection(string title, string description, int id)
         {
