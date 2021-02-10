@@ -6,6 +6,17 @@ let buttons = document.querySelectorAll('.button-overlay');
 let overlays = document.querySelectorAll("#overlay")
 let overlayClose = document.querySelectorAll("#overlay span")
 
+let btnreadmoregallery = document.querySelectorAll('.btn-readmoregallery');
+let info = document.querySelectorAll('.object-info');
+
+
+// Visar mer info om konsten vid knapptryck
+for (let i = 0; i < btnreadmoregallery.length; i++) {
+    btnreadmoregallery[i].addEventListener('click', function (event) {
+        info[i].style.display = (info[i].style.display == "none") ? "block" : "none";
+        
+    })
+}
 
 
 // Visar overlay med mer info vid knapptryck "mer info"-knapp
@@ -54,5 +65,10 @@ function copyUrl() {
     alert('Nu kan du dela webbadressen!');
 }
 
-
+function change(el) {
+    if (el.value === "Visa mer")
+        el.value = "Visa mindre";
+    else
+        el.value = "Visa mer";
+}
 

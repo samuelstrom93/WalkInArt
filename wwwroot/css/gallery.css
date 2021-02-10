@@ -1,3 +1,4 @@
+
 .exhibition-description {
     margin: 4em 1em 0;
     border: 1px solid #000;
@@ -6,6 +7,7 @@
     opacity: 0.75;
     background: #fff;
     padding: 0.5em;
+    font-family: 'Modern No. 20';
 }
 
 .share-aside {
@@ -19,6 +21,7 @@
     padding: 0 0.3em 0 0;
     border-radius: 4px;
     display: flex;
+    font-family: 'Modern No. 20';
 }
 
 .signout-wrapper:hover {
@@ -49,9 +52,10 @@
     background-color: rgb(200, 200, 200);
 }
 
-.share-icon p {
-    margin: auto 0.5em;
-}
+    .share-icon p {
+        margin: auto 0.5em;
+        font-family: 'Modern No. 20';
+    }
 
 
 .fas.fa-sign-out-alt {
@@ -63,6 +67,7 @@
 
 #main-wrapper {
     margin-top: 75px;
+  
 }
 
 .gallery-wrapper {
@@ -93,9 +98,10 @@
     display: flex;
     flex-direction: column;
     height: 400px;
+    font-family: 'Modern No. 20';
 }
 
-.picture-text p {
+    .picture-text p {
         text-align: center;
         font-size: 1.8em;
         cursor: pointer;
@@ -106,7 +112,8 @@
         opacity: 0.85;
         background: #fff;
         padding: 0.1em;
-}
+        font-family: 'Modern No. 20';
+    }
 
     .picture-text :hover {
         cursor: pointer;
@@ -133,12 +140,12 @@
     left: 0;
     right: 0px;
     top: 100px;
-    height: 1000px;
-    width: 1200px;              /**/
+    height: 800px;
+    width: 1000px; /**/
     margin: auto;
     z-index: 1000;
     /*background-color: rgb(219, 216, 216);*/
-    background-color: whitesmoke;       /**/
+    background-color: #f5f5f5; /**/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -147,43 +154,54 @@
 
 
 #overlay img {
-   height: 850px;
-   width: 650px;
+   height: 650px;
+   width: 500px;
    margin: 0 2em;
 }
 
 #overlay span {
-    font-size: 2.5em;
+    font-size: 2em;
     bottom: 92%;
-    left: 2%;
+    left: 1%;
     position: absolute;
     margin: 0;
 }
 
-#name1{
-    display: none;
-}
-
-.btn-readmoregallery{       /**/
+.btn-readmoregallery { /**/
     width: 150px;
     position: absolute;
     bottom: 0;
     margin-bottom: 15px;
+    font-size: 1.5em;
 }
+
+    .btn-readmoregallery :hover { /**/
+        background-color: rgb(200, 200, 200);
+        box-shadow: 7px 7px 7px #000;
+    }
 
 .object-info {
     margin: 2em 0;
     width: 500px;
-    height: 600px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*display: none;*/
+    /*visibility: hidden;*/
+    /* display: none;*/
+    font-family: 'Modern No. 20';
+    background: #f5f5f5;
+    
 }
+
+    .object-info p {
+        background: #f5f5f5;
+    }
 
 #artwork-description {
     font-size: 1em;
     font-style: normal;
+    background: #f5f5f5;
 }
 
 
@@ -231,6 +249,7 @@
     flex-flow: column nowrap;
     text-align: center;
     font-size: 18px;
+    font-family: 'Modern No. 20';
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

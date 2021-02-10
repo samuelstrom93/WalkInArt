@@ -3,13 +3,15 @@ footer {
     background-color: rgb(32, 32, 32);
     min-height: 8.5vh;
     align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .faq-link{
-    position:relative; right: 80%;
+    position:relative; right: 90%;
     color: #fff;
     font-size: 15px;
 }
+
 .icons i {
     margin: 0 5px;
     padding: 0.3em;
@@ -17,14 +19,20 @@ footer {
     color: #fff;
     background-color: rgb(73, 70, 70);
     border-radius: 16px;
+       
 }
 
-.contact{
-    font-size: 12px;
-    line-height: 7px;
+.icons{
+    margin-right: 10%;
 }
 
-.contact h2{
-    font-size: 12px;
-    margin-top: 15px;
+.contact {
+    font-size: 13px;
+    line-height: 4px;
+    margin-left: 1.5%;
 }
+
+    .contact h2 {
+        font-size: 13px;
+        margin-top: 15px;
+    }
