@@ -20,13 +20,145 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\scene.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\scene.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\textures\Scene_-_Root_baseColor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\textures\Scene_-_Root_metallicRoughness.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\textures\Scene_-_Root_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\scene.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\scene.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\textures\Door_baseColor.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\textures\Door_metallicRoughness.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\textures\Door_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\frame\frame.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\frame\frame.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\shelf\scene.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\shelf\scene.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\shelf\textures\DefaultMaterial_baseColor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\shelf\textures\DefaultMaterial_metallicRoughness.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\shelf\textures\DefaultMaterial_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\scene.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\scene.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\textures\lambert1_baseColor.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\textures\lambert1_metallicRoughness.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\textures\lambert1_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Plaster003_1K_Color.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Plaster003_1K_Displacement.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Plaster003_1K_Normal.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Plaster003_1K_Roughness.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Wood035_1K_Color.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Wood035_1K_Displacement.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Wood035_1K_Normal.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Wood035_1K_Roughness.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\floor\WoodFloor041_1K_AmbientOcclusion.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\floor\WoodFloor041_1K_Color.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\floor\WoodFloor041_1K_Displacement.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\floor\WoodFloor041_1K_Normal.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\floor\WoodFloor041_1K_Roughness.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\Concrete034_1K_Color.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\Concrete034_1K_Displacement.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\Concrete034_1K_Normal.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\Concrete034_1K_Roughness.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\PaintedPlaster014_1K_AmbientOcclusion.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\PaintedPlaster014_1K_Color.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\PaintedPlaster014_1K_Displacement.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\PaintedPlaster014_1K_Normal.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\wall\PaintedPlaster014_1K_Roughness.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\js\showroom.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\assets\3d_rooms\" />
+    <Folder Include="wwwroot\assets\3d_rooms\start\" />
   </ItemGroup>
 
 </Project>

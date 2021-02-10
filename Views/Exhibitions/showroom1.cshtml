@@ -17,30 +17,29 @@
         <a-scene inspector-plugin-recast>
             <a-assets>
 
-                <img id="wood-floor" src="/assets/textures/floor/WoodFloor041_1K_Color.jpg">
-                <img id="wood-floor-AO" src="/assets/textures/floor/WoodFloor041_1K_AmbientOcclusion.jpg">
-                <img id="wood-floor-Dis" src="/assets/textures/floor/WoodFloor041_1K_Displacement.jpg">
-                <img id="wood-floor-Norm" src="/assets/textures/floor/WoodFloor041_1K_Normal.jpg">
-                <img id="wood-floor-Rough" src="/assets/textures/floor/WoodFloor041_1K_Roughness.jpg">
-                <img id="conc-wall" src="/assets/textures/wall/PaintedPlaster014_1K_Color.jpg">
-                <img id="conc-wall-AO" src="/assets/textures/wall/PaintedPlaster014_1K_AmbientOcclusion.jpg">
-                <img id="conc-wall-Dis" src="/assets/textures/wall/PaintedPlaster014_1K_Displacement.jpg">
-                <img id="conc-wall-Norm" src="/assets/textures/wall/PaintedPlaster014_1K_Normal.jpg">
-                <img id="conc-wall-Rough" src="/assets/textures/wall/PaintedPlaster014_1K_Roughness.jpg">
-                <img id="beam-wood" src="/assets/textures/ceiling/Wood035_1K_Color.jpg">
-                <img id="beam-wood-Dis" src="/assets/textures/ceiling/Wood035_1K_Displacement.jpg">
-                <img id="beam-wood-Norm" src="/assets/textures/ceiling/Wood035_1K_Normal.jpg">
-                <img id="beam-wood-Rough" src="/assets/textures/ceiling/Wood035_1K_Roughness.jpg">
-                <img id="ceiling-paint" src="/assets/textures/ceiling/Plaster003_1K_Color.jpg">
-                <img id="ceiling-paint-Dis" src="/assets/textures/ceiling/Plaster003_1K_Displacement.jpg">
-                <img id="ceiling-paint-Norm" src="/assets/textures/ceiling/Plaster003_1K_Normal.jpg">
-                <img id="ceiling-paint-Rough" src="/assets/textures/ceiling/Plaster003_1K_Roughness.jpg">
-                <a-asset-item id="frame1" src="/assets/models/frame1/scene.gltf"></a-asset-item>
-                <a-asset-item id="frame2" src="/assets/models/frame/frame.gltf"></a-asset-item>
-                <a-asset-item id="door" src="/assets/models/door/scene.gltf"></a-asset-item>
-                <a-asset-item id="bench" src="/assets/models/bench/scene.gltf"></a-asset-item>
-                <a-asset-item id="shelf" src="/assets/models/shelf/scene.gltf"></a-asset-item>
-                <a-asset-item id="window" src="/assets/models/window/scene.gltf"></a-asset-item>
+                <img id="wood-floor" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Color.jpg">
+                <img id="wood-floor-AO" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_AmbientOcclusion.jpg">
+                <img id="wood-floor-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Displacement.jpg">
+                <img id="wood-floor-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Normal.jpg">
+                <img id="wood-floor-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Roughness.jpg">
+                <img id="conc-wall" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Color.jpg">
+                <img id="conc-wall-AO" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_AmbientOcclusion.jpg">
+                <img id="conc-wall-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Displacement.jpg">
+                <img id="conc-wall-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Normal.jpg">
+                <img id="conc-wall-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Roughness.jpg">
+                <img id="beam-wood" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Color.jpg">
+                <img id="beam-wood-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Displacement.jpg">
+                <img id="beam-wood-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Normal.jpg">
+                <img id="beam-wood-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Roughness.jpg">
+                <img id="ceiling-paint" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Color.jpg">
+                <img id="ceiling-paint-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Displacement.jpg">
+                <img id="ceiling-paint-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Normal.jpg">
+                <img id="ceiling-paint-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Roughness.jpg">
+                <a-asset-item id="frame" src="/assets/3d_rooms/exhibitionRoom1/models/frame/frame.gltf"></a-asset-item>
+                <a-asset-item id="door" src="/assets/3d_rooms/exhibitionRoom1/models/door/scene.gltf"></a-asset-item>
+                <a-asset-item id="bench" src="/assets/3d_rooms/exhibitionRoom1/models/bench/scene.gltf"></a-asset-item>
+                <a-asset-item id="shelf" src="/assets/3d_rooms/exhibitionRoom1/models/shelf/scene.gltf"></a-asset-item>
+                <a-asset-item id="window" src="/assets/3d_rooms/exhibitionRoom1/models/window/scene.gltf"></a-asset-item>
                 @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
                 {
                     string id = $"picture{i}";
@@ -382,37 +381,37 @@
             </a-entity>
             <a-entity id="models">
                 <a-entity id="frames">
-                    <a-entity gltf-model="#frame2" class="frames" position="3.75 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="3.75 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture0" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="1.2 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="1.2 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture1" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="-1.2 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="-1.2 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture2" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="-3.75 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="-3.75 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture3" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="3.75 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="3.75 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture4" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="1.2 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="1.2 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture5" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="-1.2 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="-1.2 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture6" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="-3.75 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="-3.75 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture7" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="6.07 1.6 0" rotation="0 -90 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 0" rotation="0 -90 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture8" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="6.07 1.6 -2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 -2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture9" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
-                    <a-entity gltf-model="#frame2" class="frames" position="6.07 1.6 2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
+                    <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
                         <a-image src="#picture10" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
                     </a-entity>
 
