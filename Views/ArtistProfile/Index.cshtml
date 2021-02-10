@@ -89,7 +89,7 @@
                                     <label><b>Uppdatera</b></label>
                                     <input type="submit" name="update" value="Uppdatera" id="update-submit" />
                                 </p>
-                                <a href="#" class="removeObject-btn">Ta bort</a>
+                                <a  href="@Url.Action("RemoveArtwork", "ArtistProfile", new { artworkId = artwork.Id })"  class="removeObject-btn">Ta bort</a>
                             </form>
                             <hr />
 
