@@ -65,10 +65,10 @@ function copyUrl() {
     alert('Nu kan du dela webbadressen!');
 }
 
-function change(el) {
-    if (el.value === "Visa mer")
-        el.value = "Visa mindre";
+function change(showhide) {
+    if (showhide.value === "Visa mer")
+        showhide.value = "Visa mindre";
     else
-        el.value = "Visa mer";
+        showhide.value = "Visa mer";
 }
 
