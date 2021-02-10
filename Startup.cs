@@ -44,8 +44,6 @@ namespace DSU21_2
             });
 
            
-            // SAMUEL
-
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;

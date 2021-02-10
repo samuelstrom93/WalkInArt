@@ -21,11 +21,12 @@ namespace DSU21_2.Controllers
             var properties = new AuthenticationProperties { RedirectUri = Url.Action("GoogleResponse") };
             return Challenge(properties, GoogleDefaults.AuthenticationScheme);
         }
+
+
         [Route("google-response")]
         public async Task<IActionResult> GoogleResponse()
         {
             var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
 
             var claims = result.Principal.Identities
             .FirstOrDefault().Claims.Select(claim => new
@@ -37,8 +38,17 @@ namespace DSU21_2.Controllers
             }).ToList();
 
             return RedirectToAction("Index", "ArtistProfile", new { profileId = claims[0].Value , profileFirstName = claims[2].Value});
-
-
         }
+
+        [Route("google-logout")]
+        public async Task<IActionResult> GoogleLogout()
+        {
+            //await HttpContext.SignOutAsync("Cookies");
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            Response.Redirect("https://www.google.com/accounts/Logout");
+
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }

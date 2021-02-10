@@ -1,4 +1,33 @@
-﻿.add-exhibition {
+﻿.grid-profile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    width: 90%;
+    grid-gap: 1em;
+    margin: 1em auto;
+}
+
+#profile-header {
+    grid-column: span 2;
+    text-align: center;
+    background-color: #27ad63;
+}
+
+.form-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-flex textarea {
+    border: 1.5px solid #000;
+    margin-bottom: 0.3em;
+}
+
+#edit-btn {
+    align-self: flex-start;
+}
+
+
+.add-exhibition {
     background-color: #34ac19;
     padding: 0.3em 0.5em;
     color: #fff;
@@ -17,7 +46,7 @@
     margin: 0 1em;
 }
 
-.grid-profile {
+.grid-exhibitions {
     display: grid;
     grid-template-columns: 2fr 1fr;
     border-radius: 4px;
@@ -38,7 +67,7 @@
     border-radius: 4px 4px 0 0;
 }
 
-.grid-profile a:hover {
+.grid-exhibitions a:hover {
     text-decoration: underline;
 }
 

@@ -16,8 +16,24 @@
 <main>
 
 
-
     <div class="grid-profile">
+        <h1 id="profile-header">@Model.Artist.Name</h1>
+
+        <div class="profile-description">
+            <h3>Beskrivning:</h3>
+            <p>@Model.Artist.About</p>
+        </div>
+
+        <form method="post" asp-action="UpdateArtist" asp-controller="ArtistProfile" class="form-flex">
+            <input type="hidden" name="artistId" value="@Model.Artist.Id" />
+            <textarea name="about" rows="5" cols="33"></textarea>
+            <input type="submit" name="remove" value="Updatera" class="edit-btn" id="edit-btn" />
+        </form>
+
+    </div>
+
+
+    <div class="grid-exhibitions">
         <h1 id="header-grid">Dina utställningar</h1>
 
         <h2 id="exhibition-title">Utställning</h2>
@@ -89,13 +105,21 @@
                                     <label><b>Uppdatera</b></label>
                                     <input type="submit" name="update" value="Uppdatera" id="update-submit" />
                                 </p>
-                                <a  href="@Url.Action("RemoveArtwork", "ArtistProfile", new { artworkId = artwork.Id, artistId = Model.Artist.Id })"  class="removeObject-btn">Ta bort</a>
+
                             </form>
+                            <form method="post" asp-action="RemoveArtwork" asp-controller="ArtistProfile">
+                                <input type="hidden" name="artworkId" value="@artwork.Id" />
+                                <input type="hidden" name="artistId" value="@Model.Artist.Id" />
+                                <input type="submit" name="remove" value="Ta bort" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett konstverk?')" />
+                            </form>
+
+
+
                             <hr />
 
-                            // Går igenom denna if-sats när index är på sista elementen för att 
+                            // Går igenom denna if-sats när index är på sista elementen för att
                             //få ut "lägg till nytt objekt"-knappen längst nere
-                            @if (j == @Model.Artist.Collections[i].Artworks.Count-1)
+                            @if (j == @Model.Artist.Collections[i].Artworks.Count - 1)
                             {
                                 <div>
                                     <a href="#" class="add-object">
@@ -130,9 +154,14 @@
 
             <div class="actions-btns">
                 <a class="edit-btn">Hantera</a>
-                <a href="@Url.Action("RemoveCollection", "ArtistProfile", new { collectionId= Model.Artist.Collections[i].Id, artistId = Model.Artist.Id })"  class="delete-btn">Ta bort</a>
+                <form method="post" asp-action="RemoveCollection" asp-controller="ArtistProfile">
+                    <input type="hidden" name="artistId" value="@Model.Artist.Id" />
+                    <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
+                    <input type="submit" name="remove" value="Ta bort" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett utställning?')" />
+                </form>
+
             </div>
-            }
+        }
 
         @*Knapp och formulär för att lägga in mer data*@
         @*POST ELLER GET?*@
