@@ -29,14 +29,14 @@ namespace DSU21_2.Views.Exhibitions
             return View(exhibitionsViewModel);
         }
 
-        public async Task<IActionResult> Room3d(int id)
+        public async Task<IActionResult> Room3d_1(int id)
         {
-            //id = 2; //TA BORT SENARE
+            id = 2; //TA BORT SENARE
             var exhibitions = await artDbRepo.GetCollection(id);
             var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
             var artist = await artDbRepo.GetArtistByCollection(exhibitions);
             ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
-            return View(exhibitionsViewModel);
+            return PartialView("/views/exhibitions/Room3d_1.cshtml",exhibitionsViewModel);
         }
 
         public IActionResult Error()
@@ -57,7 +57,7 @@ namespace DSU21_2.Views.Exhibitions
         }
         //↓↓↓↓↓↓↓↓↓ TA BORT SENARE ↓↓↓↓↓↓↓↓↓
         [Route("Test2/{id?}")]
-        public async Task<IActionResult> showroom1(int id)
+        public async Task<IActionResult> Index3d(int id)
         {
             id = 2; //TA BORT SENARE
             var exhibitions = await artDbRepo.GetCollection(id);
