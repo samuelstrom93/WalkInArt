@@ -55,8 +55,18 @@ namespace DSU21_2.Views.Exhibitions
             ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
             return View(exhibitionsViewModel);
         }
+        //↓↓↓↓↓↓↓↓↓ TA BORT SENARE ↓↓↓↓↓↓↓↓↓
+        [Route("Test2/{id?}")]
+        public async Task<IActionResult> showroom1(int id)
+        {
+            id = 2; //TA BORT SENARE
+            var exhibitions = await artDbRepo.GetCollection(id);
+            var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
+            var artist = await artDbRepo.GetArtistByCollection(exhibitions);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
+            return View(exhibitionsViewModel);
+        }
 
     }
 
-    
 }
