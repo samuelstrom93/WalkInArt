@@ -89,7 +89,7 @@
                                     <label><b>Uppdatera</b></label>
                                     <input type="submit" name="update" value="Uppdatera" id="update-submit" />
                                 </p>
-                                <a  href="@Url.Action("RemoveArtwork", "ArtistProfile", new { artworkId = artwork.Id })"  class="removeObject-btn">Ta bort</a>
+                                <a  href="@Url.Action("RemoveArtwork", "ArtistProfile", new { artworkId = artwork.Id, artistId = Model.Artist.Id })"  class="removeObject-btn">Ta bort</a>
                             </form>
                             <hr />
 
@@ -130,8 +130,9 @@
 
             <div class="actions-btns">
                 <a class="edit-btn">Hantera</a>
-                <a class="delete-btn">Ta bort</a>
-            </div>}
+                <a href="@Url.Action("RemoveCollection", "ArtistProfile", new { collectionId= Model.Artist.Collections[i].Id, artistId = Model.Artist.Id })"  class="delete-btn">Ta bort</a>
+            </div>
+            }
 
         @*Knapp och formulär för att lägga in mer data*@
         @*POST ELLER GET?*@

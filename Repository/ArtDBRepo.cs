@@ -79,9 +79,8 @@ namespace DSU21_2.Repository
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<Artist>UpdateArtist(int id, string about)
+        public Artist UpdateArtist(Artist artist, string about)
         {
-            Artist artist = await GetArtistAsync(id);
             artist.About = about;
             context.Artists
                 .Update(artist);

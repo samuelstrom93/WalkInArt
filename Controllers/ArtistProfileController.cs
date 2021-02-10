@@ -52,5 +52,33 @@ namespace DSU21_2.Controllers
             return View("Index", viewModel);
         }
 
+        public async Task<IActionResult> RemoveArtwork(int artworkId, int artistId)
+        {
+            Artwork art = await artDbRepo.GetArtwork(artworkId);
+            artDbRepo.DeleteArtwork(art);
+
+            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            ArtistViewModel viewModel = new ArtistViewModel(artist);
+            return View("Index", viewModel);
+        }
+
+        public async Task<IActionResult> RemoveCollection(int collectionId, int artistId)
+        {
+            Collection collection = await artDbRepo.GetCollection(collectionId);
+            artDbRepo.DeleteCollection(collection);
+
+            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            ArtistViewModel viewModel = new ArtistViewModel(artist);
+            return View("Index", viewModel);
+        }
+
+        public async Task<IActionResult> UpdateArtist(int artistId, string about)
+        {
+            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            artist = artDbRepo.UpdateArtist(artist, about);
+            ArtistViewModel viewModel = new ArtistViewModel(artist);
+            return View("Index", viewModel);
+        }
+
     }
 }
