@@ -26,8 +26,8 @@
 
         <form method="post" asp-action="UpdateArtist" asp-controller="ArtistProfile" class="form-flex">
             <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-            <textarea name="about" rows="5" cols="33"></textarea>
-            <input type="submit" name="remove" value="Updatera" class="edit-btn" id="edit-btn" />
+            <textarea name="about" rows="5" cols="33" placeholder="@Model.Artist.About"></textarea>
+            <input type="submit" name="remove" value="Updatera" class="edit-profile" id="edit-btn" />
         </form>
 
     </div>
@@ -67,7 +67,7 @@
                                 <p>
                                     <label>
                                         Beskrivning
-                                        <textarea name="description" rows="5" cols="33"></textarea>
+                                        <textarea name="description" rows="5" cols="33" ></textarea>
                                     </label>
                                 </p>
                                 <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
@@ -78,42 +78,42 @@
 
                     else
                     {
-                        @for (int j = 0; j < Model.Artist.Collections[i].Artworks.Count; j++)
+                        @for (int j = 0; j < @Model.Artist.Collections[i].Artworks.Count; j++)
                         {
                             var artwork = @Model.Artist.Collections[i].Artworks[j];
 
-                <div class="form-wrapper">
-                    <form class="update-form" asp-controller="ArtistProfile" asp-action="UpdateArtwork">
-                        <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-                        <input type="hidden" name="artworkId" value="@artwork.Id" />
-                        <p>
-                            <label><b>Bild @(j+1)</b></label>
-                            <img src="@artwork.Hyperlink" />
-                        </p>
-                        <p>
-                            <label><b>Namn</b></label>
-                            <input type="text" name="title" value="@artwork.Name" required pattern="\S(.*\S)?" />
-                        </p>
-                        <p>
-                            <label><b>Beskrivning</b></label>
-                            <textarea name="description" rows="7" cols="25">@artwork.Description</textarea>
-                        </p>
-                        <p>
-                            <label><b>Url</b></label>
-                            <input type="text" name="url" value="@artwork.Hyperlink" required pattern="\S(.*\S)?" />
-                        </p>
-                        <p>
-                            <label><b>Uppdatera</b></label>
-                            <input type="submit" name="update" value="Uppdatera" id="update-submit" />
-                        </p>
+                            <div class="form-wrapper">
+                                <form class="update-form" asp-controller="ArtistProfile" asp-action="UpdateArtwork">
+                                    <input type="hidden" name="artistId" value="@Model.Artist.Id" />
+                                    <input type="hidden" name="artworkId" value="@artwork.Id" />
+                                    <p>
+                                        <label><b>Bild @(j+1)</b></label>
+                                        <img src="@artwork.Hyperlink" />
+                                    </p>
+                                    <p>
+                                        <label><b>Namn</b></label>
+                                        <input type="text" name="title" value="@artwork.Name" required pattern="\S(.*\S)?" />
+                                    </p>
+                                    <p>
+                                        <label><b>Beskrivning</b></label>
+                                        <textarea name="description" rows="7" cols="25">@artwork.Description</textarea>
+                                    </p>
+                                    <p>
+                                        <label><b>Url</b></label>
+                                        <input type="text" name="url" value="@artwork.Hyperlink" required pattern="\S(.*\S)?" />
+                                    </p>
+                                    <p>
+                                        <label><b>Uppdatera</b></label>
+                                        <input type="submit" name="update" value="Uppdatera" id="update-submit" />
+                                    </p>
 
-                    </form>
-                    <form id="form-delete" method="post" asp-action="RemoveArtwork" asp-controller="ArtistProfile">
-                        <input type="hidden" name="artworkId" value="@artwork.Id" />
-                        <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-                        <input type="submit" name="remove" value="Ta bort konstverk" id="delete-btn" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett konstverk?')" />
-                    </form>
-                </div>
+                                </form>
+                                <form id="form-delete" method="post" asp-action="RemoveArtwork" asp-controller="ArtistProfile">
+                                    <input type="hidden" name="artworkId" value="@artwork.Id" />
+                                    <input type="hidden" name="artistId" value="@Model.Artist.Id" />
+                                    <input type="submit" name="remove" value="Ta bort konstverk" id="delete-btn" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett konstverk?')" />
+                                </form>
+                            </div>
 
                             <hr />
 

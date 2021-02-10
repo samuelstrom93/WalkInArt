@@ -81,6 +81,18 @@
     display: flex;
 }
 
+.edit-profile {
+    background-color: #147a4c;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    margin-right: 0.5em;
+    display: flex;
+    align-self: flex-start;
+}
+
 .edit-btn {
     background-color: #147a4c;
     padding: 0.5em 1em;
@@ -175,8 +187,6 @@
     margin: auto;
     font-weight: bold;
 }
-
-
 
 
 .artwork-form label {
