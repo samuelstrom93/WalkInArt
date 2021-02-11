@@ -39,6 +39,16 @@ namespace DSU21_2.Views.Exhibitions
             return PartialView("/views/exhibitions/Room3d_1.cshtml",exhibitionsViewModel);
         }
 
+        public async Task<IActionResult> Room3d_2(int id)
+        {
+            id = 3; //TA BORT SENARE
+            var exhibitions = await artDbRepo.GetCollection(id);
+            var exhibitionsForRoom = await artDbRepo.GetCollectionsWithArt();
+            var artist = await artDbRepo.GetArtistByCollection(exhibitions);
+            ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
+            return PartialView("/views/exhibitions/Room3d_2.cshtml", exhibitionsViewModel);
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
