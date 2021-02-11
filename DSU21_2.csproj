@@ -56,6 +56,24 @@
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\textures\Door_normal.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_books_Mat_baseColor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_books_Mat_metallicRoughness.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_books_Mat_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_Mat_baseColor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_Mat_metallicRoughness.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_Mat_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\frame\frame.bin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -165,6 +183,15 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\3d_rooms\start\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\scene.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\scene.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
