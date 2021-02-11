@@ -12,13 +12,15 @@ nav {
     background-color: #fff;
 }
 
-
+.form-control mr-sm-2 {
+    font-family: 'Raleway', sans-serif;
+}
 #search-input {
     width: 50vh;
     font-size: 18px;
     border-radius: .60rem;
     background-color: #fff;
-    color:white;
+    color: white;
 }
 
 .search-result {
