@@ -14,10 +14,16 @@ let info = document.querySelectorAll('.object-info');
 for (let i = 0; i < btnreadmoregallery.length; i++) {
     btnreadmoregallery[i].addEventListener('click', function (event) {
         info[i].style.display = (info[i].style.display == "none") ? "block" : "none";
-        
     })
 }
 
+// Ändrar knappen visa mer och visa mindre på konstverk vid knapptryck.
+function change(showhide) {
+    if (showhide.value === "Visa mer")
+        showhide.value = "Visa mindre";
+    else
+        showhide.value = "Visa mer";
+}
 
 // Visar overlay med mer info vid knapptryck "mer info"-knapp
 for (let i = 0; i < buttons.length; i++) {
@@ -65,10 +71,5 @@ function copyUrl() {
     alert('Nu kan du dela webbadressen!');
 }
 
-function change(showhide) {
-    if (showhide.value === "Visa mer")
-        showhide.value = "Visa mindre";
-    else
-        showhide.value = "Visa mer";
-}
+
 
