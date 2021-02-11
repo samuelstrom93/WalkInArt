@@ -1,0 +1,471 @@
+﻿@model DSU21_2.ViewModels.HomeViewModel
+<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+<script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-look-at-component@0.6.0/dist/aframe-look-at-component.min.js"></script>
+
+<a-scene inspector-plugin-recast>
+    <a-assets>
+        <img id="sky" src="/assets/3d_rooms/start/textures/sky.jpeg">
+        <img id="roof-nrm" src="/assets/3d_rooms/start/textures/roof-nrm.jpg">
+        <img id="roof-tex" src="/assets/3d_rooms/start/textures/roof.jpg">
+        <img id="wall-nrm" src="/assets/3d_rooms/start/textures/wall-nrm.jpg">
+        <img id="wall-tex" src="/assets/3d_rooms/start/textures/wall.jpg">
+        <img id="wall-updown-tex" src="/assets/3d_rooms/start/textures/wall-updown.jpg">
+        <img id="wall-updown-nrm" src="/assets/3d_rooms/start/textures/wall-updown-nrm.jpg">
+        <img id="floor-nrm" src="/assets/3d_rooms/start/textures/floor.jpg">
+        <img id="floor-tex" src="/assets/3d_rooms/start/textures/floor-nrm.jpg">
+
+
+
+        <a-asset-item id="nav-mesh" src="/assets/3d_rooms/start/models/navmesh.gltf"></a-asset-item>
+
+        <a-asset-item id="sofa" src="/assets/3d_rooms/start/models/sofa/scene.gltf"></a-asset-item>
+        <a-assets-item id="frame" src="/assets/3d_rooms/start/models/frame/frame/frame.gltf"></a-assets-item>
+        <a-asset-item id="stairs-left" src="/assets/3d_rooms/start/models/stairs-left/scene.gltf"></a-asset-item>
+
+        <a-assets-item id="hercules" src="/assets/3d_rooms/start/models/hercules/scene.gltf"></a-assets-item>
+        <a-assets-item id="mary" src="/assets/3d_rooms/start/models/saint-mary/scene.gltf"></a-assets-item>
+        <a-asset-item id="deluge" src="/assets/3d_rooms/start/models/deluge/scene.gltf"></a-asset-item>
+        <a-asset-item id="face" src="/assets/3d_rooms/start/models/face/scene.gltf"></a-asset-item>
+        <a-asset-item id="wall-decoration" src="/assets/3d_rooms/start/models/wall-decoration/scene.gltf"></a-asset-item>
+
+
+        @for (int i = 1; i < 9; i++)
+        {
+            string id = $"picture{i}";
+            <img id="@id" class="pictures" src="@Model.IncomingCollections[i].Artworks[0].Hyperlink" crossorigin="anonymous">
+        }
+    </a-assets>
+
+    <!--Navigation Mesh-->
+    <a-entity gltf-model="#nav-mesh" nav-mesh position="0 -0.1 0" visible="false"></a-entity>
+
+    <!--Kamera-->
+    <a-entity id="camera" movement-controls="speed: 0.6; constrainToNavMesh: true" position="-8 1 3" rotation="0 20 0">
+        <a-entity camera position="0 4 0" look-controls="pointerLockEnabled: true">
+            <a-cursor id="cursor" material="shader: flat" raycaster="far: 7;"></a-cursor>
+        </a-entity>
+    </a-entity>
+
+    <!--Lights-->
+    <a-entity id="lights-point" position="0 11.71 8.783">
+        <a-entity position="-3.75 2.734 0" light="intensity:0.4;type:point" id="point-light1"></a-entity>
+        <a-entity position="-1.25 2.734 0" light="intensity:0.4;type:point" id="point-light2"></a-entity>
+        <a-entity position="1.25 2.734 0" light="intensity:0.4;type:point" id="point-light3"></a-entity>
+        <a-entity position="3.75 2.734 0" light="intensity:0.4;type:point" id="point-light4"></a-entity>
+    </a-entity>
+
+    <a-entity id="lights-spot">
+        <a-entity position="-26.702 6.138 -8.243" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light1"></a-entity>
+        <a-entity position="-22.516 6.164 -9.006" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light2"></a-entity>
+        <a-entity position="-19.406 6.056 -8.909" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light3"></a-entity>
+        <a-entity position="-15.543 5.924 -8.414" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light4"></a-entity>
+        <a-entity position="-9.614 6.138 -8.243" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light5"></a-entity>
+        <a-entity position="-5.629 6.164 -9.006" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light6"></a-entity>
+        <a-entity position="-2.644 6.056 -8.909" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light7"></a-entity>
+        <a-entity position="1.333 5.924 -8.528" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light8"></a-entity>
+    </a-entity>
+
+    <!--Konstverk-set vänster-->
+    <a-entity id="gallery-left" position="-21.084 0 -7.72">
+        <!--4 Utställnings set-->
+        <a-entity position="-5.5 1 0" id="image1-4">
+            <!--Konstverk 1-->
+            <a-entity navigate-on-click="url: index.html" id="image1" position="5.733 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame1-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame1-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title1; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title1; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame1" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture1"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title1"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame1-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+
+            </a-entity>
+
+            <!--Konstverk 2-->
+            <a-entity navigate-on-click="url: index.html" id="image2" position="9.592 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame2-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame2-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title2; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title2; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame2" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture2"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title2"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame2-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+            </a-entity>
+
+            <!--Konstverk 3-->
+            <a-entity navigate-on-click="url: index.html" id="image3" position="12.466 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame3-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame3-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title3; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title3; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame3" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture3"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title3"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame3-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+            </a-entity>
+
+            <!--Konstverk 4-->
+            <a-entity navigate-on-click="url: index.html" id="image4" position="16.429 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame4-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame4-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title4; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title4; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame4" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture4"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title4"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame4-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+            </a-entity>
+        </a-entity>
+
+        <!--Vägg-->
+        <a-box id="wall-right"
+               src="#wall-tex"
+               repeat="4 4"
+               normal-map="#wall-nrm"
+               normal-texture-repeat="4 4"
+               roughness="0.8"
+               color="#a48e79"
+               width="17"
+               height="13"
+               depth="0.1"
+               position="0 0 -3.2">
+        </a-box>
+        <!--Tak för lampor-->
+        <a-box src="#floor-tex" repeat="4 1" normal-map="#floor-nrm" normal-texture-repeat="4 1" roughness="0.3"
+               color=" #5a320c" width="17" height="1" depth="2" position="-0.123 6.92 -2.584" geometry="width:18"></a-box>
+        <a-box id="floor-wall-right" src="#floor-tex" repeat="4 1" normal-map="#floor-nrm" normal-texture-repeat="4 1" roughness="0.3"
+               color=" #5a320c" width="17" height="1" depth="2" position="-0.123 0.87 -3.986" geometry="width:18">
+        </a-box>
+
+    </a-entity>
+    <!--Konstverk-set höger-->
+    <a-entity id="gallery-right" position="-4.1 0 -7.72">
+        <!--4 Utställnings set-->
+        <a-entity position="-5.5 1 0" id="image5-8">
+            <!--Konstverk 5-->
+            <a-entity navigate-on-click="url: index.html" id="image5" position="5.733 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame5-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame5-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title5; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title5; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame5" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture5"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title5"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame5-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+
+            </a-entity>
+
+            <!--Konstverk 6-->
+            <a-entity navigate-on-click="url: index.html" id="image6" position="9.592 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame6-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame6-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title6; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title6; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame6" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture6"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title6"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame6-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+            </a-entity>
+
+            <!--Konstverk 7-->
+            <a-entity navigate-on-click="url: index.html" id="image7" position="12.466 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame7-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame7-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title7; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title7; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame7" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture7"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title7"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame7-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+            </a-entity>
+            <!--Konstverk 8-->
+            <a-entity navigate-on-click="url: index.html" id="image8" position="16.429 0 -0.13"
+                      event-set__tarcol="_event: mouseenter; _target: #frame8-anime; material.opacity: 1.0"
+                      event-set__leave="_event: mouseleave; _target: #frame8-anime; material.opacity: 0"
+                      event-set__tarcol-title="_event: mouseenter; _target: #title8; material.color: #ffffff"
+                      event-set__leave-title="_event: mouseleave; _target: #title8; material.color: #666666">
+                <!--Ram-->
+                <a-entity gltf-model="#frame" class="big-frames" id="frame8" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
+                    <!--Utställnings bild-->
+                    <a-image src="#picture8"
+                             position="0 0 0"
+                             width="1"
+                             height="1"
+                             scale="1.1 1.1 1">
+                    </a-image>
+                </a-entity>
+                <!--Titel ram-->
+                <a-box id="title8"
+                       src="#wall-updown-tex"
+                       normal-map="#wall-updown-nrm"
+                       color="#666666"
+                       width="1"
+                       height="0.5"
+                       depth="0.05"
+                       position="-5.58 2.040 -3.02">
+                    <a-text value="Title"
+                            align="center"
+                            color="#ffffff"
+                            position="0 0 0.1">
+                    </a-text>
+                </a-box>
+                <!--Highlight-->
+                <a-box id="frame8-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                </a-box>
+            </a-entity>
+        </a-entity>
+
+        <!--Vägg-->
+        <a-box id="wall-right"
+               src="#wall-tex"
+               repeat="4 4"
+               normal-map="#wall-nrm"
+               normal-texture-repeat="4 4"
+               roughness="0.8"
+               color="#a48e79"
+               width="17"
+               height="13"
+               depth="0.1"
+               position="0 0 -3.2">
+        </a-box>
+        <!--Tak för lampor-->
+        <a-box src="#floor-tex" repeat="4 1" normal-map="#floor-nrm" normal-texture-repeat="4 1" roughness="0.3"
+               color=" #5a320c" width="17" height="1" depth="2" position="-0.123 6.92 -2.584" geometry="width:18"></a-box>
+        <a-box id="floor-wall-right" src="#floor-tex" repeat="4 1" normal-map="#floor-nrm" normal-texture-repeat="4 1" roughness="0.3"
+               color=" #5a320c" width="17" height="1" depth="2" position="-0.123 0.87 -3.986" geometry="width:18">
+        </a-box>
+
+    </a-entity>
+
+    <!--Trappor-->
+    <a-entity gltf-model="#stairs-left" id="stairs-left" position="-30.058 2.631 -8.17" rotation="0 -60.160568488736445 0" scale="0.05 0.04 0.05"></a-entity>
+
+    <!--Golv-->
+    <a-cylinder src="#floor-tex"
+                repeat="2 2"
+                normal-map="#floor-nrm"
+                normal-texture-repeat="2 2"
+                roughness="0.3" id="first-floor" position="-10.273 0 -10.737"
+                geometry="radius:30"
+                material="color:#a87915"></a-cylinder>
+    <a-cylinder src="#floor-tex"
+                repeat="2 2"
+                normal-map="#floor-nrm"
+                normal-texture-repeat="2 2"
+                roughness="0.1" id="second-floor" position="-10.273 3.458 -10.737"
+                material="color:#a87915" geometry="height:6;thetaLength:180;radius:25" rotation="0 90 0"></a-cylinder>
+
+    <!--Roof-->
+    <a-sphere src="#roof-tex"
+              repeat="1 1"
+              normal-map="#roof-nrm"
+              normal-texture-repeat="1 1"
+              roughness="0.3" id="roof" position="-10.41 39.448 -11.143" rotation="270 0 0" material="side:double; opacity:0.8" geometry="radius:30;phiLength:180"></a-sphere>
+    <!--Roof för 0F-->
+    <a-box id="roof-0F" src="#floor-tex" repeat="4 1" normal-map="#floor-nrm" normal-texture-repeat="4 1" roughness="0.3"
+           color=" #5a320c" width="17" height="1" depth="2" position="9.48 6.92 -10.274" geometry="width:9.5"></a-box>
+    <!--Vägg för hela rummet-->
+    <a-cylinder src="#roof-tex"
+                repeat="3.8 1"
+                normal-map="#wall-nrm"
+                normal-texture-repeat="1 1"
+                roughness="1" radius="1" height="3" position="-10.41 19.5 -11.143" rotation="0 90 0" open-ended="1" side="double" material="opacity:0.8" geometry="height:40;radius:30"></a-cylinder>
+    <!--Vägg för 0F-->
+    <a-box src="#floor-tex"
+           repeat="1 1"
+           normal-map="#floor-nrm"
+           normal-texture-repeat="1 1"
+           roughness="0.3" depth="10" material="color:#a87915" position="-10.391 3.431 -11.571" geometry="width:50;height:6;depth:1" id="wall-main"></a-box>
+
+    <!--sofa-->
+    <a-entity gltf-model="#sofa" id="sofa-left" position="8.827 0.639 -8.553" scale="0.02 0.05 0.05" rotation="0 -86.631 0"></a-entity>
+    <a-entity gltf-model="#sofa" id="sofa-center" position="8.827 0.639 -2.925" scale="0.02 0.05 0.05" rotation="0 -86.631 0"></a-entity>
+    <a-entity gltf-model="#sofa" id="sofa-right" position="8.827 0.639 2.569" scale="0.02 0.05 0.05" rotation="0 -86.631 0"></a-entity>
+    <!--Hercules-->
+    <a-entity gltf-model="#hercules" id="hercules" position="5.95 12.515 -24.811" rotation="0 -43.25831353237715 0" scale="1 1 0.8"></a-entity>
+    <!--Mary-->
+    <a-entity gltf-model="#mary" id="mary" position="-17.445 14.245 -22.66" rotation="0 60.56163894532801 0" scale="0.6 0.6 0.6"></a-entity>
+    <!--Deluge-->
+    <a-entity gltf-model="#deluge" id="deluge" position="-26.752 12.459 -27.23" scale="0.3 0.3 0.3"></a-entity>
+    <!--Ansikte-->
+    <a-entity gltf-model="#face" id="face" scale="1 1 0.3" rotation="0 180 0" position="-10.936 6.371 15.144"></a-entity>
+    <!--Övriga möbler-->
+    <a-entity gltf-model="#wall-decoration" id="wall-decoration" position="-12.677 3.115 -10.609" scale="0.1 0.1 0.1"></a-entity>
+
+    <a-sky src="#sky"></a-sky>
+
+</a-scene>
+<script src="~/js/showroom.js"></script>
