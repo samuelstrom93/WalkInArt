@@ -81,10 +81,19 @@
 
                 <!-- Logga in knapp -->
                 <div class="Login-icon">
-                    
-                    <a class="Login-link" href="/account/google-login" style="color: rgba(69,73,82,255)">
-                        <i class="fas fa-user"></i> Logga In
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    <a class="Login-link" href="/account/google-logout" style="color: rgba(69,73,82,255)">
+                        <i class="fas fa-user"></i> Logga Ut
                     </a>
+                    }
+                    else
+                    {
+                        <a class="Login-link" href="/account/google-login" style="color: rgba(69,73,82,255)">
+                            <i class="fas fa-user"></i> Logga In
+                        </a>
+                    }
+
                 </div>
             </nav>           
         </header>
