@@ -46,7 +46,7 @@ namespace DSU21_2.Controllers
         }
 
         //↓↓↓↓↓↓↓↓↓ TA BORT SENARE ↓↓↓↓↓↓↓↓↓
-        [Route("Test0/{id?}")]
+        
         public async Task<IActionResult> Test3D()
         {
             //Used for filling local DB with data, run once.
@@ -56,7 +56,18 @@ namespace DSU21_2.Controllers
             var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
             return View(homeViewModel);
         }
+        //↓↓↓↓↓↓↓↓↓ TA BORT SENARE ↓↓↓↓↓↓↓↓↓
+        [Route("Test0/{id?}")]
+        public async Task<IActionResult> TestIndex()
+        {
+            //Used for filling local DB with data, run once.
+            //await artDbRepo.FillDbWithData();
+            var collectionList = await artDbRepo.GetCollectionsWithArt();
+            var tagList = await artDbRepo.GetTags();
+            var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
+            return View(homeViewModel);
 
+        }
         public IActionResult Privacy()
         {
             return View();
