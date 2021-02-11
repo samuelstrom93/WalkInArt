@@ -31,20 +31,14 @@
     width: 100%;
 }
 
-
-
 #contact {
     background-color: #f8f9fa;
     padding: 60px;
 }
 
-
-
-
 #answer {
     display: none;
 }
-
 
 .question-wrapper {
     display: flex;
