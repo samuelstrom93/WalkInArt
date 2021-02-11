@@ -2,7 +2,9 @@ body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
 }
-
+ul, a {
+   font-family:'Raleway', sans-serif;
+}
 
 h1, h4 {
     font-family: 'Staatliches', cursive;
