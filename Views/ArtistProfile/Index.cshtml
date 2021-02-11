@@ -26,7 +26,7 @@
 
         <form method="post" asp-action="UpdateArtist" asp-controller="ArtistProfile" class="form-flex">
             <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-            <textarea name="about" rows="5" cols="33" placeholder="@Model.Artist.About"></textarea>
+            <textarea name="about" rows="5" cols="33"></textarea>
             <input type="submit" name="remove" value="Updatera" class="edit-profile" id="edit-btn" />
         </form>
 
@@ -36,21 +36,20 @@
     <div class="grid-exhibitions">
         <h1 id="header-grid">Dina utställningar</h1>
 
-        <h2 id="exhibition-title">Utställning</h2>
-        <h2>Hantera</h2>
+        <h1 id="exhibition-title">Utställning</h1>
+        <h1 id="edit-title">Hantera</h1>
 
 
 
         @for (int i = 0; i < Model.Artist.Collections.Count; i++)
         {
+
             <div class="exhibition-info">
-                <p class="exhibition-title">
+                <h4 class="exhibition-title">
                     @Model.Artist.Collections[i].Description
                     <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
-                    <i class="fas fa-chevron-right" id="arrow"></i>
-                </p>
+                </h4>
                 <div class="artworks">
-
 
                     @if (Model.Artist.Collections[i].Artworks.Count == 0)
                     {
@@ -153,11 +152,10 @@
             </div>
 
             <div class="actions-btns">
-                <a class="edit-btn">Hantera</a>
                 <form method="post" asp-action="RemoveCollection" asp-controller="ArtistProfile">
                     <input type="hidden" name="artistId" value="@Model.Artist.Id" />
                     <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
-                    <input type="submit" name="remove" value="Ta bort" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett utställning?')" />
+                    <input type="submit" name="remove" value="Ta bort utställningen" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett utställning?')" />
                 </form>
 
             </div>

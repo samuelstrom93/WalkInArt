@@ -79,6 +79,7 @@
 
 .actions-btns {
     display: flex;
+    justify-content: center;
 }
 
 .edit-profile {
@@ -126,23 +127,6 @@
 
 .exhibition-wrapper {
     border-bottom: 1px solid #000;
-}
-
-.exhibition-title {
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.exhibition-title:hover {
-    text-decoration: underline;
-}
-
-.artworks {
-    display: none;
-}
-
-#arrow {
-    font-size: 1em;
 }
 
 
@@ -196,7 +180,7 @@
 }
 
 .add-object{
-    background-color: #27ad63;
+    background-color: #294dc3;
     padding: 0.3em 0.5em;
     color: #fff;
     width: 200px;
@@ -253,3 +237,6 @@
 }
 
 
+#edit-title {
+    text-align: center;
+}
