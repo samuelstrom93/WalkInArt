@@ -1,11 +1,13 @@
+
 .exhibition-description {
     margin: 4em 1em 0;
     border: 1px solid #000;
-    width: 15%;
+    width: 20%;
     border-radius: 4px;
     opacity: 0.75;
     background: #fff;
-    padding: 1em;
+    padding: 0.5em;
+    font-family: 'Modern No. 20';
 }
 
 .share-aside {
@@ -19,6 +21,7 @@
     padding: 0 0.3em 0 0;
     border-radius: 4px;
     display: flex;
+    font-family: 'Modern No. 20';
 }
 
 .signout-wrapper:hover {
@@ -49,9 +52,10 @@
     background-color: rgb(200, 200, 200);
 }
 
-.share-icon p {
-    margin: auto 0.5em;
-}
+    .share-icon p {
+        margin: auto 0.5em;
+        font-family: 'Modern No. 20';
+    }
 
 
 .fas.fa-sign-out-alt {
@@ -63,10 +67,11 @@
 
 #main-wrapper {
     margin-top: 75px;
+  
 }
 
 .gallery-wrapper {
-    background-image: url("../assets/images/brownWall.png");
+    background-image: url("../assets/images/greyWall.png");
     background-size: cover;
 }
 
@@ -75,12 +80,14 @@
     justify-content: center;
     margin: 2% 0 2em;
     max-width: 100%;
+    
 }
 
 .gallery img {
     width: 300px;
     height: 400px;
-    margin: 3em 2em 2em; 
+    margin: 3em 2em 2em;
+    box-shadow: 7px 7px 7px #000;
 }
 
 .gallery img:hover {
@@ -90,32 +97,42 @@
 .picture-text {
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: 400px;
+    font-family: 'Modern No. 20';
 }
 
-.picture-text p {
-    text-align: center;
-    font-style: italic;
-    font-size: 1.2em;
-}
+    .picture-text p {
+        text-align: center;
+        font-size: 1.8em;
+        cursor: pointer;
+        margin: 0.5em 2.2em 0;
+        border: 1px;
+        width: auto;
+        border-radius: 2px;
+        opacity: 0.85;
+        background: #fff;
+        padding: 0.1em;
+        font-family: 'Modern No. 20';
+    }
 
-#artwork-description {
-    font-size: 1em;
-    font-style: normal;
-}
+    .picture-text :hover {
+        cursor: pointer;
+        background-color: rgb(200, 200, 200);
+    }
 
-.picture-text button {
+
+/*.picture-text button {
     font-weight: bold;
     margin: 1em auto;
     cursor: pointer;
     border: 1px solid #A154F2;
     padding: 0.2em 1em;
     border-radius: 3px;
-}
+}*/
 
-.picture-text button:hover {
+/*.picture-text button:hover {
     background: linear-gradient(to bottom, #A154F2, #8EF4A4);
-}
+}*/
 
 #overlay {
     visibility: hidden;
@@ -123,11 +140,12 @@
     left: 0;
     right: 0px;
     top: 100px;
-    height: 900px;
-    width: 1300px;
+    height: 790px;
+    width: 1000px; /**/
     margin: auto;
     z-index: 1000;
-    background-color: rgb(219, 216, 216);
+    /*background-color: rgb(219, 216, 216);*/
+    background-color: #f5f5f5; /**/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -142,12 +160,46 @@
 }
 
 #overlay span {
-   font-size: 2.5em;
-   bottom: 92%;
-   left: 2%;
-   position: absolute;
-   margin: 0;
+    font-size: 2em;
+    bottom: 92%;
+    left: 1%;
+    position: absolute;
+    margin: 0;
 }
+
+.btn-readmoregallery { /**/
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+
+.object-info {
+    margin: 2em 0;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*visibility: hidden;*/
+    /* display: none;*/
+    font-family: 'Modern No. 20';
+    background: #f5f5f5;
+    
+}
+
+    .object-info p {
+        background: #f5f5f5;
+    }
+
+#artwork-description {
+    font-size: 1em;
+    font-style: normal;
+    background: #f5f5f5;
+}
+
 
 .fa-window-close:hover {
     cursor: pointer;
@@ -157,16 +209,7 @@
     font-size: 2.5em;
 }
 
-.object-info {
-    margin: 2em 0;
-    width: 500px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.exhibition-link {
+    /*.exhibition-link {
     font-weight: bold;
     margin: 1em auto;
     cursor: pointer;
@@ -180,14 +223,12 @@
     background: linear-gradient(to right, #A154F2, #8EF4A4);
     text-decoration: none;
     color: #000;
-}
-
-
-/*SWIPER (Karusel)*/
-/*.gallerylist {
+}*/
+    /*SWIPER (Karusel)*/
+    /*.gallerylist {
     margin-top: 0%;
 }*/
-.swiper-container {
+    .swiper-container {
     margin-top: 2%;
 }
 
@@ -195,11 +236,16 @@
     margin-bottom: 2%;
 }
 
+    .swiper-wrapper :hover {
+        text-decoration: none;
+    }
+
 .swiper-slide {
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
     font-size: 18px;
+    font-family: 'Modern No. 20';
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -224,12 +270,22 @@
     width: 300px;
     object-fit: cover;
 }
-.room-span {
+
+#room-span{
     vertical-align: bottom;
-    margin: 1em 0;
+    color: #000;
+    font-size: 1.5em;
 }
+
+#room-span {
+    vertical-align: bottom;
+    color: #000;
+}
+
+
 .swiper-slide {
     align-content: center;
+    
 }
 
 .swiper-gallery {
