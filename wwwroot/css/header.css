@@ -1,11 +1,10 @@
 
-header {
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    white-space: nowrap;
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2%;
+    margin-top: 1%;
 }
 
 nav {
@@ -13,33 +12,14 @@ nav {
     background-color: #fff;
 }
 
-.faq-link {
-    color: #000;
-}
-
-.faq-link:hover {
-    text-decoration: underline;
-    color: #000;
-}
-
-#search-btn {
-    border-radius: 30px;
-    border: none;
-    width: 100px;
-    background: -moz-linear-gradient(left, #8EF4A4, #A154F2);
-    background: -webkit-linear-gradient(left, #8EF4A4, #A154F2);
-    background: linear-gradient(to right, #8EF4A4, #A154F2);
-    visibility:hidden;
-}
 
 #search-input {
     width: 50vh;
-}
-
-
-#logo-title {
-    color: black;
-    font-size: 30px;
+    font-family: 'Modern No. 20';
+    font-size: 18px;
+    border-radius: .60rem;
+    background-color: #fff;
+    color:white;
 }
 
 .search-result {
@@ -53,31 +33,89 @@ nav {
     box-shadow: 2px 2px 2px 2px #0200002e;
     background-color: #fbfbfb;
 }
+.search-result ul {
+     display: block;
+     padding: 0;
+}
+.search-result li {
+     padding-left: 13px;
+}
 
-.search-result ul{
-    display:block;
-    padding:0;
-}
-.search-result li{
-    padding-left:13px;
-}
 .search-result li:hover {
-    background-color:lightgray;
+     background-color: lightgray;
 }
+
 .search-result a {
     display: inline-block;
     width: 100%;
     color: inherit;
 }
+
 .search-result a:hover {
-    color:inherit;
+    color: inherit;
     text-decoration: none;
 }
-.hidden {
-    visibility: hidden;
+/* Dropdown meny */
+.drop-btn {
+    position: relative;
+    right: 20%;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgba(69,73,82,255);
+    width: 50px;
+    border: none;
 }
-.visible {
-    visibility: visible;
+.dropdown {
+    position: relative;
+    display: inline-block;
+
 }
+.dropdown {
+   position: relative; right: 30%; bottom: 5px;
+   border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    width: 50px;
+    border: none;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:active {
+    background-color: #fff;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    font-family:'Modern No. 20';
+    font-size:18px;
+}
+.dropdown:hover .dropbtn {
+    background-color: #fff;
+}
+/* Logga in */
+.Login-icon {
+    position: absolute; right: 10%;
+    
+}
+.Login-link {
+    text-decoration: none;
+    color: rgba(69,73,82,255);
+    font-family: 'Modern No. 20';
+}
+.fas.fa-user {
+   color: rgba(69,73,82,255)
+}
+
 
 
