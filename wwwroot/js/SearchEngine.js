@@ -2,7 +2,6 @@
 const searchButton = document.getElementById("search-btn")
 const searchResponse = document.getElementById("search-suggestions")
 const searchResult = document.getElementById("searchresultbox")
-searchButton.addEventListener("click", searchTags)
 
 
 searchBar.addEventListener("input", function (event) {

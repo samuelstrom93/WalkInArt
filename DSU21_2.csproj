@@ -3,10 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+    <UserSecretsId>e8dc24ef-a859-4bb1-a199-31485febbf59</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="glTF2Loader" Version="1.0.0" />
+    <Content Remove="wwwroot\assets\images\image.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
@@ -159,6 +165,10 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\3d_rooms\start\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\assets\images\image.png" />
   </ItemGroup>
 
 </Project>

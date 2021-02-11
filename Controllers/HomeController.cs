@@ -1,6 +1,7 @@
 ﻿using DSU21_2.Models;
 using DSU21_2.Repository;
 using DSU21_2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -24,6 +26,7 @@ namespace DSU21_2.Controllers
             this.artDbRepo = artDbRepo;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult>  Index()
         {
             //Used for filling local DB with data, run once.
