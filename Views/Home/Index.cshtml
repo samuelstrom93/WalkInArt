@@ -1,12 +1,12 @@
 ﻿@model DSU21_2.ViewModels.HomeViewModel
 
 <main>
-
-    <div class="flex-container">
-        <button id="vr-btn">VR</button>
-    </div>
+    <iframe id="3d-room-start" src="@Url.Action("Room3d")" style="height:85vh;width:100%;"></iframe>
+    @*<div class="flex-container">
+            <iframe id="3d-room-start" src="@Url.Action("Room3d")" style="height:85vh;width:100%;"></iframe>
+        </div>*@
     <div class="grid-container">
-    
+
         <h1>Utställningar</h1>
         @for (int i = 0; i < 4; i++)
         {
