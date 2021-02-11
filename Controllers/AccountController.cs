@@ -43,10 +43,7 @@ namespace DSU21_2.Controllers
         [Route("google-logout")]
         public async Task<IActionResult> GoogleLogout()
         {
-            //await HttpContext.SignOutAsync("Cookies");
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            Response.Redirect("https://www.google.com/accounts/Logout");
-
+            await HttpContext.SignOutAsync("Cookies");
             return RedirectToAction("Index", "Home");
         }
 
