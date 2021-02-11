@@ -35,6 +35,7 @@
         <a-asset-item id="bench" src="/assets/3d_rooms/exhibitionRoom1/models/bench/scene.gltf"></a-asset-item>
         <a-asset-item id="shelf" src="/assets/3d_rooms/exhibitionRoom1/models/shelf/scene.gltf"></a-asset-item>
         <a-asset-item id="window" src="/assets/3d_rooms/exhibitionRoom1/models/window/scene.gltf"></a-asset-item>
+        <a-asset-item id="iPad" src="/assets/3d_rooms/exhibitionRoom1/models/iPad/scene.gltf"></a-asset-item>
         @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
         {
             string id = $"picture{i}";
@@ -46,6 +47,7 @@
     <a-entity movement-controls="speed: 0.8; constrainToNavMesh: true" position="-3.75 0 0" rotation="0 0 0">
         <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true" rotation="0 -90 0">
             <a-cursor></a-cursor>
+            <a-entity gltf-model="#iPad" position="1.4 -0.31 -0.7" rotation="86 -96 -84"></a-entity>
         </a-entity>
     </a-entity>
     <a-entity id="floors">

@@ -62,6 +62,12 @@
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\frame\frame.gltf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\iPad\scene.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\iPad\scene.gltf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\shelf\scene.bin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
