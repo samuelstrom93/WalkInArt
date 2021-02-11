@@ -1,43 +1,12 @@
 ﻿@model DSU21_2.ViewModels.HomeViewModel
 
 <main>
-    <!--Kod sparad från Mest besökta>-->
-    @*Hårdkodad till fyra just nu för att fylla grid som består av fyra kolumner
-        Behöver förstora griden för att elementen ska få plats horistontellt och
-        sätta någon sorts begränsning på hur många element vi kan ladda in?*@
-    <!--@for (int i = 0; i < 4; i++)
-       {
-           <div class="grid-art">
-               <img src="@Model.CurrentCollections[i].Artworks.FirstOrDefault().Hyperlink">
-               <a class="to-exhibition" href="/Exhibitions/@Model.CurrentCollections[i].Id">
 
-                   <div class="info-box">
-                       <h3 class="title">@Model.CurrentCollections[i].Name</h3>
-                       <p class="info-txt">@Model.CurrentCollections[i].Description </p>
-                   </div>
-               </a>
-           </div>
-       }-->
     <div class="flex-container">
         <button id="vr-btn">VR</button>
     </div>
     <div class="grid-container">
-
-        @*<h1>Kategorier</h1>
-        @for (int i = 0; i < 4; i++)
-        {
-            <div class="grid-art">
-                <a class="chosen-category" href="/Categories/@Model.Categories[i].Title">
-                    <img src="@Model.Categories[i].Collections.FirstOrDefault().Artworks.FirstOrDefault().Hyperlink" alt="">
-                    <div class="category">
-                        <p>@Model.Categories[i].Title</p>
-                    </div>
-                </a>
-            </div>
-        }*@
-        @*<a href="Categories" alt="categories" class="all-categories">
-            Visa alla kategorier
-        </a>*@
+    
         <h1>Utställningar</h1>
         @for (int i = 0; i < 4; i++)
         {
