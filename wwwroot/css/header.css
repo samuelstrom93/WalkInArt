@@ -15,7 +15,6 @@ nav {
 
 #search-input {
     width: 50vh;
-    font-family: 'Modern No. 20';
     font-size: 18px;
     border-radius: .60rem;
     background-color: #fff;
@@ -111,7 +110,6 @@ nav {
 .Login-link {
     text-decoration: none;
     color: rgba(69,73,82,255);
-    font-family: 'Modern No. 20';
 }
 .fas.fa-user {
    color: rgba(69,73,82,255)

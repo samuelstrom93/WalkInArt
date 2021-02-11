@@ -7,7 +7,6 @@
     opacity: 0.75;
     background: #fff;
     padding: 0.5em;
-    font-family: 'Modern No. 20';
 }
 
 .share-aside {
@@ -21,7 +20,6 @@
     padding: 0 0.3em 0 0;
     border-radius: 4px;
     display: flex;
-    font-family: 'Modern No. 20';
 }
 
 .signout-wrapper:hover {
@@ -54,7 +52,7 @@
 
     .share-icon p {
         margin: auto 0.5em;
-        font-family: 'Modern No. 20';
+       
     }
 
 
@@ -112,7 +110,6 @@
     opacity: 0.85;
     background: #fff;
     padding: 0.1em;
-    font-family: 'Modern No. 20';
 }
     
 
@@ -168,7 +165,6 @@
     align-items: center;
     /*visibility: hidden;*/
     /* display: none;*/
-    font-family: 'Modern No. 20';
     background: #f5f5f5;
     
 }
@@ -228,7 +224,6 @@
     flex-flow: column nowrap;
     text-align: center;
     font-size: 18px;
-    font-family: 'Modern No. 20';
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

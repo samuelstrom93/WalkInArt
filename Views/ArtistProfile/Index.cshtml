@@ -20,7 +20,7 @@
         <h1 id="profile-header">@Model.Artist.Name</h1>
 
         <div class="profile-description">
-            <h3>Beskrivning:</h3>
+            <p>Beskrivning:</p>
             <p>@Model.Artist.About</p>
         </div>
 
@@ -59,7 +59,7 @@
                                 Lägg till objekt
                             </a>
                             <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
-                                <h3>Utställning</h3>
+                                <p>Utställning</p>
                                 <input type="hidden" name="artistId" value="@Model.Artist.Id" />
                                 <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
                                 <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
@@ -126,7 +126,7 @@
                                         Lägg till objekt
                                     </a>
                                     <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
-                                        <h3>Utställning</h3>
+                                        <p>Utställning</p>
                                         <input type="hidden" name="artistId" value="@Model.Artist.Id" />
                                         <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
                                         <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
@@ -170,7 +170,7 @@
             </a>
             <form class="exhibition-form" asp-controller="ArtistProfile" asp-action="AddCollection">
                 <input type="hidden" name="id" value="@Model.Artist.Id" />
-                <h3>Utställning</h3>
+                <p>Utställning</p>
                 <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
                 <p>
                     <label>
@@ -184,9 +184,6 @@
             </form>
         </div>
     </div>
-
-
-
 </main>
 
 
