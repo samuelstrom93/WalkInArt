@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace DSU21_2.Views.Exhibitions
 {
+    [AllowAnonymous]
     public class ExhibitionsController : Controller
     {
         private readonly IArtDBRepo artDbRepo;
@@ -54,6 +56,13 @@ namespace DSU21_2.Views.Exhibitions
             var artist = await artDbRepo.GetArtistByCollection(exhibitions);
             ExhibitionsViewModel exhibitionsViewModel = new ExhibitionsViewModel(exhibitions, exhibitionsForRoom, artist);
             return View(exhibitionsViewModel);
+        }
+        [Route("AllExhibitions/{id?}")]
+        public async Task<IActionResult> AllExhibitions(int id)
+        {
+            var allExhibitions = await artDbRepo.GetCollectionsWithArt();         
+            AllExhibitionsViewModel AllExhibitionsViewModel = new AllExhibitionsViewModel(allExhibitions);
+            return View(AllExhibitionsViewModel);
         }
         //↓↓↓↓↓↓↓↓↓ TA BORT SENARE ↓↓↓↓↓↓↓↓↓
         [Route("Test2/{id?}")]

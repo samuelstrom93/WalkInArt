@@ -49,9 +49,9 @@ namespace DSU21_2.Repository
         
         #region Artist
 
-        public Artist AddArtist(string name, string about)
+        public Artist AddArtist(string name, string about, string profileId)
         {
-            var artist = new Artist { Name = name, About = about };
+            var artist = new Artist { Name = name, About = about, ProfileId = profileId};
             context.Artists.Add(artist);
             context.SaveChanges();
             return artist;
@@ -61,7 +61,16 @@ namespace DSU21_2.Repository
         {
             return await context.Artists
                 .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
                 .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<Artist> GetArtistByProfile(string profileId)
+        {
+            return await context.Artists
+                .Include(a => a.Collections)
+                .ThenInclude(b => b.Artworks)
+                .FirstOrDefaultAsync(x => x.ProfileId == profileId);
         }
         public async Task<Artist> GetArtistByCollection(Collection collection)
         {
@@ -70,14 +79,28 @@ namespace DSU21_2.Repository
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<Artist>UpdateArtist(int id, string about)
+        public Artist UpdateArtist(Artist artist, string about)
         {
-            Artist artist = await GetArtistAsync(id);
             artist.About = about;
             context.Artists
                 .Update(artist);
             
             context.SaveChanges();
+            return artist;
+        }
+
+        public async Task<Artist>CheckArtist(string profileId, string name)
+        {
+            Artist artist = await GetArtistByProfile(profileId);
+            if(artist != null)
+                {
+                return artist;
+                }
+            else
+            {
+                artist = AddArtist(name, "", profileId);
+
+            }
             return artist;
         }
         #endregion
@@ -98,9 +121,9 @@ namespace DSU21_2.Repository
                 .Where(y => y.Artworks.Count > 0).ToListAsync();
         }
 
-        public bool AddCollection(Artist artist)
+        public bool AddCollection(Artist artist, string name, string description)
         {
-            Collection collection = new Collection { Name = "Sommar", Description = "Vårblommor i solen som aldrig skiner hos Espen" };
+            Collection collection = new Collection { Name = name, Description = description };
             artist.Collections.Add(collection);
             context.SaveChanges();
             return true;
@@ -119,16 +142,36 @@ namespace DSU21_2.Repository
             return tag.Collections;
         }
 
+        public async Task<Collection> UpdateCollection(int id, string description, string name)
+        {
+            Collection collection = await GetCollection(id);
+            collection.Description = description;
+            collection.Name = name;
+            context.Collections
+                .Update(collection);
 
+            context.SaveChanges();
+            return collection;
+        }
+
+        public void DeleteCollection(Collection collection)
+        {
+            foreach(Artwork artwork in collection.Artworks)
+            {
+                context.Artworks.Remove(artwork);
+            }
+            context.Collections.Remove(collection);
+            context.SaveChanges();
+        }
 
 
         #endregion
 
         #region Artwork
 
-        public bool AddArtwork(Collection collection)
+        public bool AddArtwork(Collection collection, string name, string description, string hyperlink)
         {
-            Artwork art = new Artwork { Name = "Winter", Description = "This amazing winter shot", Hyperlink = "https://i.imgur.com/sxjAWXB.jpg" };
+            Artwork art = new Artwork { Name = name, Description = description, Hyperlink = hyperlink };
             collection.Artworks.Add(art);
             context.SaveChanges();
             return true;
@@ -138,6 +181,26 @@ namespace DSU21_2.Repository
         {
             return await context.Artworks
                 .FirstOrDefaultAsync(x => x.Id ==  artworkId);            
+        }
+
+        public void DeleteArtwork(Artwork artwork)
+        {
+            context.Artworks.Remove(artwork);
+            context.SaveChanges();
+        }
+
+
+        public async Task<Artwork> UpdateArtwork(int id, string hyperlink, string description, string name)
+        {
+            Artwork artwork = await GetArtwork(id);
+            artwork.Description = description;
+            artwork.Hyperlink = hyperlink;
+            artwork.Name = name;
+            context.Artworks
+                .Update(artwork);
+
+            context.SaveChanges();
+            return artwork;
         }
 
         #endregion

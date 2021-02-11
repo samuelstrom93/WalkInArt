@@ -14,6 +14,7 @@ namespace DSU21_2.Models
         public string Name { get; set; }
         [MaxLength(4000)]
         public string About { get; set; }
+        public string ProfileId { get; set; }
         public List<Collection> Collections { get; set; } = new List<Collection>();
     }
 }

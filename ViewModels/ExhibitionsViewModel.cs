@@ -20,5 +20,9 @@ namespace DSU21_2.ViewModels
             Artist = artist;
         }
 
+        public ExhibitionsViewModel(Collection exhibitions, List<Collection> exhibitionsForRoom)
+        {
+            Exhibitions = exhibitions;
+        }
     }
 }
