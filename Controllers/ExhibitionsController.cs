@@ -51,12 +51,6 @@ namespace DSU21_2.Views.Exhibitions
             return View(exhibitionsViewModel);
         }
 
-        public IActionResult Error()
-        {
-            var allExhibitions = await artDbRepo.GetCollectionsWithArt();
-            AllExhibitionsViewModel AllExhibitionsViewModel = new AllExhibitionsViewModel(allExhibitions);
-            return View(AllExhibitionsViewModel);
-        }
 
         public async Task<IActionResult> Room3d_1(int id)
         {
