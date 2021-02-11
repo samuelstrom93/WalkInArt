@@ -3,12 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
-    <UserSecretsId>e8dc24ef-a859-4bb1-a199-31485febbf59</UserSecretsId>
+    <UserSecretsId>e24fb6f6-4dd7-46f1-9ad4-411bbeeec185</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\assets\images\image.png" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.10" />
@@ -21,10 +17,6 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
     <PackageReference Include="xunit.assert" Version="2.4.1" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="wwwroot\assets\images\image.png" />
   </ItemGroup>
 
 </Project>

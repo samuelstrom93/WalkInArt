@@ -5,11 +5,13 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace DSU21_2.Views.Exhibitions
 {
+    [AllowAnonymous]
     public class ExhibitionsController : Controller
     {
         private readonly IArtDBRepo artDbRepo;

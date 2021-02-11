@@ -1,6 +1,7 @@
 ﻿using DSU21_2.Models;
 using DSU21_2.Repository;
 using DSU21_2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
 {
+    [AllowAnonymous]
     public class CategoriesController : Controller
     {
         private IArtDBRepo artDBRepo;
