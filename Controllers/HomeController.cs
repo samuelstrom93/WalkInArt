@@ -38,6 +38,16 @@ namespace DSU21_2.Controllers
            
         }
 
+        public async Task<IActionResult> Room3d()
+        {
+            //Used for filling local DB with data, run once.
+            //await artDbRepo.FillDbWithData();
+            var collectionList = await artDbRepo.GetCollectionsWithArt();
+            var tagList = await artDbRepo.GetTags();
+            var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
+            return PartialView("/Views/Home/Room3d.cshtml",homeViewModel);
+        }
+
         public IActionResult Privacy()
         {
             return View();
