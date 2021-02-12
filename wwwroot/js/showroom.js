@@ -1,6 +1,5 @@
 
 function modifyFrames(scale){
-    console.log("here")
     let elementsToScale = document.getElementsByClassName("frames")
     let elementsWithImg = document.getElementsByClassName("pictures")
     console.log(elementsWithImg)
