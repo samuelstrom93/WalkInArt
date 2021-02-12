@@ -1,5 +1,6 @@
 
 modifyFrames()
+
 function modifyFrames(){
     let elementsToScaleForBigFrames = document.getElementsByClassName("big-frames")
     let elementsWithImg = document.getElementsByClassName("pictures")
@@ -13,8 +14,8 @@ function modifyFrames(){
 function getMetaForBigFrames(elementWithImg, elementsToScaleForBigFrames) {
     var img = new Image();
     img.onload = function () {
-        let ratio = (this.height / this.width)*1;
-        elementsToScaleForBigFrames.attributes.scale.value = `1 ${ratio} 1`
+        let ratio = (this.height / this.width)*1.5;
+        elementsToScaleForBigFrames.attributes.scale.value = `1.5 ${ratio} 1.5`
     };
     img.src = elementWithImg.attributes.src.value;
 }
