@@ -35,6 +35,7 @@
         <a-asset-item id="dustyoldbookshelf" src="/assets/3d_rooms/exhibitionRoom1/models/DustyOldBookShelf/scene.gltf"></a-asset-item>
         <a-asset-item id="shelf" src="/assets/3d_rooms/exhibitionRoom1/models/shelf/scene.gltf"></a-asset-item>
         <a-asset-item id="window" src="/assets/3d_rooms/exhibitionRoom1/models/window/scene.gltf"></a-asset-item>
+        <a-asset-item id="exit" src="/assets/3d_rooms/exhibitionRoom1/models/exit/scene.gltf"></a-asset-item>
         @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
         {
             string id = $"picture{i}";
@@ -45,7 +46,7 @@
 
     <a-entity movement-controls="speed: 0.8; constrainToNavMesh: true" position="-3.75 0 0" rotation="0 0 0">
         <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true" rotation="0 -90 0">
-            <a-cursor></a-cursor>
+            <a-cursor id="cursor"></a-cursor>
         </a-entity>
     </a-entity>
     <a-entity id="floors">
@@ -411,7 +412,13 @@
             </a-entity>
         </a-entity>
         <a-entity id="models">
-            <a-entity id="door" gltf-model="#door" position="-6.135 1.22 0" rotation="0 0 0" scale="0.011 0.011 0.011"></a-entity>
+            <a-entity id="door"
+                      navigate-on-click="url: @Url.Action("Index","Home")"
+                      gltf-model="#door"
+                      position="-6.135 1.22 0" rotation="0 0 0" scale="0.011 0.011 0.011"
+                      event-set__tarcol="_event: mouseenter; _target: #cursor; material.color: #5ec940; scale: 2 2 2"
+                      event-set__leave="_event: mouseleave; _target: #cursor; material.color: #000000; scale: 1 1 1"></a-entity>
+            <a-entity id="exit" gltf-model="#exit" position="-6.18452 2.48905 -0.01201" rotation="0 90 0" scale="0.2 0.2 0.2"></a-entity>
             <a-entity id="bench" gltf-model="#dustyoldbookshelf" position="-5.91 0 2.714" rotation="0 -91.6 0" scale="0.0115 0.0115 0.0115"></a-entity>
             <a-entity id="shelf" gltf-model="#shelf" position="-5.765 0 -2.750" rotation="0 0 0" scale="0.011 0.011 0.011"></a-entity>
             <a-entity id="window1" gltf-model="#window" position="-6.1 4.2 0" rotation="90 0 90" scale="0.1 0.1 0.1"></a-entity>
@@ -420,5 +427,3 @@
     </a-entity>
 </a-scene>
 <script src="~/js/showroom.js" onload="modifyFrames(0.7)"></script>
-
-
