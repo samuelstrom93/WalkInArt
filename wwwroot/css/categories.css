@@ -65,7 +65,7 @@
 
 
 /*CHOSEN CATEGORY PAGE*/
-/*.title {
+.title {
     text-align: center;
     padding-top: 7px;
     font-size: 20px;
@@ -95,4 +95,4 @@
 
 .to-exhibition:hover > a {
     text-decoration: none;
-}*/
+}

@@ -54,6 +54,29 @@
 }
 
 
+/*@media (max-width: 767px) {
+    .grid-allexhibitions {
+        display: grid;
+        align-content: center;
+
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 1080px) {
+    .grid-allexhibitions {
+        display: grid;
+        align-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        width: 100%;
+    }
+}*/
+
 
     /*.info-allexhibitions {
         top: -100%;
@@ -87,4 +110,7 @@
     padding-top: 7px;
     font-size: 20px;
 }*/
+
+
+
 
