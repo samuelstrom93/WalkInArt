@@ -51,6 +51,13 @@ namespace DSU21_2.Views.Exhibitions
             return View(exhibitionsViewModel);
         }
 
+        [Route("AllExhibitions/{id?}")]
+        public async Task<IActionResult> AllExhibitions(int id)
+        {
+            var allExhibitions = await artDbRepo.GetCollectionsWithArt();
+            AllExhibitionsViewModel AllExhibitionsViewModel = new AllExhibitionsViewModel(allExhibitions);
+            return View(AllExhibitionsViewModel);
+        }
 
         public async Task<IActionResult> Room3d_1(int id)
         {

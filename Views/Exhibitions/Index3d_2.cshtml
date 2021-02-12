@@ -9,7 +9,6 @@
 
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 <main>
-    <div id="main-wrapper">
         <div class="gallery-wrapper" style="background-image: url('../assets/images/brownWall.png'); background-size:cover;">
             <iframe id="3d-room" src="@Url.Action("Room3d_2", new { id = Model.Exhibitions.Id })" style="height:80vh;width:100%;"></iframe>
         </div>
@@ -32,8 +31,8 @@
                             {
                                 <img class="room-noimg" src="/assets/images/noImage.png">
                             }
-                            <span class="room-span">@room.Name</span>
-                            <a href="/exhibitions/@room.Id" class="exhibition-link">Gå till utställningen</a>
+                            <a href="/exhibitions/@room.Id" id="room-span">@room.Name</a> @*class="exhibition-link"*@
+                            @*<a href="/exhibitions/@room.Id" class="exhibition-link">Gå till utställningen</a>*@
                         </div>
                     }
                 }
@@ -43,6 +42,5 @@
             <div class="swiper-button-prev swiper-button-white swiper-nav-room-prev"></div>
             <div class="swiper-button-next swiper-button-white swiper-nav-room-next"></div>
         </div>
-    </div>
 
 </main>
