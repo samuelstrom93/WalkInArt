@@ -4,7 +4,7 @@
     border: 1px solid #000;
     width: 20%;
     border-radius: 4px;
-    opacity: 0.75;
+    opacity: 0.80;
     background: #fff;
     padding: 0.5em;
 }
@@ -113,7 +113,6 @@
 }
     
 
-
 #overlay {
     visibility: hidden;
     position: absolute;
@@ -121,7 +120,7 @@
     right: 0px;
     top: 100px;
     height: 790px;
-    width: 1000px; /**/
+    width: 1100px; /**/
     margin: auto;
     z-index: 1000;
     /*background-color: rgb(219, 216, 216);*/
@@ -258,6 +257,7 @@
 #room-span {
     vertical-align: bottom;
     color: #000;
+    font-family: 'Staatliches';
 }
 
 
