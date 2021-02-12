@@ -208,8 +208,7 @@
     <a-entity id="exit" gltf-model="#exit" position="-0.0033 4.11941 4.88822" rotation="" scale="0.2 0.2 0.2"></a-entity>
     <a-plane id="exit-plate" rotation="0 180 0"  position="-0.00997 2.3208 4.89549" scale="3 3 3"
              navigate-on-click="url: @Url.Action("Index","Home")"                   
-             event-set__tarcol="_event: mouseenter; _target: #cursor; material.color: #5ec940; scale: 2 2 2"
-             event-set__leave="_event: mouseleave; _target: #cursor; material.color: #000000; scale: 1 1 1"
+             @await Html.PartialAsync("/Views/Shared/_CursorAnimation.cshtml")
              material="
                   displacementBias:0;
                   displacementScale:0;
