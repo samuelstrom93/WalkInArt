@@ -22,7 +22,7 @@
         cursor: pointer;
         background: linear-gradient(to bottom, #808080, #575151);
 }
-.grid-container {
+.grid-containerHome {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
@@ -32,7 +32,7 @@
     margin-bottom: 2%;
 }
 
-.grid-art {
+.grid-artHome {
     position: relative;
     text-align: center;
     background-color: yellow;
@@ -43,24 +43,24 @@
     margin-left: 1%;
 }
 
-    .grid-art img {
+    .grid-artHome img {
         height: 300px;
         width: 300px;
     }
 
-    .grid-art a {
+    .grid-artHome a {
         color: #000;
         text-decoration: none;
         font-size: 1.2em;
     }
 
-        .grid-art a:hover {
+        .grid-artHome a:hover {
             text-decoration: underline;
             color: #000;
         }
 
 
-.grid-container h1 {
+.grid-containerHome h1 {
     padding: 20px 0px 0px 0px;
     grid-column: span 5;
     margin-top: -5%;
@@ -90,13 +90,13 @@
     align-items: center;
 }
 
-.grid-art:hover .art-overlay {
+.grid-artHome:hover .art-overlay {
     height: 100%;
     opacity: 0.7;
 }
 
 
-.grid-art span {
+.grid-artHome span {
     font-size: 1.2em;
     text-align: center;
 }
