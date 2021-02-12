@@ -12,6 +12,9 @@
     <a-asset-item id="frames" src="/assets/3d_rooms/exhibitionRoom2/models/frame/frame.gltf"></a-asset-item>
     <a-assets-item id="doors" src="/assets/3d_rooms/exhibitionRoom2/models/door/scene.gltf"></a-assets-item>
     <a-assets-item id="flower" src="/assets/3d_rooms/exhibitionRoom2/models/flower/scene.gltf"></a-assets-item>
+    <a-asset-item id="candle" src="/assets/3d_rooms/exhibitionRoom2/models/candle/scene.gltf"></a-asset-item>
+    <a-asset-item id="sculpture" src="/assets/3d_rooms/exhibitionRoom2/models/sculpture/scene.gltf"></a-asset-item>
+    <a-asset-item id="shelf" src="/assets/3d_rooms/exhibitionRoom2/models/shelf/scene.gltf"></a-asset-item>
     <img id="conc-floor-ao" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_AmbientOcclusion.jpg">
     <img id="conc-floor-color" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Color.jpg">
     <img id="conc-floor-dis" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Displacement.jpg">
@@ -21,11 +24,11 @@
     <img id="roof-dis" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Displacement.jpg">
     <img id="roof-nor" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Normal.jpg">
     <img id="roof-rou" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Roughness.jpg">
-    
+
     @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
     {
         string id = $"art{i}";
-        <img id="@id" class="pictures" src="@Model.Exhibitions.Artworks[i].Hyperlink" crossorigin="anonymous"/>
+        <img id="@id" class="pictures" src="@Model.Exhibitions.Artworks[i].Hyperlink" crossorigin="anonymous" />
     }
 
 </a-assets>
@@ -158,39 +161,39 @@
     </a-box>
 
     <!--Ram-->
-    <a-entity id="frame-1" gltf-model="#frames" position="2.9 2.23 -4.85" rotation="0 0 0" scale="1 1 1">
+    <a-entity id="frame-1" class="frames" gltf-model="#frames" position="2.9 2.23 -4.85" rotation="0 0 0" scale="1 1 1">
         <a-image src="#art0" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-2" gltf-model="#frames" position="0.04 2.23 -4.85" rotation="0 0 0" scale="1 1 1">
+    <a-entity id="frame-2" class="frames" gltf-model="#frames" position="0.04 2.23 -4.85" rotation="0 0 0" scale="1 1 1">
         <a-image src="#art1" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-3" gltf-model="#frames" position="-2.9 2.23 -4.85" rotation="0 0 0" scale="1 1 1">
+    <a-entity id="frame-3" class="frames" gltf-model="#frames" position="-2.9 2.23 -4.85" rotation="0 0 0" scale="1 1 1">
         <a-image src="#art2" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-4" gltf-model="#frames" position="0.01 2.23 -0.01" rotation="0 0 0" scale="1 1 1">
+    <a-entity id="frame-4" class="frames" gltf-model="#frames" position="0.01 2.23 -0.01" rotation="0 0 0" scale="1 1 1">
         <a-image src="#art3" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-5" gltf-model="#frames" position="-4.87 2.23 -2.89" rotation="0 90 0" scale="1 1 1">
+    <a-entity id="frame-5" class="frames" gltf-model="#frames" position="-4.87 2.23 -2.89" rotation="0 90 0" scale="1 1 1">
         <a-image src="#art4" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-6" gltf-model="#frames" position="-4.87 2.23 -0.14" rotation="0 90 0" scale="1 1 1">
+    <a-entity id="frame-6" class="frames" gltf-model="#frames" position="-4.87 2.23 -0.14" rotation="0 90 0" scale="1 1 1">
         <a-image src="#art5" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-7" gltf-model="#frames" position="-4.87 2.23 2.7" rotation="0 90 0" scale="1 1 1">
+    <a-entity id="frame-7" class="frames" gltf-model="#frames" position="-4.87 2.23 2.7" rotation="0 90 0" scale="1 1 1">
         <a-image src="#art6" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-8" gltf-model="#frames" position="4.84 2.23 -3.04" rotation="0 -90 0" scale="1 1 1">
+    <a-entity id="frame-8" class="frames" gltf-model="#frames" position="4.84 2.23 -3.04" rotation="0 -90 0" scale="1 1 1">
         <a-image src="#art7" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-9" gltf-model="#frames" position="4.84 2.23 -0.16" rotation="0 -90 0" scale="1 1 1">
+    <a-entity id="frame-9" class="frames" gltf-model="#frames" position="4.84 2.23 -0.16" rotation="0 -90 0" scale="1 1 1">
         <a-image src="#art8" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
@@ -198,18 +201,28 @@
         <a-image src="#art9" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
-    <a-entity id="frame-11" gltf-model="#frames" position="0.027 2.23 -0.28" rotation="0 180 0" scale="1 1 1">
+    <a-entity id="frame-11" class="frames" gltf-model="#frames" position="0.027 2.23 -0.28" rotation="0 180 0" scale="1 1 1">
         <a-image src="#art10" position="0 0 -0.02" scale="1.1 1.1 1.1"></a-image>
     </a-entity>
 
+    <!--Dekorationer-->
     <!--Dörr-->
     <a-entity id="door" gltf-model="#doors" position="0.027 -0.07 5.13" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
 
     <!--Blommor-->
     <a-entity id="flower-1" gltf-model="#flower" position="-3.5 -0.07 4.3" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
-    <a-entity id="flower-2" gltf-model="#flower" position="3.485 -0.07 4.3" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
+    <a-entity id="flower-2" gltf-model="#flower" position="3.15 2.69 4.3" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
     <a-entity id="flower-3" gltf-model="#flower" position="-4.29 -0.07 -4.61" rotation="0 90 0" scale="0.02 0.02 0.02"></a-entity>
     <a-entity id="flower-4" gltf-model="#flower" position="4.5 -0.07 -4.61" rotation="0 90 0" scale="0.02 0.02 0.02"></a-entity>
+
+    <!--Hylla-->
+    <a-entity id="shelves" gltf-model="#shelf" position="3.1 -0.07 4.24" rotation="0 0 0" scale="1.8 1.8 1.8"></a-entity>
+
+    <!--Skulptur-->
+    <a-entity id="sculptures" gltf-model="#sculpture" position="3.65 0.65 4.24" rotation="0 0 0" scale="0.09 0.09 0.09"></a-entity>
+
+    <!--Ljus-->
+    <a-entity id="candles" gltf-model="#candle" position="2.57 1.13 3.99" rotation="0 0 0" scale="2 2 2"></a-entity>
 
     <!--Lampor-->
     <a-entity id="light" light="type: ambient; intensity:0.5; distance:10;" position="-0.2 2.7 1.5"></a-entity>
@@ -234,4 +247,4 @@
 
 </a-scene>
 
-<script src="~/js/showroom.js"></script>
+<script src="~/js/showroom.js">modifyFrames(1)</script>
