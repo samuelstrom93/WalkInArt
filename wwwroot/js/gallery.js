@@ -59,17 +59,11 @@ for (let i = 0; i < pictures.length; i++) {
     })
 }
 
-// Kopierar url via share-icon (används med onclick på share-elementet)
-function copyUrl() {
-    let textDummy = document.createElement('input'),
-    text = window.location.href;
-    document.body.appendChild(textDummy);
-    textDummy.value = text;
-    textDummy.select();
-    document.execCommand('copy');
-    document.body.removeChild(textDummy);
-    alert('Nu kan du dela webbadressen!');
-}
+// Facebook dela-ikon
+let fbButton = document.querySelector(".fb-share-button");
+let url = window.location.href;
 
+// Sätter data-href till nuvarande url så att dela-knappen delar den sidan du är inne på
+fbButton.setAttribute('data-href', url);
 
 

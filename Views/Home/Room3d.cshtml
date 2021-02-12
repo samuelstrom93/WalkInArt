@@ -4,6 +4,7 @@
 <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 <script src="https://unpkg.com/aframe-look-at-component@0.6.0/dist/aframe-look-at-component.min.js"></script>
+<script src="https://unpkg.com/aframe-lsystem-component/dist/aframe-lsystem-component.min.js"></script>
 
 <a-scene inspector-plugin-recast>
     <a-assets>
@@ -32,10 +33,12 @@
         <a-asset-item id="wall-decoration" src="/assets/3d_rooms/start/models/wall-decoration/scene.gltf"></a-asset-item>
 
 
-        @for (int i = 1; i < 9; i++)
+        @for (int i = 0; i < 9; i++)
         {
-            string id = $"picture{i}";
+            int j = i+1;
+            string id = $"picture{j}";
             <img id="@id" class="pictures" src="@Model.IncomingCollections[i].Artworks[0].Hyperlink" crossorigin="anonymous">
+            
         }
     </a-assets>
 
@@ -58,14 +61,14 @@
     </a-entity>
 
     <a-entity id="lights-spot">
-        <a-entity position="-26.702 6.138 -8.243" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light1"></a-entity>
-        <a-entity position="-22.516 6.164 -9.006" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light2"></a-entity>
-        <a-entity position="-19.406 6.056 -8.909" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light3"></a-entity>
-        <a-entity position="-15.543 5.924 -8.414" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light4"></a-entity>
+        <a-entity position="-26.319 6.138 -8.243" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light1"></a-entity>
+        <a-entity position="-22.747 6.164 -9.006" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light2"></a-entity>
+        <a-entity position="-19.463 6.056 -8.909" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light3"></a-entity>
+        <a-entity position="-15.543 6.072 -8.414" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light4"></a-entity>
         <a-entity position="-9.614 6.138 -8.243" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light5"></a-entity>
-        <a-entity position="-5.629 6.164 -9.006" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light6"></a-entity>
-        <a-entity position="-2.644 6.056 -8.909" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light7"></a-entity>
-        <a-entity position="1.333 5.924 -8.528" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light8"></a-entity>
+        <a-entity position="-5.713 6.164 -9.006" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light6"></a-entity>
+        <a-entity position="-2.494 6.056 -8.909" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light7"></a-entity>
+        <a-entity position="1.333 5.998 -8.528" rotation="-31 0 0" light="angle:40;penumbra:0.3;type:spot" id="spot-light8"></a-entity>
     </a-entity>
 
     <!--Konstverk-set vänster-->
@@ -73,7 +76,7 @@
         <!--4 Utställnings set-->
         <a-entity position="-5.5 1 0" id="image1-4">
             <!--Konstverk 1-->
-            <a-entity navigate-on-click="url: index.html" id="image1" position="5.733 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[0].Id })" id="image1" position="5.733 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame1-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame1-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title1; material.color: #ffffff"
@@ -89,28 +92,23 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title1"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title1"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[1].Name; align: center">
+                </a-entity>
+
                 <!--Highlight-->
-                <a-box id="frame1-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame1-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
 
             </a-entity>
 
             <!--Konstverk 2-->
-            <a-entity navigate-on-click="url: index.html" id="image2" position="9.592 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[1].Id })" id="image2" position="9.238 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame2-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame2-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title2; material.color: #ffffff"
@@ -126,27 +124,22 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title2"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title2"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[2].Name; align: center">
+                </a-entity>
+
                 <!--Highlight-->
-                <a-box id="frame2-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame2-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
             </a-entity>
 
             <!--Konstverk 3-->
-            <a-entity navigate-on-click="url: index.html" id="image3" position="12.466 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[2].Id })" id="image3" position="12.57 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame3-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame3-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title3; material.color: #ffffff"
@@ -162,27 +155,21 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title3"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title3"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[3].Name; align: center">
+                </a-entity>
                 <!--Highlight-->
-                <a-box id="frame3-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame3-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
             </a-entity>
 
             <!--Konstverk 4-->
-            <a-entity navigate-on-click="url: index.html" id="image4" position="16.429 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[3].Id })" id="image4" position="16.429 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame4-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame4-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title4; material.color: #ffffff"
@@ -198,22 +185,16 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title4"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title4"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[4].Name; align: center">
+                </a-entity>
                 <!--Highlight-->
-                <a-box id="frame4-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame4-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
             </a-entity>
         </a-entity>
@@ -244,7 +225,7 @@
         <!--4 Utställnings set-->
         <a-entity position="-5.5 1 0" id="image5-8">
             <!--Konstverk 5-->
-            <a-entity navigate-on-click="url: index.html" id="image5" position="5.733 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[4].Id })" id="image5" position="5.733 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame5-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame5-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title5; material.color: #ffffff"
@@ -260,28 +241,22 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title5"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title5"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[5].Name; align: center">
+                </a-entity>
                 <!--Highlight-->
-                <a-box id="frame5-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame5-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
 
             </a-entity>
 
             <!--Konstverk 6-->
-            <a-entity navigate-on-click="url: index.html" id="image6" position="9.592 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[5].Id })" id="image6" position="9.238 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame6-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame6-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title6; material.color: #ffffff"
@@ -297,27 +272,21 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title6"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title6"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[6].Name; align: center">
+                </a-entity>
                 <!--Highlight-->
-                <a-box id="frame6-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame6-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
             </a-entity>
 
             <!--Konstverk 7-->
-            <a-entity navigate-on-click="url: index.html" id="image7" position="12.466 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[6].Id })" id="image7" position="12.57 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame7-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame7-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title7; material.color: #ffffff"
@@ -333,26 +302,20 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title7"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title7"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[7].Name; align: center">
+                </a-entity>
                 <!--Highlight-->
-                <a-box id="frame7-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame7-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
             </a-entity>
             <!--Konstverk 8-->
-            <a-entity navigate-on-click="url: index.html" id="image8" position="16.429 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[7].Id })" id="image8" position="16.429 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame8-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame8-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title8; material.color: #ffffff"
@@ -368,22 +331,16 @@
                     </a-image>
                 </a-entity>
                 <!--Titel ram-->
-                <a-box id="title8"
-                       src="#wall-updown-tex"
-                       normal-map="#wall-updown-nrm"
-                       color="#666666"
-                       width="1"
-                       height="0.5"
-                       depth="0.05"
-                       position="-5.58 2.040 -3.02">
-                    <a-text value="Title"
-                            align="center"
-                            color="#ffffff"
-                            position="0 0 0.1">
-                    </a-text>
-                </a-box>
+                <a-entity id="title8"
+                          class="title-frames"
+                          scale="0.6 0.6 1"
+                          position="-5.58 2.040 -3.02"
+                          geometry="primitive: box; width: 1.5; height: auto; depth: 0.05"
+                          material="src: #wall-updown-tex; normal-map: #wall-updown-nrm; color: #666666"
+                          text="wrapCount: 10; letterSpacing: 1; zOffset: 0.1; value: @Model.IncomingCollections[8].Name; align: center">
+                </a-entity>
                 <!--Highlight-->
-                <a-box id="frame8-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.558 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
+                <a-box id="frame8-anime" color="#666666" width="0.1" height="2.5" depth="0.1" position="-5.413 3.658 -3.042" material="opacity:0;src:#wall-tex;" geometry="width:3.5">
                 </a-box>
             </a-entity>
         </a-entity>

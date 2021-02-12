@@ -1,7 +1,7 @@
 ﻿
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 
-<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
 <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -409,7 +409,6 @@
             <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
                 <a-image src="#picture10" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
             </a-entity>
-
         </a-entity>
         <a-entity id="models">
             <a-entity id="door" gltf-model="#door" position="-6.135 1.22 0" rotation="0 0 0" scale="0.011 0.011 0.011"></a-entity>
@@ -420,4 +419,6 @@
         </a-entity>
     </a-entity>
 </a-scene>
-<script src="~/js/showroom.js"></script>
+<script src="~/js/showroom.js" onload="modifyFrames(0.7)"></script>
+
+

@@ -1,5 +1,6 @@
-
+ï»¿
 modifyFrames()
+
 function modifyFrames(){
     let elementsToScaleForBigFrames = document.getElementsByClassName("big-frames")
     let elementsWithImg = document.getElementsByClassName("pictures")
@@ -13,13 +14,13 @@ function modifyFrames(){
 function getMetaForBigFrames(elementWithImg, elementsToScaleForBigFrames) {
     var img = new Image();
     img.onload = function () {
-        let ratio = (this.height / this.width)*1;
-        elementsToScaleForBigFrames.attributes.scale.value = `1 ${ratio} 1`
+        let ratio = (this.height / this.width)*1.2;
+        elementsToScaleForBigFrames.attributes.scale.value = `1.2 ${ratio} 1.2`
     };
     img.src = elementWithImg.attributes.src.value;
 }
 
-//För att flytta till en annan sida i ett VR rum
+//Fï¿½r att flytta till en annan sida i ett VR rum
 AFRAME.registerComponent('navigate-on-click', {
     schema: {
         url: { default: '' }
@@ -30,7 +31,7 @@ AFRAME.registerComponent('navigate-on-click', {
         var el = this.el;
 
         el.addEventListener('click', function () {
-            window.location.href = data.url;
+            window.parent.location.href = data.url;
         });
     }
 }); 

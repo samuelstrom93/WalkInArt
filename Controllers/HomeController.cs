@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
 {
-    [Authorize]
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
