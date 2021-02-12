@@ -49,9 +49,15 @@
     height: 100%;
 }
 
-    .info-allexhibitions {
+.info-allexhibitions:hover {
+    top: -100%;
+}
+
+
+
+    /*.info-allexhibitions {
         top: -100%;
-    }
+    }*/
 
 /*
 .to-all-exhibitions {
