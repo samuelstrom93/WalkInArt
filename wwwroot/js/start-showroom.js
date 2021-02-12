@@ -1,4 +1,4 @@
-
+ï»¿
 modifyFrames()
 
 function modifyFrames(){
@@ -14,13 +14,13 @@ function modifyFrames(){
 function getMetaForBigFrames(elementWithImg, elementsToScaleForBigFrames) {
     var img = new Image();
     img.onload = function () {
-        let ratio = (this.height / this.width)*1.3;
-        elementsToScaleForBigFrames.attributes.scale.value = `1.3 ${ratio} 1.3`
+        let ratio = (this.height / this.width)*1.2;
+        elementsToScaleForBigFrames.attributes.scale.value = `1.2 ${ratio} 1.2`
     };
     img.src = elementWithImg.attributes.src.value;
 }
 
-//För att flytta till en annan sida i ett VR rum
+//Fï¿½r att flytta till en annan sida i ett VR rum
 AFRAME.registerComponent('navigate-on-click', {
     schema: {
         url: { default: '' }
