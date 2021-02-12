@@ -78,16 +78,7 @@
             <!--Konstverk 1-->
             <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[0].Id })" id="image1" position="5.733 0 -0.13"
 
-                      event-set__cursor-scale="_event: mouseenter; _target: #cursor; material.color: #5ec940;
-                                                 animation.property: scale;
-                                                 animation.to: 2 2 2; 
-                                                 animation.dur: 250; 
-                                                 animation.easing: easeInOutBack;"
-                      event-set__cursor-scale-leave="_event: mouseleave; _target: #cursor; material.color: #000000;
-                                                 animation.property: scale;
-                                                 animation.to: 1 1 1; 
-                                                 animation.dur: 250; 
-                                                 animation.easing: easeInOutBack;"
+                      @await Html.PartialAsync("/Views/Shared/_CursorAnimation.cshtml")
 
                       event-set__tarcol-title="_event: mouseenter; _target: #title1;
                                                  animation.property: material.color;
