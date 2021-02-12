@@ -32,7 +32,7 @@ AFRAME.registerComponent('navigate-on-click', {
         var el = this.el;
 
         el.addEventListener('click', function () {
-            window.location.href = data.url;
+            window.parent.location.href = data.url;
         });
     }
 }); 

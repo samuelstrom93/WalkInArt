@@ -33,10 +33,12 @@
         <a-asset-item id="wall-decoration" src="/assets/3d_rooms/start/models/wall-decoration/scene.gltf"></a-asset-item>
 
 
-        @for (int i = 1; i < 9; i++)
+        @for (int i = 0; i < 9; i++)
         {
-            string id = $"picture{i}";
+            int j = i+1;
+            string id = $"picture{j}";
             <img id="@id" class="pictures" src="@Model.IncomingCollections[i].Artworks[0].Hyperlink" crossorigin="anonymous">
+            
         }
     </a-assets>
 
@@ -74,7 +76,7 @@
         <!--4 Utställnings set-->
         <a-entity position="-5.5 1 0" id="image1-4">
             <!--Konstverk 1-->
-            <a-entity navigate-on-click="url: index.html" id="image1" position="5.733 0 -0.13"
+            <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[0].Id })" id="image1" position="5.733 0 -0.13"
                       event-set__tarcol="_event: mouseenter; _target: #frame1-anime; material.opacity: 1.0"
                       event-set__leave="_event: mouseleave; _target: #frame1-anime; material.opacity: 0"
                       event-set__tarcol-title="_event: mouseenter; _target: #title1; material.color: #ffffff"
