@@ -1,7 +1,7 @@
 ﻿
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 
-<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
 <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -35,7 +35,6 @@
         <a-asset-item id="dustyoldbookshelf" src="/assets/3d_rooms/exhibitionRoom1/models/DustyOldBookShelf/scene.gltf"></a-asset-item>
         <a-asset-item id="shelf" src="/assets/3d_rooms/exhibitionRoom1/models/shelf/scene.gltf"></a-asset-item>
         <a-asset-item id="window" src="/assets/3d_rooms/exhibitionRoom1/models/window/scene.gltf"></a-asset-item>
-        <a-asset-item id="iPad" src="/assets/3d_rooms/exhibitionRoom1/models/iPad/scene.gltf"></a-asset-item>
         @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
         {
             string id = $"picture{i}";
@@ -47,7 +46,6 @@
     <a-entity movement-controls="speed: 0.8; constrainToNavMesh: true" position="-3.75 0 0" rotation="0 0 0">
         <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true" rotation="0 -90 0">
             <a-cursor></a-cursor>
-            <a-entity gltf-model="#iPad" position="1.4 -0.31 -0.7" rotation="86 -96 -84"></a-entity>
         </a-entity>
     </a-entity>
     <a-entity id="floors">
@@ -411,7 +409,6 @@
             <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
                 <a-image src="#picture10" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
             </a-entity>
-
         </a-entity>
         <a-entity id="models">
             <a-entity id="door" gltf-model="#door" position="-6.135 1.22 0" rotation="0 0 0" scale="0.011 0.011 0.011"></a-entity>
@@ -422,4 +419,6 @@
         </a-entity>
     </a-entity>
 </a-scene>
-<script src="~/js/showroom.js"></script>
+<script src="~/js/showroom.js" onload="modifyFrames(0.7)"></script>
+
+
