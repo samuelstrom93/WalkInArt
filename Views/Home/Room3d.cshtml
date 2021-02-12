@@ -77,12 +77,31 @@
         <a-entity position="-5.5 1 0" id="image1-4">
             <!--Konstverk 1-->
             <a-entity navigate-on-click="url: @Url.Action("Index3d","Exhibitions", new { id = Model.IncomingCollections[0].Id })" id="image1" position="5.733 0 -0.13"
-                      event-set__cursor="_event: mouseenter; _target: #cursor; material.color: #5ec940; scale: 2 2 2"
-                      event-set__cursor-leave="_event: mouseleave; _target: #cursor; material.color: #000000; scale: 1 1 1"
+                      @*event-set__cursor-color="_event: mouseenter; _target: #cursor; 
+                                                 animation.property: material.color;
+                                                 animation.from: #000000;
+                                                 animation.to: #5ec940; 
+                                                 animation.dur: 250; 
+                                                 animation.easing: linear;"*@
+                      event-set__cursor-scale="_event: mouseenter; _target: #cursor; 
+                                                 animation.property: scale;
+                                                 animation.to: 2 2 2; 
+                                                 animation.dur: 250; 
+                                                 animation.easing: easeInOutBack;"
+                      event-set__cursor-scale-leave="_event: mouseleave; _target: #cursor; 
+                                                 animation.property: scale;
+                                                 animation.to: 1 1 1; 
+                                                 animation.dur: 250; 
+                                                 animation.easing: easeInOutBack;"
+                      @*event-set__cursor-leave="_event: mouseleave; _target: #cursor;
+                                         animation.property: material.color;
+                                         animation.from: #5ec940;
+                                         animation.to: #000000; 
+                                         animation.dur: 250; 
+                                         animation.easing: linear; scale: 1 1 1"*@
 
                       event-set__tarcol-title="_event: mouseenter; _target: #title1; material.color: #ffffff"
                       event-set__leave-title="_event: mouseleave; _target: #title1; material.color: #666666">
-                <a-animation begin="click" attribute="scale" dur="500" easing="ease-in-sine" to="2 2 2"></a-animation>
                 <!--Ram-->
                 <a-entity gltf-model="#frame" class="big-frames" id="frame1" position="-5.473 3.654 -2.973" scale="0.7 0.7 1">
                     <!--Utställnings bild-->
