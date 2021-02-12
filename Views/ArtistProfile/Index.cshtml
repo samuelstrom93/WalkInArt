@@ -46,7 +46,7 @@
 
             <div class="exhibition-info">
                 <h4 class="exhibition-title">
-                    @Model.Artist.Collections[i].Description
+                    @Model.Artist.Collections[i].Name
                     <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
                 </h4>
                 <div class="artworks">
@@ -66,7 +66,7 @@
                                 <p>
                                     <label>
                                         Beskrivning
-                                        <textarea name="description" rows="5" cols="33" ></textarea>
+                                        <textarea name="description" rows="5" cols="33"></textarea>
                                     </label>
                                 </p>
                                 <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
@@ -178,6 +178,7 @@
                         <textarea name="description" rows="5" cols="33"></textarea>
                     </label>
                 </p>
+                <p><label>Kategori: (optionell) <input type="text" name="category" pattern="\S(.*\S)?" /></label></p>
                 <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
 
 
