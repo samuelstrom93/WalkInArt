@@ -55,3 +55,63 @@
 }
 
 
+/*@media (max-width: 767px) {
+    .grid-allexhibitions {
+        display: grid;
+        align-content: center;
+
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 1080px) {
+    .grid-allexhibitions {
+        display: grid;
+        align-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        margin: auto;
+        width: 100%;
+    }
+}*/
+
+
+    /*.info-allexhibitions {
+        top: -100%;
+    }*/
+
+/*
+.to-all-exhibitions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: auto;
+    background-color: rgba(255,255,255, 0.7);
+    height: 40%;
+    width: 100%;
+}*/
+
+/*.title:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.title {
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 7px;
+    font-size: 20px;
+}*/
+
+
+
+
