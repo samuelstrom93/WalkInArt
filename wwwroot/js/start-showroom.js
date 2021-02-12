@@ -14,8 +14,8 @@ function modifyFrames(){
 function getMetaForBigFrames(elementWithImg, elementsToScaleForBigFrames) {
     var img = new Image();
     img.onload = function () {
-        let ratio = (this.height / this.width)*1.5;
-        elementsToScaleForBigFrames.attributes.scale.value = `1.5 ${ratio} 1.5`
+        let ratio = (this.height / this.width)*1.3;
+        elementsToScaleForBigFrames.attributes.scale.value = `1.3 ${ratio} 1.3`
     };
     img.src = elementWithImg.attributes.src.value;
 }
@@ -31,7 +31,7 @@ AFRAME.registerComponent('navigate-on-click', {
         var el = this.el;
 
         el.addEventListener('click', function () {
-            window.location.href = data.url;
+            window.parent.location.href = data.url;
         });
     }
 }); 
