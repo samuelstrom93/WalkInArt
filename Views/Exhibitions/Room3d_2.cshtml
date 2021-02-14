@@ -1,7 +1,7 @@
 ﻿
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 
-<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
 <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
@@ -37,7 +37,7 @@
     <!--Kamera-->
     <a-entity movement-controls="speed: 0.5; constrainToNavMesh: true" position="0 0 4.8" rotation="0 0 0">
         <a-entity camera position="0 2 0" look-controls="pointerLockEnabled: true">
-            <a-cursor raycaster="far: 7;"></a-cursor>
+            <a-cursor id="cursor" raycaster="far: 7;"></a-cursor>
         </a-entity>
     </a-entity>
 
@@ -204,8 +204,25 @@
     </a-entity>
 
     <!--Dörr-->
-    <a-entity id="door" gltf-model="#doors" position="0.027 -0.07 5.13" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
-
+    <a-entity id="door"gltf-model="#doors" position="0.027 -0.07 5.13" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
+    <a-entity id="exit" gltf-model="#exit" position="-0.0033 4.11941 4.88822" rotation="" scale="0.2 0.2 0.2"></a-entity>
+    <a-plane id="exit-plate" rotation="0 180 0"  position="-0.00997 2.3208 4.89549" scale="3 3 3"
+             navigate-on-click="url: @Url.Action("Index","Home")"                   
+             event-set__tarcol="_event: mouseenter; _target: #cursor; material.color: #5ec940; scale: 2 2 2"
+             event-set__leave="_event: mouseleave; _target: #cursor; material.color: #000000; scale: 1 1 1"
+             material="
+                  displacementBias:0;
+                  displacementScale:0;
+                  ambientOcclusionMap: #conc-floor-ao;
+                  displacementMap: #conc-floor-dis;
+                  normalMap: #conc-floor-nor;
+                  roughnessMap: #conc-floor-rou;
+                  src:#conc-floor-color;
+                  repeat:3 3;
+                  ambientOcclusionTextureRepeat: 3 3;
+                  displacementTextureRepeat: 3 3;
+                  normalTextureRepeat: 3 3;
+                  roughnessTextureRepeat: 3 3;"></a-plane>
     <!--Blommor-->
     <a-entity id="flower-1" gltf-model="#flower" position="-3.5 -0.07 4.3" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>
     <a-entity id="flower-2" gltf-model="#flower" position="3.485 -0.07 4.3" rotation="0 0 0" scale="0.02 0.02 0.02"></a-entity>

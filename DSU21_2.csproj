@@ -192,6 +192,8 @@
     <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\scene.gltf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\exit\scene.bin" />
+    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\exit\scene.gltf" />
   </ItemGroup>
 
   <ItemGroup>
