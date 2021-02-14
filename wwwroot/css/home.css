@@ -10,18 +10,55 @@
     border-bottom: 1px solid black;
 }
 #vr-btn {
-    position:relative; left: 75%; top: -200px;
-    border-radius: 20px;
-    border: none;
-    width: 50px;
-    background-color: rgba(69,73,82,255);
-    color: white;
-    font-family: 'Modern No. 20';
-    font-size: 18px;
+    position: absolute;
+    right: 3vw;
+    top: 15vh;
+    border-radius: 8px;
+    width: auto;
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: bold;
+    mix-blend-mode: hard-light;
+    border-block-width: 2px;
+    border-color: black;
 }
  #vr-btn:hover {
         cursor: pointer;
         background: linear-gradient(to bottom, #808080, #575151);
+}
+.changeView-btn {
+    position: absolute;
+    border-radius: 8px;
+    width: auto;
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: bold;
+    mix-blend-mode: hard-light;
+    border-width: 2px;
+    border-color: black;
+}
+
+.changeView-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom, #808080, #575151);
+    mix-blend-mode: normal;
+    color: white;
+
+}
+#change2d-btn {
+    right: 3vw;
+    top: 15vh;
+    width: auto;
+}
+
+#change3droom-btn {
+    right: 3vw;
+    top: 19vh;
+    width: auto;
 }
 .grid-container {
     display: grid;

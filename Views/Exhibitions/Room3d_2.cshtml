@@ -7,31 +7,32 @@
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
 <script src="https://unpkg.com/aframe-look-at-component@0.6.0/dist/aframe-look-at-component.min.js"></script>
 
-<a-assets>
-    <a-asset-item id="this-nav-mesh" src="/assets/3d_rooms/exhibitionRoom2/navmesh.gltf"></a-asset-item>
-    <a-asset-item id="frames" src="/assets/3d_rooms/exhibitionRoom2/models/frame/frame.gltf"></a-asset-item>
-    <a-assets-item id="doors" src="/assets/3d_rooms/exhibitionRoom2/models/door/scene.gltf"></a-assets-item>
-    <a-assets-item id="flower" src="/assets/3d_rooms/exhibitionRoom2/models/flower/scene.gltf"></a-assets-item>
-    <img id="conc-floor-ao" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_AmbientOcclusion.jpg">
-    <img id="conc-floor-color" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Color.jpg">
-    <img id="conc-floor-dis" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Displacement.jpg">
-    <img id="conc-floor-nor" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Normal.jpg">
-    <img id="conc-floor-rou" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Roughness.jpg">
-    <img id="roof-color" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Color.jpg">
-    <img id="roof-dis" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Displacement.jpg">
-    <img id="roof-nor" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Normal.jpg">
-    <img id="roof-rou" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Roughness.jpg">
-    
-    @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
-    {
-        string id = $"art{i}";
-        <img id="@id" class="pictures" src="@Model.Exhibitions.Artworks[i].Hyperlink" crossorigin="anonymous"/>
-    }
-
-</a-assets>
 
 
 <a-scene inspector-plugin-recast>
+    <a-assets>
+        <a-asset-item id="this-nav-mesh" src="/assets/3d_rooms/exhibitionRoom2/navmesh.gltf"></a-asset-item>
+        <a-asset-item id="frames" src="/assets/3d_rooms/exhibitionRoom2/models/frame/frame.gltf"></a-asset-item>
+        <a-assets-item id="doors" src="/assets/3d_rooms/exhibitionRoom2/models/door/scene.gltf"></a-assets-item>
+        <a-assets-item id="flower" src="/assets/3d_rooms/exhibitionRoom2/models/flower/scene.gltf"></a-assets-item>
+        <img id="conc-floor-ao" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_AmbientOcclusion.jpg">
+        <img id="conc-floor-color" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Color.jpg">
+        <img id="conc-floor-dis" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Displacement.jpg">
+        <img id="conc-floor-nor" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Normal.jpg">
+        <img id="conc-floor-rou" src="/assets/3d_rooms/exhibitionRoom2/textures/floorWall/Concrete030_1K_Roughness.jpg">
+        <img id="roof-color" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Color.jpg">
+        <img id="roof-dis" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Displacement.jpg">
+        <img id="roof-nor" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Normal.jpg">
+        <img id="roof-rou" src="/assets/3d_rooms/exhibitionRoom2/textures/ceiling/Plaster001_1K_Roughness.jpg">
+
+        @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
+        {
+            string id = $"art{i}";
+            <img id="@id" class="pictures" src="@Model.Exhibitions.Artworks[i].Hyperlink" crossorigin="anonymous" />
+        }
+
+    </a-assets>
+
 
     <!--Kamera-->
     <a-entity movement-controls="speed: 0.5; constrainToNavMesh: true" position="0 0 4.8" rotation="0 0 0">
@@ -234,4 +235,4 @@
 
 </a-scene>
 
-<script src="~/js/showroom.js">modifyFrames(1)</script>
+<script src="~/js/showroom.js" onload="modifyFrames(1)"></script>
