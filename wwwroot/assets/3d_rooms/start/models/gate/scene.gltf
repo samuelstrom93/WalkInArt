@@ -1,0 +1,273 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1274,
+      "max": [
+        -3.3380661010742188,
+        4.0912408828735352,
+        -5.1588010787963867
+      ],
+      "min": [
+        -6.8556151390075684,
+        -2.4578759670257568,
+        -8.4634618759155273
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 15288,
+      "componentType": 5126,
+      "count": 1274,
+      "max": [
+        0.9999316930770874,
+        0.99252128601074219,
+        0.99974668025970459
+      ],
+      "min": [
+        -0.99927419424057007,
+        -0.99994111061096191,
+        -0.99934107065200806
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1274,
+      "max": [
+        0.99971407651901245,
+        0.99935632944107056,
+        0.99954497814178467,
+        1
+      ],
+      "min": [
+        -0.99979203939437866,
+        -0.99993389844894409,
+        -0.99869424104690552,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1274,
+      "max": [
+        0.99454998970031738,
+        0.99908900260925293
+      ],
+      "min": [
+        0.00015300000086426735,
+        0.0039059999398887157
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 2784,
+      "max": [
+        1273
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "BozhidarKN (https://sketchfab.com/bojidarkn)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/models/e4871953f099429383ac568630670e62",
+      "title": "Death Statue Low Poly model"
+    },
+    "generator": "Sketchfab-3.22.13",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 11136,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 10192,
+      "byteOffset": 11136,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 30576,
+      "byteOffset": 21328,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 20384,
+      "byteOffset": 51904,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 72288,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Death_lowpoly_final_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Death_lowpoly_final_normal.png"
+    },
+    {
+      "uri": "textures/Death_lowpoly_final_baseColor.jpeg"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Death_lowpoly_final",
+      "normalTexture": {
+        "index": 1,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "occlusionTexture": {
+        "index": 0,
+        "strength": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 2,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.99805372953414917,
+        0,
+        0.06235961988568306,
+        0,
+        0.062077227979898453,
+        -0.095059923827648163,
+        -0.99353408813476562,
+        0,
+        0.005927900318056345,
+        0.9954715371131897,
+        -0.09487491101026535,
+        0,
+        -0.020240884274244308,
+        7.6745977401733398,
+        -6.3281097412109375,
+        1
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "Death_lowpoly_final.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": ""
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
+
