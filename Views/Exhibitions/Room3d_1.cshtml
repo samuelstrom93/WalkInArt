@@ -34,7 +34,7 @@
         <a-asset-item id="door" src="/assets/3d_rooms/exhibitionRoom1/models/door/scene.gltf"></a-asset-item>
         <a-asset-item id="desk" src="/assets/3d_rooms/exhibitionRoom1/models/desk/scene.gltf"></a-asset-item>
         <a-asset-item id="shelf" src="/assets/3d_rooms/exhibitionRoom1/models/shelf/scene.gltf"></a-asset-item>
-        <a-asset-item id="window" src="/assets/3d_rooms/exhibitionRoom1/models/window/scene.gltf"></a-asset-item>
+        <a-asset-item id="window" src="/assets/3d_rooms/exhibitionRoom1/models/window2/scene.gltf"></a-asset-item>
         <a-asset-item id="exit" src="/assets/3d_rooms/exhibitionRoom1/models/exit/scene.gltf"></a-asset-item>
         @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
         {
@@ -508,8 +508,8 @@
             <a-entity id="exit" gltf-model="#exit" position="-6.18452 2.48905 -0.01201" rotation="0 90 0" scale="0.2 0.2 0.2"></a-entity>
             <a-entity id="desk" gltf-model="#desk" position="-5.61 0.48 2.750" rotation="0 90 0" scale="1 1 1"></a-entity>
             <a-entity id="shelf" gltf-model="#shelf" position="-5.765 0 -2.750" rotation="0 0 0" scale="0.011 0.011 0.011"></a-entity>
-            <a-entity id="window1" gltf-model="#window" position="-6.1 4.2 0" rotation="90 0 90" scale="0.1 0.1 0.1"></a-entity>
-            <a-entity id="window2" gltf-model="#window" position="6.1 4.2 0" rotation="90 0 90" scale="0.1 0.1 0.1"></a-entity>
+            <a-entity id="window1" gltf-model="#window" position="-6.1 2.9 0" rotation="180 0 180" scale="0.01 0.01 0.01"><a-plane position="0 137.7 0" rotation="180 90 90" geometry="height:98;width:120" material="color:#919dd9"></a-plane></a-entity>
+            <a-entity id="window2" gltf-model="#window" position="6.1 2.9 0" rotation="180 0 180" scale="0.01 0.01 0.01"><a-plane position="0 137.7 0" rotation="0 90 90" geometry="height:98;width:120" material="color:#919dd9"></a-plane></a-entity>
         </a-entity>
     </a-entity>
 </a-scene>

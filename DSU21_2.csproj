@@ -26,21 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\scene.bin">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\scene.gltf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\textures\Scene_-_Root_baseColor.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\textures\Scene_-_Root_metallicRoughness.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\textures\Scene_-_Root_normal.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\desk\textures\DefaultMaterial_baseColor.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -84,21 +69,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\shelf\textures\DefaultMaterial_normal.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\scene.bin">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\scene.gltf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\textures\lambert1_baseColor.jpeg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\textures\lambert1_metallicRoughness.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window\textures\lambert1_normal.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\textures\ceiling\Plaster003_1K_Color.jpg">
@@ -173,6 +143,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\window2\" />
     <Folder Include="wwwroot\assets\3d_rooms\start\" />
   </ItemGroup>
 
