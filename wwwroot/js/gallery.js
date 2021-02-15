@@ -1,8 +1,4 @@
-let pictures = document.querySelectorAll(".gallery img");
-let pictureText = document.querySelectorAll(".picture-text p");
-
-
-let buttons = document.querySelectorAll('.button-overlay');
+ï»¿let buttons = document.querySelectorAll('.button-overlay');
 let overlays = document.querySelectorAll("#overlay")
 let overlayClose = document.querySelectorAll("#overlay span")
 
@@ -17,12 +13,12 @@ for (let i = 0; i < btnreadmoregallery.length; i++) {
     })
 }
 
-// Ändrar knappen visa mer och visa mindre på konstverk vid knapptryck.
+// ï¿½ndrar knappen visa mer och visa mindre pï¿½ konstverk vid knapptryck.
 function change(showhide) {
-    if (showhide.value === "Visa mer")
-        showhide.value = "Visa mindre";
+    if (showhide.value === "Visa info")
+        showhide.value = "Visa bild";
     else
-        showhide.value = "Visa mer";
+        showhide.value = "Visa info";
 }
 
 // Visar overlay med mer info vid knapptryck "mer info"-knapp
@@ -33,7 +29,7 @@ for (let i = 0; i < buttons.length; i++) {
     })
 }
 
-// Stänger overlay genom att klicka på krysset i overlay eller "mer info"-knappen igen
+// Stï¿½nger overlay genom att klicka pï¿½ krysset i overlay eller "mer info"-knappen igen
 for (let i = 0; i < overlayClose.length; i++) {
     overlayClose[i].addEventListener("click", function (event) {
         overlays[i].style.visibility = (overlays[i].style.visibility == "visible") ? "hidden" : "visible";
@@ -43,27 +39,20 @@ for (let i = 0; i < overlayClose.length; i++) {
 }
 
 
-// Förstorar bilden genom knapptryck på respektive bild (konstverk)
-for (let i = 0; i < pictures.length; i++) {
-    pictures[i].addEventListener("click", function (event){
 
-        pictures.forEach(picture => {
-            if (picture.style.height = "650px") {
-                picture.style.height = "";
-                picture.style.width = "";
-            }
-        });
-
-        event.target.style.width = "500px";
-        event.target.style.height = "650px";
-    })
+// Kopierar url via share-icon (anvï¿½nds med onclick pï¿½ share-elementet)
+function copyUrl() {
+    let textDummy = document.createElement('input'),
+    text = window.location.href;
+    document.body.appendChild(textDummy);
+    textDummy.value = text;
+    textDummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(textDummy);
+    alert('Nu kan du dela webbadressen!');
 }
 
-// Facebook dela-ikon
-let fbButton = document.querySelector(".fb-share-button");
-let url = window.location.href;
-
-// Sätter data-href till nuvarande url så att dela-knappen delar den sidan du är inne på
+// Sï¿½tter data-href till nuvarande url sï¿½ att dela-knappen delar den sidan du ï¿½r inne pï¿½
 fbButton.setAttribute('data-href', url);
 
 

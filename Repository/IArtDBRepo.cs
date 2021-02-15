@@ -14,11 +14,12 @@ namespace DSU21_2.Repository
         Task<Collection> GetCollection(int collectionId);
         void DeleteCollection(Collection collection);
         Artist AddArtist(string name, string about, string profileId);
-        public bool AddCollection(Artist artist, string name, string description);
+        bool AddCollection(Artist artist, string name, string description);
+        Task<bool> AddCollection(Artist artist, string name, string description, string category);
         bool AddArtwork(Collection collection, string name, string description, string hyperlink);
         Task<Artwork> UpdateArtwork(int id, string hyperlink, string description, string name);
         Task<List<Collection>> GetCollectionsWithArt();
-        bool AddTag(string title);
+        Task<Tag> AddTag(string title);
         Task<List<Tag>> GetTags();
         Task<Tag> GetTag(int tagId);
         Artist UpdateArtist(Artist artist, string about);

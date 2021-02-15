@@ -129,6 +129,18 @@ namespace DSU21_2.Repository
             return true;
         }
 
+        public async Task <bool>AddCollection(Artist artist, string name, string description, string category)
+        {
+            Collection collection = new Collection { Name = name, Description = description };
+            Tag tag = await AddTag(category);
+            collection.Tags.Add(tag);
+            artist.Collections.Add(collection);
+            context.SaveChanges();
+            return true;
+        }
+
+
+
         public async Task<List<Collection>> GetCollectionWithTags()
         {
             return await context.Collections
@@ -207,13 +219,20 @@ namespace DSU21_2.Repository
 
         #region Tag
 
-        public bool AddTag(string title)
+        public async Task<Tag> AddTag(string title)
         {
-            title = "Fotografi";
-            var tag = new Tag { Title = title };
-            context.Tags.Add(tag);
-            context.SaveChanges();
-            return true;
+            Tag tag;
+            tag = await context.Tags
+                .FirstOrDefaultAsync(a => a.Title == title);
+
+            if(tag == null)
+            {
+                tag = new Tag();
+                tag.Title = title;
+                context.Tags.Add(tag);
+                context.SaveChanges();
+            }
+            return tag;
         }
 
         public async Task<List<Tag>> GetTags()

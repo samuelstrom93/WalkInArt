@@ -20,14 +20,14 @@
         <h1 id="profile-header">@Model.Artist.Name</h1>
 
         <div class="profile-description">
-            <h3>Beskrivning:</h3>
+            <p>Beskrivning:</p>
             <p>@Model.Artist.About</p>
         </div>
 
         <form method="post" asp-action="UpdateArtist" asp-controller="ArtistProfile" class="form-flex">
             <input type="hidden" name="artistId" value="@Model.Artist.Id" />
             <textarea name="about" rows="5" cols="33"></textarea>
-            <input type="submit" name="remove" value="Updatera" class="edit-profile" id="edit-btn" />
+            <input type="submit" name="remove" value="Uppdatera" class="edit-profile" id="edit-btn" />
         </form>
 
     </div>
@@ -46,7 +46,7 @@
 
             <div class="exhibition-info">
                 <h4 class="exhibition-title">
-                    @Model.Artist.Collections[i].Description
+                    @Model.Artist.Collections[i].Name
                     <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
                 </h4>
                 <div class="artworks">
@@ -59,14 +59,14 @@
                                 Lägg till objekt
                             </a>
                             <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
-                                <h3>Utställning</h3>
+                                <p>Utställning</p>
                                 <input type="hidden" name="artistId" value="@Model.Artist.Id" />
                                 <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
                                 <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
                                 <p>
                                     <label>
                                         Beskrivning
-                                        <textarea name="description" rows="5" cols="33" ></textarea>
+                                        <textarea name="description" rows="5" cols="33"></textarea>
                                     </label>
                                 </p>
                                 <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
@@ -103,7 +103,7 @@
                                     </p>
                                     <p>
                                         <label><b>Uppdatera</b></label>
-                                        <input type="submit" name="update" value="Uppdatera" id="update-submit" />
+                                        <input type="submit" name="update" value="Uppdatera" class="update-submit" />
                                     </p>
 
                                 </form>
@@ -126,7 +126,7 @@
                                         Lägg till objekt
                                     </a>
                                     <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
-                                        <h3>Utställning</h3>
+                                        <p>Utställning</p>
                                         <input type="hidden" name="artistId" value="@Model.Artist.Id" />
                                         <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
                                         <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
@@ -170,7 +170,7 @@
             </a>
             <form class="exhibition-form" asp-controller="ArtistProfile" asp-action="AddCollection">
                 <input type="hidden" name="id" value="@Model.Artist.Id" />
-                <h3>Utställning</h3>
+                <p>Utställning</p>
                 <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
                 <p>
                     <label>
@@ -178,15 +178,13 @@
                         <textarea name="description" rows="5" cols="33"></textarea>
                     </label>
                 </p>
+                <p><label>Kategori: (optionell) <input type="text" name="category" pattern="\S(.*\S)?" /></label></p>
                 <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
 
 
             </form>
         </div>
     </div>
-
-
-
 </main>
 
 

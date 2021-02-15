@@ -9,7 +9,9 @@
 #profile-header {
     grid-column: span 2;
     text-align: center;
-    background-color: #27ad63;
+    background-color: rgb(32, 32, 32);
+    border-radius: 8px;
+    font-size: 2.0rem;
     color: #fff;
     height: 5vh;
 }
@@ -18,9 +20,12 @@
     display: flex;
     flex-direction: column;
 }
+.form-flex textarea {
+    border-radius: 8px;
+}
 
 .form-flex textarea {
-    border: 1.5px solid #000;
+    border: 1.5px solid #585252;
     margin-bottom: 0.3em;
 }
 
@@ -32,7 +37,7 @@
 }
 
 .add-exhibition {
-    background-color: #34ac19;
+    background-color: rgb(46,46,46);
     padding: 0.3em 0.5em;
     color: #fff;
     width: 200px;
@@ -66,10 +71,11 @@
 
 #header-grid {
     grid-column: span 2;
-    background-color: #3c25c1;
+    background-color: rgb(32, 32, 32);
+    font-size: 2.0rem;
     text-align: center;
     color: #fff;
-    border-radius: 4px 4px 0 0;
+    border-radius: 8px;
     height: 5vh;
 }
 
@@ -83,7 +89,7 @@
 }
 
 .edit-profile {
-    background-color: #147a4c;
+    background-color: rgb(46,46,46);
     padding: 0.5em 1em;
     border-radius: 4px;
     color: #fff;
@@ -97,7 +103,7 @@
 .edit-btn {
     background-color: #147a4c;
     padding: 0.5em 1em;
-    border-radius: 4px;
+    border-radius: 8px;
     color: #fff;
     cursor: pointer;
     border: none;
@@ -113,6 +119,7 @@
     color: #fff;
     cursor: pointer;
     border: none;
+    margin-top: 2.6%;
 }
 
 .delete-btn:hover {
@@ -151,12 +158,13 @@
 .exhibition-form {
     display: none;
     margin: 1em;
-    border: 1px solid #000;
+    border: 1.5px solid #585252;
+    border-radius: 8px;
     padding: 1em;
     width: 75%;
 }
 
-.exhibition-form h3 {
+.exhibition-form p {
     margin-bottom: 1em;
 }
 
@@ -164,12 +172,20 @@
     display: flex;
     flex-direction: column;
     font-weight: bold;
-} 
+}
 
 #submit-btn {
     display: flex;
     margin: auto;
-    font-weight: bold;
+    background-color: #212529;
+    border-radius: 4px;
+    color:#fff;
+}
+.update-submit {
+    color: #fff;
+    background: rgb(46,46,46);
+    border: none;
+    height: 2rem;
 }
 
 
@@ -179,8 +195,8 @@
     font-weight: bold;
 }
 
-.add-object{
-    background-color: #294dc3;
+.add-object {
+    background-color: rgb(46,46,46);
     padding: 0.3em 0.5em;
     color: #fff;
     width: 200px;
@@ -203,7 +219,7 @@
     width: 75%;
 }
 
-.object-form h3 {
+.object-form p {
     margin-bottom: 1em;
 }
 
@@ -224,7 +240,13 @@
     flex-direction: row;
     align-items: center;
 }
-
+.form-wrapper textarea {
+    border-radius: 8px;
+    border: 1.5px solid #585252;
+}
+.form-wrapper input {
+    border-radius: 8px;
+ }
 .update-form p {
     display: flex;
     flex-direction: column;
@@ -235,7 +257,9 @@
     height: 190px;
     width: 230px;
 }
-
+.update-form input {
+   border: 1.5px solid #585252;
+}
 
 #edit-title {
     text-align: center;

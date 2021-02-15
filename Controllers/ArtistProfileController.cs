@@ -25,12 +25,19 @@ namespace DSU21_2.Controllers
             return View(viewModel);
         }
 
-
-
-        public async Task<IActionResult> AddCollection(string title, string description, int id)
+        public async Task<IActionResult> AddCollection(string title, string description, int id, string category)
         {
             Artist artist = await artDbRepo.GetArtistAsync(id);
-            artDbRepo.AddCollection(artist, title, description);
+
+            if (String.IsNullOrEmpty(category))
+            {
+                artDbRepo.AddCollection(artist, title, description);
+            }
+            else
+            {
+                await artDbRepo.AddCollection(artist, title, description, category);
+            }
+
 
             ArtistViewModel viewModel = new ArtistViewModel(artist);
             return View("Index", viewModel);
