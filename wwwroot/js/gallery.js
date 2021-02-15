@@ -1,4 +1,4 @@
-let buttons = document.querySelectorAll('.button-overlay');
+ï»¿let buttons = document.querySelectorAll('.button-overlay');
 let overlays = document.querySelectorAll("#overlay")
 let overlayClose = document.querySelectorAll("#overlay span")
 
@@ -13,7 +13,7 @@ for (let i = 0; i < btnreadmoregallery.length; i++) {
     })
 }
 
-// Ändrar knappen visa mer och visa mindre på konstverk vid knapptryck.
+// ï¿½ndrar knappen visa mer och visa mindre pï¿½ konstverk vid knapptryck.
 function change(showhide) {
     if (showhide.value === "Visa info")
         showhide.value = "Visa bild";
@@ -29,7 +29,7 @@ for (let i = 0; i < buttons.length; i++) {
     })
 }
 
-// Stänger overlay genom att klicka på krysset i overlay eller "mer info"-knappen igen
+// Stï¿½nger overlay genom att klicka pï¿½ krysset i overlay eller "mer info"-knappen igen
 for (let i = 0; i < overlayClose.length; i++) {
     overlayClose[i].addEventListener("click", function (event) {
         overlays[i].style.visibility = (overlays[i].style.visibility == "visible") ? "hidden" : "visible";
@@ -40,6 +40,19 @@ for (let i = 0; i < overlayClose.length; i++) {
 
 
 
+// Kopierar url via share-icon (anvï¿½nds med onclick pï¿½ share-elementet)
+function copyUrl() {
+    let textDummy = document.createElement('input'),
+    text = window.location.href;
+    document.body.appendChild(textDummy);
+    textDummy.value = text;
+    textDummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(textDummy);
+    alert('Nu kan du dela webbadressen!');
+}
 
+// Sï¿½tter data-href till nuvarande url sï¿½ att dela-knappen delar den sidan du ï¿½r inne pï¿½
+fbButton.setAttribute('data-href', url);
 
 

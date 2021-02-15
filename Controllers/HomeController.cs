@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
 {
-    [Authorize]
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -36,6 +36,16 @@ namespace DSU21_2.Controllers
             var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
             return View(homeViewModel);
            
+        }
+
+        public async Task<IActionResult> Room3d()
+        {
+            //Used for filling local DB with data, run once.
+            //await artDbRepo.FillDbWithData();
+            var collectionList = await artDbRepo.GetCollectionsWithArt();
+            var tagList = await artDbRepo.GetTags();
+            var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
+            return PartialView("/Views/Home/Room3d.cshtml",homeViewModel);
         }
 
         public IActionResult Privacy()

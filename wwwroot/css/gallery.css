@@ -300,5 +300,7 @@
     padding: 2% 1%;
 }
 
-
-
+.fb-share-button {
+    transform: scale(1.5);
+    margin-right: 1em;
+}

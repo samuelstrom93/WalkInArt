@@ -1,0 +1,515 @@
+﻿
+@model DSU21_2.ViewModels.ExhibitionsViewModel
+
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+<script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-look-at-component@0.6.0/dist/aframe-look-at-component.min.js"></script>
+
+
+
+<a-scene inspector-plugin-recast>
+    <a-assets>
+
+        <img id="wood-floor" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Color.jpg">
+        <img id="wood-floor-AO" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_AmbientOcclusion.jpg">
+        <img id="wood-floor-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Displacement.jpg">
+        <img id="wood-floor-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Normal.jpg">
+        <img id="wood-floor-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/floor/WoodFloor041_1K_Roughness.jpg">
+        <img id="conc-wall" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Color.jpg">
+        <img id="conc-wall-AO" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_AmbientOcclusion.jpg">
+        <img id="conc-wall-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Displacement.jpg">
+        <img id="conc-wall-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Normal.jpg">
+        <img id="conc-wall-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/wall/PaintedPlaster014_1K_Roughness.jpg">
+        <img id="beam-wood" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Color.jpg">
+        <img id="beam-wood-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Displacement.jpg">
+        <img id="beam-wood-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Normal.jpg">
+        <img id="beam-wood-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Wood035_1K_Roughness.jpg">
+        <img id="ceiling-paint" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Color.jpg">
+        <img id="ceiling-paint-Dis" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Displacement.jpg">
+        <img id="ceiling-paint-Norm" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Normal.jpg">
+        <img id="ceiling-paint-Rough" src="/assets/3d_rooms/exhibitionRoom1/textures/ceiling/Plaster003_1K_Roughness.jpg">
+        <a-asset-item id="frame" src="/assets/3d_rooms/exhibitionRoom1/models/frame/frame.gltf"></a-asset-item>
+        <a-asset-item id="door" src="/assets/3d_rooms/exhibitionRoom1/models/door/scene.gltf"></a-asset-item>
+        <a-asset-item id="dustyoldbookshelf" src="/assets/3d_rooms/exhibitionRoom1/models/DustyOldBookShelf/scene.gltf"></a-asset-item>
+        <a-asset-item id="shelf" src="/assets/3d_rooms/exhibitionRoom1/models/shelf/scene.gltf"></a-asset-item>
+        <a-asset-item id="window" src="/assets/3d_rooms/exhibitionRoom1/models/window/scene.gltf"></a-asset-item>
+        <a-asset-item id="exit" src="/assets/3d_rooms/exhibitionRoom1/models/exit/scene.gltf"></a-asset-item>
+        @for (int i = 0; i < Model.Exhibitions.Artworks.Count; i++)
+        {
+            string id = $"picture{i}";
+            <img id="@id" class="pictures" src="@Model.Exhibitions.Artworks[i].Hyperlink" crossorigin="anonymous">
+        }
+    </a-assets>
+
+
+    <a-entity movement-controls="speed: 0.8; constrainToNavMesh: true" position="-3.75 0 0" rotation="0 0 0">
+        <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true" rotation="0 -90 0">
+            <a-cursor id="cursor"></a-cursor>
+        </a-entity>
+    </a-entity>
+    <a-entity id="floors">
+        <a-plane rotation="-90 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    ambientOcclusionMap: #wood-floor-AO;
+                    displacementMap: #wood-floor-Dis;
+                    normalMap: #wood-floor-Norm;
+                    roughnessMap: #wood-floor-Rough;
+                    src:#wood-floor;
+                    repeat:5 5;
+                    ambientOcclusionTextureRepeat: 5 5;
+                    displacementTextureRepeat: 5 5;
+                    normalTextureRepeat: 5 5;
+                    roughnessTextureRepeat: 5 5;" geometry="height:10;width:12.5" id="floor"></a-plane>
+        <a-plane rotation="-90 0 0" material="" geometry="height:9.7;width:12" id="floor-nav-mesh" visible="false" nav-mesh></a-plane>
+    </a-entity>
+    <a-entity id="roof">
+        <a-plane position="0 2.95 5" rotation="60 180 180" material="displacementBias:0;
+                displacementScale:0;
+                displacementMap: #ceiling-paint-Dis;
+                normalMap: #ceiling-paint-Norm;
+                roughnessMap: #ceiling-paint-Rough;
+                src:#ceiling-paint;
+                repeat:20 20;
+                displacementTextureRepeat: 20 20;
+                normalTextureRepeat: 20 20;
+                roughnessTextureRepeat: 20 20;" geometry="height:15;width:12.5" id="ceiling1"></a-plane>
+        <a-plane position="0 2.95 -5" rotation="60 0 0" material="displacementBias:0;
+                displacementScale:0;
+                displacementMap: #ceiling-paint-Dis;
+                normalMap: #ceiling-paint-Norm;
+                roughnessMap: #ceiling-paint-Rough;
+                src:#ceiling-paint;
+                repeat:20 20;
+                ambientOcclusionTextureRepeat: 20 20;
+                displacementTextureRepeat: 20 20;
+                normalTextureRepeat: 20 20;
+                roughnessTextureRepeat: 20 20;" geometry="height:15;width:12.5" id="ceiling2"></a-plane>
+        <a-entity id="beam1">
+            <a-box position="-6.25 3.15 0" rotation="90 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam1-lower"></a-box>
+            <a-box position="-6.25 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam1-upper1">
+            </a-box>
+            <a-box position="-6.25 5.64 0.127" rotation="-60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam1-upper2">
+        </a-entity>
+        <a-entity id="beam2">
+            <a-box position="-3.75 3.15 0" rotation="90 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam2-lower"></a-box>
+            <a-box position="-3.75 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam2-upper1">
+            </a-box>
+            <a-box position="-3.75 5.64 0.127" rotation="-60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam2-upper2">
+        </a-entity>
+        <a-entity id="beam3">
+            <a-box position="-1.25 3.15 0" rotation="90 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam3-lower"></a-box>
+            <a-box position="-1.25 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam3-upper1">
+            </a-box>
+            <a-box position="-1.25 5.64 0.127" rotation="-60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam3-upper2">
+        </a-entity>
+        <a-entity id="beam4">
+            <a-box position="1.25 3.15 0" rotation="90 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam4-lower"></a-box>
+            <a-box position="1.25 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam4-upper1">
+            </a-box>
+            <a-box position="1.25 5.64 0.127" rotation="-60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam4-upper2">
+        </a-entity>
+        <a-entity id="beam5">
+            <a-box position="3.75 3.15 0" rotation="90 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam5-lower"></a-box>
+            <a-box position="3.75 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam5-upper1">
+            </a-box>
+            <a-box position="3.75 5.64 0.127" rotation="-60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam5-upper2">
+        </a-entity>
+        <a-entity id="beam6">
+            <a-box position="6.25 3.15 0" rotation="90 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam6-lower"></a-box>
+            <a-box position="6.25 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam6-upper1">
+            </a-box>
+            <a-box position="6.25 5.64 0.127" rotation="-60 0 0" material="displacementBias:0;
+                    displacementScale:0;
+                    displacementMap: #beam-wood-Dis;
+                    normalMap: #beam-wood-Norm;
+                    roughnessMap: #beam-wood-Rough;
+                    src:#beam-wood;
+                    repeat:1 10;
+                    ambientOcclusionTextureRepeat: 1 10;
+                    displacementTextureRepeat: 1 10;
+                    normalTextureRepeat: 1 10;
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.29;height:10" id="beam6-upper2">
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="walls">
+        <a-box position="0 1.5 -5" material=" color:#dad8d8; displacementBias:0;
+                displacementScale:0;
+                ambientOcclusionMap: #conc-wall-AO;
+                displacementMap: #conc-wall-Dis;
+                normalMap: #conc-wall-Norm;
+                roughnessMap: #conc-wall-Rough;
+                src:#conc-wall;
+                repeat:2.5 1;
+                ambientOcclusionTextureRepeat: 2.5 1;
+                displacementTextureRepeat: 2.5 1;
+                normalTextureRepeat: 2.5 1;
+                roughnessTextureRepeat: 2.5 1;" geometry="width:12.5;height:3;depth:0.2" id="wall-E"></a-box>
+        <a-box position="0 1.5 5" rotation="0 180 0" material=" color:#dad8d8; displacementBias:0;
+                displacementScale:0;
+                ambientOcclusionMap: #conc-wall-AO;
+                displacementMap: #conc-wall-Dis;
+                normalMap: #conc-wall-Norm;
+                roughnessMap: #conc-wall-Rough;
+                src:#conc-wall;
+                repeat:2.5 1;
+                ambientOcclusionTextureRepeat: 2.5 1;
+                displacementTextureRepeat: 2.5 1;
+                normalTextureRepeat: 2.5 1;
+                roughnessTextureRepeat: 2.5 1;" geometry="width:12.5;depth:0.2;height:3" id="wall-W"></a-box>
+        <a-box position="6.25 1.5 0" rotation="0 -90 0" material=" color:#dad8d8; displacementBias:0;
+                displacementScale:0;
+                ambientOcclusionMap: #conc-wall-AO;
+                displacementMap: #conc-wall-Dis;
+                normalMap: #conc-wall-Norm;
+                roughnessMap: #conc-wall-Rough;
+                src:#conc-wall;
+                repeat:2 3;
+                ambientOcclusionTextureRepeat: 2 3;
+                displacementTextureRepeat: 2 3;
+                normalTextureRepeat: 2 3;
+                roughnessTextureRepeat: 2 3;" geometry="width:10;height:9;depth:0.2" id="wall-S"></a-box>
+        <a-box position="-6.25 1.5 0" rotation="0 90 0" material=" color:#dad8d8; displacementBias:0;
+                displacementScale:0;
+                ambientOcclusionMap: #conc-wall-AO;
+                displacementMap: #conc-wall-Dis;
+                normalMap: #conc-wall-Norm;
+                roughnessMap: #conc-wall-Rough;
+                src:#conc-wall;
+                repeat:2 3;
+                ambientOcclusionTextureRepeat: 2 3;
+                displacementTextureRepeat: 2 3;
+                normalTextureRepeat: 2 3;
+                roughnessTextureRepeat: 2 3;" geometry="width:10;height:9;depth:0.2" id="wall-N"></a-box>
+    </a-entity>
+
+    <a-entity id="lights-point">
+        <a-entity position="-3.75 2.734 0" light="intensity:0.4;type:point" id="point-light1"></a-entity>
+        <a-entity position="-1.25 2.734 0" light="intensity:0.4;type:point" id="point-light2"></a-entity>
+        <a-entity position="1.25 2.734 0" light="intensity:0.4;type:point" id="point-light3"></a-entity>
+        <a-entity position="3.75 2.734 0" light="intensity:0.4;type:point" id="point-light4"></a-entity>
+    </a-entity>
+
+    <a-entity id="lights-spot">
+        <a-entity position="-3.75 2.85 -3.5" rotation="-31 0 0" light="penumbra:0.3;angle:40;type:spot" id="spot-light1"></a-entity>
+        <a-entity position="-1.25 2.85 -3.5" rotation="-31 0 0" light="penumbra:0.3;angle:40;type:spot" id="spot-light2"></a-entity>
+        <a-entity position="1.25 2.85 -3.5" rotation="-31 0 0" light="penumbra:0.3;angle:40;type:spot" id="spot-light3"></a-entity>
+        <a-entity position="3.75 2.85 -3.5" rotation="-31 0 0" light="penumbra:0.3;angle:40;type:spot" id="spot-light4"></a-entity>
+        <a-entity position="-3.75 2.85 3.5" rotation="-31 -180 -180" light="penumbra:0.3;angle:40;type:spot" id="spot-light5"></a-entity>
+        <a-entity position="-1.25 2.85 3.5" rotation="-31 -180 -180" light="penumbra:0.3;angle:40;type:spot" id="spot-light6"></a-entity>
+        <a-entity position="1.25 2.85 3.5" rotation="-31 -180 -180" light="penumbra:0.3;angle:40;type:spot" id="spot-light7"></a-entity>
+        <a-entity position="3.75 2.85 3.5" rotation="-31 -180 -180" light="penumbra:0.3;angle:40;type:spot" id="spot-light8"></a-entity>
+        <a-entity position="3.75 2.85 -2.5" rotation="-25 -90 0" light="penumbra:0.3;angle:30;intensity:0.8;type:spot;" id="spot-light9"></a-entity>
+        <a-entity position="3.75 2.85 0" rotation="-25 -90 0" light="penumbra:0.3;angle:30;intensity:0.8;type:spot" id="spot-light10"></a-entity>
+        <a-entity position="3.75 2.85 2.5" rotation="-25 -90 0" light="penumbra:0.3;angle:30;intensity:0.8;type:spot" id="spot-light11"></a-entity>
+    </a-entity>
+    <a-entity id="models">
+        <a-entity id="frames">
+            <a-entity gltf-model="#frame" class="frames" position="3.75 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture0" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="1.2 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture1" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="-1.2 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture2" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="-3.75 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture3" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="3.75 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture4" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="1.2 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture5" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="-1.2 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture6" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="-3.75 1.6 4.85" rotation="0 180 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture7" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 0" rotation="0 -90 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture8" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 -2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture9" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+            <a-entity gltf-model="#frame" class="frames" position="6.07 1.6 2.5" rotation="0 -90 0" scale="0.7 0.7 0.7">
+                <a-image src="#picture10" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
+            </a-entity>
+        </a-entity>
+        <a-entity id="frames-title">
+            <a-entity id="title-0"
+                      class="title-frames"
+                      position="4.75 1.6 -4.85"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-1"
+                      class="title-frames"
+                      position="2.2 1.6 -4.85"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-2"
+                      class="title-frames"
+                      position="-0.2 1.6 -4.85"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-3"
+                      class="title-frames"
+                      position="-2.75 1.6 -4.85"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-4"
+                      class="title-frames"
+                      position="2.75 1.6 4.85"
+                      rotation="0 180 0"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-5"
+                      class="title-frames"
+                      position="0.2 1.6 4.85"
+                      rotation="0 180 0"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-6"
+                      class="title-frames"
+                      position="-2.2 1.6 4.85"
+                      rotation="0 180 0"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-7"
+                      class="title-frames"
+                      position="-4.75 1.6 4.85"
+                      rotation="0 180 0"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-8"
+                      class="title-frames"
+                      position="6.07 1.6 1"
+                      rotation="0 -90 0"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-9"
+                      class="title-frames"
+                      position="6.07 1.6 -1.5"
+                      rotation="0 -90 0"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+            <a-entity id="title-10"
+                      class="title-frames"
+                      position="6.07 1.6 3.5"
+                      rotation="0 -90 0"
+                      geometry="primitive: plane; width: 0.6; height:0.3; depth: 0.05"
+                      material="color:#fff; opacity:0.4;"
+                      text="wrapCount:20; width:0.5; height:0.2; value: Title on painting; align:left; color:#000; text.size:6px">
+            </a-entity>
+
+        </a-entity>
+        <a-entity id="models">
+            <a-entity id="door"
+                      navigate-on-click="url: @Url.Action("Index","Home")"
+                      gltf-model="#door"
+                      position="-6.135 1.22 0" rotation="0 0 0" scale="0.011 0.011 0.011"
+                      @await Html.PartialAsync("/Views/Shared/_CursorAnimation.cshtml")></a-entity>
+            <a-entity id="exit" gltf-model="#exit" position="-6.18452 2.48905 -0.01201" rotation="0 90 0" scale="0.2 0.2 0.2"></a-entity>
+            <a-entity id="bench" gltf-model="#dustyoldbookshelf" position="-5.91 0 2.714" rotation="0 -91.6 0" scale="0.0115 0.0115 0.0115"></a-entity>
+            <a-entity id="shelf" gltf-model="#shelf" position="-5.765 0 -2.750" rotation="0 0 0" scale="0.011 0.011 0.011"></a-entity>
+            <a-entity id="window1" gltf-model="#window" position="-6.1 4.2 0" rotation="90 0 90" scale="0.1 0.1 0.1"></a-entity>
+            <a-entity id="window2" gltf-model="#window" position="6.1 4.2 0" rotation="90 0 90" scale="0.1 0.1 0.1"></a-entity>
+        </a-entity>
+    </a-entity>
+</a-scene>
+<script src="~/js/showroom.js" onload="modifyFrames(0.7)"></script>

@@ -22,7 +22,39 @@
     cursor: pointer;
     background: linear-gradient(to bottom, #808080, #575151);
 }
-.grid-containerHome {
+.changeView-btn {
+    position: absolute;
+    border-radius: 8px;
+    width: auto;
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: bold;
+    mix-blend-mode: hard-light;
+    border-width: 2px;
+    border-color: black;
+}
+
+.changeView-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom, #808080, #575151);
+    mix-blend-mode: normal;
+    color: white;
+
+}
+#change2d-btn {
+    right: 3vw;
+    top: 15vh;
+    width: auto;
+}
+
+#change3droom-btn {
+    right: 3vw;
+    top: 19vh;
+    width: auto;
+}
+.grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
@@ -66,12 +98,33 @@
     margin-top: -5%;
 }
 
+.fas.fa-chevron-right {
+    align-self: center;
+    justify-self: center;
+    font-size: 2.3em;
+}
 
 .grid-artHome span {
     font-size: 1.2em;
     text-align: center;
 }
 
+.category-overlay {
+    position: relative;
+    bottom: 125px;
+    background-color: #fff;
+    height: 30%;
+    opacity: 0.7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-overlay a:hover {
+    text-decoration: underline;
+}
 
 .info-boxHome {
     top: -17%;
