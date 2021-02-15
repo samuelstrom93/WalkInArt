@@ -41,6 +41,15 @@
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\bench\textures\Scene_-_Root_normal.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\desk\textures\DefaultMaterial_baseColor.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\desk\textures\DefaultMaterial_metallicRoughness.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\desk\textures\DefaultMaterial_normal.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\scene.bin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -54,24 +63,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\door\textures\Door_normal.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_books_Mat_baseColor.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_books_Mat_metallicRoughness.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_books_Mat_normal.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_Mat_baseColor.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_Mat_metallicRoughness.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\textures\dusty_bookshelf_Mat_normal.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\assets\3d_rooms\exhibitionRoom1\models\frame\frame.bin">
@@ -186,10 +177,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\scene.bin">
+    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\desk\scene.bin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\scene.gltf">
+    <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\desk\scene.gltf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\exit\scene.bin" />
