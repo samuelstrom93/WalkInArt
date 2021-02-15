@@ -1,6 +1,6 @@
 
 .exhibition-description {
-    margin: 4em 1em 0;
+    margin: 1em 1em;
     border: 1px solid #000;
     width: 27.5%;
     border-radius: 4px;
@@ -50,10 +50,10 @@
     background-color: rgb(200, 200, 200);
 }
 
-    .share-icon p {
-        margin: auto 0.5em;
+.share-icon p {
+    margin: auto 0.5em;
        
-    }
+}
 
 
 .fas.fa-sign-out-alt {
@@ -88,14 +88,11 @@
     box-shadow: 7px 7px 7px #000;
 }
 
-.gallery img:hover {
-    cursor: pointer;
-}
 
 .picture-text {
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: 450px;
 }
 
 .picture-text p {
@@ -105,10 +102,13 @@
     margin: 0.5em 2.2em 0;
     border: 1px;
     width: auto;
-    border-radius: 2px;
     opacity: 0.85;
     background: #fff;
     padding: 0.1em;
+}
+
+.button-overlay {
+    border-radius: 8px;
 }
     
 
@@ -131,14 +131,14 @@
 
 
 #overlay img {
-   height: 650px;
-   width: 500px;
+   height: 750px;
+   width: 550px;
    margin: 0 2em;
 }
 
 #overlay span {
     font-size: 2em;
-    bottom: 92%;
+    bottom: 94%;
     left: 1%;
     position: absolute;
     margin: 0;
@@ -150,6 +150,8 @@
     bottom: 0;
     margin-bottom: 15px;
     font-size: 1.2em;
+    border-radius: 8px;
+    border: 1px solid #000;
 }
 
 
@@ -294,3 +296,6 @@
     background-color: #30363d65;
     padding: 2% 1%;
 }
+
+
+

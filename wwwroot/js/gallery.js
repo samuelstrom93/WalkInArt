@@ -1,6 +1,3 @@
-let pictureText = document.querySelectorAll(".picture-text p");
-
-
 let buttons = document.querySelectorAll('.button-overlay');
 let overlays = document.querySelectorAll("#overlay")
 let overlayClose = document.querySelectorAll("#overlay span")
@@ -18,10 +15,10 @@ for (let i = 0; i < btnreadmoregallery.length; i++) {
 
 // Ändrar knappen visa mer och visa mindre på konstverk vid knapptryck.
 function change(showhide) {
-    if (showhide.value === "Visa mer")
-        showhide.value = "Visa mindre";
+    if (showhide.value === "Visa info")
+        showhide.value = "Visa bild";
     else
-        showhide.value = "Visa mer";
+        showhide.value = "Visa info";
 }
 
 // Visar overlay med mer info vid knapptryck "mer info"-knapp
@@ -41,23 +38,6 @@ for (let i = 0; i < overlayClose.length; i++) {
     
 }
 
-
-
-//// Förstorar bilden genom knapptryck på respektive bild (konstverk)
-for (let i = 0; i < pictures.length; i++) {
-    pictures[i].addEventListener("click", function (event){
-
-        pictures.forEach(picture => {
-            if (picture.style.height = "650px") {
-                picture.style.height = "";
-                picture.style.width = "";
-            }
-        });
-
-        event.target.style.width = "500px";
-        event.target.style.height = "650px";
-    })
-}
 
 
 
