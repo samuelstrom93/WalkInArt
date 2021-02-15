@@ -1,8 +1,8 @@
 ﻿
+
 function modifyFrames(scale){
     let elementsToScale = document.getElementsByClassName("frames")
     let elementsWithImg = document.getElementsByClassName("pictures")
-    console.log(elementsWithImg)
     for (let i = 0; i  < elementsWithImg.length; i++){
         getMeta(elementsWithImg[i], elementsToScale[i],scale)
     }
@@ -19,6 +19,8 @@ function getMeta(elementWithImg,elementToScale,scale){
     };
     img.src = elementWithImg.attributes.src.value;
 }
+
+
 
 //F�r att flytta till en annan sida i ett VR rum
 AFRAME.registerComponent('navigate-on-click', {
