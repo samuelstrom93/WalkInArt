@@ -52,7 +52,10 @@ function copyUrl() {
     alert('Nu kan du dela webbadressen!');
 }
 
+let fbBtn = document.querySelector(".fb-share-button");
+let url = window.location.href;
+
 // S�tter data-href till nuvarande url s� att dela-knappen delar den sidan du �r inne p�
-fbButton.setAttribute('data-href', url);
+fbBtn.setAttribute('data-href', url);
 
 
