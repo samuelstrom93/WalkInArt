@@ -416,8 +416,7 @@
                       navigate-on-click="url: @Url.Action("Index","Home")"
                       gltf-model="#door"
                       position="-6.135 1.22 0" rotation="0 0 0" scale="0.011 0.011 0.011"
-                      event-set__tarcol="_event: mouseenter; _target: #cursor; material.color: #5ec940; scale: 2 2 2"
-                      event-set__leave="_event: mouseleave; _target: #cursor; material.color: #000000; scale: 1 1 1"></a-entity>
+                      @await Html.PartialAsync("/Views/Shared/_CursorAnimation.cshtml")></a-entity>
             <a-entity id="exit" gltf-model="#exit" position="-6.18452 2.48905 -0.01201" rotation="0 90 0" scale="0.2 0.2 0.2"></a-entity>
             <a-entity id="bench" gltf-model="#dustyoldbookshelf" position="-5.91 0 2.714" rotation="0 -91.6 0" scale="0.0115 0.0115 0.0115"></a-entity>
             <a-entity id="shelf" gltf-model="#shelf" position="-5.765 0 -2.750" rotation="0 0 0" scale="0.011 0.011 0.011"></a-entity>
