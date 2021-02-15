@@ -9,7 +9,22 @@
     background: white;
     border-bottom: 1px solid black;
 }
-
+.esc-label {
+    position: absolute;
+    left: 2%;
+    margin-top: 1%;
+    padding: 0px 5px 0px 5px;
+    border-radius: 8px;
+    width: auto;
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+    mix-blend-mode: hard-light;
+    border-width: 2px;
+    border-color: black;
+}
 .changeView-btn {
     position: absolute;
     border-radius: 8px;
