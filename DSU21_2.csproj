@@ -182,10 +182,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\assets\3d_rooms\start\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\DustyOldBookShelf\scene.bin">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -194,6 +190,8 @@
     </None>
     <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\exit\scene.bin" />
     <None Include="wwwroot\assets\3d_rooms\exhibitionRoom1\models\exit\scene.gltf" />
+    <None Include="wwwroot\assets\3d_rooms\start\models\sofa\scene.bin" />
+    <None Include="wwwroot\assets\3d_rooms\start\models\sofa\scene.gltf" />
   </ItemGroup>
 
   <ItemGroup>
