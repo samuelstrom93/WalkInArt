@@ -1,4 +1,3 @@
-let pictures = document.querySelectorAll(".gallery img");
 let pictureText = document.querySelectorAll(".picture-text p");
 
 
@@ -43,7 +42,8 @@ for (let i = 0; i < overlayClose.length; i++) {
 }
 
 
-// Förstorar bilden genom knapptryck på respektive bild (konstverk)
+
+//// Förstorar bilden genom knapptryck på respektive bild (konstverk)
 for (let i = 0; i < pictures.length; i++) {
     pictures[i].addEventListener("click", function (event){
 
@@ -59,17 +59,7 @@ for (let i = 0; i < pictures.length; i++) {
     })
 }
 
-// Kopierar url via share-icon (används med onclick på share-elementet)
-function copyUrl() {
-    let textDummy = document.createElement('input'),
-    text = window.location.href;
-    document.body.appendChild(textDummy);
-    textDummy.value = text;
-    textDummy.select();
-    document.execCommand('copy');
-    document.body.removeChild(textDummy);
-    alert('Nu kan du dela webbadressen!');
-}
+
 
 
 

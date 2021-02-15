@@ -19,15 +19,15 @@
     font-size: 18px;
 }
  #vr-btn:hover {
-        cursor: pointer;
-        background: linear-gradient(to bottom, #808080, #575151);
+    cursor: pointer;
+    background: linear-gradient(to bottom, #808080, #575151);
 }
 .grid-containerHome {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
     padding: 20px;
-    margin-top: 100px; /**/
+    margin-top: 100px;
     margin-left: 7%;
     margin-bottom: 2%;
 }
@@ -35,7 +35,6 @@
 .grid-artHome {
     position: relative;
     text-align: center;
-    background-color: yellow;
     overflow: hidden;
     height: 300px;
     width: 300px;
@@ -43,53 +42,28 @@
     margin-left: 1%;
 }
 
-    .grid-artHome img {
-        height: 300px;
-        width: 300px;
-    }
+.grid-artHome img {
+    height: 300px;
+    width: 300px;
+}
 
-    .grid-artHome a {
-        color: #000;
-        text-decoration: none;
-        font-size: 1.2em;
-    }
+.grid-artHome a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2em;
+}
 
-        .grid-artHome :hover {
-            text-decoration:none ;
-            color: #000;
-            top: -100%;
-            opacity: 0.8;
-        }
-
-
-.grid-containerHome h1 {
-    padding: 20px 0px 0px 0px;
-    grid-column: span 5;
-    margin-top: -5%;
+.grid-artHome :hover {
+    text-decoration: none;
+    color: #000;
+    top: -100%;
 }
 
 
-/*.fas.fa-chevron-right {
-    align-self: center;
-    justify-self: center;
-    font-size: 2.3em;
-}*/
-
-.art-overlay {              /*Behövs denna?*/
-    position: relative;
-    bottom: 200px;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    transition: .5s ease;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.grid-containerHome h1 {
+    padding: 10px 0px 0px 0px;
+    grid-column: span 5;
+    margin-top: -5%;
 }
 
 
@@ -112,37 +86,3 @@
     top: 50%;
 }
 
-
-/*.all-categories {
-    grid-column: span 5;
-    margin-left: 2em;
-    color: #000;
-    font-weight: bold;
-    border: 1px solid #000;
-    width: 15%;
-    text-align: center;
-    padding: 0.25em 0;
-}
-
-all-categories:hover {
-    color: #000;
-    background: linear-gradient(to bottom, #A154F2, #8EF4A4);
-    text-decoration: none;
-}*/
-
-/*.category-overlay {
-    position: relative;
-    bottom: 125px;
-    background-color: #fff;
-    height: 30%;
-    opacity: 0.7;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.category-overlay a:hover {
-    text-decoration: underline;
-}*/
