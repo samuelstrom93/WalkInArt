@@ -7,12 +7,12 @@
 
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 <main>
-        <div class="gallery-wrapper" style="background-image: url('../assets/images/background.jfif'); background-size:cover;">
-            <iframe id="3d-room" src="@Url.Action("Room3d_1", new { id = Model.Exhibitions.Id })" style="height:80vh;width:100%;"></iframe>
-
-            <button id="change2d-btn" class="changeView-btn" onclick="location.href = '/exhibitions2d/@Model.Exhibitions.Id';">ÄNDRA TILL 2D</button>
-            <button id="change3droom-btn" class="changeView-btn" onclick="location.href = '/exhibitions2/@Model.Exhibitions.Id';">BYT RUM</button>
-        </div>
+    <div class="gallery-wrapper" style="background-image: url('../assets/images/background.jfif'); background-size:cover;">
+        <iframe id="3d-room" src="@Url.Action("Room3d_1", new { id = Model.Exhibitions.Id })" style="height:80vh;width:100%;"></iframe>
+        <label class="esc-label">Esc för att avsluta VR-läge</label>
+        <button id="change2d-btn" class="changeView-btn" onclick="location.href = '/exhibitions2d/@Model.Exhibitions.Id';">ÄNDRA TILL 2D</button>
+        <button id="change3droom-btn" class="changeView-btn" onclick="location.href = '/exhibitions2/@Model.Exhibitions.Id';">BYT RUM</button>
+    </div>
         <!-- Rumlista -->
         <div class="swiper-container roomlist">
             <div class="swiper-wrapper">
