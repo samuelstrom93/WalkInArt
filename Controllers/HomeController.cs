@@ -29,8 +29,6 @@ namespace DSU21_2.Controllers
         [AllowAnonymous]
         public async Task<IActionResult>  Index()
         {
-            //Used for filling local DB with data, run once.
-            //await artDbRepo.FillDbWithData();
             var collectionList = await artDbRepo.GetCollectionsWithArt();
             var tagList = await artDbRepo.GetTags();
             var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
@@ -40,8 +38,6 @@ namespace DSU21_2.Controllers
 
         public async Task<IActionResult> Room3d()
         {
-            //Used for filling local DB with data, run once.
-            //await artDbRepo.FillDbWithData();
             var collectionList = await artDbRepo.GetCollectionsWithArt();
             var tagList = await artDbRepo.GetTags();
             var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
