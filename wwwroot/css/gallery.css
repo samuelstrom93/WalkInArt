@@ -97,7 +97,6 @@
     margin: 0.5em 2.2em 0;
     border: 1px;
     width: auto;
-    border-radius: 2px;
     opacity: 0.85;
     background: #fff;
     padding: 0.1em;
@@ -106,7 +105,10 @@
 .button-overlay {
     border-radius: 8px;
 }
-    
+
+.button-overlay:hover {
+    background-color: rgb(200, 200, 200);
+}
 
 #overlay {
     visibility: hidden;
@@ -147,8 +149,14 @@
     margin-bottom: 15px;
     font-size: 1.2em;
     border-radius: 8px;
-    border: 1px solid #000;
+    border: 1px solid #808080;
 }
+
+.btn-readmoregallery:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+
 
 
 .object-info {
@@ -159,7 +167,6 @@
     flex-direction: column;
     align-items: center;
     background: #f5f5f5;
-    
 }
 
  .object-info p {
