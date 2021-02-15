@@ -1,0 +1,11 @@
+Model Information:
+* title:	H&M Home Candlesticks
+* source:	https://sketchfab.com/3d-models/hm-home-candlesticks-987988b9420846f9a41ffe7838567948
+* author:	BLAH.BLAH. (https://sketchfab.com/blahdotblahdot)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "H&M Home Candlesticks" (https://sketchfab.com/3d-models/hm-home-candlesticks-987988b9420846f9a41ffe7838567948) by BLAH.BLAH. (https://sketchfab.com/blahdotblahdot) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
