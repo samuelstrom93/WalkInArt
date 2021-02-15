@@ -18,23 +18,19 @@
     cursor: pointer;
 }
 
-.fa.fa-chevron-down:hover,
-.fa.fa-chevron-up:hover {
-    color: #9f63eb;
-}
+    .fa.fa-chevron-down:hover,
+    .fa.fa-chevron-up:hover {
+        color: #6d6d6d;
+    }
 
 
 #hr.thin-line {
     height: 1px;
     border: 0;
-    background-color: grey;
+    background-color: #f8f9fa;
     width: 100%;
 }
 
-#contact {
-    background-color: #f8f9fa;
-    padding: 60px;
-}
 
 #answer {
     display: none;
@@ -47,6 +43,9 @@
 }
 
 .question-wrapper:hover {
-    color: #9f63eb;
+    color: #808080;
     cursor: pointer;
+}
+#faq-h1{
+    text-align: center;
 }
