@@ -96,7 +96,6 @@
     display: flex;
     flex-direction: column;
     height: 400px;
-    font-family: 'Modern No. 20';
 }
 
 .picture-text p {
