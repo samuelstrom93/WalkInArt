@@ -7,11 +7,11 @@
 
 @model DSU21_2.ViewModels.ExhibitionsViewModel
 <main>
-        <div class="gallery-wrapper" style="background-image: url('../assets/images/brownWall.png'); background-size:cover;">
+        <div class="gallery-wrapper" style="background-image: url('../assets/images/background.jfif'); background-size:cover;">
             <iframe id="3d-room" src="@Url.Action("Room3d_1", new { id = Model.Exhibitions.Id })" style="height:80vh;width:100%;"></iframe>
 
             <button id="change2d-btn" class="changeView-btn" onclick="location.href = '/exhibitions2d/@Model.Exhibitions.Id';">ÄNDRA TILL 2D</button>
-            <button id="change3droom-btn" class="changeView-btn" onclick="location.href = '/exhibitions2/@Model.Exhibitions.Id';">BYTA RUM</button>
+            <button id="change3droom-btn" class="changeView-btn" onclick="location.href = '/exhibitions2/@Model.Exhibitions.Id';">BYT RUM</button>
         </div>
         <!-- Rumlista -->
         <div class="swiper-container roomlist">

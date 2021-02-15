@@ -11,7 +11,6 @@
 .grid-artcategory {
     position: relative;
     text-align: center;
-    background-color: yellow; /**Tabort*/
     overflow: hidden;
     height: 250px;
     width: 250px;
@@ -48,8 +47,10 @@
     width: 105%;
 }
 
-#cateory-h1{
+#cateory-h1 {
     text-align: center;
+    margin-top: 2%;
+    font-size: 3em;
 }
 
 .chosen-category p {
@@ -65,17 +66,24 @@
 
 
 /*CHOSEN CATEGORY PAGE*/
+#chosencategory-h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 2%;
+}
+
 .title {
     text-align: center;
-    padding-top: 7px;
-    font-size: 20px;
+    padding-top: 1%;
+    color: #000;
 }
 
 .info-txt {
     text-align: left;
-    font-size: 14px;
     padding-left: 10px;
     padding-right: 10px;
+    color: #000;
+    font-size: 14px;
 }
 
 
@@ -84,15 +92,11 @@
     position: relative;
     transition: all .3s ease-out;
     background: #fff;
-    opacity: 0.8;
+    opacity: 0.9;
     height: 100%;
 }
 
 
 .info-box:hover {
     top: -100%;
-}
-
-.to-exhibition:hover > a {
-    text-decoration: none;
 }
