@@ -3,28 +3,28 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 30410,
+      "count": 533,
       "max": [
-        110.03417205810547,
-        47.531654357910156,
-        79.251068115234375
+        4.9166750907897949,
+        3.4367949962615967,
+        5.6035051345825195
       ],
       "min": [
-        -109.41271209716797,
-        -44.737838745117188,
-        16.795387268066406
+        -4.9166750907897949,
+        -1.6877779960632324,
+        0.014902000315487385
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 364920,
+      "byteOffset": 6396,
       "componentType": 5126,
-      "count": 30410,
+      "count": 533,
       "max": [
         1,
         1,
-        1
+        0.99996364116668701
       ],
       "min": [
         -1,
@@ -36,17 +36,17 @@
     {
       "bufferView": 3,
       "componentType": 5126,
-      "count": 30410,
+      "count": 533,
       "max": [
         1,
-        1,
-        0.99999594688415527,
+        0.99999910593032837,
+        0.99968695640563965,
         1
       ],
       "min": [
-        -1,
-        -1,
-        -0.99999970197677612,
+        -0.99986249208450317,
+        -0.79871636629104614,
+        -0.78364944458007812,
         -1
       ],
       "type": "VEC4"
@@ -54,85 +54,23 @@
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 30410,
+      "count": 533,
       "max": [
-        0.99821120500564575,
-        0.99950003623962402
+        0.98198497295379639,
+        0.98850798606872559
       ],
       "min": [
-        0.00050000002374872565,
-        0.00050000002374872565
+        0.040157001465559006,
+        0.025228999555110931
       ],
       "type": "VEC2"
     },
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 166014,
+      "count": 1920,
       "max": [
-        30409
-      ],
-      "min": [
-        0
-      ],
-      "type": "SCALAR"
-    },
-    {
-      "bufferView": 2,
-      "byteOffset": 729840,
-      "componentType": 5126,
-      "count": 1184,
-      "max": [
-        79.792976379394531,
-        38.929458618164062,
-        17.679012298583984
-      ],
-      "min": [
-        -80.899391174316406,
-        -33.468456268310547,
-        0.51751375198364258
-      ],
-      "type": "VEC3"
-    },
-    {
-      "bufferView": 2,
-      "byteOffset": 744048,
-      "componentType": 5126,
-      "count": 1184,
-      "max": [
-        0.99994498491287231,
-        0.99994438886642456,
-        0.46760517358779907
-      ],
-      "min": [
-        -0.99994498491287231,
-        -0.99994438886642456,
-        -1
-      ],
-      "type": "VEC3"
-    },
-    {
-      "bufferView": 1,
-      "byteOffset": 243280,
-      "componentType": 5126,
-      "count": 1184,
-      "max": [
-        0.52402698993682861,
-        0.70287066698074341
-      ],
-      "min": [
-        0.27532774209976196,
-        0.6426507830619812
-      ],
-      "type": "VEC2"
-    },
-    {
-      "bufferView": 0,
-      "byteOffset": 664056,
-      "componentType": 5125,
-      "count": 5904,
-      "max": [
-        1183
+        532
       ],
       "min": [
         0
@@ -142,42 +80,42 @@
   ],
   "asset": {
     "extras": {
-      "author": "VISJA FILIP RUMIN (https://sketchfab.com/VISJA)",
+      "author": "georgazaky108 (https://sketchfab.com/georgazaky108)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/old-sofa-free-90be7242f24749c3a8e0b0a69c616fc1",
-      "title": "Old Sofa (FREE)"
+      "source": "https://sketchfab.com/models/a1de3b36a972418a8456422d3a724527",
+      "title": "Low poly sofa"
     },
-    "generator": "Sketchfab-7.44.0",
+    "generator": "Sketchfab-3.22.1",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 687672,
+      "byteLength": 7680,
       "byteOffset": 0,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 252752,
-      "byteOffset": 687672,
+      "byteLength": 4264,
+      "byteOffset": 7680,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 758256,
-      "byteOffset": 940424,
+      "byteLength": 12792,
+      "byteOffset": 11944,
       "byteStride": 12,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 486560,
-      "byteOffset": 1698680,
+      "byteLength": 8528,
+      "byteOffset": 24736,
       "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
@@ -185,25 +123,19 @@
   ],
   "buffers": [
     {
-      "byteLength": 2185240,
+      "byteLength": 33264,
       "uri": "scene.bin"
     }
   ],
   "images": [
     {
-      "uri": "textures/Material_3_baseColor.jpeg"
+      "uri": "textures/Material.000_normal.png"
     },
     {
-      "uri": "textures/Material_3_metallicRoughness.png"
+      "uri": "textures/Material.000_metallicRoughness.png"
     },
     {
-      "uri": "textures/Material_3_normal.jpeg"
-    },
-    {
-      "uri": "textures/material_baseColor.jpeg"
-    },
-    {
-      "uri": "textures/material_metallicRoughness.png"
+      "uri": "textures/Material.000_baseColor.png"
     }
   ],
   "materials": [
@@ -214,26 +146,21 @@
         0,
         0
       ],
-      "name": "Material_3",
+      "name": "Material.000",
       "normalTexture": {
-        "index": 2,
+        "index": 0,
         "scale": 1,
-        "texCoord": 0
-      },
-      "occlusionTexture": {
-        "index": 1,
-        "strength": 1,
         "texCoord": 0
       },
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          1,
-          1,
-          1,
+          0.68731660660000005,
+          0.68731660660000005,
+          0.68731660660000005,
           1
         ],
         "baseColorTexture": {
-          "index": 0,
+          "index": 2,
           "texCoord": 0
         },
         "metallicFactor": 1,
@@ -243,43 +170,10 @@
         },
         "roughnessFactor": 1
       }
-    },
-    {
-      "doubleSided": true,
-      "emissiveFactor": [
-        0,
-        0,
-        0
-      ],
-      "name": "material",
-      "occlusionTexture": {
-        "index": 4,
-        "strength": 1,
-        "texCoord": 0
-      },
-      "pbrMetallicRoughness": {
-        "baseColorFactor": [
-          1,
-          1,
-          1,
-          1
-        ],
-        "baseColorTexture": {
-          "index": 3,
-          "texCoord": 0
-        },
-        "metallicFactor": 1,
-        "metallicRoughnessTexture": {
-          "index": 4,
-          "texCoord": 0
-        },
-        "roughnessFactor": 1
-      }
     }
   ],
   "meshes": [
     {
-      "name": "Sofa_Material #3_0",
       "primitives": [
         {
           "attributes": {
@@ -290,21 +184,6 @@
           },
           "indices": 4,
           "material": 0,
-          "mode": 4
-        }
-      ]
-    },
-    {
-      "name": "Sofa_1_0",
-      "primitives": [
-        {
-          "attributes": {
-            "NORMAL": 6,
-            "POSITION": 5,
-            "TEXCOORD_0": 7
-          },
-          "indices": 8,
-          "material": 1,
           "mode": 4
         }
       ]
@@ -333,64 +212,11 @@
       "children": [
         3
       ],
-      "matrix": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        -1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
-      ],
-      "name": "7e58e03efdd84904b6b0737e5e0bd7af.fbx"
-    },
-    {
-      "children": [
-        4
-      ],
-      "name": "RootNode"
-    },
-    {
-      "children": [
-        5,
-        6
-      ],
-      "matrix": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        2.2204460492503131e-16,
-        -1,
-        0,
-        0,
-        1,
-        2.2204460492503131e-16,
-        0,
-        0,
-        0,
-        0,
-        1
-      ],
-      "name": "Sofa"
+      "name": "e3e45ba7f92d4db1be04c2a5b82ee23e.obj.cleaner.materialmerger.gles"
     },
     {
       "mesh": 0,
-      "name": "Sofa_Material #3_0"
-    },
-    {
-      "mesh": 1,
-      "name": "Sofa_1_0"
+      "name": ""
     }
   ],
   "samplers": [
@@ -422,14 +248,6 @@
     {
       "sampler": 0,
       "source": 2
-    },
-    {
-      "sampler": 0,
-      "source": 3
-    },
-    {
-      "sampler": 0,
-      "source": 4
     }
   ]
 }
