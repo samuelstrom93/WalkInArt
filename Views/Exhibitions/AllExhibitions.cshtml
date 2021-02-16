@@ -7,7 +7,7 @@
         {
             <div class="grid-allexhibition">
                  <img src="@Model.AllExhibitions[i].Artworks.FirstOrDefault().Hyperlink">
-                     <a class="to-all-exhibitions" href="/Exhibitions/@i" @Model.AllExhibitions[i].Name>
+                     <a class="to-all-exhibitions" href="/Exhibitions/@Model.AllExhibitions[i].Id">
                         <div class="info-allexhibitions">
                               <h1 class="title-allexhibitions">@Model.AllExhibitions[i].Name</h1>
                               <p class="text-allexhibitions">@Model.AllExhibitions[i].Description</p>
