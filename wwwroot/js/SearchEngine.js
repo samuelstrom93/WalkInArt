@@ -2,7 +2,14 @@
 const searchButton = document.getElementById("search-btn")
 const searchResponse = document.getElementById("search-suggestions")
 const searchResult = document.getElementById("searchresultbox")
-
+searchBar.addEventListener("focus", function () {
+    if (searchBar.value != "") { searchResult.className = "search-result visible"; }
+})
+searchBar.addEventListener("blur", function () {
+    setTimeout(function () {
+        searchResult.className = "search-result hidden";
+    }, 200);
+})
 
 searchBar.addEventListener("input", function (event) {
     if (searchBar.value != "") {
