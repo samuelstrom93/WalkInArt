@@ -134,7 +134,7 @@
     transition: all .3s ease-out;
     background: #fff;
     opacity: 0.8;
-      
+    height: 100%;
 }
 
 .info-boxHome :hover{

@@ -24,7 +24,7 @@ async function showSearchResponse(data, lenght) {
 
     console.log(lenght)
     if (lenght > 0) {
-        html += `<li style="pointer-events:none !important" >Utställningar: <li>`;
+        html += `<li style="pointer-events:none !important; font-weight: bold;" >Utställningar: <li>`;
     }
 
     for (let i = 0; i < lenght; i++) {
@@ -34,7 +34,7 @@ async function showSearchResponse(data, lenght) {
 }
 
 async function searchCollections() {
-    let link = "https://localhost:44305/api/Collections/";
+    let link = "https://grupp8.dsvkurs.miun.se/api/Collections/";
         link += searchBar.value;
     let response = await fetch(link);
     let data = await response.json()
@@ -46,7 +46,7 @@ async function searchCollections() {
 }
 
 async function searchTags() {
-    let link = "https://localhost:44305/api/Tags/";
+    let link = "https://grupp8.dsvkurs.miun.se/api/Tags/";
     link += searchBar.value;
     let response = await fetch(link);
     let data = await response.json()
@@ -57,7 +57,7 @@ async function searchTags() {
 async function showTagSearchResponse(data, lenght) {
 
     if (lenght > 0) {
-        html += `<li style="pointer-events:none !important" >Kategori: <li>`;
+        html += `<li style="pointer-events:none !important; font-weight: bold;" >Kategori: <li>`;
     }
 
     for (let i = 0; i < lenght; i++) {

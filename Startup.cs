@@ -34,17 +34,17 @@ namespace DSU21_2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ArtContext>(options =>
-               options.UseSqlServer(Configuration.GetConnectionString("LocalDb")));
+               options.UseSqlServer(Configuration.GetConnectionString("Grupp2")));
             services.AddScoped<IArtDBRepo, ArtDBRepo>();
             services.AddControllersWithViews();
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("https://localhost:44373/");
-                                  });
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(name: MyAllowSpecificOrigins,
+            //                      builder =>
+            //                      {
+            //                          builder.WithOrigins("https://localhost:44373/");
+            //                      });
+            //});
 
 
             //services.AddAuthentication(options =>
@@ -91,10 +91,10 @@ namespace DSU21_2
             });
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors(MyAllowSpecificOrigins);
+            //app.UseCors(MyAllowSpecificOrigins);
 
             //app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
