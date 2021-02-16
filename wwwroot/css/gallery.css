@@ -117,8 +117,8 @@
     position: absolute;
     left: 0;
     right: 0px;
-    top: 25%;
-    height: 85%;
+    top: 22.5%;
+    height: 80%;
     width: 60%; 
     margin: auto;
     z-index: 1000;
@@ -131,14 +131,14 @@
 
 
 #overlay img {
-   height: 550px;
-   width: 450px;
+   height: 500px;
+   width: 400px;
    margin: 0 2em;
 }
 
 #overlay span {
     font-size: 2em;
-    bottom: 94%;
+    bottom: 92%;
     left: 1%;
     position: absolute;
     margin: 0;
