@@ -46,7 +46,7 @@
                         }
                         @if (Model.Exhibitions.Artworks.Count % 3 != 0)
                         {
-                            <div class="swiper-slide">
+                            <div class="swiper-slide swiper-gallery">
                                 <div class="gallery">
                                     @for (int i = artCount * 3; i < Model.Exhibitions.Artworks.Count; i++)
                                     {
@@ -58,7 +58,7 @@
                                         <div id="overlay">
                                             <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
-                                            <input class="btn-readmoregallery" type="button" value="läs mer" onclick="change()" />
+                                            <input class="btn-readmoregallery" type="button" value="Visa bild" onclick="showPictureOnly(this)" />
                                             @*<button class="btn-readmoregallery"></button>*@
                                             <div class="object-info">
                                                 <h1>@Model.Exhibitions.Artworks[i].Name</h1>
