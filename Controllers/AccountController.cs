@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
 {
+
     [AllowAnonymous, Route("account")]
     public class AccountController : Controller
     {

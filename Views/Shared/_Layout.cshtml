@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="/css/allExhibitions.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+
+    <!--Facebook-->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v9.0" nonce="dsqp0JGx"></script>
 
     <!-- Bootstrap -->
@@ -66,14 +69,12 @@
 
                 <a style="display: block"></a>
 
-                <!-- SearchEngine.js -->
-                <script type="text/javascript" src="~/js/searchEngine.js"></script>
-                <!-- DropDown meny för kategorier och utställningar.js -->
+                <!-- DropDown meny för kategorier och utställningar -->
                 <div class="dropdown">
                     <button class="drop-btn"><i class="fas fa-bars"></i></button>
                     <div class="dropdown-content">
-                        <a href="/Categories"  style="color: rgba(69,73,82,255)">Kategorier</a>
-                        <a href="/AllExhibitions"style="color: rgba(69,73,82,255)">Utställningar</a>
+                        <a href="/Categories" style="color: rgba(69,73,82,255)">Kategorier</a>
+                        <a href="/AllExhibitions" style="color: rgba(69,73,82,255)">Utställningar</a>
                     </div>
                 </div>
 
@@ -81,42 +82,42 @@
                 <div class="Login-icon">
                     @if (User.Identity.IsAuthenticated)
                     {
-                    <a class="Login-link" href="/account/google-logout" style="color: rgba(69,73,82,255)">
-                        <i class="fas fa-user"></i> Logga Ut
-                    </a>
+                        <a class="Login-link" href="/account/google-logout" style="color: rgba(69,73,82,255)">
+                            <i class="fas fa-user"></i> Logga Ut
+                        </a>
                     }
                     else
                     {
-                        // TODO
                         <a class="Login-link" href="/account/google-login" style="color: rgba(69,73,82,255)">
                             <i class="fas fa-user"></i> Logga In
                         </a>
                     }
 
                 </div>
-            </nav>           
+            </nav>
         </header>
 
         @RenderBody()
 
-    <!-- Footer -->
-    <footer class="d-flex justify-content-between align-items-center">
+        <!-- Footer -->
+        <footer class="d-flex justify-content-between align-items-center">
 
-        <div class="contact">
-            <p>Kontakta oss</p>
-            <p>Telefonnummer: 070-1234567</p>
-            <p>Epostadress: WalkInArt@gmail.com</p>
-        </div>
+            <div class="contact">
+                <p>Kontakta oss</p>
+                <p>Telefonnummer: 070-1234567</p>
+                <p>Epostadress: WalkInArt@gmail.com</p>
+            </div>
 
-        <div class="icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div id="faq-hjälp">
-            <a class="faq-link" href="/Faq">Hjälp</a>
-        </div>
-    </footer>
+            <div class="icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <div id="faq-hjälp">
+                <a class="faq-link" href="/Faq">Hjälp</a>
+            </div>
+        </footer>
 
         <!-- Fontawesome -->
         <script src="https://kit.fontawesome.com/3ef0f906bf.js" crossorigin="anonymous"></script>
@@ -127,6 +128,8 @@
         <!-- Bootstrap js-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+        <!-- Search-Engine.js -->
+        <script type="text/javascript" src="~/js/search-engine.js"></script>
 
         <!-- Egna js -->
         @RenderSection("Scripts", required: false)

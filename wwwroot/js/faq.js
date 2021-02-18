@@ -1,4 +1,10 @@
-﻿let answers = document.querySelectorAll('#answer');
+﻿/// <summary>
+/// Används för endast hjälpsidan
+/// </summary>
+
+console.log("faq.js is loaded")
+
+let answers = document.querySelectorAll('#answer');
 let questions = document.querySelectorAll('#question');
 let arrowIcons = document.querySelectorAll("#arrow");
 let questionDivs = document.querySelectorAll('.question-wrapper');
