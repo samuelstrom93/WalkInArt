@@ -1,11 +1,6 @@
 ﻿using DSU21_2.Models;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+
 
 namespace DSU21_2.ViewModels
 {
@@ -19,11 +14,6 @@ namespace DSU21_2.ViewModels
             Exhibitions = exhibitions;
             ExhibitionsForRooms = exhibitionsForRooms;
             Artist = artist;
-        }
-
-        public ExhibitionsViewModel(Collection exhibitions, List<Collection> exhibitionsForRoom)
-        {
-            Exhibitions = exhibitions;
         }
     }
 }

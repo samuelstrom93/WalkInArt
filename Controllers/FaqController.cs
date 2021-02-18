@@ -11,11 +11,9 @@ namespace DSU21_2.Controllers
     public class FaqController : Controller
     {
         [Route("Faq")]
-
         public IActionResult Index()
         {        
-            FaqViewModel faqViewModel = new FaqViewModel();
-            return View(faqViewModel);
+            return View();
         }
         public IActionResult Error()
         {
