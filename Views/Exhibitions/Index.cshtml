@@ -26,18 +26,17 @@
                                             <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
 
                                             <p class="button-overlay">@Model.Exhibitions.Artworks[j].Name</p>
-                                            @*<button class="button-overlay">Mer info</button>*@
                                             <div id="overlay">
                                                 <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
                                                 <img src="@Model.Exhibitions.Artworks[j].Hyperlink"  alt="">
                                                 
                                                 <input type="button" value="Visa bild" class="btn-readmoregallery"  onclick=" return change(this)"/>
-                                                @*<button class="btn-readmoregallery" name="läs mer" onclick="change()"></button>*@
-                                            <div class="object-info">
+
+                                                <div class="object-info">
                                                     <h1>@Model.Exhibitions.Artworks[j].Name</h1>
                                                     <p> av @Model.Artist.Name</p>
                                                     <p id="artwork-description">@Model.Exhibitions.Artworks[j].Description</p>
-                                            </div>
+                                                </div>
                                             </div>
                                         </div>
                                     }
@@ -54,18 +53,18 @@
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
 
                                             <p class="button-overlay">@Model.Exhibitions.Artworks[i].Name</p>
-                                            @*<button class="button-overlay">Mer info</button>*@
-                                        <div id="overlay">
-                                            <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
-                                            <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
-                                            <input class="btn-readmoregallery" type="button" value="läs mer" onclick="change()" />
-                                            @*<button class="btn-readmoregallery"></button>*@
-                                            <div class="object-info">
-                                                <h1>@Model.Exhibitions.Artworks[i].Name</h1>
-                                                <p>@Model.Artist.Name</p>
-                                                <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
+
+                                            <div id="overlay">
+                                                <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
+                                                <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
+                                                <input class="btn-readmoregallery" type="button" value="läs mer" onclick="change()" />
+
+                                                <div class="object-info">
+                                                    <h1>@Model.Exhibitions.Artworks[i].Name</h1>
+                                                    <p>@Model.Artist.Name</p>
+                                                    <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                     }
                                 </div>
@@ -113,8 +112,9 @@
                         {
                             <img class="room-noimg" src="/assets/images/noImage.png">
                         }
-                    <a href="/exhibitions/@room.Id" id="room-span">@room.Name</a> @*class="exhibition-link"*@ 
-                        @*<a href="/exhibitions/@room.Id" class="exhibition-link">Gå till utställningen</a>*@
+
+                        <a href="/exhibitions/@room.Id" id="room-span">@room.Name</a>
+
                     </div>
                 }
             }
