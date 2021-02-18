@@ -48,4 +48,4 @@ På 2D-utställningarna har vi implementerat en **dela-knapp** för Facebook. Om
 
 ### Kodstandarder 
 
-[Länk till MD-fil med kodstandarder](Kodstandard.md)
+[Länk till kodstandarder](Kodstandard.md)
