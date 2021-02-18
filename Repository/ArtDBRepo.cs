@@ -1,10 +1,7 @@
 ﻿using DSU21_2.Data;
 using DSU21_2.Models;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,34 +16,6 @@ namespace DSU21_2.Repository
             this.context  =  context;
         }
 
-        public async Task FillDbWithData() // Endast för att fylla DB med fejkdata.
-        {
-            string data = File.ReadAllText(@"Test_v2.json");
-            var result = JsonConvert.DeserializeObject<List<Artist>>(data);
-            foreach (var artist in result)
-            {
-                context.Artists.Add(artist);
-            }
-            //context.SaveChanges();
-
-            var data2 = File.ReadAllText(@"testTag.json");
-            var result2 = JsonConvert.DeserializeObject<List<Tag>>(data2);
-            foreach (var tag in result2)
-            {
-                context.Tags.Add(tag);
-
-            }
-            context.SaveChanges();
-            Random random = new Random();
-            List<Tag> tags = await GetTags();
-            List<Collection> collections = await GetCollectionsWithArt();
-            foreach (var collection in collections)
-            {
-                collection.Tags.Add(tags[random.Next(8)]);
-            }
-            context.SaveChanges();
-        }
-        
         #region Artist
 
         public Artist AddArtist(string name, string about, string profileId)
@@ -57,7 +26,7 @@ namespace DSU21_2.Repository
             return artist;
         }
 
-        public async Task<Artist>GetArtistAsync(int id)
+        public async Task<Artist>GetArtistById(int id)
         {
             return await context.Artists
                 .Include(a => a.Collections)
@@ -121,37 +90,20 @@ namespace DSU21_2.Repository
                 .Where(y => y.Artworks.Count > 0).ToListAsync();
         }
 
-        public bool AddCollection(Artist artist, string name, string description)
+        public void AddCollection(Artist artist, string name, string description)
         {
             Collection collection = new Collection { Name = name, Description = description };
             artist.Collections.Add(collection);
             context.SaveChanges();
-            return true;
         }
 
-        public async Task <bool>AddCollection(Artist artist, string name, string description, string category)
+        public async Task AddCollection(Artist artist, string name, string description, string category)
         {
             Collection collection = new Collection { Name = name, Description = description };
             Tag tag = await AddTag(category);
             collection.Tags.Add(tag);
             artist.Collections.Add(collection);
             context.SaveChanges();
-            return true;
-        }
-
-
-
-        public async Task<List<Collection>> GetCollectionWithTags()
-        {
-            return await context.Collections
-                .Where(x => x.Tags.Count > 0).ToListAsync();
-        }
-
-       
-        public async Task<List<Collection>> GetCollectionWithTag(int tagId)
-        {
-            Tag tag = await GetTag(tagId);
-            return tag.Collections;
         }
 
         public async Task<Collection> UpdateCollection(int id, string description, string name)
@@ -259,8 +211,6 @@ namespace DSU21_2.Repository
                 .ThenInclude(b => b.Artworks)
                 .FirstOrDefaultAsync(x => x.Title == title);
         }
-
-
 
         #endregion
 

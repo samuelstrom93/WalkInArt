@@ -31,9 +31,6 @@ namespace DSU21_2.Controllers
             var claims = result.Principal.Identities
             .FirstOrDefault().Claims.Select(claim => new
             {
-                //claim.Issuer,
-                //claim.OriginalIssuer,
-                //claim.Type,
                 claim.Value
             }).ToList();
 

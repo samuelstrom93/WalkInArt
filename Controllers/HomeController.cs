@@ -4,10 +4,8 @@ using DSU21_2.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
@@ -15,12 +13,10 @@ namespace DSU21_2.Controllers
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IArtDBRepo artDbRepo;
         
-        public HomeController(ILogger<HomeController> logger, IArtDBRepo artDbRepo)
+        public HomeController(IArtDBRepo artDbRepo)
         {
-            _logger = logger;
             this.artDbRepo = artDbRepo;
         }
 

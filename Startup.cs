@@ -21,8 +21,6 @@ namespace DSU21_2
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,9 +32,9 @@ namespace DSU21_2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                            })
+                {
+                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                })
                 .AddCookie(options =>
                 {
                     options.LoginPath = "/account/google-login";
@@ -46,6 +44,7 @@ namespace DSU21_2
                     options.ClientId = "701908591987-ra0gjnk9frl2bd46k9mft4vjkn8fjh88.apps.googleusercontent.com";
                     options.ClientSecret = "rlbk0Wsck-IJkaOGaPqJXqX_";
                 });
+
             services.AddDbContext<ArtContext>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("Grupp2")));
             services.AddScoped<IArtDBRepo, ArtDBRepo>();
