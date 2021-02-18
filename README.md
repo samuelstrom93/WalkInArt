@@ -46,7 +46,7 @@ Så att utställarna kan logga in och skapa en profil samt lägga till en utstä
 
 ### Facebook dela-knapp
 
-På 2D-utställningarna har vi implementerat en **dela-knapp** för Facebook. Om en användare använder funktionen kan dem dela den utställning de är inne på och integrera i sitt Facebook-flöde.
+På 2D-utställningarna har vi implementerat en dela-knapp för Facebook. Om en användare använder funktionen kan dem dela den utställning de är inne på och integrera i sitt Facebook-flöde.
 
 
 ### Kodstandarder 
