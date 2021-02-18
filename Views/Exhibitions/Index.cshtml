@@ -5,8 +5,7 @@
 }
 
 @model DSU21_2.ViewModels.ExhibitionsViewModel
-<main>
-        <div class="gallery-wrapper">
+<main class="gallery-wrapper">
             <!-- Swiper.js -->
             <div class="swiper-container gallerylist">
                 <div class="exhibition-description">
@@ -45,7 +44,7 @@
                         }
                         @if (Model.Exhibitions.Artworks.Count % 3 != 0)
                         {
-                            <div class="swiper-slide">
+                            <div class="swiper-slide swiper-gallery">
                                 <div class="gallery">
                                     @for (int i = artCount * 3; i < Model.Exhibitions.Artworks.Count; i++)
                                     {
@@ -53,18 +52,18 @@
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
 
                                             <p class="button-overlay">@Model.Exhibitions.Artworks[i].Name</p>
-
-                                            <div id="overlay">
-                                                <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
-                                                <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
-                                                <input class="btn-readmoregallery" type="button" value="läs mer" onclick="change()" />
-
-                                                <div class="object-info">
-                                                    <h1>@Model.Exhibitions.Artworks[i].Name</h1>
-                                                    <p>@Model.Artist.Name</p>
-                                                    <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
-                                                </div>
+                                            @*<button class="button-overlay">Mer info</button>*@
+                                        <div id="overlay">
+                                            <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
+                                            <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
+                                            <input class="btn-readmoregallery" type="button" value="Visa bild" onclick="showPictureOnly(this)" />
+                                            @*<button class="btn-readmoregallery"></button>*@
+                                            <div class="object-info">
+                                                <h1>@Model.Exhibitions.Artworks[i].Name</h1>
+                                                <p>@Model.Artist.Name</p>
+                                                <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
                                             </div>
+                                        </div>
                                         </div>
                                     }
                                 </div>
@@ -91,17 +90,17 @@
                 <div class="swiper-button-prev swiper-button-white swiper-nav-gallery-prev"></div>
                 <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
             </div>
-        </div>
+        @*</div>*@
 
     <!-- Rumlista -->
-    <div class="swiper-container roomlist">
-        <div class="swiper-wrapper">
+<div class="swiper-container roomlist margin-top">
+    <div class="swiper-wrapper">
 
-            <!-- Slides (kallas från model i c#) -->
-            @{
-                @for (var i = 0; i < Model.ExhibitionsForRooms.Count; i++)
-                {
-                    var room = Model.ExhibitionsForRooms[i];
+        <!-- Slides (kallas från model i c#) -->
+        @{
+            @for (var i = 0; i < Model.ExhibitionsForRooms.Count; i++)
+            {
+                var room = Model.ExhibitionsForRooms[i];
 
                     <div class="swiper-slide">
                         @if (room.Artworks[0].Hyperlink != "N/A")
@@ -120,8 +119,8 @@
             }
         </div>
 
-        <!--  navigation buttons -->
-        <div class="swiper-button-prev swiper-button-white swiper-nav-room-prev"></div>
-        <div class="swiper-button-next swiper-button-white swiper-nav-room-next"></div>
-    </div>
+    <!--  navigation buttons -->
+    <div class="swiper-button-prev swiper-button-white swiper-nav-room-prev"></div>
+    <div class="swiper-button-next swiper-button-white swiper-nav-room-next"></div>
+</div>
 </main>

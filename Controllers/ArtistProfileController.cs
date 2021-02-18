@@ -1,14 +1,14 @@
 ﻿using DSU21_2.Models;
 using DSU21_2.Repository;
 using DSU21_2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DSU21_2.Controllers
 {
+    [Authorize]
     public class ArtistProfileController : Controller
     {
         private readonly IArtDBRepo artDbRepo;
@@ -27,7 +27,7 @@ namespace DSU21_2.Controllers
 
         public async Task<IActionResult> AddCollection(string title, string description, int id, string category)
         {
-            Artist artist = await artDbRepo.GetArtistAsync(id);
+            Artist artist = await artDbRepo.GetArtistById(id);
 
             if (String.IsNullOrEmpty(category))
             {
@@ -49,7 +49,7 @@ namespace DSU21_2.Controllers
             artDbRepo.AddArtwork(collection,title,description,url);
 
 
-            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            Artist artist = await artDbRepo.GetArtistById(artistId);
             ArtistViewModel viewModel = new ArtistViewModel(artist);
             return View("Index", viewModel);
         }
@@ -58,7 +58,7 @@ namespace DSU21_2.Controllers
         {
             await artDbRepo.UpdateArtwork( artworkId, url, description, title);
             
-            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            Artist artist = await artDbRepo.GetArtistById(artistId);
             ArtistViewModel viewModel = new ArtistViewModel(artist);
             return View("Index", viewModel);
         }
@@ -69,7 +69,7 @@ namespace DSU21_2.Controllers
             Artwork art = await artDbRepo.GetArtwork(artworkId);
             artDbRepo.DeleteArtwork(art);
 
-            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            Artist artist = await artDbRepo.GetArtistById(artistId);
             ArtistViewModel viewModel = new ArtistViewModel(artist);
             return View("Index", viewModel);
         }
@@ -80,7 +80,7 @@ namespace DSU21_2.Controllers
             Collection collection = await artDbRepo.GetCollection(collectionId);
             artDbRepo.DeleteCollection(collection);
 
-            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            Artist artist = await artDbRepo.GetArtistById(artistId);
             ArtistViewModel viewModel = new ArtistViewModel(artist);
             return View("Index", viewModel);
         }
@@ -88,7 +88,7 @@ namespace DSU21_2.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateArtist(int artistId, string about)
         {
-            Artist artist = await artDbRepo.GetArtistAsync(artistId);
+            Artist artist = await artDbRepo.GetArtistById(artistId);
             artist = artDbRepo.UpdateArtist(artist, about);
             ArtistViewModel viewModel = new ArtistViewModel(artist);
             return View("Index", viewModel);

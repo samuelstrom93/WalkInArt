@@ -1,10 +1,15 @@
-﻿let buttons = document.querySelectorAll('.button-overlay');
+﻿/// <summary>
+/// Används för 2d-rum på utställningssidor
+/// </summary>
+
+console.log("gallery.js is loaded")
+
+let buttons = document.querySelectorAll('.button-overlay');
 let overlays = document.querySelectorAll("#overlay")
 let overlayClose = document.querySelectorAll("#overlay span")
 
 let btnreadmoregallery = document.querySelectorAll('.btn-readmoregallery');
 let info = document.querySelectorAll('.object-info');
-
 
 // Visar mer info om konsten vid knapptryck
 for (let i = 0; i < btnreadmoregallery.length; i++) {
@@ -13,8 +18,8 @@ for (let i = 0; i < btnreadmoregallery.length; i++) {
     })
 }
 
-// �ndrar knappen visa mer och visa mindre p� konstverk vid knapptryck.
-function change(showhide) {
+// Ändrar knappen visa mer och visa mindre på konstverk vid knapptryck.
+function showPictureOnly(showhide) {
     if (showhide.value === "Visa info")
         showhide.value = "Visa bild";
     else
@@ -29,7 +34,7 @@ for (let i = 0; i < buttons.length; i++) {
     })
 }
 
-// St�nger overlay genom att klicka p� krysset i overlay eller "mer info"-knappen igen
+// Stänger overlay genom att klicka på krysset i overlay eller "mer info"-knappen igen
 for (let i = 0; i < overlayClose.length; i++) {
     overlayClose[i].addEventListener("click", function (event) {
         overlays[i].style.visibility = (overlays[i].style.visibility == "visible") ? "hidden" : "visible";
@@ -38,24 +43,10 @@ for (let i = 0; i < overlayClose.length; i++) {
     
 }
 
-
-
-// Kopierar url via share-icon (anv�nds med onclick p� share-elementet)
-function copyUrl() {
-    let textDummy = document.createElement('input'),
-    text = window.location.href;
-    document.body.appendChild(textDummy);
-    textDummy.value = text;
-    textDummy.select();
-    document.execCommand('copy');
-    document.body.removeChild(textDummy);
-    alert('Nu kan du dela webbadressen!');
-}
-
 let fbBtn = document.querySelector(".fb-share-button");
 let url = window.location.href;
 
-// S�tter data-href till nuvarande url s� att dela-knappen delar den sidan du �r inne p�
+// Sätter data-href till nuvarande url så att dela-knappen delar den sidan du är inne på
 fbBtn.setAttribute('data-href', url);
 
 

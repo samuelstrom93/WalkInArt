@@ -63,10 +63,12 @@
     margin: 0 0.2em 0;
 }
 
-.gallery-wrapper {
+
+.gallerylist {
     background-image: url("../assets/images/background.jfif");
     background-size: cover;
 }
+
 
 .gallery {
     display: flex;
@@ -115,8 +117,8 @@
     position: absolute;
     left: 0;
     right: 0px;
-    top: 100px;
-    height: 90%;
+    top: 22.5%;
+    height: 80%;
     width: 60%; 
     margin: auto;
     z-index: 1000;
@@ -129,14 +131,14 @@
 
 
 #overlay img {
-   height: 650px;
-   width: 500px;
+   height: 500px;
+   width: 400px;
    margin: 0 2em;
 }
 
 #overlay span {
     font-size: 2em;
-    bottom: 94%;
+    bottom: 92%;
     left: 1%;
     position: absolute;
     margin: 0;
@@ -186,7 +188,11 @@
 .fas.fa-share {
     font-size: 2.5em;
 }
-.swiper-container {
+/*.swiper-container {
+    margin-top: 2%;
+}*/
+
+.margin-top {
     margin-top: 2%;
 }
 

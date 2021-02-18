@@ -21,8 +21,6 @@ namespace DSU21_2
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,42 +31,25 @@ namespace DSU21_2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                })
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/account/google-login";
+                })
+                .AddGoogle(options =>
+                {
+                    options.ClientId = "701908591987-ra0gjnk9frl2bd46k9mft4vjkn8fjh88.apps.googleusercontent.com";
+                    options.ClientSecret = "rlbk0Wsck-IJkaOGaPqJXqX_";
+                });
+
             services.AddDbContext<ArtContext>(options =>
-               options.UseSqlServer(Configuration.GetConnectionString("LocalDb")));
+               options.UseSqlServer(Configuration.GetConnectionString("Grupp2")));
             services.AddScoped<IArtDBRepo, ArtDBRepo>();
             services.AddControllersWithViews();
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("https://localhost:44373/");
-                                  });
-            });
-
-           
-            services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            })
-            .AddCookie(options =>
-            {
-                options.LoginPath = "/account/google-login";
-            })
-            .AddGoogle(options =>
-            {
-                IConfigurationSection googleAuthNSection =
-                Configuration.GetSection("Authentication:Google");
-                options.ClientId = googleAuthNSection["ClientId"];
-                options.ClientSecret = googleAuthNSection["ClientSecret"];
-            });
         }
-
-
-
-
-
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -91,7 +72,6 @@ namespace DSU21_2
             });
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthentication();
             app.UseAuthorization();

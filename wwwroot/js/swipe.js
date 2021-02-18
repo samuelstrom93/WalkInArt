@@ -1,4 +1,9 @@
-﻿
+﻿/// <summary>
+/// För att kontrollera karusel för 2d-rums konstverk och rumlista 
+/// </summary>
+
+console.log("swipe.js is loaded")
+
 //Karusel för utställningar
 var gallerySwiper = new Swiper('.gallerylist', {
         loop: true,
