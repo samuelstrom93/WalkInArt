@@ -1,4 +1,6 @@
-﻿
+﻿    /// <summary>
+    /// 
+    /// </summary>
 
 function modifyFrames(scale){
     let elementsToScale = document.getElementsByClassName("frames")

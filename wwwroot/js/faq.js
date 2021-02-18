@@ -1,4 +1,7 @@
-﻿let answers = document.querySelectorAll('#answer');
+﻿    /// <summary>
+    /// 
+    /// </summary>
+let answers = document.querySelectorAll('#answer');
 let questions = document.querySelectorAll('#question');
 let arrowIcons = document.querySelectorAll("#arrow");
 let questionDivs = document.querySelectorAll('.question-wrapper');

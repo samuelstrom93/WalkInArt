@@ -1,4 +1,8 @@
-﻿const searchBar = document.getElementById("search-input")
+﻿    /// <summary>
+    /// 
+    /// </summary>
+
+const searchBar = document.getElementById("search-input")
 const searchButton = document.getElementById("search-btn")
 const searchResponse = document.getElementById("search-suggestions")
 const searchResult = document.getElementById("searchresultbox")

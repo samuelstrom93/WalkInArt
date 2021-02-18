@@ -1,4 +1,8 @@
-﻿// Hanterar lägg till ny utställning
+﻿    /// <summary>
+    /// 
+    /// </summary>
+
+// Hanterar lägg till ny utställning
 let addExhibitionFormBtn = document.querySelector(".add-exhibition");
 let exhibitionForm = document.querySelector(".exhibition-form");
 

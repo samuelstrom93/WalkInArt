@@ -1,4 +1,7 @@
-﻿let buttons = document.querySelectorAll('.button-overlay');
+﻿    /// <summary>
+    /// 
+    /// </summary>
+let buttons = document.querySelectorAll('.button-overlay');
 let overlays = document.querySelectorAll("#overlay")
 let overlayClose = document.querySelectorAll("#overlay span")
 

@@ -1,4 +1,7 @@
-﻿
+﻿    /// <summary>
+    /// 
+    /// </summary>
+
 //Karusel för utställningar
 var gallerySwiper = new Swiper('.gallerylist', {
         loop: true,
