@@ -34,6 +34,8 @@ API:et finns tillgängligt på https://grupp8.dsvkurs.miun.se/.
 
 Ett exempel på ett API-anrop är: https://grupp8.dsvkurs.miun.se/api/Collections/ som returnerar alla kollektioner via databasen. 
 
+[Länk till ArtAPI-repo](https://github.com/eksteinbakk/ArtAPI)
+
 
 ### Databas
 
