@@ -2,10 +2,12 @@
     /// 
     /// </summary>
 
+console.log("Search Engine")
 const searchBar = document.getElementById("search-input")
 const searchButton = document.getElementById("search-btn")
 const searchResponse = document.getElementById("search-suggestions")
 const searchResult = document.getElementById("searchresultbox")
+
 searchBar.addEventListener("focus", function () {
     if (searchBar.value != "") { searchResult.className = "search-result visible"; }
 })
