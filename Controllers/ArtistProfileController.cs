@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
+/// <summary>
+///  För att utställaren ska kunna hantera sin konstverk efter inloggning
+/// </summary>
+/// 
+
 namespace DSU21_2.Controllers
 {
     [Authorize]
@@ -25,6 +30,7 @@ namespace DSU21_2.Controllers
             return View(viewModel);
         }
 
+        //CRUD för utsällningar och konstverk
         public async Task<IActionResult> AddCollection(string title, string description, int id, string category)
         {
             Artist artist = await artDbRepo.GetArtistById(id);

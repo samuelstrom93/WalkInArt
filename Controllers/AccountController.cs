@@ -10,9 +10,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+/// <summary>
+/// För att utställaren ska kunna inlogga/utlogga
+/// </summary>
+/// 
 namespace DSU21_2.Controllers
 {
-
     [AllowAnonymous, Route("account")]
     public class AccountController : Controller
     {
@@ -23,7 +26,7 @@ namespace DSU21_2.Controllers
             return Challenge(properties, GoogleDefaults.AuthenticationScheme);
         }
 
-
+        // För att hantera Googles autentisering
         [Route("google-response")]
         public async Task<IActionResult> GoogleResponse()
         {

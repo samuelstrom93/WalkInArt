@@ -6,6 +6,11 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 
+/// <summary>
+/// För utställningssidor (både 2D- och 3D-rum)
+/// </summary>
+/// 
+
 namespace DSU21_2.Views.Exhibitions
 {
     [AllowAnonymous]
@@ -56,6 +61,7 @@ namespace DSU21_2.Views.Exhibitions
             return View(AllExhibitionsViewModel);
         }
 
+        // Skickar ViewModel till partial-view för 3d-rum, miljön 1
         public async Task<IActionResult> Room3d_1(int id)
         {
             var exhibitions = await artDbRepo.GetCollection(id);
@@ -65,6 +71,7 @@ namespace DSU21_2.Views.Exhibitions
             return PartialView("/views/exhibitions/Room3d_1.cshtml", exhibitionsViewModel);
         }
 
+        // Skickar ViewModel till partial-view för 3d-rum, miljön 2
         public async Task<IActionResult> Room3d_2(int id)
         {
             var exhibitions = await artDbRepo.GetCollection(id);

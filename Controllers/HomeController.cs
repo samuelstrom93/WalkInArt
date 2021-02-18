@@ -8,6 +8,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
+/// <summary>
+/// För startsidan
+/// </summary>
+/// 
 namespace DSU21_2.Controllers
 {
 
@@ -30,6 +34,7 @@ namespace DSU21_2.Controllers
            
         }
 
+        // Skickar ViewModel till partial-view för 3d-rum
         public async Task<IActionResult> Room3d()
         {
             var collectionList = await artDbRepo.GetCollectionsWithArt();
