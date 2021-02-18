@@ -8,25 +8,32 @@ namespace DSU21_2.Repository
 {
     public interface IArtDBRepo
     {
-
+        #region Artist
+        Artist AddArtist(string name, string about, string profileId);
         Task<Artist> GetArtistById(int id);
         Task<Artist> GetArtistByCollection(Collection collection);
-        Task<Collection> GetCollection(int collectionId);
-        void DeleteCollection(Collection collection);
-        Artist AddArtist(string name, string about, string profileId);
+        Task<Artist> GetArtistByProfileId(string profileId);
+        Task<Artist> CheckArtist(string profileId, string name);
+        Artist UpdateArtist(Artist artist, string about);
+        #endregion
+        #region Collection
         void AddCollection(Artist artist, string name, string description);
         Task AddCollection(Artist artist, string name, string description, string category);
-        bool AddArtwork(Collection collection, string name, string description, string hyperlink);
-        Task<Artwork> UpdateArtwork(int id, string hyperlink, string description, string name);
+        Task<Collection> GetCollection(int collectionId);
         Task<List<Collection>> GetCollectionsWithArt();
+        void DeleteCollection(Collection collection);
+        #endregion
+        #region Artwork
+        void AddArtwork(Collection collection, string name, string description, string hyperlink);
+        Task<Artwork> GetArtwork(int artworkId);
+        Task<Artwork> UpdateArtwork(int id, string hyperlink, string description, string name);
+        void DeleteArtwork(Artwork artwork);
+        #endregion
+        #region Tag
         Task<Tag> AddTag(string title);
         Task<List<Tag>> GetTags();
-        Task<Tag> GetTag(int tagId);
-        Artist UpdateArtist(Artist artist, string about);
-        Task<Artwork> GetArtwork(int artworkId);
-        void DeleteArtwork(Artwork artwork);
+        Task<Tag> GetTagById(int tagId);
         Task<Tag> GetTagByName(string title);
-        Task<Artist> GetArtistByProfile(string profileId);
-        Task<Artist> CheckArtist(string profileId, string name);
+        #endregion
     }
 }

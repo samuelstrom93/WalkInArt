@@ -17,7 +17,10 @@ namespace DSU21_2.Repository
         }
 
         #region Artist
-
+        /// <summary>
+        /// Lägger in nya konstnärer. ProfilId sköter Google.
+        /// </summary>
+        /// 
         public Artist AddArtist(string name, string about, string profileId)
         {
             var artist = new Artist { Name = name, About = about, ProfileId = profileId};
@@ -34,7 +37,7 @@ namespace DSU21_2.Repository
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<Artist> GetArtistByProfile(string profileId)
+        public async Task<Artist> GetArtistByProfileId(string profileId)
         {
             return await context.Artists
                 .Include(a => a.Collections)
@@ -57,10 +60,13 @@ namespace DSU21_2.Repository
             context.SaveChanges();
             return artist;
         }
-
+        /// <summary>
+        /// Kollar om det är en befintlig konstnär eller ej.
+        /// </summary>
+        /// 
         public async Task<Artist>CheckArtist(string profileId, string name)
         {
-            Artist artist = await GetArtistByProfile(profileId);
+            Artist artist = await GetArtistByProfileId(profileId);
             if(artist != null)
                 {
                 return artist;
@@ -82,21 +88,30 @@ namespace DSU21_2.Repository
                 .Include(x => x.Artworks)
                 .FirstOrDefaultAsync(y =>y.Id == collectionId);
         }
-        
+        /// <summary>
+        /// Hämtar alla utställningar som innerhåller konstverk.
+        /// </summary>
+        /// 
         public async Task<List<Collection>> GetCollectionsWithArt()
         {
             return await context.Collections
                 .Include(x => x.Artworks)
                 .Where(y => y.Artworks.Count > 0).ToListAsync();
         }
-
+        /// <summary>
+        /// Lägger till utställning utan en kategori.
+        /// </summary>
+        /// 
         public void AddCollection(Artist artist, string name, string description)
         {
             Collection collection = new Collection { Name = name, Description = description };
             artist.Collections.Add(collection);
             context.SaveChanges();
         }
-
+        /// <summary>
+        /// Lägger till utställning med en kategori.
+        /// </summary>
+        /// 
         public async Task AddCollection(Artist artist, string name, string description, string category)
         {
             Collection collection = new Collection { Name = name, Description = description };
@@ -133,12 +148,11 @@ namespace DSU21_2.Repository
 
         #region Artwork
 
-        public bool AddArtwork(Collection collection, string name, string description, string hyperlink)
+        public void AddArtwork(Collection collection, string name, string description, string hyperlink)
         {
             Artwork art = new Artwork { Name = name, Description = description, Hyperlink = hyperlink };
             collection.Artworks.Add(art);
             context.SaveChanges();
-            return true;
         }
 
         public async Task<Artwork> GetArtwork(int artworkId)
@@ -170,7 +184,10 @@ namespace DSU21_2.Repository
         #endregion
 
         #region Tag
-
+        /// <summary>
+        /// Tag = Kategori.
+        /// </summary>
+        /// 
         public async Task<Tag> AddTag(string title)
         {
             Tag tag;
@@ -196,7 +213,7 @@ namespace DSU21_2.Repository
 
         }
 
-        public async Task<Tag> GetTag(int tagId)
+        public async Task<Tag> GetTagById(int tagId)
         {
             return await context.Tags
                 .Include(a => a.Collections)
