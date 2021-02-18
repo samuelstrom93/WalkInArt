@@ -1,5 +1,5 @@
 ﻿    /// <summary>
-    /// 
+    /// För att utställalen ska kunna hantera sina konstverk efter inloggning
     /// </summary>
 
 // Hanterar lägg till ny utställning
