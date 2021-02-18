@@ -4,7 +4,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-
+/// <summary>
+/// För hjälpsidan
+/// </summary>
+/// 
 namespace DSU21_2.Controllers
 {
     [AllowAnonymous]

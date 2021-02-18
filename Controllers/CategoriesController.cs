@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Visar kategorier
+/// </summary>
+/// 
 namespace DSU21_2.Controllers
 {
     [AllowAnonymous]
