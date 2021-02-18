@@ -21,7 +21,10 @@ WalkInArt finns tillgänglig på https://grupp2.dsvkurs.miun.se/.
 Projektet är skapat i Visual Studio med hjälp av ramverket ASP.NET core och enligt MVC-mönstret. Här jobbar vi även med vymodeller för att minska beroenden mellan logiken och det vyerna. I projektet har vi även jobbat med asynkron programmering för att snabba upp webbsidan.
 
 ### A-frame
-A-frame är ramverket vi använt för att bygga våra VR-rum och är baserat på HTML-kod. Här har vi använt oss av 3d-modeller för att bygga upp en immersiv upplevelse. Mer information kring ramverket A-frame finns på [A-frame dokumentation](https://aframe.io/docs/1.2.0/introduction/faq.html).
+A-frame är ramverket vi använt för att bygga våra VR-rum och är baserat på HTML-kod. Här har vi använt oss av 3d-modeller för att bygga upp en immersiv upplevelse.
+
+För att komma åt byggläget i A-frame kan man när man är inne i VR-rummen använda ```Ctrl + alt + I``` för att inspektera element.
+Mer information kring ramverket A-frame finns på [A-frame dokumentation](https://aframe.io/docs/1.2.0/introduction/faq.html).
 
 
 ### API
