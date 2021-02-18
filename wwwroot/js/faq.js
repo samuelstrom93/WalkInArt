@@ -1,6 +1,7 @@
 ﻿    /// <summary>
-    /// 
+    /// Används för endast hjälpsidan
     /// </summary>
+
 let answers = document.querySelectorAll('#answer');
 let questions = document.querySelectorAll('#question');
 let arrowIcons = document.querySelectorAll("#arrow");
