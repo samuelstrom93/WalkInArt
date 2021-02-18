@@ -13,16 +13,14 @@
    
 
 .fa.fa-chevron-down,
-.fas fa-chevron-up
-{
+.fas fa-chevron-up{
     cursor: pointer;
 }
 
-    .fa.fa-chevron-down:hover,
-    .fa.fa-chevron-up:hover {
-        color: #6d6d6d;
-    }
-
+.fa.fa-chevron-down:hover,
+.fa.fa-chevron-up:hover {
+     color: #6d6d6d;
+}
 
 #hr.thin-line {
     height: 1px;
@@ -30,7 +28,6 @@
     background-color: #f8f9fa;
     width: 100%;
 }
-
 
 #answer {
     display: none;
@@ -46,6 +43,7 @@
     color: #808080;
     cursor: pointer;
 }
+
 #faq-h1{
     text-align: center;
 }
