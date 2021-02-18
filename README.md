@@ -29,7 +29,7 @@ Sökfunktioner är ofta en central del av webbsidor och för att enkelt kunna hi
 
 API:et finns tillgängligt på https://grupp8.dsvkurs.miun.se/.
 
-Ett exempel på ett API-anrop är: https://grupp8.dsvkurs.miun.se/api/artists som returnerar alla artister på hemsidan via databasen. 
+Ett exempel på ett API-anrop är: https://grupp8.dsvkurs.miun.se/api/Collections/ som returnerar alla kollektioner via databasen. 
 
 
 ### Databas EF
