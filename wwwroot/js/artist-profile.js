@@ -1,6 +1,8 @@
-﻿    /// <summary>
-    /// För att utställalen ska kunna hantera sina konstverk efter inloggning
-    /// </summary>
+﻿/// <summary>
+/// För att utställalen ska kunna hantera sina konstverk efter inloggning
+/// </summary>
+
+console.log("artist-profile.js is loaded")
 
 // Hanterar lägg till ny utställning
 let addExhibitionFormBtn = document.querySelector(".add-exhibition");

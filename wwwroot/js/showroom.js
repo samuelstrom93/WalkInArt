@@ -1,6 +1,8 @@
-﻿    /// <summary>
-    /// 
-    /// </summary>
+﻿/// <summary>
+/// 
+/// </summary>
+
+console.log("showroom.js is loaded")
 
 function modifyFrames(scale){
     let elementsToScale = document.getElementsByClassName("frames")

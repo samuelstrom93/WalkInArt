@@ -1,6 +1,8 @@
-﻿    /// <summary>
-    /// Används för 2D-rum på utställningssidor
-    /// </summary>
+﻿/// <summary>
+/// Används för 2D-rum på utställningssidor
+/// </summary>
+
+console.log("gallery.js is loaded")
 
 let buttons = document.querySelectorAll('.button-overlay');
 let overlays = document.querySelectorAll("#overlay")

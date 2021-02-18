@@ -1,6 +1,8 @@
-﻿    /// <summary>
-    /// 
-    /// </summary>
+﻿/// <summary>
+/// 
+/// </summary>
+
+console.log("start-showroom.js is loaded")
 modifyFrames()
 
 function modifyFrames(){

@@ -1,6 +1,8 @@
-﻿    /// <summary>
-    /// 
-    /// </summary>
+﻿/// <summary>
+/// 
+/// </summary>
+
+console.log("swipe.js is loaded")
 
 //Karusel för utställningar
 var gallerySwiper = new Swiper('.gallerylist', {
