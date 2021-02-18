@@ -52,18 +52,18 @@
                                             <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
 
                                             <p class="button-overlay">@Model.Exhibitions.Artworks[i].Name</p>
-                                            @*<button class="button-overlay">Mer info</button>*@
-                                        <div id="overlay">
-                                            <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
-                                            <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
-                                            <input class="btn-readmoregallery" type="button" value="Visa bild" onclick="showPictureOnly(this)" />
-                                            @*<button class="btn-readmoregallery"></button>*@
-                                            <div class="object-info">
-                                                <h1>@Model.Exhibitions.Artworks[i].Name</h1>
-                                                <p>@Model.Artist.Name</p>
-                                                <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
+
+                                            <div id="overlay">
+                                                <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
+                                                <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
+                                                <input class="btn-readmoregallery" type="button" value="Visa bild" onclick="showPictureOnly(this)">
+
+                                                <div class="object-info">
+                                                    <h1>@Model.Exhibitions.Artworks[i].Name</h1>
+                                                    <p>@Model.Artist.Name</p>
+                                                    <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                     }
                                 </div>
