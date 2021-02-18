@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// Används för 2D-rum på utställningssidor
+/// Används för 2d-rum på utställningssidor
 /// </summary>
 
 console.log("gallery.js is loaded")
