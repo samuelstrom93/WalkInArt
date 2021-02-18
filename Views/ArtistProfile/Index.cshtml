@@ -1,167 +1,139 @@
 ﻿@model DSU21_2.ViewModels.ArtistViewModel
-
 @section Scripts {
-
     <script src="~/js/artist-profile.js"></script>
 }
-
 <br />
 <br />
 <br />
 <br />
 <br />
-
-
-
 <main>
-
     <div class="grid-profile">
         <h1 id="profile-header">@Model.Artist.Name</h1>
-
         <div class="profile-description">
             <p>Beskrivning:</p>
             <p>@Model.Artist.About</p>
         </div>
-
         <form method="post" asp-action="UpdateArtist" asp-controller="ArtistProfile" class="form-flex">
             <input type="hidden" name="artistId" value="@Model.Artist.Id" />
             <textarea name="about" rows="5" cols="33"></textarea>
             <input type="submit" name="remove" value="Uppdatera" class="edit-profile" id="edit-btn" />
         </form>
-
     </div>
-
-
+    
     <div class="grid-exhibitions">
         <h1 id="header-grid">Dina utställningar</h1>
-
         <h1 id="exhibition-title">Utställning</h1>
         <h1 id="edit-title">Hantera</h1>
-
-
-
         @for (int i = 0; i < Model.Artist.Collections.Count; i++)
         {
-
             <div class="exhibition-info">
                 <h4 class="exhibition-title">
                     @Model.Artist.Collections[i].Name
                     <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
-                </h4>
-                <div class="artworks">
-
-                    @if (Model.Artist.Collections[i].Artworks.Count == 0)
+                </h4>            
+                @*Lägger till konstverk och beskrivning*@
+            <div class="artworks">
+                @if (Model.Artist.Collections[i].Artworks.Count == 0)
+                {
+                    <div>
+                        <a class="add-object">
+                            <i class="fas fa-plus"></i>
+                            Lägg till objekt
+                        </a>
+                        <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
+                            <p>Utställning</p>
+                            <input type="hidden" name="artistId" value="@Model.Artist.Id" />
+                            <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
+                            <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
+                            <p>
+                                <label>
+                                    Beskrivning
+                                    <textarea name="description" rows="5" cols="33"></textarea>
+                                </label>
+                            </p>
+                            <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
+                            <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    @*Uppdatera konstverk*@
+                    @for (int j = 0; j < @Model.Artist.Collections[i].Artworks.Count; j++)
                     {
-                        <div>
-                            <a class="add-object">
-                                <i class="fas fa-plus"></i>
-                                Lägg till objekt
-                            </a>
-                            <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
-                                <p>Utställning</p>
+                        var artwork = @Model.Artist.Collections[i].Artworks[j];
+                        <div class="form-wrapper">
+                            <form class="update-form" asp-controller="ArtistProfile" asp-action="UpdateArtwork">
                                 <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-                                <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
-                                <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
+                                <input type="hidden" name="artworkId" value="@artwork.Id" />
                                 <p>
-                                    <label>
-                                        Beskrivning
-                                        <textarea name="description" rows="5" cols="33"></textarea>
-                                    </label>
+                                    <label><b>Bild @(j+1)</b></label>
+                                    <img src="@artwork.Hyperlink" />
                                 </p>
-                                <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
-                                <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
+                                <p>
+                                    <label><b>Namn</b></label>
+                                    <input type="text" name="title" value="@artwork.Name" required pattern="\S(.*\S)?" />
+                                </p>
+                                <p>
+                                    <label><b>Beskrivning</b></label>
+                                    <textarea name="description" rows="7" cols="25">@artwork.Description</textarea>
+                                </p>
+                                <p>
+                                    <label><b>Url</b></label>
+                                    <input type="text" name="url" value="@artwork.Hyperlink" required pattern="\S(.*\S)?" />
+                                </p>
+                                <p>
+                                    <label><b>Uppdatera</b></label>
+                                    <input type="submit" name="update" value="Uppdatera" class="update-submit" />
+                                </p>
+                            </form>
+                            @*Ta bort konstverk*@
+                            <form id="form-delete" method="post" asp-action="RemoveArtwork" asp-controller="ArtistProfile">
+                                <input type="hidden" name="artworkId" value="@artwork.Id" />
+                                <input type="hidden" name="artistId" value="@Model.Artist.Id" />
+                                <input type="submit" name="remove" value="Ta bort konstverk" id="delete-btn" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett konstverk?')" />
                             </form>
                         </div>
-                    }
+                        <hr />
 
-                    else
-                    {
-                        @for (int j = 0; j < @Model.Artist.Collections[i].Artworks.Count; j++)
+                        @*If-sats för att undersöka när index är på sista elementet för att få ut "lägg till nytt objekt" knapp. *@
+                        @if (j == @Model.Artist.Collections[i].Artworks.Count - 1)
                         {
-                            var artwork = @Model.Artist.Collections[i].Artworks[j];
-
-                            <div class="form-wrapper">
-                                <form class="update-form" asp-controller="ArtistProfile" asp-action="UpdateArtwork">
+                            <div>
+                                <a class="add-object">
+                                    <i class="fas fa-plus"></i>
+                                    Lägg till objekt
+                                </a>
+                                <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
+                                    <p>Utställning</p>
                                     <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-                                    <input type="hidden" name="artworkId" value="@artwork.Id" />
+                                    <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
+                                    <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
                                     <p>
-                                        <label><b>Bild @(j+1)</b></label>
-                                        <img src="@artwork.Hyperlink" />
+                                        <label>
+                                            Beskrivning
+                                            <textarea name="description" rows="5" cols="33"></textarea>
+                                        </label>
                                     </p>
-                                    <p>
-                                        <label><b>Namn</b></label>
-                                        <input type="text" name="title" value="@artwork.Name" required pattern="\S(.*\S)?" />
-                                    </p>
-                                    <p>
-                                        <label><b>Beskrivning</b></label>
-                                        <textarea name="description" rows="7" cols="25">@artwork.Description</textarea>
-                                    </p>
-                                    <p>
-                                        <label><b>Url</b></label>
-                                        <input type="text" name="url" value="@artwork.Hyperlink" required pattern="\S(.*\S)?" />
-                                    </p>
-                                    <p>
-                                        <label><b>Uppdatera</b></label>
-                                        <input type="submit" name="update" value="Uppdatera" class="update-submit" />
-                                    </p>
-
-                                </form>
-                                <form id="form-delete" method="post" asp-action="RemoveArtwork" asp-controller="ArtistProfile">
-                                    <input type="hidden" name="artworkId" value="@artwork.Id" />
-                                    <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-                                    <input type="submit" name="remove" value="Ta bort konstverk" id="delete-btn" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett konstverk?')" />
+                                    <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
+                                    <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
                                 </form>
                             </div>
-
-                            <hr />
-
-                            // Går igenom denna if-sats när index är på sista elementen för att
-                            //få ut "lägg till nytt objekt"-knappen längst nere
-                            @if (j == @Model.Artist.Collections[i].Artworks.Count - 1)
-                            {
-                                <div>
-                                    <a class="add-object">
-                                        <i class="fas fa-plus"></i>
-                                        Lägg till objekt
-                                    </a>
-                                    <form class="object-form" asp-controller="ArtistProfile" asp-action="AddArtwork">
-                                        <p>Utställning</p>
-                                        <input type="hidden" name="artistId" value="@Model.Artist.Id" />
-                                        <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
-                                        <p><label>Titel <input type="text" name="title" required pattern="\S(.*\S)?" /></label></p>
-                                        <p>
-
-                                            <label>
-                                                Beskrivning
-                                                <textarea name="description" rows="5" cols="33"></textarea>
-                                            </label>
-                                        </p>
-                                        <p><label>Bild-url <input type="text" name="url" required pattern="\S(.*\S)?" /></label></p>
-                                        <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
-                                    </form>
-                                </div>
-                            }
-
                         }
                     }
-
-
-
-                </div>
+                }
             </div>
-
+            </div>
             <div class="actions-btns">
                 <form method="post" asp-action="RemoveCollection" asp-controller="ArtistProfile">
                     <input type="hidden" name="artistId" value="@Model.Artist.Id" />
                     <input type="hidden" name="collectionId" value="@Model.Artist.Collections[i].Id" />
                     <input type="submit" name="remove" value="Ta bort utställningen" class="delete-btn" onclick="return confirm('Är du säker på att du vill ta bort ett utställning?')" />
                 </form>
-
             </div>
         }
-
-        @*Knapp och formulär för att lägga in mer data*@
-        @*POST ELLER GET?*@
+        @*Knapp och formulär för att lägga till utställning*@
         <div>
             <a class="add-exhibition">
                 <i class="fas fa-plus"></i>
@@ -179,13 +151,10 @@
                 </p>
                 <p><label>Kategori: (optionell) <input type="text" name="category" pattern="\S(.*\S)?" /></label></p>
                 <p><input type="submit" name="add" value="Lägg till" id="submit-btn" /></p>
-
-
             </form>
         </div>
     </div>
 </main>
-
 
 
 

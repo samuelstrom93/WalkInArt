@@ -1,5 +1,6 @@
 ﻿
-/*CSS FÖR BÅDE INDEX OCH CHOSEN CATEGORY*/
+/*CSS för index och chosen category*/
+
 .grid-category {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -7,7 +8,6 @@
     padding: 50px;
     margin-top: 10px;
 }
-
 .grid-artcategory {
     position: relative;
     text-align: center;
@@ -18,19 +18,16 @@
     margin-left: 20%;
     box-shadow: 5px 5px 7px #707070;
 }
+.grid-artcategory:hover > a {
+    text-decoration: none;
+}
 
+.grid-artcategory img {
+    height: 250px;
+    width: 250px;
+}
 
-    .grid-artcategory:hover > a {
-        text-decoration: none;
-    }
-
-    .grid-artcategory img {
-        height: 250px;
-        width: 250px;
-    }
-
-
-/*INDEX PAGE*/
+/*Index*/
 .category {
     position: absolute;
     top: 50%;
@@ -42,42 +39,36 @@
     text-transform: uppercase;
     font-weight: bold;
     margin: auto;
-    background-color: rgba(255,255,255, 0.7); /*bakgrundsfärgen måste vara rgba för att inte texten ska bli genomskinlig som bakgrunden*/
+    background-color: rgba(255,255,255, 0.7); 
     height: 40%;
     width: 105%;
 }
-
 #cateory-h1 {
     text-align: center;
     margin-top: 2%;
     font-size: 3em;
 }
-
 .chosen-category p {
     margin-top: 10px;
     color: #000;
     font-size: 1.5em;
 }
-
 .chosen-category:hover p {
     font-weight: bold;
     text-decoration: underline;
 }
 
-
-/*CHOSEN CATEGORY PAGE*/
+/*Chosen category*/
 #chosencategory-h1 {
     text-align: center;
     font-size: 3em;
     margin-top: 2%;
 }
-
 .title {
     text-align: center;
     padding-top: 1%;
     color: #000;
 }
-
 .info-txt {
     text-align: left;
     padding-left: 10px;
@@ -85,8 +76,6 @@
     color: #000;
     font-size: 14px;
 }
-
-
 .info-box {
     top: -15%;
     position: relative;
@@ -95,8 +84,6 @@
     opacity: 0.9;
     height: 100%;
 }
-
-
 .info-box:hover {
     top: -100%;
 }

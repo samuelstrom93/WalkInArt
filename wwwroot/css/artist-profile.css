@@ -5,7 +5,6 @@
     grid-gap: 1em;
     margin: 1em auto;
 }
-
 #profile-header {
     grid-column: span 2;
     text-align: center;
@@ -15,27 +14,21 @@
     color: #fff;
     height: 5vh;
 }
-
 .form-flex {
     display: flex;
     flex-direction: column;
 }
 .form-flex textarea {
-    border-radius: 8px;
-}
-
-.form-flex textarea {
     border: 1.5px solid #585252;
     margin-bottom: 0.3em;
+    border-radius: 8px;
 }
-
 #form-delete {
     display: flex;
     align-self: flex-start;
     margin-top: 2%;
     margin-left: auto;
 }
-
 .add-exhibition {
     background-color: rgb(46,46,46);
     padding: 0.3em 0.5em;
@@ -46,16 +39,12 @@
     border-radius: 4px;
     cursor: pointer;
 }
-
 .add-exhibition:hover {
     color: #fff;
 }
-
-
 .exhibition-info {
     margin: 0 1em;
 }
-
 .grid-exhibitions {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -67,8 +56,6 @@
     grid-gap: 1em;
     background-color: rgb(245, 245, 245);
 }
-
-
 #header-grid {
     grid-column: span 2;
     background-color: rgb(32, 32, 32);
@@ -78,16 +65,13 @@
     border-radius: 8px;
     height: 5vh;
 }
-
 .grid-exhibitions a:hover {
     text-decoration: underline;
 }
-
 .actions-btns {
     display: flex;
     justify-content: center;
 }
-
 .edit-profile {
     background-color: rgb(46,46,46);
     padding: 0.5em 1em;
@@ -99,7 +83,6 @@
     display: flex;
     align-self: flex-start;
 }
-
 .edit-btn {
     background-color: #147a4c;
     padding: 0.5em 1em;
@@ -111,7 +94,6 @@
     display: flex;
     align-self: flex-start;
 }
-
 .delete-btn {
     background-color: #c62020;
     padding: 0.5em 1em;
@@ -121,22 +103,17 @@
     border: none;
     margin-top: 2.6%;
 }
-
 .delete-btn:hover {
     color: #fff;
     text-decoration: underline;
 }
-
 .edit-btn:hover {
     color: #fff;
     text-decoration: underline;
 }
-
 .exhibition-wrapper {
     border-bottom: 1px solid #000;
 }
-
-
 .removeObject-btn {
     background-color: #c62020;
     padding: 0.5em 1em;
@@ -145,16 +122,13 @@
     color: #fff;
     margin-left: auto;
 }
-
 .removeObject-btn:hover {
     text-decoration: underline;
     color: #fff;
 }
-
 #exhibition-title {
     margin: 0 0.25em;
 }
-
 .exhibition-form {
     display: none;
     margin: 1em;
@@ -163,17 +137,14 @@
     padding: 1em;
     width: 75%;
 }
-
 .exhibition-form p {
     margin-bottom: 1em;
 }
-
 .exhibition-form label {
     display: flex;
     flex-direction: column;
     font-weight: bold;
 }
-
 #submit-btn {
     display: flex;
     margin: auto;
@@ -187,14 +158,11 @@
     border: none;
     height: 2rem;
 }
-
-
 .artwork-form label {
     display: flex;
     flex-direction: column;
     font-weight: bold;
 }
-
 .add-object {
     background-color: rgb(46,46,46);
     padding: 0.3em 0.5em;
@@ -205,12 +173,10 @@
     border-radius: 4px;
     cursor: pointer;
 }
-
 .add-object:hover {
     color: #fff;
     text-decoration: underline;
 }
-
 .object-form {
     display: none;
     margin: 1em;
@@ -218,23 +184,18 @@
     padding: 1em;
     width: 75%;
 }
-
 .object-form p {
     margin-bottom: 1em;
 }
-
 .object-form label {
     display: flex;
     flex-direction: column;
     font-weight: bold;
 } 
-
-
 .update-form {
     display: flex;
     flex-direction: row;
 }
-
 .form-wrapper {
     display: flex;
     flex-direction: row;
@@ -252,7 +213,6 @@
     flex-direction: column;
     margin: 0 0.5em;
 }
-
 .update-form img {
     height: 190px;
     width: 230px;
@@ -260,7 +220,6 @@
 .update-form input {
    border: 1.5px solid #585252;
 }
-
 #edit-title {
     text-align: center;
 }
