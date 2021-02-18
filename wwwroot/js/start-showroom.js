@@ -1,10 +1,11 @@
 ﻿/// <summary>
-/// 
+/// Används för 3d-rum på startsidan
 /// </summary>
 
 console.log("start-showroom.js is loaded")
 modifyFrames()
 
+// Ram justerar beroende på konstverks storlek
 function modifyFrames(){
     let elementsToScaleForBigFrames = document.getElementsByClassName("big-frames")
     let elementsWithImg = document.getElementsByClassName("pictures")
@@ -24,7 +25,7 @@ function getMetaForBigFrames(elementWithImg, elementsToScaleForBigFrames) {
     img.src = elementWithImg.attributes.src.value;
 }
 
-//F�r att flytta till en annan sida i ett VR rum
+//För att flytta till en annan sida i ett VR rum
 AFRAME.registerComponent('navigate-on-click', {
     schema: {
         url: { default: '' }
