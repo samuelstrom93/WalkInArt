@@ -4,17 +4,17 @@
     <iframe id="3d-room-start" src="@Url.Action("Room3d")" style="height:85vh;width:100%;"></iframe>
     <label class="esc-label">Esc för att avsluta VR-läge</label>
 
-    <div class="grid-containerHome">
+    <div class="grid-containerhome">
 
         <h1>Utställningar</h1>
         @for (int i = 0; i < 4; i++)
         {
-            <div class="grid-artHome">
+            <div class="grid-arthome">
                 <img src="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Hyperlink">
                 <a class="to-exhibition" href="/Exhibitions/@Model.IncomingCollections[i].Id">
-                    <div class="info-boxHome">
-                        <h1 class="titleHome">@Model.IncomingCollections[i].Name</h1>
-                        <p class="info-txtHome">@Model.IncomingCollections[i].Description </p>
+                    <div class="info-boxhome">
+                        <h1 class="titlehome">@Model.IncomingCollections[i].Name</h1>
+                        <p class="info-txthome">@Model.IncomingCollections[i].Description </p>
                     </div> 
                 </a>
             </div>
