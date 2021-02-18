@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// För att kontrollera karusel för 2d-rums konstverk och rumlista 
 /// </summary>
 
 console.log("swipe.js is loaded")
