@@ -43,12 +43,14 @@
         }
     </a-assets>
 
-
+    <!--Kamera-->
     <a-entity movement-controls="speed: 0.8; constrainToNavMesh: true" position="-3.75 0 0" rotation="0 0 0">
         <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true" rotation="0 -90 0">
             <a-cursor id="cursor"></a-cursor>
         </a-entity>
     </a-entity>
+
+    <!--Golv-->
     <a-entity id="floors">
         <a-plane rotation="-90 0 0" material="displacementBias:0;
                     displacementScale:0;
@@ -61,9 +63,12 @@
                     ambientOcclusionTextureRepeat: 5 5;
                     displacementTextureRepeat: 5 5;
                     normalTextureRepeat: 5 5;
-                    roughnessTextureRepeat: 5 5;" geometry="height:10;width:12.5" id="floor"></a-plane>
+                    roughnessTextureRepeat: 5 5;" geometry="height:10;width:12.5" id="floor">
+        </a-plane>
         <a-plane rotation="-90 0 0" material="" geometry="height:9.7;width:12" id="floor-nav-mesh" visible="false" nav-mesh></a-plane>
     </a-entity>
+
+    <!--Tak-->
     <a-entity id="roof">
         <a-plane position="0 2.95 5" rotation="60 180 180" material="displacementBias:0;
                 displacementScale:0;
@@ -74,7 +79,8 @@
                 repeat:20 20;
                 displacementTextureRepeat: 20 20;
                 normalTextureRepeat: 20 20;
-                roughnessTextureRepeat: 20 20;" geometry="height:15;width:12.5" id="ceiling1"></a-plane>
+                roughnessTextureRepeat: 20 20;" geometry="height:15;width:12.5" id="ceiling1">
+        </a-plane>
         <a-plane position="0 2.95 -5" rotation="60 0 0" material="displacementBias:0;
                 displacementScale:0;
                 displacementMap: #ceiling-paint-Dis;
@@ -85,7 +91,8 @@
                 ambientOcclusionTextureRepeat: 20 20;
                 displacementTextureRepeat: 20 20;
                 normalTextureRepeat: 20 20;
-                roughnessTextureRepeat: 20 20;" geometry="height:15;width:12.5" id="ceiling2"></a-plane>
+                roughnessTextureRepeat: 20 20;" geometry="height:15;width:12.5" id="ceiling2">
+        </a-plane>
         <a-entity id="beam1">
             <a-box position="-6.25 3.15 0" rotation="90 0 0" material="displacementBias:0;
                     displacementScale:0;
@@ -97,7 +104,8 @@
                     ambientOcclusionTextureRepeat: 1 10;
                     displacementTextureRepeat: 1 10;
                     normalTextureRepeat: 1 10;
-                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam1-lower"></a-box>
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam1-lower">
+            </a-box>
             <a-box position="-6.25 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
                     displacementScale:0;
                     displacementMap: #beam-wood-Dis;
@@ -133,7 +141,8 @@
                     ambientOcclusionTextureRepeat: 1 10;
                     displacementTextureRepeat: 1 10;
                     normalTextureRepeat: 1 10;
-                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam2-lower"></a-box>
+                    roughnessTextureRepeat: 1 10;" geometry="depth:0.3;width:0.3;height:10" id="beam2-lower">
+            </a-box>
             <a-box position="-3.75 5.64 -0.127" rotation="60 0 0" material="displacementBias:0;
                     displacementScale:0;
                     displacementMap: #beam-wood-Dis;
@@ -304,6 +313,7 @@
         </a-entity>
     </a-entity>
 
+    <!--Väggar-->
     <a-entity id="walls">
         <a-box position="0 1.5 -5" material=" color:#dad8d8; displacementBias:0;
                 displacementScale:0;
@@ -316,7 +326,8 @@
                 ambientOcclusionTextureRepeat: 2.5 1;
                 displacementTextureRepeat: 2.5 1;
                 normalTextureRepeat: 2.5 1;
-                roughnessTextureRepeat: 2.5 1;" geometry="width:12.5;height:3;depth:0.2" id="wall-E"></a-box>
+                roughnessTextureRepeat: 2.5 1;" geometry="width:12.5;height:3;depth:0.2" id="wall-E">
+        </a-box>
         <a-box position="0 1.5 5" rotation="0 180 0" material=" color:#dad8d8; displacementBias:0;
                 displacementScale:0;
                 ambientOcclusionMap: #conc-wall-AO;
@@ -328,7 +339,8 @@
                 ambientOcclusionTextureRepeat: 2.5 1;
                 displacementTextureRepeat: 2.5 1;
                 normalTextureRepeat: 2.5 1;
-                roughnessTextureRepeat: 2.5 1;" geometry="width:12.5;depth:0.2;height:3" id="wall-W"></a-box>
+                roughnessTextureRepeat: 2.5 1;" geometry="width:12.5;depth:0.2;height:3" id="wall-W">
+        </a-box>
         <a-box position="6.25 1.5 0" rotation="0 -90 0" material=" color:#dad8d8; displacementBias:0;
                 displacementScale:0;
                 ambientOcclusionMap: #conc-wall-AO;
@@ -340,7 +352,8 @@
                 ambientOcclusionTextureRepeat: 2 3;
                 displacementTextureRepeat: 2 3;
                 normalTextureRepeat: 2 3;
-                roughnessTextureRepeat: 2 3;" geometry="width:10;height:9;depth:0.2" id="wall-S"></a-box>
+                roughnessTextureRepeat: 2 3;" geometry="width:10;height:9;depth:0.2" id="wall-S">
+        </a-box>
         <a-box position="-6.25 1.5 0" rotation="0 90 0" material=" color:#dad8d8; displacementBias:0;
                 displacementScale:0;
                 ambientOcclusionMap: #conc-wall-AO;
@@ -352,9 +365,11 @@
                 ambientOcclusionTextureRepeat: 2 3;
                 displacementTextureRepeat: 2 3;
                 normalTextureRepeat: 2 3;
-                roughnessTextureRepeat: 2 3;" geometry="width:10;height:9;depth:0.2" id="wall-N"></a-box>
+                roughnessTextureRepeat: 2 3;" geometry="width:10;height:9;depth:0.2" id="wall-N">
+        </a-box>
     </a-entity>
 
+    <!--Lampor-->
     <a-entity id="lights-point">
         <a-entity position="-3.75 2.734 0" light="intensity:0.4;type:point" id="point-light1"></a-entity>
         <a-entity position="-1.25 2.734 0" light="intensity:0.4;type:point" id="point-light2"></a-entity>
@@ -375,6 +390,8 @@
         <a-entity position="3.75 2.85 0" rotation="-25 -90 0" light="penumbra:0.3;angle:30;intensity:0.8;type:spot" id="spot-light10"></a-entity>
         <a-entity position="3.75 2.85 2.5" rotation="-25 -90 0" light="penumbra:0.3;angle:30;intensity:0.8;type:spot" id="spot-light11"></a-entity>
     </a-entity>
+
+    <!--Ramar-->
     <a-entity id="models">
         <a-entity id="frames">
             <a-entity gltf-model="#frame" class="frames" position="3.75 1.6 -4.85" rotation="0 0 0" scale="0.7 0.7 0.7">
@@ -411,7 +428,9 @@
                 <a-image src="#picture10" scale="1.1 1.1 1.1" position="0 0 -0.02"></a-image>
             </a-entity>
         </a-entity>
-        @{int artworks = @Model.Exhibitions.Artworks.Count; int currentArtwork = 0;  } 
+
+        <!--Titel skyltar-->
+        @{int artworks = @Model.Exhibitions.Artworks.Count; int currentArtwork = 0; }
         <a-entity id="frames-title">
             <a-entity id="title-0"
                       class="title-frames"
@@ -499,6 +518,8 @@
             </a-entity>
 
         </a-entity>
+
+        <!--Dekorationer-->
         <a-entity id="models">
             <a-entity id="door"
                       navigate-on-click="url: @Url.Action("Index","Home")"

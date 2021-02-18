@@ -50,7 +50,7 @@
         </a-entity>
     </a-entity>
 
-    <!--Lights-->
+    <!--Lampor-->
     <a-entity id="lights-point" position="0 11.71 8.783">
         <a-entity position="-3.75 2.734 0" light="intensity:0.4;type:point" id="point-light1"></a-entity>
         <a-entity position="-1.25 2.734 0" light="intensity:0.4;type:point" id="point-light2"></a-entity>
@@ -438,13 +438,13 @@
                 roughness="0.1" id="second-floor" position="-10.273 3.458 -10.737"
                 material="color:#a87915" geometry="height:6;thetaLength:180;radius:25" rotation="0 90 0"></a-cylinder>
 
-    <!--Roof-->
+    <!--Tak-->
     <a-sphere src="#roof-tex"
               repeat="1 1"
               normal-map="#roof-nrm"
               normal-texture-repeat="1 1"
               roughness="0.3" id="roof" position="-10.41 39.448 -11.143" rotation="270 0 0" material="side:double; opacity:0.8" geometry="radius:30;phiLength:180"></a-sphere>
-    <!--Roof för 0F-->
+    <!--Tak för 0F-->
     <a-box id="roof-0F" src="#floor-tex" repeat="4 1" normal-map="#floor-nrm" normal-texture-repeat="4 1" roughness="0.3"
            color=" #5a320c" width="17" height="1" depth="2" position="9.48 6.92 -10.274" geometry="width:9.5"></a-box>
     <!--Vägg för hela rummet-->
@@ -460,7 +460,7 @@
            normal-texture-repeat="1 1"
            roughness="0.3" depth="10" material="color:#a87915" position="-10.391 3.431 -11.571" geometry="width:50;height:6;depth:1" id="wall-main"></a-box>
 
-    <!--sofa-->
+    <!--Soffa-->
     <a-entity gltf-model="#sofa-low-poly" id="sofa" position="8.269 0.30827 -4.85285" scale="1 0.8 1" rotation="0 -86.631 0"></a-entity>
     <!--Woman-->
     <a-entity gltf-model="#woman" id="woman" position="-13.14773 6.95678 -20.75059" rotation="0 90 0" scale="0.015 0.015 0.015"></a-entity>
