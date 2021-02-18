@@ -37,7 +37,7 @@ Ett exempel på ett API-anrop är: https://grupp8.dsvkurs.miun.se/api/Collection
 
 ### Databas
 
-Infoga bild på databas-diagram
+[Script för att skapa databas](Resources/createDB_script.sql)
 
 
 
