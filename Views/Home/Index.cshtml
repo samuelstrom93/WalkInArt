@@ -1,8 +1,23 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model DSU21_2.ViewModels.HomeViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<main>
+    <iframe id="3d-room-start" src="@Url.Action("Room3d")" style="height:85vh;width:100%;"></iframe>
+    <label class="esc-label">Esc för att avsluta VR-läge</label>
+
+    <div class="grid-containerhome">
+
+        <h1>Utställningar</h1>
+        @for (int i = 0; i < 4; i++)
+        {
+            <div class="grid-arthome">
+                <img src="@Model.IncomingCollections[i].Artworks.FirstOrDefault().Hyperlink">
+                <a class="to-exhibition" href="/Exhibitions/@Model.IncomingCollections[i].Id">
+                    <div class="info-boxhome">
+                        <h1 class="titlehome">@Model.IncomingCollections[i].Name</h1>
+                        <p class="info-txthome">@Model.IncomingCollections[i].Description </p>
+                    </div> 
+                </a>
+            </div>
+        }
+    </div>
+</main>

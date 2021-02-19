@@ -1,0 +1,126 @@
+@section Scripts {
+
+    <script type="text/javascript" src="~/js/swipe.js"></script>
+    <script src="~/js/gallery.js"></script>
+}
+
+@model DSU21_2.ViewModels.ExhibitionsViewModel
+<main class="gallery-wrapper">
+            <!-- Swiper.js -->
+            <div class="swiper-container gallerylist">
+                <div class="exhibition-description">
+                    <h1>@Model.Artist.Name</h1>
+                    <p>@Model.Exhibitions.Description</p>
+                </div>
+                <div class="swiper-wrapper">
+                    @{
+                        int artCount = Model.Exhibitions.Artworks.Count / 3;
+                        for (int i = 0; i < artCount; i++)
+                        {
+                            <div class="swiper-slide swiper-gallery">
+                                <div class="gallery">
+                                    @for (int j = i * 3; j < (i * 3) + 3; j++)
+                                    {
+                                        <div class="picture-text">
+                                            <img src="@Model.Exhibitions.Artworks[j].Hyperlink" alt="">
+
+                                            <p class="button-overlay">@Model.Exhibitions.Artworks[j].Name</p>
+                                            <div id="overlay">
+                                                <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
+                                                <img src="@Model.Exhibitions.Artworks[j].Hyperlink"  alt="">
+                                                
+                                                <input type="button" value="Visa bild" class="btn-readmoregallery"  onclick=" return change(this)"/>
+
+                                                <div class="object-info">
+                                                    <h1>@Model.Exhibitions.Artworks[j].Name</h1>
+                                                    <p> av @Model.Artist.Name</p>
+                                                    <p id="artwork-description">@Model.Exhibitions.Artworks[j].Description</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                        @if (Model.Exhibitions.Artworks.Count % 3 != 0)
+                        {
+                            <div class="swiper-slide swiper-gallery">
+                                <div class="gallery">
+                                    @for (int i = artCount * 3; i < Model.Exhibitions.Artworks.Count; i++)
+                                    {
+                                        <div class="picture-text">
+                                            <img src="@Model.Exhibitions.Artworks[i].Hyperlink" alt="">
+
+                                            <p class="button-overlay">@Model.Exhibitions.Artworks[i].Name</p>
+
+                                            <div id="overlay">
+                                                <span><i class="far fa-window-close" onmouseover="this.className = 'fas fa-window-close'" onmouseout="this.className ='far fa-window-close'"></i></span>
+                                                <img src="@Model.Exhibitions.Artworks[i].Hyperlink"  alt="">
+                                                <input class="btn-readmoregallery" type="button" value="Visa bild" onclick="showPictureOnly(this)">
+
+                                                <div class="object-info">
+                                                    <h1>@Model.Exhibitions.Artworks[i].Name</h1>
+                                                    <p>@Model.Artist.Name</p>
+                                                    <p id="artwork-description">@Model.Exhibitions.Artworks[i].Description</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+
+                <aside class="share-aside">
+                    <div class="signout-wrapper">
+                        <a href="/Home" class="sign-out">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Lämna utställning
+                        </a>
+                    </div>
+                        <div class="fb-share-button" data-href="" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fadventofcode.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Dela</a></div>
+                </aside>
+
+                <!--  pagination -->
+                <div class="swiper-pagination swiper-pagination-black">
+
+                </div>
+                <!--  navigation buttons -->
+                <div class="swiper-button-prev swiper-button-white swiper-nav-gallery-prev"></div>
+                <div class="swiper-button-next swiper-button-white swiper-nav-gallery-next"></div>
+            </div>
+        @*</div>*@
+
+    <!-- Rumlista -->
+<div class="swiper-container roomlist margin-top">
+    <div class="swiper-wrapper">
+
+        <!-- Slides (kallas från model i c#) -->
+        @{
+            @for (var i = 0; i < Model.ExhibitionsForRooms.Count; i++)
+            {
+                var room = Model.ExhibitionsForRooms[i];
+
+                    <div class="swiper-slide">
+                        @if (room.Artworks[0].Hyperlink != "N/A")
+                        {
+                            <img class="room-img" src="@room.Artworks[0].Hyperlink">
+                        }
+                        else
+                        {
+                            <img class="room-noimg" src="/assets/images/noImage.png">
+                        }
+
+                        <a href="/exhibitions/@room.Id" id="room-span">@room.Name</a>
+
+                    </div>
+                }
+            }
+        </div>
+
+    <!--  navigation buttons -->
+    <div class="swiper-button-prev swiper-button-white swiper-nav-room-prev"></div>
+    <div class="swiper-button-next swiper-button-white swiper-nav-room-next"></div>
+</div>
+</main>

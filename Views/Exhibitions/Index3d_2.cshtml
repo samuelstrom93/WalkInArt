@@ -1,0 +1,49 @@
+﻿
+@section Scripts {
+
+    <script type="text/javascript" src="~/js/swipe.js"></script>
+
+
+}
+
+@model DSU21_2.ViewModels.ExhibitionsViewModel
+<main>
+    <div class="gallery-wrapper" style="background-image: url('../assets/images/background.jfif'); background-size:cover;">
+        <iframe id="3d-room" src="@Url.Action("Room3d_2", new { id = Model.Exhibitions.Id })" style="height:80vh;width:100%;"></iframe>
+        <label class="esc-label">Esc för att avsluta VR-läge</label>
+        <button id="change2d-btn" class="changeView-btn" onclick="location.href = '/exhibitions2d/@Model.Exhibitions.Id';">ÄNDRA TILL 2D</button>
+        <button id="change3droom-btn" class="changeView-btn" onclick="location.href = '/exhibitions/@Model.Exhibitions.Id';">BYT RUM</button>
+    </div>
+        <!-- Rumlista -->
+        <div class="swiper-container roomlist margin-top">
+            <div class="swiper-wrapper">
+
+                <!-- Slides (kallas från model i c#) -->
+                @{
+                    @for (var i = 0; i < Model.ExhibitionsForRooms.Count; i++)
+                    {
+                        var room = Model.ExhibitionsForRooms[i];
+
+                        <div class="swiper-slide">
+                            @if (room.Artworks[0].Hyperlink != "N/A")
+                            {
+                                <img class="room-img" src="@room.Artworks[0].Hyperlink">
+                            }
+                            else
+                            {
+                                <img class="room-noimg" src="/assets/images/noImage.png">
+                            }
+
+                            <a href="/exhibitions/@room.Id" id="room-span">@room.Name</a> 
+
+                        </div>
+                    }
+                }
+            </div>
+
+            <!--  navigation buttons -->
+            <div class="swiper-button-prev swiper-button-white swiper-nav-room-prev"></div>
+            <div class="swiper-button-next swiper-button-white swiper-nav-room-next"></div>
+        </div>
+
+</main>

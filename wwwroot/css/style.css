@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Staatliches';
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+article {
+    min-height: 100%;
+    display: flex !important;
+    flex-direction: column;
+}
+
+
+main {
+    flex-grow: 1;
+}
+
+header, main, footer {
+    flex-shrink: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000
+}
+

@@ -1,26 +1,46 @@
 ﻿using DSU21_2.Models;
+using DSU21_2.Repository;
+using DSU21_2.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 
+/// <summary>
+/// För startsidan
+/// </summary>
+/// 
 namespace DSU21_2.Controllers
 {
+
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IArtDBRepo artDbRepo;
+        
+        public HomeController(IArtDBRepo artDbRepo)
         {
-            _logger = logger;
+            this.artDbRepo = artDbRepo;
         }
 
-        public IActionResult Index()
+        [AllowAnonymous]
+        public async Task<IActionResult>  Index()
         {
-            return View();
+            var collectionList = await artDbRepo.GetCollectionsWithArt();
+            var tagList = await artDbRepo.GetTags();
+            var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
+            return View(homeViewModel);
+           
+        }
+
+        // Skickar ViewModel till partial-view för 3d-rum
+        public async Task<IActionResult> Room3d()
+        {
+            var collectionList = await artDbRepo.GetCollectionsWithArt();
+            var tagList = await artDbRepo.GetTags();
+            var homeViewModel = new HomeViewModel(collectionList, collectionList, tagList);
+            return PartialView("/Views/Home/Room3d.cshtml",homeViewModel);
         }
 
         public IActionResult Privacy()
